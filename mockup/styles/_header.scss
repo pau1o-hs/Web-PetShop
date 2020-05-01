@@ -1,0 +1,83 @@
+@import "colors";
+@import "utils";
+
+/* Style the top navigation bar */
+.header {
+	display: flex;
+	background: #333;
+	justify-content: stretch;
+	align-items: center;
+
+}
+// ICON
+.logo {
+	text-align: center;
+	// background-color: $my-orange;
+	color: white;
+	
+	img {
+		max-width: 100px;
+	}
+}
+
+.navorder {
+	flex: 10;
+	margin-left: 20px;
+}
+
+.navbar {
+	a {
+		color: white;
+		padding: 14px 16px;
+		text-decoration: none;
+		text-align: center;
+		font-size: 17px;
+		&:hover {
+			background-color: #ddd;
+			color: black;
+		}
+	}	
+}
+
+.searchbar {
+	input[type="text"] {
+		// padding: 6px;
+		// border: none;
+		margin-top: 13px;
+		// margin-right: 16px;
+		font-size: 17px;
+		display:table-cell; 
+		width:300px;
+		height: 40px;
+	}
+}
+
+.navprofile {
+	a{
+		text-decoration: none;
+		color: white;
+	}
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+	width: 100%;
+	height: 105px;
+	padding: 10px;
+	text-align: center;
+	background: $my-orange;
+	color: white;
+}
+
+.imgprofile {
+	// justify-content: stretch;
+	// height: 105px;
+	// padding-top: 10px;
+	img {
+		border-radius: 100px;
+		max-width: 10px;
+		// object-fit: cover;
+	}
+	// width: 10%;
+
+	background: $my-orange;
+}
