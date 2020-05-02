@@ -582,14 +582,9 @@ body, html {
   }
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
-  background-color: red;
-}
-
 .login-register {
   width: 50%;
+  height: 50%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -598,6 +593,9 @@ body, html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  background-color: red;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .login {
@@ -605,6 +603,10 @@ body, html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.login input {
+  width: 90%;
 }
 
 /* Ensures that all elements width and height already include the padding and border. */
