@@ -582,31 +582,158 @@ body, html {
   }
 }
 
-.login-register {
+.login-loginregister {
   width: 50%;
-  height: 50%;
+  height: 70%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: red;
-  -ms-flex-item-align: center;
-      align-self: center;
+  margin-top: 7.5%;
+  border-radius: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.login {
+.login-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #111;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  width: 50%;
 }
 
-.login input {
-  width: 90%;
+.login-login input[type="text"], .login-login input[type="password"] {
+  background: none;
+  display: block;
+  width: 220px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: white;
+  margin: 10px auto;
+  text-align: center;
+  padding: 14px 10px;
+  border: 0;
+  border: 2px solid #3498db;
+  outline: none;
+  border-radius: 24px;
+  opacity: .5;
+}
+
+.login-login input[type="text"]:hover, .login-login input[type="password"]:hover {
+  opacity: 1;
+}
+
+.login-login input[type="text"]:focus, .login-login input[type="password"]:focus {
+  opacity: 1;
+  width: 250px;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
+.login-login input[type="submit"] {
+  background: none;
+  display: block;
+  width: 150px;
+  color: white;
+  margin: 10px auto;
+  text-align: center;
+  padding: 14px 10px;
+  border: 0;
+  border: 2px solid #2ecc71;
+  outline: none;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.login-login input[type="submit"]:hover {
+  background: #2ecc71;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
+.login-register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #426a9e;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 50%;
+}
+
+.login-register h1 {
+  margin-bottom: 5%;
+}
+
+.login-register input {
+  width: 70%;
+  height: 8%;
+  margin-bottom: 5%;
+  background-color: #FBFBFB;
+  border-width: thin;
+  text-align: center;
+  border-radius: 6px;
+  opacity: 0.7;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.login-register input:hover {
+  opacity: 1;
+}
+
+.login-register input:focus {
+  width: 74%;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.login-register button {
+  padding: 13px 13px;
+  background-color: #275CAB;
+  color: #9E9E9E;
+  text-align: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+  border-width: 0px;
+  border-radius: 3px;
+}
+
+.login-register button:hover {
+  background-color: #5884C6;
+  opacity: 1;
+  color: white;
 }
 
 /* Ensures that all elements width and height already include the padding and border. */
