@@ -1,0 +1,118 @@
+@import "colors";
+@import "utils";
+
+$navbar-top: rgb(66, 106, 158);
+$navbar-bottom: red;
+
+*{
+	margin:0px;
+	padding: 0px;
+}
+
+/* Style the top navigation bar */
+.header {
+	display: flex;
+	background-color: $navbar-top;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height:10vh;
+}
+
+// ICON
+.logo {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $navbar-top;
+	color: white;
+	height: 10vh;
+
+	background-image: url("./images/logo.png");
+	background-position: center;
+	background-size: 8vh;
+	background-repeat: no-repeat;
+
+}
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	background-color: $navbar-bottom;
+	// width: 100%;
+	
+	a {	
+		color: white;
+		padding: 20px;
+		text-decoration: none;
+		text-align: center;
+		
+		&:hover {
+			background-color: #ddd;
+			color: black;
+		}
+	}
+}
+.search{	
+	display: flex;
+	justify-content: center;
+	input[type="text"] {
+		padding: 12px;
+		border: none;
+		font-size: 20px;
+		border-radius: 15px;
+		width: 30vh;
+	}
+}
+
+.profile{
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	
+	height: 10vh;
+	background-color: $navbar-top;
+	color: white;
+	
+	h3{
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serifs;
+	}
+	/*
+	a{
+		text-decoration: none;
+		color: white;
+		background-color: $navbar-top;
+		padding: 5px;
+		&:hover {
+			background-color: #ddd;
+			color: black;
+		}
+	}
+	*/
+}
+
+#profileimg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #333;
+	color: white;
+	height: 7vh;
+	width: 7vh;
+	margin-left: 3vh;
+	background-image: url("./images/naruto.png");
+	background-position: center;
+	background-size: 10vh;
+	background-repeat: no-repeat;
+	border-radius: 100%;
+}
+
+
+
+
+

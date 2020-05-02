@@ -1,0 +1,238 @@
+@import "colors";
+@import "utils";
+
+// html, body{
+//     margin: 0;
+// }
+  
+// body{
+//     text-align: center;
+// }
+
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
+
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-family: 'Just Another Hand', cursive;
+	overflow-X: hidden;
+}
+
+$big_width: 100%; 			//Slider width - large display
+$big_height: 25%; 		//Slider height - large display
+$big_nav_width: 12%;	// Previous and Next width - large display
+
+$small_width: 100%; 	//Slider width - small display
+$small_height: 55%; 	//Slider height - small display
+$small_nav_width: 15%;// Previous and Next width - small display
+
+$box-shadow: 0 11px 22px rgba(0, 0, 0, 0.0), 0 7px 7px rgba(0, 0, 0, 0.0);
+$brown: #795548;
+$blue: #2196F3;
+$green: #4CAF50;
+$magenta: #F44336;
+$nav_color: rgba(0, 0, 0, 0.0);
+$nav_hover_color: rgba(0, 0, 0, 0.0);
+
+.container {
+	margin: 0 auto;
+	// margin-top: 20px;
+	position: relative;
+	width: $big_width;
+	height: 0;
+	padding-bottom: $big_height;
+	user-select: none;
+	background-color: #1c1c1c;
+	box-shadow: $box-shadow;
+
+	input {
+		display: none;
+	}
+
+	.slide_img {
+		position: absolute;
+		width: 100%;
+        height: 100%;
+        
+		z-index: -1;
+
+		img {
+			width: inherit;
+			height: inherit;
+		}
+
+		.prev, .next {
+			width: $big_nav_width;
+			height: inherit;
+			position: absolute;
+			top: 0;
+			background-color: $nav_color;
+			z-index: 99;
+			transition: .45s;
+			cursor: pointer;
+			text-align: center;
+		}
+		.next {
+			right: 0;
+		}
+		.prev {
+			left: 0;
+		}
+
+		.prev:hover, .next:hover {
+			transition: .3s;
+			background-color: $nav_hover_color;
+		}
+
+		.prev span, .next span {
+			position: absolute;
+			width: 0px;
+			height: 0px;
+			border: solid 20px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.prev span {
+			border-color: transparent #fff transparent transparent;
+			right: 35%;
+		}
+		.next span {
+			border-color: transparent transparent transparent #fff;
+			left: 35%;
+		}
+	}
+
+	#nav_slide {
+		width: 100%;
+		bottom: 12%;
+		height: 11px;
+		position: absolute;
+		text-align: center;
+		z-index: 99;
+		cursor: default;
+
+		.dots {
+			top: -5px;
+			width: 18px;
+			height: 18px;
+			margin: 0 3px;
+			position: relative;
+			border-radius: 100%;
+			display: inline-block;
+			background-color: rgba(0, 0, 0, 0.6);
+			transition: .4s;
+			cursor: pointer;
+		}
+		
+		#dot1:hover {background: $brown;}
+		#dot2:hover {background: $magenta;}
+		#dot3:hover {background: $blue;}
+		#dot4:hover {background: $green;}
+	}
+}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three,
+#i4:checked ~ #four {
+	z-index: 9;
+	animation: scroll 1s ease-in-out;
+}
+
+#i1:checked ~ #nav_slide #dot1 {background: $brown;}
+#i2:checked ~ #nav_slide #dot2 {background: $magenta;}
+#i3:checked ~ #nav_slide #dot3 {background: $blue;}
+#i4:checked ~ #nav_slide #dot4 {background: $green;}
+
+
+
+@keyframes scroll {
+	0% { opacity: .4;}
+	100% { opacity: 1;}
+}
+
+@media screen and (max-width: 685px) {
+	.container {
+		border: none;
+		width: $small_width;
+		height: 0;
+		padding-bottom: $small_height;
+
+		.slide_img {
+			.prev, .next {
+				width: $small_nav_width;
+			}
+
+			.prev span, .next span {
+				border: solid 12px;
+			}
+			.prev span {
+				border-color: transparent #fff transparent transparent;
+			}
+			.next span {
+				border-color: transparent transparent transparent #fff;
+			}
+		}
+
+		#nav_slide .dots {
+			width: 12px;
+			height: 12px;
+		}
+	}
+}
+
+.img-button {
+    display: flex;
+    justify-content: center;
+}
+
+.home-button{
+    font-size: 30px;
+    width: 1200px;
+    height: 500px;
+    border: none;
+    text-decoration: none;
+    color: white;
+    background-position: center;
+    background-size: cover;
+    transition-duration: 0.3s;
+}
+.button1{
+    background-image: url("./images/products.jpg");
+    
+    &:hover{
+        background-image: url("./images/products-blur.jpg");
+    }
+}
+.button2{
+    background-image: url("./images/services.jpg");
+    
+    &:hover{
+        background-image: url("./images/services-blur.jpg");
+    }
+}
+
+.above-slide{
+    display:flex;
+	flex-direction: column;
+	h2{
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+    // align-items: center;
+
+}
+.title2{
+    margin:4%;
+	align-self: center;
+	color: #333;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row,
+    .navbar {
+        flex-direction: column;
+    }
+}

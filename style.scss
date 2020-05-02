@@ -1,0 +1,16 @@
+@import "styles/colors";
+@import "styles/utils";
+@import "styles/header";
+@import "styles/footer";
+@import "styles/home";
+
+/* Ensures that all elements width and height already include the padding and border. */
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+	font-family: $font-stack;
+  margin: 0;
+}

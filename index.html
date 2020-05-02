@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PetLife - your favorite pet shop!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+		
+		<!-- Navigation Bar -->
+    <div class="header">
+      <!-- LOGO -->
+			<div class="logo">
+      </div>
+      
+      <div style="display: flex; justify-content: space-between">
+        <div class="navbar">
+          <!-- MENU BAR -->
+          <a href="#">Home</a>
+          <a href="#">Products</a>
+          <a href="#">Services</a>
+          <a href="#">Profile</a>
+        </div>
+        <!-- SEARCH BAR -->
+        <div class="search">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+
+      <div class="profile">
+        <h3>Boboca dos Santos</h3>        
+          <!-- <a href="#">My Profile</a> -->
+        <div id="profileimg"></div>
+      </div>
+		</div>
+
+    <!-- <div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+
+    <!-- <br><br> -->
+    <!-- The flexible grid (content) -->
+    <div class="container">
+      <input type="radio" id="i1" name="images" checked/>
+      <input type="radio" id="i2" name="images" />
+      <input type="radio" id="i3" name="images" />
+      <input type="radio" id="i4" name="images"  />
+      
+      <div class="slide_img" id="one">			
+          
+          <img src="./images/cat1.jpg">
+          
+            <label class="prev" for="i4"><span></span></label>
+            <label class="next" for="i2"><span></span></label>	
+        
+      </div>
+      
+      <div class="slide_img" id="two">
+        
+          <img src="./images/dogs3.jpg" >
+          
+            <label class="prev" for="i1"><span></span></label>
+            <label class="next" for="i3"><span></span></label>
+        
+      </div>
+          
+      <div class="slide_img" id="three">
+          <img src="./images/fish1.jpg">	
+          
+            <label class="prev" for="i2"><span></span></label>
+            <label class="next" for="i4"><span></span></label>
+      </div>
+    
+    
+      <div class="slide_img" id="four">
+          <img src="./images/bird2.jpg">	
+          
+            <label class="prev" for="i3"><span></span></label>
+            <label class="next" for="i1"><span></span></label>
+    
+      </div>
+    
+      <div id="nav_slide">
+        <label for="i1" class="dots" id="dot1"></label>
+        <label for="i2" class="dots" id="dot2"></label>
+        <label for="i3" class="dots" id="dot3"></label>
+        <label for="i4" class="dots" id="dot4"></label>
+      </div> 
+    </div>
+
+    
+
+    <div class="above-slide">
+      <div class="title2">
+        <h2>What are you looking for?</h2>
+      </div>
+            
+      <div class="img-button">
+        <button class = "home-button button1" >PRODUCTS</button>
+        <button class="home-button button2">SERVICES</button>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+			<div class="footer-item footer-item-1">
+				<div class="footer-item-top">
+					<h2>Find us on social media</h2>
+				</div>
+				<div class="footer-item-bottom">
+					<ul>
+						<li>
+							<a href="https://www.facebook.com/" target="_blank">Facebook</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/" target="_blank">Instagram</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/" target="_blank">Twitter</a>	
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-item footer-item-2">
+				<div class="footer-item-top">
+					<h2>Stay Connected</h2>
+					<h3>Subscribe to our newsletter</h3>
+				</div>
+				<div class="footer-item-bottom">
+					<form action="#"></form>
+					<input type="text" placeholder="enter your best e-mail" />
+					<input type="submit" value="Submit" />
+				</div>
+			</div>
+    </div>
+  </body>
+</html>

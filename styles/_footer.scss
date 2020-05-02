@@ -1,0 +1,26 @@
+@import "colors";
+@import "utils";
+
+.footer {
+	display: flex;
+	background: $my-black;
+	color: $my-white;
+}
+
+.footer-item {
+  padding: 30px;
+}
+
+.footer-item-1 {
+	flex: 40% 100% 0;
+}
+
+.footer-item-2 {
+	flex: 60% 100% 0;
+}
+
+.footer-item-top {
+}
+
+.footer-item-bottom {
+}
