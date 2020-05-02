@@ -40,7 +40,7 @@ $navbar-bottom: red;
 .navbar {
 	display: flex;
 	justify-content: center;
-	background-color: $navbar-bottom;
+	background-color: $navbar-top;
 	// width: 100%;
 	
 	a {	
@@ -63,7 +63,7 @@ $navbar-bottom: red;
 		border: none;
 		font-size: 20px;
 		border-radius: 15px;
-		width: 30vh;
+		width: 40vh;
 	}
 }
 
@@ -111,8 +111,3 @@ $navbar-bottom: red;
 	background-repeat: no-repeat;
 	border-radius: 100%;
 }
-
-
-
-
-
