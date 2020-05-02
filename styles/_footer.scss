@@ -5,22 +5,113 @@
 	display: flex;
 	background: $my-black;
 	color: $my-white;
+	height: 200px;
 }
 
 .footer-item {
-  padding: 30px;
+	padding: 20px;
+	* {
+		margin: 0;
+	}
+	flex-direction: column;
+}
+
+/* Separator (vertical line) between itens */
+.footer-item-sep {
+	background-color: $my-white;
+	align-self: center;
+	height: 80%;
+	width: 3px;
+	padding: 0;
 }
 
 .footer-item-1 {
-	flex: 40% 100% 0;
+	flex: 2 1 0;
+	display: flex;
 }
 
 .footer-item-2 {
-	flex: 60% 100% 0;
+	flex: 3 1 0;
+	display: flex;
 }
 
 .footer-item-top {
+	flex: 1 1 0;
+	text-align: center;
+	@include flex-center(column);
+	flex-wrap: wrap;
+	h2 {
+		font-weight: normal;
+	}
+	h3 {
+		font-size: 1.3em;
+	}
 }
 
 .footer-item-bottom {
+	flex: 1 1 0;
+	text-align: center;
+	@include flex-center(row);
+	flex-wrap: wrap;
+}
+
+#social-media-list {
+	flex: 1 1 0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+	li {
+		text-align: center;
+	}
+}
+
+#news-email {
+	height: 45px;
+	width: 350px;
+	margin: 0 20px;
+}
+
+#news-button {
+	height: 45px;
+	width: 100px;
+	background: $my-lightblue;
+	border-radius: 5px;
+	color: $my-white;
+	font-size: 1.1em;
+	&:hover {
+		background-color: $my-blue;
+	}
+}
+
+/* Editing font awesome favicons */
+.fa {
+	padding: 10px;
+	font-size: 30px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px;
+	border-radius: 50%;
+}
+
+.fa:hover {
+	opacity: 0.7;
+}
+
+.fa-facebook {
+	background: #3b5998;
+	color: white;
+}
+
+.fa-instagram {
+	background: #125688;
+	color: white;
+}
+
+.fa-twitter {
+	background: #55acee;
+	color: white;
 }
