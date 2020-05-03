@@ -1,12 +1,13 @@
 @import "colors";
 @import "utils";
 
-$navbar-top: rgb(66, 106, 158);
+$navbar-top: rgba(0, 0, 0, 0.432);
 $navbar-bottom: red;
 
 *{
 	margin:0px;
 	padding: 0px;
+	// position: relative;
 }
 
 /* Style the top navigation bar */
@@ -16,7 +17,9 @@ $navbar-bottom: red;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height:10vh;
+	height: 10vh;
+	z-index: 100;
+	position: absolute;
 }
 
 // ICON
@@ -26,10 +29,10 @@ $navbar-bottom: red;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: $navbar-top;
+	// background-color: $navbar-top;
 	color: white;
 	height: 10vh;
-
+	margin-left: 15vh;
 	background-image: url("./images/logo.png");
 	background-position: center;
 	background-size: 8vh;
@@ -38,14 +41,17 @@ $navbar-bottom: red;
 }
 
 .navbar {
-	display: flex;
 	justify-content: center;
-	background-color: $navbar-top;
+	// background-color: $navbar-top;
+	align-self: center;
+	margin-left: 8vh;
+	margin-right: 10vh;
+	
 	// width: 100%;
 	
 	a {	
 		color: white;
-		padding: 20px;
+		padding: 4.3vh 20px;
 		text-decoration: none;
 		text-align: center;
 		
@@ -55,27 +61,34 @@ $navbar-bottom: red;
 		}
 	}
 }
-.search{	
-	display: flex;
+.search{
+	align-self: center;
 	justify-content: center;
+	// height: 50px;
+	// width: 50px;
+
+	// background-color: white;
+	// opacity: 1;
 	input[type="text"] {
-		padding: 12px;
+		padding: 8px;
 		border: none;
 		font-size: 20px;
 		border-radius: 15px;
 		width: 40vh;
 	}
+	// position: absolute;
+	// z-index: 1193;
 }
 
 .profile{
 	display: flex;
-	flex: 1;
+	flex: 2;
 	align-items: center;
 	justify-content: center;
 	align-content: center;
 	
 	height: 10vh;
-	background-color: $navbar-top;
+	// background-color: $navbar-top;
 	color: white;
 	
 	h3{

@@ -20,7 +20,7 @@ body, html {
 }
 
 $big_width: 100%; 			//Slider width - large display
-$big_height: 25%; 		//Slider height - large display
+$big_height: 35%; 		//Slider height - large display
 $big_nav_width: 12%;	// Previous and Next width - large display
 
 $small_width: 100%; 	//Slider width - small display
@@ -28,12 +28,12 @@ $small_height: 55%; 	//Slider height - small display
 $small_nav_width: 15%;// Previous and Next width - small display
 
 $box-shadow: 0 11px 22px rgba(0, 0, 0, 0.0), 0 7px 7px rgba(0, 0, 0, 0.0);
-$brown: #795548;
+$brown: #fcf809;
 $blue: #2196F3;
 $green: #4CAF50;
 $magenta: #F44336;
 $nav_color: rgba(0, 0, 0, 0.0);
-$nav_hover_color: rgba(0, 0, 0, 0.0);
+$nav_hover_color: rgba(0, 0, 0, 0);
 
 .container {
 	margin: 0 auto;
@@ -46,7 +46,7 @@ $nav_hover_color: rgba(0, 0, 0, 0.0);
 	background-color: #1c1c1c;
 	box-shadow: $box-shadow;
 
-	input {
+	input[type="radio"] {
 		display: none;
 	}
 
@@ -95,11 +95,11 @@ $nav_hover_color: rgba(0, 0, 0, 0.0);
 		}
 
 		.prev span {
-			border-color: transparent #fff transparent transparent;
+			border-color: transparent rgba(0, 0, 0, 0.432) transparent transparent;
 			right: 35%;
 		}
 		.next span {
-			border-color: transparent transparent transparent #fff;
+			border-color: transparent transparent transparent rgba(0, 0, 0, 0.1);
 			left: 35%;
 		}
 	}
@@ -184,20 +184,23 @@ $nav_hover_color: rgba(0, 0, 0, 0.0);
 }
 
 .img-button {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: space-around;
+	// height: 700;
+	// background-color: green;
 }
 
 .home-button{
     font-size: 30px;
-    width: 1200px;
+    width: 900px;
     height: 500px;
     border: none;
     text-decoration: none;
     color: white;
     background-position: center;
-    background-size: cover;
-    transition-duration: 0.3s;
+		background-size: cover;
+		// background-size: 500px 500px;
+		transition-duration: 0.3s;
 }
 .button1{
     background-image: url("./images/products.jpg");
