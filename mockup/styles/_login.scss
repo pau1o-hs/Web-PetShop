@@ -1,0 +1,130 @@
+@import "colors";
+@import "utils";	
+
+
+.login-loginregister{
+	width: 50%;
+	height:70%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	// background-color: white;
+	margin-top: 7.5%;
+	border-radius: 15px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login-login{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #111;
+	border-bottom-left-radius: 15px;
+	border-top-left-radius: 15px;
+	width:50%;
+	
+	input[type = "text"], input[type = "password"]{		
+		background: none;
+		display: block;
+		width: 220px;
+		transition:0.4s;
+
+		color: white;
+		margin: 10px auto;
+		text-align: center;
+		padding: 14px 10px;
+		border: 0;
+		border: 2px solid #3498db;
+		outline: none;
+		border-radius: 24px;
+
+		opacity: .5;
+
+		&:hover{
+			opacity: 1;
+		}
+
+		&:focus {
+			opacity: 1;
+			width: 250px;
+			// border: 2px solid #2ecc71;
+			transition-duration: 0.1s;
+		}
+	}
+
+	input[type = "submit"]{		
+		background: none;
+		display: block;
+		width: 150px;
+
+		// background-color: #111;
+		color: white;
+		margin: 10px auto;
+		text-align: center;
+		padding: 14px 10px;
+
+		border: 0;
+		border: 2px solid #2ecc71;
+		outline: none;
+		border-radius: 24px;
+		cursor: pointer;
+
+		&:hover {
+			// // width: 240px;
+			background:  #2ecc71;
+			transition-duration: 0.1s;
+		}
+	}
+}
+
+.login-register{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(66, 106, 158);
+	border-bottom-right-radius: 15px;
+	border-top-right-radius: 15px;
+	width:50%;
+	h1{
+		margin-bottom: 5%;
+	}
+	input{
+		width: 70%;
+		height: 8%;
+		margin-bottom: 5%;
+		background-color: #FBFBFB;
+		border-width: thin;
+		text-align: center;
+		border-radius: 6px;
+		opacity:0.7;
+		transition:0.4s;
+		&:hover{
+			opacity: 1;
+		}
+		&:focus {
+			width:74%;
+			transition-duration: 0.2s;
+		}
+	}
+	button{
+		padding: 13px 13px;
+		background-color: #275CAB;
+		color: #9E9E9E;
+		
+		text-align: center;
+		transition:0.2s;
+		text-decoration: none;
+		cursor: pointer;
+		border-width: 0px;
+		border-radius: 3px;
+
+		&:hover{
+			background-color:#5884C6;
+			opacity: 1;
+			color:white;
+		}	
+	}
+}	
