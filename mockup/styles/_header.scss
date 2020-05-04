@@ -1,7 +1,7 @@
 @import "colors";
 @import "utils";
 
-$navbar-top: rgba(0, 0, 0, 0.432);
+$navbar-top: rgba(0, 0, 0, 0.2);
 $navbar-bottom: red;
 
 *{
@@ -32,48 +32,52 @@ $navbar-bottom: red;
 	// background-color: $navbar-top;
 	color: white;
 	height: 10vh;
+	width: 10vh;
 	margin-left: 15vh;
-	background-image: url("./images/logo.png");
+	background-image: url("./images/logo.svg");
 	background-position: center;
-	background-size: 8vh;
+	background-size: 6vh;
 	background-repeat: no-repeat;
-
+	
 }
 
 .navbar {
+	display:flex;
+	flex-wrap: nowrap;
 	justify-content: center;
 	// background-color: $navbar-top;
 	align-self: center;
 	margin-left: 8vh;
 	margin-right: 10vh;
 	
-	// width: 100%;
-	
 	a {	
 		color: white;
-		padding: 4.3vh 20px;
+		padding: 3.75vh 2vh;
 		text-decoration: none;
 		text-align: center;
+		font-size: 2vh;
+		transition-duration: .3s;
 		
 		&:hover {
-			background-color: #ddd;
-			color: black;
+			border-bottom: 0.3vh solid white;
+			
 		}
+
+	}
+
+	.active {
+		border-bottom: .3vh solid white;
 	}
 }
 .search{
 	align-self: center;
 	justify-content: center;
-	// height: 50px;
-	// width: 50px;
 
-	// background-color: white;
-	// opacity: 1;
 	input[type="text"] {
-		padding: 8px;
+		padding: 0.8vh;
 		border: none;
-		font-size: 20px;
-		border-radius: 15px;
+		font-size: 2vh;
+		border-radius: 1.5vh;
 		width: 40vh;
 	}
 	// position: absolute;
@@ -93,6 +97,7 @@ $navbar-bottom: red;
 	
 	h3{
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serifs;
+		font-size: 2.5vh;
 	}
 	/*
 	a{
@@ -118,7 +123,7 @@ $navbar-bottom: red;
 	height: 7vh;
 	width: 7vh;
 	margin-left: 3vh;
-	background-image: url("./images/naruto.png");
+	background-image: url("./images/tchutchucão.jpg");
 	background-position: center;
 	background-size: 10vh;
 	background-repeat: no-repeat;

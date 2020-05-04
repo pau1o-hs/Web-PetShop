@@ -1,0 +1,154 @@
+@import "colors";
+@import "utils";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+$navbar-top: $my-blue;
+
+// .header-services{
+	
+// 	display: flex;
+// 	background-color: $navbar-top;
+// 	justify-content: center;
+// 	align-items: center;
+// 	width: 100%;
+// 	height: 10vh;
+// 	z-index: 100;
+// 	//position: absolute;
+// }
+
+.footer-services {
+	display: flex;
+	background: white;
+	color: black;
+	height: 175px;
+	width: 100%;
+	justify-content: center;
+	opacity:1;
+}
+
+
+#service-title{
+	width: 100%;
+	margin: 5vh 0px;
+	text-align:center;
+	align-self: center;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		
+}
+
+
+.menu-products{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	width: 65%;
+	height: 150%;
+	margin: 0 auto;
+	background-color: white;	
+	justify-content: space-between;
+	grid-gap: 20px;
+	grid-template-areas: "a b" "a c" "e d" "f d";
+	align-self: center;
+
+	button {
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-size: 40px;
+		color: white;
+		font-weight: bold;
+		text-shadow: 0px 0px 3px black;
+	}
+}
+
+.btn-prod{
+	
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	border: none;
+	background-position: center;
+	background-size: cover;
+	transition-duration: 0.3s;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+
+}
+
+// Banho e tosa
+.prod1{
+	background-image:url(images/alimentacao-bw.jpg);	
+	grid-area: a;
+	&:hover {
+		background-image:url(images/alimentacao.jpg);	
+		// background-color: $my-blue;
+		// background-image: none;
+	}
+}
+
+// Castração
+.prod2{
+	background-image:url(images/products-bw.jpg);
+	grid-area: b;
+	&:hover {
+		background-image:url(images/products.jpg);
+		// background-color: $my-blue;
+		// background-image: none;
+	}
+}
+
+// Consulta
+.prod3{
+	background-image:url(images/petiscos-bw.jpg);
+	grid-area: c;
+
+	&:hover {
+		background-image:url(images/petiscos.jpg);
+		// background-color: $my-blue;	
+		// background-image: none;
+	}
+}
+
+// Vacinacao
+.prod4{
+	background-image:url(images/passeio-bw.jpg);
+	grid-area: d;
+	
+	&:hover {
+		background-image:url(images/passeio.jpg);
+		// background-color: $my-blue;	
+		// background-image: none;
+	}
+}
+
+// Adestracao
+.prod5{
+	background-image:url(images/clothes-bw.jpg);
+	grid-area: e;
+
+	&:hover {
+		background-image:url(images/clothes.jpg);
+		// background-color: $my-blue;
+		// background-image: none;
+	}
+}
+
+// Lar temporario
+.prod6{
+	background-image:url(images/ambiente-bw.jpg);
+	grid-area: f;
+	
+	&:hover {
+		background-image:url(images/ambiente.jpg);
+		// background-color: $my-blue;
+		// background-image: none;
+	}
+}
+
+/* // Mais serviços
+.serv7{
+background-image:url(images/banho.jpg);
+background-color: orange;
+grid-area: g;
+} */

@@ -18,7 +18,7 @@
 	}
 	flex-direction: column;
 }
-s
+
 /* Separator (vertical line) between itens */
 .footer-item-sep {
 	background-color: $my-white;
@@ -79,10 +79,12 @@ s
 }
 
 #news-button {
+	cursor: pointer;
 	height: 45px;
 	width: 100px;
 	background: #125688;
 	border-radius: 5px;
+	border: none;
 	color: $my-white;
 	font-size: 1.1em;
 	&:hover {
