@@ -166,7 +166,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: white;
+  background: #FBFCFC;
   color: black;
   height: 175px;
   width: 100%;
@@ -811,37 +811,18 @@ body, html {
   padding: 0px;
 }
 
-.header-services {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #6086be;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 10vh;
-  z-index: 100;
-}
-
-.footer-services {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: #6086be;
-  color: black;
-  height: 175px;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  opacity: 1;
-}
-
-#service-title {
+/* .header-services{
+	
+	display: flex;
+	background-color: $navbar-top;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 10vh;
+	z-index: 100;
+	//position: absolute;
+} */
+.service-title {
   width: 100%;
   margin: 5vh 0px;
   text-align: center;
@@ -880,20 +861,45 @@ body, html {
 .btn-serv {
   width: 100%;
   max-width: 100%;
+  overflow: hidden;
+  position: relative;
   margin: 0 auto;
   border: none;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+}
+
+.btn-serv:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.btn-serv:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.btn-serv p {
+  position: relative;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .serv1 {
   background-image: url("images/services-bw.jpg");
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: a;
 }
@@ -916,7 +922,7 @@ body, html {
 .serv3 {
   background-image: url(images/consulta-bw.jpg);
   -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   grid-area: c;
 }
 
@@ -926,8 +932,7 @@ body, html {
 
 .serv4 {
   background-image: url(images/vacinacao-bw.jpg);
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: d;
 }
@@ -949,8 +954,8 @@ body, html {
 
 .serv6 {
   background-image: url(images/lar-bw.jpg);
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
   grid-area: f;
 }
 
@@ -969,20 +974,6 @@ grid-area: g;
   padding: 0px;
 }
 
-.footer-services {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: white;
-  color: black;
-  height: 175px;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  opacity: 1;
-}
-
 #service-title {
   width: 100%;
   margin: 5vh 0px;
@@ -993,7 +984,7 @@ grid-area: g;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.menu-products {
+#menu-products {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -1005,107 +996,247 @@ grid-area: g;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  grid-gap: 20px;
+  grid-gap: 2.5vh;
       grid-template-areas: "a b" "a c" "e d" "f d";
   -ms-grid-row-align: center;
       align-self: center;
+  margin-bottom: 2.5vh;
 }
 
-.menu-products button {
+#menu-products a {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 40px;
   color: white;
   font-weight: bold;
   text-shadow: 0px 0px 3px black;
+  text-decoration: none;
+}
+
+#foods {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  width: 65%;
+  height: 90%;
+  margin: 0 auto;
+  background-color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-gap: 20px;
+      grid-template-areas: "a b" "c d" "e f";
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#foods div {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1vh;
+  color: black;
 }
 
 .btn-prod {
   width: 100%;
   max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  border: none;
+  background-position: center center;
+  background-size: cover;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+}
+
+.btn-prod:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.btn-prod:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.btn-prod p {
+  position: relative;
+  text-align: center;
+  top: 45%;
+}
+
+.prod1 {
+  background-image: url(images/alimentacao.jpg);
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: a;
+}
+
+.prod1:hover:before {
+  background-image: url(images/alimentacao-bw.jpg);
+}
+
+.prod2 {
+  background-image: url(images/products.jpg);
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: b;
+}
+
+.prod2:hover:before {
+  background-image: url(images/products-bw.jpg);
+}
+
+.prod3 {
+  background-image: url(images/petiscos.jpg);
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: c;
+}
+
+.prod3:hover:before {
+  background-image: url(images/petiscos-bw.jpg);
+}
+
+.prod4 {
+  background-image: url(images/passeio.jpg);
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: d;
+}
+
+.prod4:hover:before {
+  background-image: url(images/passeio-bw.jpg);
+}
+
+.prod5 {
+  background-image: url(images/clothes.jpg);
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: e;
+}
+
+.prod5:hover:before {
+  background-image: url(images/clothes-bw.jpg);
+}
+
+.prod6 {
+  background-image: url(images/ambiente.jpg);
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: f;
+}
+
+.prod6:hover:before {
+  background-image: url(images/ambiente-bw.jpg);
+}
+
+.item-unity {
+  width: 100%;
+  max-width: 100%;
+  height: 40vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "imagem imagem titulo titulo titulo" "imagem imagem descricao descricao descricao" "imagem imagem descricao descricao descricao" "imagem imagem descricao descricao descricao" "buttonadd buttonadd buttonadd addremove addremove";
+  grid-column-gap: 0.7vh;
   margin: 0 auto;
   border: none;
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 }
 
-.prod1 {
-  background-image: url(images/alimentacao-bw.jpg);
+.item-unity img {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row-span: 4;
   -ms-grid-column: 1;
-  grid-area: a;
+  -ms-grid-column-span: 2;
+  grid-area: imagem;
+  width: 100%;
+  height: 100%;
 }
 
-.prod1:hover {
-  background-image: url(images/alimentacao.jpg);
-}
-
-.prod2 {
-  background-image: url(images/products-bw.jpg);
+.item-unity h2 {
+  width: 98%;
+  height: 100%;
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: b;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: titulo;
+  -ms-grid-column-align: start;
+      justify-self: start;
 }
 
-.prod2:hover {
-  background-image: url(images/products.jpg);
-}
-
-.prod3 {
-  background-image: url(images/petiscos-bw.jpg);
+.item-unity h3 {
+  width: 98%;
+  height: 100%;
+  -ms-grid-column-align: start;
+      justify-self: start;
   -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: c;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: descricao;
 }
 
-.prod3:hover {
-  background-image: url(images/petiscos.jpg);
-}
-
-.prod4 {
-  background-image: url(images/passeio-bw.jpg);
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  grid-area: d;
-}
-
-.prod4:hover {
-  background-image: url(images/passeio.jpg);
-}
-
-.prod5 {
-  background-image: url(images/clothes-bw.jpg);
-  -ms-grid-row: 3;
+.item-unity button {
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
-  grid-area: e;
+  -ms-grid-column-span: 3;
+  grid-area: buttonadd;
+  width: 70%;
+  height: 40%;
+  background-color: blue;
 }
 
-.prod5:hover {
-  background-image: url(images/clothes.jpg);
+.item-unity div {
+  -ms-grid-row: 5;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-area: addremove;
 }
 
-.prod6 {
-  background-image: url(images/ambiente-bw.jpg);
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: f;
+.btn-handleItemAmount {
+  width: 100%;
+  background-color: magenta;
 }
 
-.prod6:hover {
-  background-image: url(images/ambiente.jpg);
+.btn-handleItemAmount input {
+  background-color: transparent;
 }
 
-/* // Mais serviços
-.serv7{
-background-image:url(images/banho.jpg);
-background-color: orange;
-grid-area: g;
-} */
+.btn-handleItemAmount button {
+  background-color: none;
+  border: 0;
+  width: 50%;
+}
+
+.btn-handleItemAmount #less:hover {
+  background-color: red;
+}
+
+.btn-handleItemAmount #plus:hover {
+  background-color: green;
+}
+
 /* Ensures that all elements width and height already include the padding and border. */
 * {
   -webkit-box-sizing: border-box;
