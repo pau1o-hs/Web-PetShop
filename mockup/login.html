@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -9,22 +9,44 @@
 	<link rel="icon" href="images/favicon.ico">
 </head>
 
-<body style="background-color: white;">
-	<div class="login-loginregister">
-		<div class="login-login">
-			<h1 style="color: white; font-weight: 10px;">ENTRE</h1>
+<body style="background-color:darkgrey;">
+	<div class="login-container">
+		<div 
+		class="login-item"
+		style="border-bottom-left-radius:15px; border-top-left-radius:15px;"
+		>
+			<img 
+				src="https://img.icons8.com/plasticine/100/000000/administrative-tools.png"
+				class="login-icon"
+				alt="Admin icon"
+			/>
+			<h1 style="color: white; font-weight: 10px;">Administrator</h1>
 			<br>
-			<input type="text" placeholder="Nome de usuário">
-			<input type="password" placeholder="Senha">
-			<input type="submit" value="Login" id="">
+			<input type="text" placeholder="Admin name">
+			<input type="password" placeholder="Password">
+			<a href="index.html">Forgot your password?</a>
+			<input type="submit" value="Login">
+			<div style="visibility: hidden;">Just to occupy space</div>
 		</div>
-		<div class="login-register">
-			<h1>REGISTRE</h1>
-
-			<input type="text" placeholder="Nome completo" />
-			<input type="email" placeholder="Digite o email" />
-			<input type="password" placeholder="Digite a senha" />
-			<button type="button">Cadatrar</button>
+		<div 
+		class="login-item"
+		style="border-bottom-right-radius:15px; border-top-right-radius:15px;"
+		>
+			<img 
+				src="https://img.icons8.com/color/48/000000/user-male.png" 
+				class="login-icon"
+				alt="Customer icon"
+			/>
+			<h1 style="color: white; font-weight: 10px;">Customer</h1>
+			<br>
+			<input type="text" placeholder="E-mail">
+			<input type="password" placeholder="Password">
+			<a href="index.html">Forgot your password?</a>
+			<input type="submit" value="Login">
+			<span>
+				Not a member?
+				<a href="index.html" id="register-now">Register now</a>
+			</span>
 		</div>
 	</div>
 </body>

@@ -28,15 +28,15 @@ $navbar-top: rgb(96, 134, 190);
 
 .menu-services{
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 
 	width: 65%;
-	height: 150%;
+	height: 90%;
 	margin: 0 auto;
 	background-color: white;	
 	justify-content: space-between;
 	grid-gap: 20px;
-	grid-template-areas: "a e" "a d" "c d" "f b";
+	grid-template-areas: "a a b" "a a f" "e d f" "e d c";
 	align-self: center;
 
 	button {
@@ -59,7 +59,7 @@ $navbar-top: rgb(96, 134, 190);
 	border: none;
 	background-position: center center;
 	background-size: cover;
-	transition: all .3s;
+	transition: all .5s;
 
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 
@@ -71,7 +71,7 @@ $navbar-top: rgb(96, 134, 190);
 	}
 
 	&:hover:before { 
-		transform: scale(1.2);
+		transform: scale(1.1);
 	}
 
 	p {
@@ -81,11 +81,11 @@ $navbar-top: rgb(96, 134, 190);
 
 // Banho e tosa
 .serv1{
-	background-image:url("images/services-bw.jpg");	
+	background-image:url("images/categorias/services.jpg");	
 	grid-area: a;
 
 	&:hover { 
-		background-image:url("images/services.jpg");	
+		background-image:url("images/categorias/services-bw.jpg");	
 	}
 }
 
@@ -104,56 +104,56 @@ $navbar-top: rgb(96, 134, 190);
 
 // Castração
 .serv2{
-	background-image:url(images/castracao-bw.jpg);
+	background-image:url(images/categorias/castracao.jpg);
 	grid-area: b;
 	&:hover {
-		background-image:url(images/castracao.jpg);	
+		background-image:url(images/categorias/castracao-bw.jpg);	
 	}
 }
 
 // Consulta
 .serv3{
-	background-image:url(images/consulta-bw.jpg);
+	background-image:url(images/categorias/consulta.jpg);
 	grid-area: c;
 
 	&:hover {
-		background-image:url(images/consulta.jpg);	
+		background-image:url(images/categorias/consulta-bw.jpg);	
 	}
 }
 
 // Vacinacao
 .serv4{
-	background-image:url(images/vacinacao-bw.jpg);
+	background-image:url(images/categorias/vacinacao.jpg);
 	grid-area: d;
 	
 	&:hover {
-		background-image:url(images/vacinacao.jpg);	
+		background-image:url(images/categorias/vacinacao-bw.jpg);	
 	}
 }
 
 // Adestracao
 .serv5{
-	background-image:url(images/adestramento-bw.jpg);
+	background-image:url(images/categorias/adestramento.jpg);
 	grid-area: e;
 
 	&:hover {
-		background-image:url(images/adestramento.jpg);	
+		background-image:url(images/categorias/adestramento-bw.jpg);	
 	}
 }
 
 // Lar temporario
 .serv6{
-	background-image:url(images/lar-bw.jpg);
+	background-image:url(images/categorias/lar.jpg);
 	grid-area: f;
 	
 	&:hover {
-		background-image:url(images/lar.jpg);	
+		background-image:url(images/categorias/lar-bw.jpg);	
 	}
 }
 
 /* // Mais serviços
 .serv7{
-background-image:url(images/banho.jpg);
+background-image:url(images/categorias/banho.jpg);
 background-color: orange;
 grid-area: g;
 } */

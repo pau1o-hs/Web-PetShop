@@ -1,10 +1,14 @@
 @import "colors";
 @import "utils";
 
+$face-color: #3B5998;
+$insta-color: #125688;
+$twitter-color: #55ACEE; 
+
 .footer {
 	display: flex;
-	background: #FBFCFC;
-	color: black;
+	background: $my-black;
+	color: $my-white;
 	height: 175px;
 	width: 100%;
 	justify-content: center;
@@ -109,16 +113,16 @@
 }
 
 .fa-facebook {
-	background:#125688;
+	background: $face-color;
 	color: white;
 }
 
 .fa-instagram {
-	background: #125688;
+	background: $insta-color;
 	color: white;
 }
 
 .fa-twitter {
-	background: #125688;
+	background: $twitter-color;
 	color: white;
 }

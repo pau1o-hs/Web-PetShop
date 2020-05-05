@@ -1,14 +1,6 @@
 @import "colors";
 @import "utils";
 
-// html, body{
-//     margin: 0;
-// }
-  
-// body{
-//     text-align: center;
-// }
-
 @import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
 
 body, html {
@@ -27,7 +19,7 @@ $small_width: 100%; 	//Slider width - small display
 $small_height: 55%; 	//Slider height - small display
 $small_nav_width: 15%;// Previous and Next width - small display
 
-$box-shadow: 0 11px 22px rgba(0, 0, 0, 0.0), 0 7px 7px rgba(0, 0, 0, 0.0);
+$box-shadow: 0 11px 22px rgba(0, 0, 0, 0.3), 0 7px 7px rgba(0, 0, 0, 0.3);
 $brown: #fcf809;
 $blue: #2196F3;
 $green: #4CAF50;
@@ -44,7 +36,7 @@ $nav_hover_color: rgba(0, 0, 0, 0);
 	padding-bottom: $big_height;
 	user-select: none;
 	background-color: #1c1c1c;
-	// box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
 
 	input[type="radio"] {
 		display: none;
@@ -221,6 +213,7 @@ $nav_hover_color: rgba(0, 0, 0, 0);
 	background-position: center;
 	background-size: cover;
 	transition-duration: .3s;
+	cursor: pointer;
 
 	transition: cubic-bezier();
 	
@@ -232,26 +225,26 @@ $nav_hover_color: rgba(0, 0, 0, 0);
 
 }
 .button1{
-	background-image: url("./images/products-bw.jpg");
+	background-image: url("./images/categorias/products.jpg");
 	
 	&:hover{
 		// background-color: $my-blue;
-		background-image: url("./images/products.jpg");
+		background-image: url("./images/categorias/products-bw.jpg");
 	}
 }
 .button2{
-	background-image: url("./images/services-bw.jpg");
+	background-image: url("./images/categorias/services.jpg");
 	
 	&:hover{
 		// background-color: $my-blue;
-		background-image: url("./images/services.jpg");
+		background-image: url("./images/categorias/services-bw.jpg");
 	}
 }
 
 .above-slide{
 	display:flex;
 	flex-direction: column;
-	background-color: white;
+	// background-color: white;
 	// box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 	h2{
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

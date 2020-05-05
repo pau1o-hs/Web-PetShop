@@ -11,15 +11,15 @@
 </head>
 
 <body>
-	<!-- <div class="container">
-		Navigation Bar
+	<div class="container">
+		<!-- Navigation Bar -->
 		<div class="header">
 			<div style="display: flex; flex: 4;">
 				
-				LOGO
+				<!-- LOGO -->
 				<div class="logo"></div>
 
-				MENU BAR
+				<!-- MENU BAR -->
 				<div class="navbar">
 					<a href="index.html">Home</a>
 					<a class="active" href="products.html">Products</a>
@@ -27,14 +27,14 @@
 					<a href="login.html">Profile</a>
 				</div>
 
-				SEARCH BAR
+				<!-- SEARCH BAR -->
 				<div class="search">
 					<input type="text" placeholder=" Search..." />
 				</div>
-
+				
 				<div class="profile">
-					<h3>Tchutchucão</h3>
-					<a href="#">My Profile</a>
+					<a href="login.html">Login/Register</a>
+					<!-- <a href="#">My Profile</a> -->
 					<div id="profileimg"></div>
 				</div>
 			</div>
@@ -50,48 +50,651 @@
 
 			<h1>PRODUCTS</h1>
 		</div>
-	</div> -->
+	</div>
 
-	<!-- <div class="title2"><strong>Select a category</strong></div> -->
-	<!-- <br><br> -->
-	<!-- <section id="menu-products">
-		<a class="btn-prod prod1" href="#foods"><p>Foods</p></a>
-		<a class="btn-prod prod2"><p>Toys</p></a>
-		<a class="btn-prod prod3"><p>Snacks</p></a>
-		<a class="btn-prod prod4"><p>Walkway</p></a>
-		<a class="btn-prod prod5"><p>Clothing</p></a>
-		<a class="btn-prod prod6"><p>Ambient</p></a>
-		<button class="btn-serv serv7"> Mais serviços em breve</button>
-	</section> -->
+	<div class="title2"><strong>Select a category</strong></div>
+	<section id="menu-products">
+		<a class="btn-prod prod1" href="#foodsection"><p>Foods</p></a>
+		<a class="btn-prod prod2" href="#toysection"><p>Toys</p></a>
+		<a class="btn-prod prod3" href="#snacksection"><p>Snacks</p></a>
+		<a class="btn-prod prod4" href="#walkwaysection"><p>Walkway</p></a>
+		<a class="btn-prod prod5" href="#clothsection"><p>Clothing</p></a>
+		<a class="btn-prod prod6" href="#comfortsection"><p>Comfort</p></a>
+		
+	</section> 
 
-	<!-- <br><br>
-	<h1>FOODS</h1>
-	<hr /> -->
+<!------------------------------------------------------------------------------------------------------------------------->	
+	<div id="foodsection">
+		<p>Foods</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
 
 	<section id="foods">
 		<div class="item-unity food1">
-			<img src="images/racao-gato.jpg" alt="Ração de gato"></img>
-			<h2>Nome do Item</h2>
-			<h3>Descrição: Esse Produto tem um selo bunda do paulinho de qualidade</h3>
-			<button>Adicionar ao carrinho</button>
-			<div class="btn-handleItemAmount">
-				<input type="text" value="0">
-					<div style="display: flex;">
-						<button id="less">-</button>
-						<button id="plus">+</button>
-					</div>
-				</input>
-			</div>
+			<img src="images/racoes/racao-gato.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Nome do Item</h2>
+			<p id="descricao-item">Esse produto tem um selo sorriso do paulinho de qualidade</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+
 		</div>
 
-		<div class="item-unity food2">Ration 2</div>
-		<div class="item-unity food3">Ration 3</div>
-		<div class="item-unity food4">Ration 4</div>
-		<div class="item-unity food5">Ration 5</div>
-		<div class="item-unity food6">Ration 6</div>
-		<!-- <button class="btn-serv serv7"> Mais serviços em breve</button> -->
+		<div class="item-unity food2">
+			<img src="images/racoes/racao-gato2.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food3">
+			<img src="images/racoes/racao-gato3.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+		
+		<div class="item-unity food4">
+			<img src="images/racoes/racao-gato4.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+		
+		<div class="item-unity food5">
+			<img src="images/racoes/racao-cao.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+		
+		<div class="item-unity food6">
+			<img src="images/racoes/racao-cao2.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food7">
+			<img src="images/racoes/racao-peixe.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food8">
+			<img src="images/racoes/racao-passaro.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+
+		</div>
 	</section>
 
+
+	<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+	<div id="toysection">
+		<p>Toys</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
+
+	<section id="foods">
+		<div class="item-unity food1">
+			<img src="images/brinquedos/brinquedo1.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Nome do Item</h2>
+			<p id="descricao-item">Esse produto tem um selo sorriso do paulinho de qualidade</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+
+		</div>
+
+		<div class="item-unity food2">
+			<img src="images/brinquedos/brinquedo2.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food3">
+			<img src="images/brinquedos/brinquedo3.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+		
+		<div class="item-unity food4">
+			<img src="images/brinquedos/brinquedo4.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+		
+		<div class="item-unity food5">
+			<img src="images/brinquedos/brinquedo5.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+	
+	</section>
+	<!-------------------------------------------------------------------------------------------------------------------------->
+	<div id="snacksection">
+		<p>Snacks</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
+
+	<section id="foods">
+		<div class="item-unity food1">
+			<img src="images/petiscos/snack1.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Nome do Item</h2>
+			<p id="descricao-item">Esse produto tem um selo sorriso do paulinho de qualidade</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+
+		</div>
+
+		<div class="item-unity food2">
+			<img src="images/petiscos/snack2.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food3">
+			<img src="images/petiscos/snack3.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food4">
+			<img src="images/petiscos/snack4.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+	</section>
+
+	<div id="walkwaysection">
+		<p>Walkway</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
+
+	<section id="foods">
+		<div class="item-unity food1">
+			<img src="images/passeio/coleira1.png" alt="Ração de gato"></img>
+			<h2 id="nome-item">Nome do Item</h2>
+			<p id="descricao-item">Esse produto tem um selo sorriso do paulinho de qualidade</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+
+		</div>
+
+		<div class="item-unity food2">
+			<img src="images/passeio/coleira2.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food3">
+			<img src="images/passeio/coleira3.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food4">
+			<img src="images/passeio/coleira4.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food5">
+			<img src="images/passeio/coleira5.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food6">
+			<img src="images/passeio/coleira6.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+		</div>
+	</section>
+
+	<!-- <div id="snacksection"><p>Snacks</p></div> -->
+		<div id="clothsection">
+		<p>Clothing</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
+
+	<section id="foods">
+		<div class="item-unity food1">
+			<img src="images/roupas/roupa1.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Nome do Item</h2>
+			<p id="descricao-item">Esse produto tem um selo sorriso do paulinho de qualidade</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+
+		</div>
+
+		<div class="item-unity food2">
+			<img src="images/roupas/roupa2.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food3">
+			<img src="images/roupas/roupa3.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food4">
+			<img src="images/roupas/roupa4.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food5">
+			<img src="images/roupas/roupa5.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food6">
+			<img src="images/roupas/roupa6.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food7">
+			<img src="images/roupas/roupa7.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+		</div>
+	</section>
+
+
+	<div id="comfortsection">
+		<p>Comfort</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
+	<section id="foods">
+		<div class="item-unity food1">
+			<img src="images/conforto/conforto1.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Nome do Item</h2>
+			<p id="descricao-item">Esse produto tem um selo sorriso do paulinho de qualidade</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+
+		</div>
+
+		<div class="item-unity food2">
+			<img src="images/conforto/conforto2.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+				<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="item-unity food3">
+			<img src="images/conforto/conforto3.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+		
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+		
+		<div class="item-unity food4">
+			<img src="images/conforto/conforto4.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+		
+		<div class="item-unity food5">
+			<img src="images/conforto/conforto5.webp" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Adicionar ao carrinho</button>
+			
+			<!-- <div class="btn-handleItemAmount">
+					<input type="text" value="0" height= 50%></input>			
+				<div style="display: flex; height: 100%">
+					<button id="plus">+</button>
+					<button id="less">-</button>
+				</div>
+			</div> -->
+		</div>
+
+	
+	</section>
+<!--------------------------------------------------------------------------------------------------------------------------------->
 	<!-- Footer -->
 	<div class="footer" style="margin-top: 20px">
 		<div class="footer-item footer-item-1">
