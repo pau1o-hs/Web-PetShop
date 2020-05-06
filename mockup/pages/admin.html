@@ -50,96 +50,400 @@
 	
 	<div class="above-slide">
 		<div class="title2">
-			<strong>Would like to add or change something?</strong>
+			<strong>Choose a subject to manage</strong>
 		</div>
 	</div>
 	
-	<section id="menu-profile">
-		<a class="home-button prof1" href="#profilesection"><p>PROFILE INFO</p></a>
-		<a class="home-button prof2" href="#petsection"><p>PETS MANAGER</p></a>
-		<!-- <a class="home-button prof3" href="#purchasesection"><p>PURCHASES</p></a> -->
-		<a class="home-button prof4" href="#schedulesection"><p>RESERVED SCHEDULES</p></a>
+	<section id="menu-profile-admin">
+		<a class="home-button admin1" href="#adminsection"><p>ADMINISTRATORS</p></a>
+		<a class="home-button admin2" href="#clientsection"><p>CLIENTS</p></a>
+		<a class="home-button admin3" href="#productssection"><p>PRODUCTS</p></a>
+		<a class="home-button admin4" href="#schedulesection-admin"><p>SCHEDULES</p></a>
+		<a class="home-button admin5" href="#servicessection"><p>SERVICES</p></a>
+		
 	</section>
 	
-	<div id="profilesection" class="customsection" style="background-color:mediumseagreen;">
-		<p>Profile Information</p>
-	</div>
-
-	<div id="infoform">
-
-		<section class="infosection" style="width: 30%">
-			<p>ID #0000</p>
-			<div>
-					<button class="btn-add">+</button>
-			</div>
-		</section>
-		
-		<section class="infosection" style="width: 30%">
-			<input type="text" placeholder="Full name">
-			<input type="text" placeholder="Adress">
-			<input type="text" placeholder="Phone">
-			<input type="text" placeholder="E-mail">
-		</section>
-
-	</div>
-
-	<div id="petsection" class="customsection" style="background-color:#2980B9;">
-		<p>Pets Manager</p>
-	</div>
-
-	<div id="petform">
-		<a class="home-button pet1" href="#schedulesection"><p>Bobby</p></a>
-		<a class="home-button pet2" href="#schedulesection"><p>Frajola</p></a>
-		<a class="home-button pet3" href="#schedulesection"><p>Roger</p></a>
-		<div class="infosection">
-			<input type="text" placeholder="Name">
-			<input type="select" placeholder="Race">
-			<input type="number" placeholder="Age">
-			<!-- <section style="display: flex; width: 100%"> -->
-				<button type="file" class="btn-add2">Photo</button>
-				<button class="btn-add2" style="width: 50%;">Add Pet</button>
-			<!-- </section> -->
-		</div>
-	</div>
-
-	<!-- <div id="purchasesection" class="customsection" style="background-color:#27AE60;">
-		<p>Purchases</p>
-	</div>
-
-	<div id="infoform">
-		<input type="text" placeholder="Full name">
-		<input type="text" placeholder="Adress">
-		<input type="text" placeholder="Adress">
-		<input type="text" placeholder="Adress">
-	</div> -->
-
-	<div id="schedulesection" class="customsection" style="background-color:#E74C3C;">
-		<p>Reserved Schedules</p>
+	<div id="adminsection" class="customsection" style="background-color:mediumseagreen;">
+		<p>Administratos</p>
 		<div class="search">
-			<input type="text" placeholder=" Type one of your pets here..." />
+			<input type="text" placeholder=" Search..." />
 		</div>
 	</div>
 
 	<div class="scheduleform">
-
-		<section class="polaroid pol1">
-			<img src="../images/profile/pet1.png" width="100%" height="80%"></img>
-			<p>Wash (R$0,00)</p><hr />
-			<p>11:00 | 10-10-2020</p>
+		<section class="polaroid pol1" style="background-color:mediumseagreen;">
+			<img src="../images/profile/admin1.jpg" width="100%" height="80%"></img>
+			<p>Tchutchucão</p><hr />
+			<button>Edit</button>
 		</section>
-		
-		<section class="polaroid pol2">
-			<img src="../images/profile/pet3.jpg" width="100%" height="80%"></img>
-			<p>Appointment (R$0,00)</p><hr />
-			<p>10:30 | 10-10-2020</p>
+		<section class="polaroid pol2" style="background-color:mediumseagreen;">
+			<img src="../images/profile/admin2.jpg" width="100%" height="80%"></img>
+			<p>Scooby-Doo</p><hr />
+			<button>Edit</button>
 		</section>
-
-		<div class="petregister">
-			<button class="btn-add">+</button>
+		<div class="infosection">
+			<input type="text" placeholder="Name">
+			<input type="text" placeholder="Phone">
+			<input type="email" placeholder="E-mail">
+			<!-- <section style="display: flex; width: 100%"> -->
+				<button type="file" class="btn-add2">Photo</button>
+				<button class="btn-add2" style="width: 50%;">Add Admin</button>
+			<!-- </section> -->
 		</div>
-		<!-- <p>Pet: <input type="text" value="Bobby" size="7" readonly></p>
-		<p>Service: <select><option selected>Wash</option></select></p>
-		<p>Date: <input type="datetime-local" value="2020-05-05T10:30" readonly></p> -->
+	</div>
+
+	<div id="clientsection" class="customsection" style="background-color:#2980B9;">
+		<p>Clients</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
+
+	<div class="scheduleform">
+		<section class="polaroid pol1" style="background-color:#2980B9;">
+			<img src="../images/profile/cliente1.jpg" width="100%" height="80%"></img>
+			<p>Tom</p><hr />
+			<button>Edit</button>
+		</section>
+		<section class="polaroid pol2" style="background-color:#2980B9;">
+			<img src="../images/profile/cliente2.webp" width="100%" height="80%"></img>
+			<p>Jerry</p><hr />
+			<button>Edit</button>
+		</section>
+		<section class="polaroid pol3" style="background-color:#2980B9;">
+			<img src="../images/profile/cliente3.jpg" width="100%" height="80%"></img>
+			<p>Coragem</p><hr />
+			<button>Edit</button>
+		</section>
+		<!-- <a class="home-button pet1" href="#schedulesection"><p>Tom</p></a>
+		<a class="home-button pet2" href="#schedulesection"><p>Jerry</p></a>
+		<a class="home-button pet3" href="#schedulesection"><p>Coragem</p></a> -->
+		<div class="infosection">
+			<input type="text" placeholder="Name">
+			<input type="text" placeholder="Adress">
+			<input type="text" placeholder="Phone">
+			<input type="email" placeholder="E-mail">
+			<!-- <section style="display: flex; width: 100%"> -->
+				<button type="file" class="btn-add2">Photo</button>
+				<button class="btn-add2" style="width: 50%;">Add Client</button>
+			<!-- </section> -->
+		</div>
+	</div>
+
+	<div id="productssection" class="customsection" style="background-color:slateblue;">
+		<p>Products</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
+
+	<section id="foods">
+		<div class="item-unity food1">
+			<img src="../images/racoes/racao-cao.jpg" alt="Ração de gato"></img>
+			<h2 id="nome-item">Pedigree</h2>
+			<p id="descricao-item">Ração pedigree 5kg para cães</p>
+			<p id="preco">R$0,00</p>
+			<button id="adicionar-carrinho">Update item</button>
+		</div>
+		<div class="infosection">
+			<input type="text" placeholder="Name">
+			<input type="text" placeholder="Description">
+			<input type="number" placeholder="In Stock">
+			<input type="number" placeholder="Sold">
+			<button type="file" class="btn-add2">Photo</button>
+			<button class="btn-add2" style="width: 50%;">Add Client</button>
+		</div>
+	</section>
+
+	<div id="servicessection" class="customsection" style="background-color:#E74C3C;">
+		<p>Services</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
+
+	<div class="scheduleform">
+		<section class="polaroid pol1" style="background-color:#E74C3C;">
+			<img src="../images/categorias/services.jpg" width="100%" height="80%"></img>
+			<p>Wash</p><hr />
+			<button>Edit</button>
+		</section>
+		<section class="polaroid pol2" style="background-color:#E74C3C;">
+			<img src="../images/categorias/vacinacao.jpg" width="100%" height="80%"></img>
+			<p>Vaccine</p><hr />
+			<button>Edit</button>
+		</section>
+		<section class="polaroid pol3" style="background-color:#E74C3C;">
+			<img src="../images/categorias/adestramento.jpg" width="100%" height="80%"></img>
+			<p>Training</p><hr />
+			<button>Edit</button>
+		</section>
+		<!-- <a class="home-button pet1" href="#schedulesection"><p>Wash</p></a>
+		<a class="home-button pet2" href="#schedulesection"><p>Vaccine</p></a>
+		<a class="home-button pet3" href="#schedulesection"><p>Training</p></a> -->
+		<div class="infosection">
+			<input type="text" placeholder="Name">
+			<input type="text" placeholder="Description">
+			<input type="number" placeholder="Price">
+			<!-- <section style="display: flex; width: 100%"> -->
+				<button type="file" class="btn-add2">Photo</button>
+				<button class="btn-add2" style="width: 50%;">Add Client</button>
+			<!-- </section> -->
+		</div>
+	</div>
+
+	<div id="schedulesection-admin" class="customsection" style="background-color:darkslategray;">
+		<p>Schedules</p>
+		<div class="search">
+			<input type="text" placeholder=" Search..." />
+		</div>
+	</div>
+
+	<!-- Scheduler -->
+	<div class="scheduler" id="scheduler">
+		<!-- TIME SELECTOR -->
+		<div class="time-selector">
+			<p id="book-query">I want to book:</p>
+			<div class="row-separator"></div>
+			<div class="tsel-item1">
+				<div class="tsel-up">
+					<div class="weeks">
+						<span
+							>In
+							<input type="number" value="0" min="0" />
+							weeks
+						</span>
+					</div>
+					<div class="days">
+						<span>On</span>
+						<select>
+							<option selected>Monday</option>
+							<option>Tuesday</option>
+							<option>Wednesday</option>
+							<option>Thursday</option>
+							<option>Friday</option>
+							<option>Saturday</option>
+							<option>Sunday</option>
+						</select>
+					</div>
+				</div>
+				<div class="column-separator"></div>
+				<div class="tsel-down">
+					<span
+						>For
+						<input class="date-input" type="date" />
+					</span>
+				</div>
+			</div>
+			<div class="row-separator"></div>
+			<div class="tsel-item2">
+				<span>Between</span>
+				<select>
+					<option selected>08:00</option>
+					<option>09:00</option>
+					<option>10:00</option>
+					<option>11:00</option>
+					<option>12:00</option>
+					<option>13:00</option>
+					<option>14:00</option>
+					<option>15:00</option>
+					<option>16:00</option>
+					<option>17:00</option>
+					<option>18:00</option>
+				</select>
+				<br />
+				<span>and</span>
+				<select>
+					<option>08:00</option>
+					<option>09:00</option>
+					<option>10:00</option>
+					<option>11:00</option>
+					<option>12:00</option>
+					<option selected>13:00</option>
+					<option>14:00</option>
+					<option>15:00</option>
+					<option>16:00</option>
+					<option>17:00</option>
+					<option>18:00</option>
+				</select>
+			</div>
+		</div>
+		<!-- TIME DISPLAY -->
+		<div class="time-display">
+			<div class="display-day">
+				<p>11/05</p>
+				<div>
+					<div class="display-slot reserved">
+						<p class="hour">14:30</p>
+						<p class="empty">EMPTY</p>
+					</div>
+					<div class="display-slot reserved">
+						<p class="hour">13:00</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<img
+							class="icon"
+							src="../images/tchutchucão.jpg"
+							alt="Pet image"
+						/>
+						<div class="info">
+							<p class="service">Vaccination<span class="of"> of</span></p>
+							<p class="pet">Tchutchucão</p>
+						</div>
+					</div>
+					<div class="display-slot free">
+						<p class="hour">11:30</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<p class="service">Vaccination</p>
+					</div>
+					<div class="display-slot reserved">
+						<p class="hour">9:30</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<img
+							class="icon"
+							src="../images/tchutchucão.jpg"
+							alt="Pet image"
+						/>
+						<div class="info">
+							<p class="service">Vaccination<span class="of"> of</span></p>
+							<p class="pet">Tchutchucão</p>
+						</div>
+					</div>
+					<div class="display-slot free">
+						<p class="hour">08:30</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<p class="service">Vaccination</p>
+					</div>
+				</div>
+			</div>
+			<div class="display-day">
+				<p>18/05</p>
+				<div>
+					<div class="display-slot free">
+						<p class="hour">11:30</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<p class="service">Vaccination</p>
+					</div>
+					<div class="display-slot reserved">
+						<p class="hour">14:30</p>
+						<p class="empty">EMPTY</p>
+					</div>
+					<div class="display-slot free">
+						<p class="hour">08:30</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<p class="service">Vaccination</p>
+					</div>
+					<div class="display-slot reserved">
+						<p class="hour">13:00</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<img
+							class="icon"
+							src="../images/tchutchucão.jpg"
+							alt="Pet image"
+						/>
+						<div class="info">
+							<p class="service">Vaccination<span class="of"> of</span></p>
+							<p class="pet">Tchutchucão</p>
+						</div>
+					</div>
+					<div class="display-slot reserved">
+						<p class="hour">14:30</p>
+						<p class="empty">EMPTY</p>
+					</div>
+				</div>
+			</div>
+			<div class="display-day">
+				<p>25/05</p>
+				<div>
+					<div class="display-slot reserved">
+						<p class="hour">13:00</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<img
+							class="icon"
+							src="../images/tchutchucão.jpg"
+							alt="Pet image"
+						/>
+						<div class="info">
+							<p class="service">Vaccination<span class="of"> of</span></p>
+							<p class="pet">Tchutchucão</p>
+						</div>
+					</div>
+					<div class="display-slot free">
+						<p class="hour">11:30</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<p class="service">Vaccination</p>
+					</div>
+					<div class="display-slot reserved">
+						<p class="hour">14:30</p>
+						<p class="empty">EMPTY</p>
+					</div>
+
+					<div class="display-slot free">
+						<p class="hour">08:30</p>
+						<img
+							class="icon"
+							src="../images/categorias/vacinacao.jpg"
+							alt="Vaccination image"
+						/>
+						<p class="service">Vaccination</p>
+					</div>
+
+					<div class="display-slot reserved">
+						<p class="hour">14:30</p>
+						<p class="empty">EMPTY</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- PAGINATION -->
+		<div class="pagination">
+			<ul>
+				<li class="prev">&#10094;</li>
+				<li class="next">&#10095;</li>
+				<li>
+					<span
+						>Page
+						<span style="color: yellow;">1</span>
+						of 10</span
+					>
+				</li>
+			</ul>
+		</div>
 	</div>
 
 	<!-- Footer -->

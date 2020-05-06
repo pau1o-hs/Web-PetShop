@@ -171,13 +171,6 @@ body {
   border-radius: 100%;
 }
 
-.fa-shopping-cart {
-  background: #ff8400;
-  position: fixed;
-  right: 5vh;
-  color: white;
-}
-
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1906,7 +1899,7 @@ body, html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   grid-gap: 2.5vh;
-      grid-template-areas: "btn-pet1 btn-pet2 btn-pet3 pet-register";
+      grid-template-areas: "polaroid1 polaroid2 polaroid3 pet-register";
   -ms-grid-row-align: center;
       align-self: center;
   margin-bottom: 5vh;
@@ -1923,22 +1916,16 @@ body, html {
 
 .pet1 {
   background-image: url("images/profile/pet1.png");
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: btn-pet1;
 }
 
 .pet2 {
   background-image: url("images/profile/pet2.jpg");
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: btn-pet2;
 }
 
 .pet3 {
   background-image: url("images/profile/pet3.jpg");
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
   grid-area: btn-pet3;
 }
 
@@ -1976,8 +1963,8 @@ body, html {
 }
 
 .btn-add {
-  width: 6vw;
-  height: 6vw;
+  width: 6vh;
+  height: 6vh;
   font-size: 100px;
   color: white;
   background-color: mediumseagreen;
@@ -2017,7 +2004,6 @@ body, html {
 }
 
 .polaroid {
-  background-color: #E74C3C;
   -webkit-box-shadow: 0 0 10px black;
           box-shadow: 0 0 10px black;
   -ms-flex-item-align: center;
@@ -2058,11 +2044,17 @@ body, html {
   grid-area: polaroid2;
 }
 
-#menu-profile {
+.pol2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: polaroid3;
+}
+
+#menu-profile-admin {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 65%;
   height: 70%;
   margin: 0 auto;
@@ -2071,13 +2063,13 @@ body, html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   grid-gap: 2.5vh;
-      grid-template-areas: "btn-prof1 btn-prof2 btn-prof2"  "btn-prof1 btn-prof4 btn-prof4";
+      grid-template-areas: "btn-admin1 btn-admin1 btn-admin2 btn-admin2"  "btn-admin1 btn-admin1 btn-admin3 btn-admin3" "btn-admin5 btn-admin5 btn-admin4 btn-admin4";
   -ms-grid-row-align: center;
       align-self: center;
   margin-bottom: 5vh;
 }
 
-#menu-profile a {
+#menu-profile-admin a {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 40px;
   color: white;
@@ -2086,33 +2078,45 @@ body, html {
   text-decoration: none;
 }
 
-.prof1 {
+.admin1 {
   background-image: url("images/profile/profileinfo.jpg");
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
-  grid-area: btn-prof1;
+  -ms-grid-column-span: 2;
+  grid-area: btn-admin1;
 }
 
-.prof2 {
-  background-image: url("images/profile/petmanager.jpg");
+.admin2 {
+  background-image: url("images/profile/clients.jpeg");
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   -ms-grid-column-span: 2;
-  grid-area: btn-prof2;
+  grid-area: btn-admin2;
 }
 
-.prof3 {
+.admin3 {
   background-image: url("images/products-header.jpg");
-  grid-area: btn-prof3;
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: btn-admin3;
 }
 
-.prof4 {
+.admin4 {
   background-image: url("images/profile/schedule.jpg");
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
   -ms-grid-column-span: 2;
-  grid-area: btn-prof4;
+  grid-area: btn-admin4;
+}
+
+.admin5 {
+  background-image: url("images/profile/services.jpeg");
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: btn-admin5;
 }
 
 #infoform {
@@ -2152,9 +2156,9 @@ body, html {
   -webkit-transition: 0.4s;
   transition: 0.4s;
   width: 220px;
-  margin: 1vh auto;
+  margin: .7vh auto;
   text-align: center;
-  padding: 14px 10px;
+  padding: 8px 10px;
   border: 0;
   outline: none;
   border-radius: 24px;
@@ -2201,52 +2205,18 @@ body, html {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 }
 
-#petform {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 65%;
-  height: 40%;
-  margin: 0 auto;
-  background-color: none;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  grid-gap: 2.5vh;
-      grid-template-areas: "btn-pet1 btn-pet2 btn-pet3 pet-register";
-  -ms-grid-row-align: center;
-      align-self: center;
-  margin-bottom: 5vh;
-}
-
-#petform a {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 40px;
-  color: white;
-  font-weight: bold;
-  text-shadow: 0px 0px 3px black;
-  text-decoration: none;
-}
-
 .pet1 {
   background-image: url("images/profile/pet1.png");
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: btn-pet1;
 }
 
 .pet2 {
   background-image: url("images/profile/pet2.jpg");
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: btn-pet2;
 }
 
 .pet3 {
   background-image: url("images/profile/pet3.jpg");
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
   grid-area: btn-pet3;
 }
 
@@ -2325,6 +2295,10 @@ body, html {
 }
 
 .polaroid {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #E74C3C;
   -webkit-box-shadow: 0 0 10px black;
           box-shadow: 0 0 10px black;
@@ -2334,6 +2308,9 @@ body, html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 100%;
 }
@@ -2343,15 +2320,34 @@ body, html {
      object-fit: cover;
 }
 
-.polaroid p {
+.polaroid p, .polaroid button {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  background: none;
+  border: 0;
+  outline: none;
   font-weight: bolder;
   font-size: large;
+  -ms-grid-column-align: center;
+      justify-self: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
   padding: 5px 20px;
   color: white;
+}
+
+.polaroid button {
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.polaroid button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .pol1 {

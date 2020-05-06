@@ -131,7 +131,7 @@
 	background-color: none;	
 	justify-content: space-between;
 	grid-gap: 2.5vh;
-	grid-template-areas: 	"btn-pet1 btn-pet2 btn-pet3 pet-register";
+	grid-template-areas: 	"polaroid1 polaroid2 polaroid3 pet-register";
 	align-self: center;
 	margin-bottom: 5vh;
 
@@ -185,8 +185,8 @@
 }
 
 .btn-add {
-		width: 6vw;
-		height: 6vw;
+		width: 6vh;
+		height: 6vh;
 
 		font-size: 100px;
 		color: white;
@@ -232,7 +232,7 @@
 }
 
 .polaroid {
-	background-color: #E74C3C; 
+	// background-color: #E74C3C; 
 	box-shadow: 0 0 10px black;
 	align-self: center;
 	align-items: center;
@@ -260,4 +260,8 @@
 
 .pol2 {
 	grid-area: polaroid2;
+}
+
+.pol2 {
+	grid-area: polaroid3;
 }
