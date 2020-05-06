@@ -1,183 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>PetLife: Services</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link rel="stylesheet" href="../style.css" />
+		<link rel="icon" href="images/favicon.ico" />
+	</head>
 
-<head>
-	<title>PetLife: Services</title>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="../style.css" />
-	<link rel="icon" href="images/favicon.ico">
-</head>
+	<body>
+		<div class="container">
+			<!-- Navigation Bar -->
+			<div class="header">
+				<div style="display: flex; flex: 4;">
+					<!-- LOGO -->
+					<div class="logo"></div>
 
-<body>
-	<div class="container">
-		<!-- Navigation Bar -->
-		<div class="header">
-			<div style="display: flex; flex: 4;">
-				
-				<!-- LOGO -->
-				<div class="logo"></div>
-
-				<!-- MENU BAR -->
-				<div class="navbar">
-					<a href="index.html">Home</a>
-					<a href="products.html">Products</a>
-					<a class="active" href="services.html">Services</a>
-					<a href="profile.html">Profile</a>
-				</div>
-
-				<!-- SEARCH BAR -->
-				<div class="search">
-					<input type="text" placeholder=" Search..." />
-				</div>
-
-				<div class="profile">
-					<a href="login.html">Login/Register</a>
-					<!-- <a href="#">My Profile</a> -->
-					<div id="profileimg"></div>
-				</div>
-			</div>
-		</div>
-
-		<input type="radio" id="i1" name="images" checked />
-		<input type="radio" id="i2" name="images" />
-		<input type="radio" id="i3" name="images" />
-		<input type="radio" id="i4" name="images" />
-
-		<div class="slide_img" id="one">
-			<img src="../images/dogs3.jpg" />
-
-			<h1>SERVICES</h1>
-		</div>
-
-		<div class="slide_img" id="two">
-			<img src="../images/dogs3.jpg" />
-
-			<h1 class="slider_text">FIND EVERYTHING</h1>
-		</div>
-
-		<div class="slide_img" id="three">
-			<img src="../images/fish1.jpg" />
-			
-			<h1 class="slider_text">FOR ALL KIND</h1>
-		</div>
-
-		<div class="slide_img" id="four">
-			<img src="../images/bird2.jpg" />
-
-			<h1 class="slider_text">OF PETS</h1>
-		</div>
-	</div>
-
-	<div class="title2"><strong>Select a category</strong></div>
-
-	<section class="menu-services">
-		<a class="btn-serv serv1" href="#scheduler"><p>Wash</p></a>
-		<a class="btn-serv serv2" href="#scheduler"><p>Castration</p></a>
-		<a class="btn-serv serv3" href="#scheduler"><p>Appointment</p></a>
-		<a class="btn-serv serv4" href="#scheduler"><p>Vaccine</p></a>
-		<a class="btn-serv serv5" href="#scheduler"><p>Training</p></a>
-		<a class="btn-serv serv6" href="#scheduler"><p>Temporary accommodation</p></a>
-		<!-- <button class="btn-serv serv7"> Mais serviços em breve</button> -->
-	</section>
-
-	<!-- Scheduler -->
-	<div class="scheduler" id="scheduler">
-		<!-- TIME SELECTOR -->
-		<div class="time-selector">
-			<p id="book-query">I want to book:</p>
-			<div class="footer-item footer-item-sep"></div>
-			<div class="tsel-item1">
-				<div class="tsel-up">
-					<div class="weeks">
-						<span>In</span>
-						<input type="number" value="0" min="0"/>
-						<span>weeks</span>
+					<!-- MENU BAR -->
+					<div class="navbar">
+						<a href="index.html">Home</a>
+						<a href="products.html">Products</a>
+						<a class="active" href="services.html">Services</a>
+						<a href="profile.html">Profile</a>
 					</div>
-					<div class="days">
-						<span>On</span>
-						<select>
-							<option value="monday">Monday</option>
-							<option value="tuesday">Tuesday</option>
-							<option value="wednesday">Wednesday</option>
-							<option value="thursday">Thursday</option>
-							<option value="friday">Friday</option>
-							<option value="saturday">Saturday</option>
-							<option value="sunday">Sunday</option>
-						</select>
+
+					<!-- SEARCH BAR -->
+					<div class="search">
+						<input type="text" placeholder=" Search..." />
+					</div>
+
+					<div class="profile">
+						<a href="login.html">Login/Register</a>
+						<!-- <a href="#">My Profile</a> -->
+						<div id="profileimg"></div>
 					</div>
 				</div>
-				<div class="tsel-down">
-					<span>For
-						<input class="date-input" type="date"></input>
-					</span>
+			</div>
+
+			<input type="radio" id="i1" name="images" checked />
+			<input type="radio" id="i2" name="images" />
+			<input type="radio" id="i3" name="images" />
+			<input type="radio" id="i4" name="images" />
+
+			<div class="slide_img" id="one">
+				<img src="../images/dogs3.jpg" />
+
+				<h1>SERVICES</h1>
+			</div>
+
+			<div class="slide_img" id="two">
+				<img src="../images/dogs3.jpg" />
+
+				<h1 class="slider_text">FIND EVERYTHING</h1>
+			</div>
+
+			<div class="slide_img" id="three">
+				<img src="../images/fish1.jpg" />
+
+				<h1 class="slider_text">FOR ALL KIND</h1>
+			</div>
+
+			<div class="slide_img" id="four">
+				<img src="../images/bird2.jpg" />
+
+				<h1 class="slider_text">OF PETS</h1>
+			</div>
+		</div>
+
+		<div class="title2"><strong>Select a category</strong></div>
+
+		<section class="menu-services">
+			<a class="btn-serv serv1" href="#scheduler"><p>Wash</p></a>
+			<a class="btn-serv serv2" href="#scheduler"><p>Castration</p></a>
+			<a class="btn-serv serv3" href="#scheduler"><p>Appointment</p></a>
+			<a class="btn-serv serv4" href="#scheduler"><p>Vaccination</p></a>
+			<a class="btn-serv serv5" href="#scheduler"><p>Training</p></a>
+			<a class="btn-serv serv6" href="#scheduler"
+				><p>Temporary accommodation</p></a
+			>
+			<!-- <button class="btn-serv serv7"> Mais serviços em breve</button> -->
+		</section>
+
+		<!-- Scheduler -->
+		<div class="scheduler" id="scheduler">
+			<!-- TIME SELECTOR -->
+			<div class="time-selector">
+				<p id="book-query">I want to book:</p>
+				<div class="row-separator"></div>
+				<div class="tsel-item1">
+					<div class="tsel-up">
+						<div class="weeks">
+							<span
+								>In
+								<input type="number" value="0" min="0" />
+								weeks
+							</span>
+						</div>
+						<div class="days">
+							<span>On</span>
+							<select>
+								<option selected>Monday</option>
+								<option>Tuesday</option>
+								<option>Wednesday</option>
+								<option>Thursday</option>
+								<option>Friday</option>
+								<option>Saturday</option>
+								<option>Sunday</option>
+							</select>
+						</div>
+					</div>
+					<div class="column-separator"></div>
+					<div class="tsel-down">
+						<span
+							>For
+							<input class="date-input" type="date" />
+						</span>
+					</div>
+				</div>
+				<div class="row-separator"></div>
+				<div class="tsel-item2">
+					<span>Between</span>
+					<select>
+						<option selected>08:00</option>
+						<option>09:00</option>
+						<option>10:00</option>
+						<option>11:00</option>
+						<option>12:00</option>
+						<option>13:00</option>
+						<option>14:00</option>
+						<option>15:00</option>
+						<option>16:00</option>
+						<option>17:00</option>
+						<option>18:00</option>
+					</select>
+					<br />
+					<span>and</span>
+					<select>
+						<option>08:00</option>
+						<option>09:00</option>
+						<option>10:00</option>
+						<option>11:00</option>
+						<option>12:00</option>
+						<option selected>13:00</option>
+						<option>14:00</option>
+						<option>15:00</option>
+						<option>16:00</option>
+						<option>17:00</option>
+						<option>18:00</option>
+					</select>
 				</div>
 			</div>
-			<div class="footer-item footer-item-sep"></div>
-			<div class="tsel-item2">
-				<span>Between</span>
-				<input type="number" value="0" min="0" />
-				<br/>
-				<span>and</span>
-				<input type="number" value="0" min="0" />
-			</div>
-		</div>
-		<!-- TIME DISPLAY -->
-		<div class="time-display">
-			<div>
-				<p class="day">11/05</p>
-				
-			</div>
-		</div>
-		<!-- PAGINATION -->
-		<div class="pagination">
-			<ul>
-				<li class="prev">&#10094;</li>
-				<li class="next">&#10095;</li>
-				<li>
-					<span>Page 
-						<span style="color:yellow;">1</span> 
-					of 10</span>
-				</li>
-			</ul>
-		</div>
-	</div>
+			<!-- TIME DISPLAY -->
+			<div class="time-display">
+				<div class="display-day">
+					<p>11/05</p>
+					<div>
+						<div class="display-slot reserved">
+							<p class="hour">14:30</p>
+							<p class="empty">EMPTY</p>
+						</div>
+						<div class="display-slot reserved">
+							<p class="hour">13:00</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<img
+								class="icon"
+								src="../images/tchutchucão.jpg"
+								alt="Pet image"
+							/>
+							<div class="info">
+								<p class="service">Vaccination<span class="of"> of</span></p>
+								<p class="pet">Tchutchucão</p>
+							</div>
+						</div>
+						<div class="display-slot free">
+							<p class="hour">11:30</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<p class="service">Vaccination</p>
+						</div>
+						<div class="display-slot reserved">
+							<p class="hour">9:30</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<img
+								class="icon"
+								src="../images/tchutchucão.jpg"
+								alt="Pet image"
+							/>
+							<div class="info">
+								<p class="service">Vaccination<span class="of"> of</span></p>
+								<p class="pet">Tchutchucão</p>
+							</div>
+						</div>
+						<div class="display-slot free">
+							<p class="hour">08:30</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<p class="service">Vaccination</p>
+						</div>
+					</div>
+				</div>
+				<div class="display-day">
+					<p>18/05</p>
+					<div>
+						<div class="display-slot free">
+							<p class="hour">11:30</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<p class="service">Vaccination</p>
+						</div>
+						<div class="display-slot reserved">
+							<p class="hour">14:30</p>
+							<p class="empty">EMPTY</p>
+						</div>
+						<div class="display-slot free">
+							<p class="hour">08:30</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<p class="service">Vaccination</p>
+						</div>
+						<div class="display-slot reserved">
+							<p class="hour">13:00</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<img
+								class="icon"
+								src="../images/tchutchucão.jpg"
+								alt="Pet image"
+							/>
+							<div class="info">
+								<p class="service">Vaccination<span class="of"> of</span></p>
+								<p class="pet">Tchutchucão</p>
+							</div>
+						</div>
+						<div class="display-slot reserved">
+							<p class="hour">14:30</p>
+							<p class="empty">EMPTY</p>
+						</div>
+					</div>
+				</div>
+				<div class="display-day">
+					<p>25/05</p>
+					<div>
+						<div class="display-slot reserved">
+							<p class="hour">13:00</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<img
+								class="icon"
+								src="../images/tchutchucão.jpg"
+								alt="Pet image"
+							/>
+							<div class="info">
+								<p class="service">Vaccination<span class="of"> of</span></p>
+								<p class="pet">Tchutchucão</p>
+							</div>
+						</div>
+						<div class="display-slot free">
+							<p class="hour">11:30</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<p class="service">Vaccination</p>
+						</div>
+						<div class="display-slot reserved">
+							<p class="hour">14:30</p>
+							<p class="empty">EMPTY</p>
+						</div>
 
-	<!-- Footer -->
-	<div class="footer" style="margin-top: 20px">
-		<div class="footer-item footer-item-1">
-			<div class="footer-item-top">
-				<h2>
-					Find us on<strong> social media</strong>
-				</h2>
+						<div class="display-slot free">
+							<p class="hour">08:30</p>
+							<img
+								class="icon"
+								src="../images/categorias/vacinacao.jpg"
+								alt="Vaccination image"
+							/>
+							<p class="service">Vaccination</p>
+						</div>
+
+						<div class="display-slot reserved">
+							<p class="hour">14:30</p>
+							<p class="empty">EMPTY</p>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="footer-item-bottom">
-				<ul id="social-media-list">
+			<!-- PAGINATION -->
+			<div class="pagination">
+				<ul>
+					<li class="prev">&#10094;</li>
+					<li class="next">&#10095;</li>
 					<li>
-						<a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank"></a>
-					</li>
-					<li>
-						<a href="https://www.instagram.com/" class="fa fa-instagram" target="_blank"></a>
-					</li>
-					<li>
-						<a href="https://twitter.com/" class="fa fa-twitter" target="_blank"></a>
+						<span
+							>Page
+							<span style="color: yellow;">1</span>
+							of 10</span
+						>
 					</li>
 				</ul>
 			</div>
 		</div>
-		<div class="footer-item footer-item-sep"></div>
-		<div class="footer-item footer-item-2">
-			<div class="footer-item-top">
-				<h2>Subscribe to our <strong>newsletter</strong></h2>
+
+		<!-- Footer -->
+		<div class="footer" style="margin-top: 20px;">
+			<div class="footer-item footer-item-1">
+				<div class="footer-item-top">
+					<h2>Find us on<strong> social media</strong></h2>
+				</div>
+				<div class="footer-item-bottom">
+					<ul id="social-media-list">
+						<li>
+							<a
+								href="https://www.facebook.com/"
+								class="fa fa-facebook"
+								target="_blank"
+							></a>
+						</li>
+						<li>
+							<a
+								href="https://www.instagram.com/"
+								class="fa fa-instagram"
+								target="_blank"
+							></a>
+						</li>
+						<li>
+							<a
+								href="https://twitter.com/"
+								class="fa fa-twitter"
+								target="_blank"
+							></a>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="footer-item-bottom">
-				<form action="#"></form>
-				<input id="news-email" type="text" placeholder="enter your best e-mail" />
-				<input id="news-button" type="submit" value="Submit"/>
+			<div class="footer-item footer-item-sep"></div>
+			<div class="footer-item footer-item-2">
+				<div class="footer-item-top">
+					<h2>Subscribe to our <strong>newsletter</strong></h2>
+				</div>
+				<div class="footer-item-bottom">
+					<form action="#"></form>
+					<input
+						id="news-email"
+						type="text"
+						placeholder="enter your best e-mail"
+					/>
+					<input id="news-button" type="submit" value="Submit" />
+				</div>
 			</div>
 		</div>
-	</div>
-</body>
-
+	</body>
 </html>
