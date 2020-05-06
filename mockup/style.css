@@ -171,13 +171,6 @@ body {
   border-radius: 100%;
 }
 
-.fa-shopping-cart {
-  background: #ff8400;
-  position: fixed;
-  right: 5vh;
-  color: white;
-}
-
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1906,7 +1899,7 @@ body, html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   grid-gap: 2.5vh;
-      grid-template-areas: "btn-pet1 btn-pet2 btn-pet3 pet-register";
+      grid-template-areas: "polaroid1 polaroid2 polaroid3 pet-register";
   -ms-grid-row-align: center;
       align-self: center;
   margin-bottom: 5vh;
@@ -1923,22 +1916,307 @@ body, html {
 
 .pet1 {
   background-image: url("images/profile/pet1.png");
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: btn-pet1;
 }
 
 .pet2 {
   background-image: url("images/profile/pet2.jpg");
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: btn-pet2;
 }
 
 .pet3 {
   background-image: url("images/profile/pet3.jpg");
+  grid-area: btn-pet3;
+}
+
+.pet4 {
+  background-image: url("images/profile/add.jpg");
+  grid-area: btn-pet4;
+}
+
+.petregister {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
+  grid-area: pet-register;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+  width: 100%;
+  height: 100%;
+}
+
+.petregister input {
+  margin: 2vh 1vw;
+}
+
+.btn-add {
+  width: 6vh;
+  height: 6vh;
+  font-size: 100px;
+  color: white;
+  background-color: mediumseagreen;
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(65, 2, 2, 0.1);
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(65, 2, 2, 0.1);
+  border: 0;
+  outline: none;
+  border-radius: 1000%;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  opacity: 0.5;
+}
+
+.btn-add:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
+}
+
+.scheduleform {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 65%;
+  height: 40%;
+  margin: 0 auto;
+  background-color: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-gap: 2.5vh;
+      grid-template-areas: "polaroid1 polaroid2 pet-register";
+  -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 5vh;
+}
+
+.polaroid {
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.polaroid img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.polaroid p {
+  font-weight: bolder;
+  font-size: large;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  padding: 5px 20px;
+  color: white;
+}
+
+.pol1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: polaroid1;
+}
+
+.pol2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: polaroid2;
+}
+
+.pol2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: polaroid3;
+}
+
+#menu-profile-admin {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 65%;
+  height: 70%;
+  margin: 0 auto;
+  background-color: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-gap: 2.5vh;
+      grid-template-areas: "btn-admin1 btn-admin1 btn-admin2 btn-admin2"  "btn-admin1 btn-admin1 btn-admin3 btn-admin3" "btn-admin5 btn-admin5 btn-admin4 btn-admin4";
+  -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 5vh;
+}
+
+#menu-profile-admin a {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px black;
+  text-decoration: none;
+}
+
+.admin1 {
+  background-image: url("images/profile/profileinfo.jpg");
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: btn-admin1;
+}
+
+.admin2 {
+  background-image: url("images/profile/clients.jpeg");
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: btn-admin2;
+}
+
+.admin3 {
+  background-image: url("images/products-header.jpg");
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: btn-admin3;
+}
+
+.admin4 {
+  background-image: url("images/profile/schedule.jpg");
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: btn-admin4;
+}
+
+.admin5 {
+  background-image: url("images/profile/services.jpeg");
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: btn-admin5;
+}
+
+#infoform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 65%;
+  height: 50%;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5vh;
+}
+
+.infosection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.infosection p, .infosection .btn-add2, .infosection input {
+  display: block;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  width: 220px;
+  margin: .7vh auto;
+  text-align: center;
+  padding: 8px 10px;
+  border: 0;
+  outline: none;
+  border-radius: 24px;
+  font-weight: bold;
+  opacity: .5;
+}
+
+.infosection p:hover, .infosection .btn-add2:hover, .infosection input:hover {
+  opacity: 1;
+}
+
+.infosection p, .infosection .btn-add2 {
+  background-color: mediumseagreen;
+  -webkit-box-shadow: 0 0 5px mediumseagreen;
+          box-shadow: 0 0 5px mediumseagreen;
+  color: white;
+}
+
+.infosection input {
+  background: none;
+  border: 2px solid dodgerblue;
+}
+
+.infosection input:focus {
+  opacity: 1;
+  background-color: white;
+  width: 250px;
+}
+
+.infosection div {
+  width: 75%;
+  height: 37.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+}
+
+.pet1 {
+  background-image: url("images/profile/pet1.png");
+  grid-area: btn-pet1;
+}
+
+.pet2 {
+  background-image: url("images/profile/pet2.jpg");
+  grid-area: btn-pet2;
+}
+
+.pet3 {
+  background-image: url("images/profile/pet3.jpg");
   grid-area: btn-pet3;
 }
 
@@ -2017,6 +2295,10 @@ body, html {
 }
 
 .polaroid {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #E74C3C;
   -webkit-box-shadow: 0 0 10px black;
           box-shadow: 0 0 10px black;
@@ -2026,6 +2308,9 @@ body, html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 100%;
 }
@@ -2035,15 +2320,34 @@ body, html {
      object-fit: cover;
 }
 
-.polaroid p {
+.polaroid p, .polaroid button {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  background: none;
+  border: 0;
+  outline: none;
   font-weight: bolder;
   font-size: large;
+  -ms-grid-column-align: center;
+      justify-self: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
   padding: 5px 20px;
   color: white;
+}
+
+.polaroid button {
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.polaroid button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .pol1 {
