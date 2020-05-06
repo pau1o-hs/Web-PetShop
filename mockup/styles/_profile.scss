@@ -185,8 +185,8 @@
 }
 
 .btn-add {
-		width: 15vh;
-		height: 15vh;
+		width: 6vw;
+		height: 6vw;
 
 		font-size: 100px;
 		color: white;
@@ -212,21 +212,52 @@
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
 	width: 65%;
-	height: 30%;
+	height: 40%;
 	margin: 0 auto;
 	background-color: none;	
 	justify-content: space-between;
 	grid-gap: 2.5vh;
-	grid-template-areas: 	"btn-pet1 btn-pet3 pet-register";
+	grid-template-areas: 	"polaroid1 polaroid2 pet-register";
 	align-self: center;
 	margin-bottom: 5vh;
 
-	a {
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		font-size: 40px;
-		color: white;
-		font-weight: bold;
-		text-shadow: 0px 0px 3px black;
-		text-decoration: none;
+	// a {
+	// 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	// 	font-size: 40px;
+	// 	color: white;
+	// 	font-weight: bold;
+	// 	text-shadow: 0px 0px 3px black;
+	// 	text-decoration: none;
+	// }
+}
+
+.polaroid {
+	background-color: #E74C3C; 
+	box-shadow: 0 0 10px black;
+	align-self: center;
+	align-items: center;
+	img {
+		object-fit: cover;
 	}
+
+	p {
+		font-weight: bolder;
+		font-size: large;
+		align-self: center;
+		text-align: center; 
+		padding: 5px 20px;
+		color: white;
+		// box-shadow: 0 0 30px #E74C3C;
+	}
+
+	width: 100%;
+	height: 100%;
+}
+
+.pol1 {
+	grid-area: polaroid1;
+}
+
+.pol2 {
+	grid-area: polaroid2;
 }
