@@ -1682,7 +1682,7 @@ body, html {
 .pet3 {
   background-image: url("images/profile/pet3.jpg");
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   grid-area: btn-pet3;
 }
 
@@ -1720,8 +1720,8 @@ body, html {
 }
 
 .btn-add {
-  width: 15vh;
-  height: 15vh;
+  width: 6vw;
+  height: 6vw;
   font-size: 100px;
   color: white;
   background-color: mediumseagreen;
@@ -1747,26 +1747,59 @@ body, html {
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 65%;
-  height: 30%;
+  height: 40%;
   margin: 0 auto;
   background-color: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   grid-gap: 2.5vh;
-      grid-template-areas: "btn-pet1 btn-pet3 pet-register";
+      grid-template-areas: "polaroid1 polaroid2 pet-register";
   -ms-grid-row-align: center;
       align-self: center;
   margin-bottom: 5vh;
 }
 
-.scheduleform a {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 40px;
+.polaroid {
+  background-color: #E74C3C;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.polaroid img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.polaroid p {
+  font-weight: bolder;
+  font-size: large;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  padding: 5px 20px;
   color: white;
-  font-weight: bold;
-  text-shadow: 0px 0px 3px black;
-  text-decoration: none;
+}
+
+.pol1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: polaroid1;
+}
+
+.pol2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: polaroid2;
 }
 
 /* Ensures that all elements width and height already include the padding and border. */

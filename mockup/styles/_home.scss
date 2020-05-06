@@ -227,7 +227,6 @@ $nav_hover_color: rgba(0, 0, 0, 0);
 	max-width: 100%;
 	overflow: hidden;
 	position: relative;
-
 	margin: 0 auto;
 	border: none;
 	background-position: center center;
@@ -238,7 +237,8 @@ $nav_hover_color: rgba(0, 0, 0, 0);
 
 	&:before { 
 		content:"";
-		position:absolute; top:0;right:0;bottom:0;left:0;
+		position:absolute; 
+		top:0;right:0;bottom:0;left:0;
 		background:inherit;
 		transition:inherit;
 	}
@@ -251,6 +251,7 @@ $nav_hover_color: rgba(0, 0, 0, 0);
 		position: relative;
 		text-align: center; 
 		top: 42%;
+		// vertical-align: middle;
 	}
 }
 
