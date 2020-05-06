@@ -5,18 +5,6 @@
 
 $navbar-top: rgb(96, 134, 190);
 
-/* .header-services{
-	
-	display: flex;
-	background-color: $navbar-top;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 10vh;
-	z-index: 100;
-	//position: absolute;
-} */
-
 .service-title{
 	width: 100%;
 	margin: 5vh 0px;
@@ -25,26 +13,26 @@ $navbar-top: rgb(96, 134, 190);
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
 .menu-services{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 
 	width: 65%;
-	height: 90%;
+	height: 70%;
 	margin: 0 auto;
-	background-color: white;	
-	justify-content: space-between;
-	grid-gap: 20px;
+	background-color: none;	
+	grid-gap: 2.5vh;
 	grid-template-areas: "a a b" "a a f" "e d f" "e d c";
 	align-self: center;
+	margin-bottom: 5vh;
 
-	button {
+	a {
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		font-size: 40px;
 		color: white;
 		font-weight: bold;
 		text-shadow: 0px 0px 3px black;
+		text-decoration: none;
 	}
 }
 
@@ -75,7 +63,9 @@ $navbar-top: rgb(96, 134, 190);
 	}
 
 	p {
-		position: relative; text-align: center; align-content: center;
+		position: relative;
+		text-align: center; 
+		top: 42%;
 	}
 }
 
@@ -85,29 +75,16 @@ $navbar-top: rgb(96, 134, 190);
 	grid-area: a;
 
 	&:hover { 
-		background-image:url("images/categorias/services-bw.jpg");	
+		background-image:url("images/categorias/services.jpg");	
 	}
 }
-
-// .wrap {
-// 	// content:"";
-// 	position:absolute; top:0;right:0;bottom:0;left:0;
-// 	background:inherit;
-// 	transition:inherit;
-// 	// z-index: -10;
-// 	// justify-content: center;
-
-// 	&:hover {
-// 		transform: scale(1.2);
-// 	}
-// }
 
 // Castração
 .serv2{
 	background-image:url(images/categorias/castracao.jpg);
 	grid-area: b;
 	&:hover {
-		background-image:url(images/categorias/castracao-bw.jpg);	
+		background-image:url(images/categorias/castracao.jpg);	
 	}
 }
 
@@ -117,7 +94,7 @@ $navbar-top: rgb(96, 134, 190);
 	grid-area: c;
 
 	&:hover {
-		background-image:url(images/categorias/consulta-bw.jpg);	
+		background-image:url(images/categorias/consulta.jpg);	
 	}
 }
 
@@ -127,7 +104,7 @@ $navbar-top: rgb(96, 134, 190);
 	grid-area: d;
 	
 	&:hover {
-		background-image:url(images/categorias/vacinacao-bw.jpg);	
+		background-image:url(images/categorias/vacinacao.jpg);	
 	}
 }
 
@@ -137,7 +114,7 @@ $navbar-top: rgb(96, 134, 190);
 	grid-area: e;
 
 	&:hover {
-		background-image:url(images/categorias/adestramento-bw.jpg);	
+		background-image:url(images/categorias/adestramento.jpg);	
 	}
 }
 
@@ -147,13 +124,81 @@ $navbar-top: rgb(96, 134, 190);
 	grid-area: f;
 	
 	&:hover {
-		background-image:url(images/categorias/lar-bw.jpg);	
+		background-image:url(images/categorias/lar.jpg);	
 	}
 }
 
-/* // Mais serviços
-.serv7{
-background-image:url(images/categorias/banho.jpg);
-background-color: orange;
-grid-area: g;
-} */
+.scheduler {
+	margin: 10vh auto;
+	width: 80%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.time-selector {
+	background: $my-orange;
+	flex: 2 1 0;
+	display: flex;
+	#book-query {
+		background: red;
+		flex: 3 1 0;
+		text-align: center;
+		align-self: center;
+	}
+	.tsel-item1 {
+		background: blue;
+		flex: 5 1 0;
+		text-align: center;
+
+		.tsel-up {
+			text-align: center;
+			display: inline-block;
+			justify-content: space-around;
+		}
+		.tsel-down {
+			text-align: center;
+		}
+	}
+	.tsel-item2 {
+		background: yellow;
+		flex: 5 1 0;
+		text-align: center;
+	}
+}
+
+.time-display {
+	background: $my-blue;
+	flex: 10 1 0;
+	display: flex;
+	* {
+		flex: 1 1 0;
+	}
+}
+
+.pagination {
+	flex: 1 1 0;
+  padding: 2vh 5vh;
+  background: $my-black;
+	text-align: center;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		li {
+			color: white;
+			font-size: 20px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+	}
+	.prev {
+		float: left;
+	}
+	.next {
+		float: right;
+	}
+	input [type=number] {
+		appearance: none;
+	}
+}

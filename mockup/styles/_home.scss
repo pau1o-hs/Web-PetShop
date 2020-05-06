@@ -198,52 +198,88 @@ $nav_hover_color: rgba(0, 0, 0, 0);
 	}
 }
 
-.img-button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
+#menu-home {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	width: 65%;
+	height: 40%;
+	margin: 0 auto;
+	background-color: none;	
+	justify-content: space-between;
+	grid-gap: 2.5vh;
+	grid-template-areas: "homebutton1 homebutton2";
+	align-self: center;
+	margin-bottom: 5vh;
+
+	a {
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-size: 40px;
+		color: white;
+		font-weight: bold;
+		text-shadow: 0px 0px 3px black;
+		text-decoration: none;
+	}
 }
 
 .home-button{
-	width: 50vw;
-	height: 60vh;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+
+	margin: 0 auto;
 	border: none;
-	text-decoration: none;
-	background-position: center;
+	background-position: center center;
 	background-size: cover;
-	transition-duration: .3s;
-	cursor: pointer;
+	transition: all .5s;
 
-	transition: cubic-bezier();
-	
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 5vh;
-	color: white;
-	font-weight: bold;
-	text-shadow: 1px 1px 3px black;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 
+	&:before { 
+		content:"";
+		position:absolute; top:0;right:0;bottom:0;left:0;
+		background:inherit;
+		transition:inherit;
+	}
+
+	&:hover:before { 
+		transform: scale(1.1);
+	}
+
+	p {
+		position: relative;
+		text-align: center; 
+		top: 42%;
+	}
 }
+
 .button1{
+	grid-area: homebutton1;
 	background-image: url("./images/categorias/products.jpg");
 	
 	&:hover{
 		// background-color: $my-blue;
-		background-image: url("./images/categorias/products-bw.jpg");
+		background-image: url("./images/categorias/products.jpg");
 	}
 }
+
 .button2{
+	grid-area: homebutton2;
 	background-image: url("./images/categorias/services.jpg");
 	
 	&:hover{
 		// background-color: $my-blue;
-		background-image: url("./images/categorias/services-bw.jpg");
+		background-image: url("./images/categorias/services.jpg");
 	}
 }
 
 .above-slide{
 	display:flex;
 	flex-direction: column;
+	width: 100%;
+	margin: 0 auto;
+	// justify-content: center;
 	// background-color: white;
 	// box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 	h2{

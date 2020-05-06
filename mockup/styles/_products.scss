@@ -24,7 +24,6 @@ $navbar-top: $my-blue;
 	height: 70%;
 	margin: 0 auto;
 	background-color: none;	
-	// justify-content: space-between;
 	grid-gap: 2.5vh;
 	grid-template-areas: "a b f" "a c d" "e c d";
 	align-self: center;
@@ -108,7 +107,7 @@ $navbar-top: $my-blue;
 	grid-area: a;
 	
 	&:hover:before{
-		background-image:url(images/categorias/alimentacao-bw.jpg);	
+		background-image:url(images/categorias/alimentacao.jpg);	
 	}
 }
 
@@ -118,7 +117,7 @@ $navbar-top: $my-blue;
 	grid-area: b;
 	
 	&:hover:before {
-		background-image:url(images/categorias/products-bw.jpg);
+		background-image:url(images/categorias/products.jpg);
 	}
 }
 
@@ -128,7 +127,7 @@ $navbar-top: $my-blue;
 	grid-area: c;
 
 	&:hover:before {
-		background-image:url(images/categorias/petiscos-bw.jpg);
+		background-image:url(images/categorias/petiscos.jpg);
 	}
 }
 
@@ -138,7 +137,7 @@ $navbar-top: $my-blue;
 	grid-area: d;
 	
 	&:hover:before {
-		background-image:url(images/categorias/passeio-bw.jpg);
+		background-image:url(images/categorias/passeio.jpg);
 	}
 }
 
@@ -148,7 +147,7 @@ $navbar-top: $my-blue;
 	grid-area: e;
 
 	&:hover:before {
-		background-image:url(images/categorias/clothes-bw.jpg);
+		background-image:url(images/categorias/clothes.jpg);
 	}
 }
 
@@ -158,7 +157,7 @@ $navbar-top: $my-blue;
 	grid-area: f;
 	
 	&:hover:before {
-		background-image:url(images/categorias/ambiente-bw.jpg);
+		background-image:url(images/categorias/ambiente.jpg);
 
 	}
 }
@@ -357,7 +356,7 @@ $navbar-top: $my-blue;
 	
 }
 
-#foodsection{
+.customsection{
 	margin: 0 auto;
 	display:flex;
 
@@ -365,122 +364,9 @@ $navbar-top: $my-blue;
 	width:65%;
 	height: 8vh;
 	margin-bottom: 5vh;
-	background-color:#8E44AD;
+	// background-color:#8E44AD;
 	justify-content: space-around;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
-
-	p{
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		font-size: 5vh;
-		font-weight: bold;
-		align-self: center;
-		color:white;
-		
-	}
-}
-
-#toysection{
-	margin: 0 auto;
-	display:flex;
-
-	text-align: center;
-	width:65%;
-	height: 8vh;
-	margin-bottom: 5vh;
-	background-color:#2980B9;
-	justify-content: space-around;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
-
-	p{
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		font-size: 5vh;
-		font-weight: bold;
-		align-self: center;
-		color:white;
-	}
-}
-
-#walkwaysection{
-	margin: 0 auto;
-	display:flex;
-
-	text-align: center;
-	width:65%;
-	height: 8vh;
-	margin-bottom: 5vh;
-	background-color:#27AE60;	
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
-
-	justify-content: space-around;
-	
-	p{
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		font-size: 5vh;
-		font-weight: bold;
-		align-self: center;
-		color:white;
-		
-	}
-}
-
-#snacksection{
-	margin: 0 auto;
-	display:flex;
-
-	text-align: center;
-	width:65%;
-	height: 8vh;
-	margin-bottom: 5vh;
-	background-color:#E74C3C;
-	
-	justify-content: space-around;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
-	
-	p{
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		font-size: 5vh;
-		font-weight: bold;
-		align-self: center;
-		color:white;
-		
-	}
-}
-
-#clothsection{
-	margin: 0 auto;
-	display:flex;
-
-	text-align: center;
-	width:65%;
-	height: 8vh;
-	margin-bottom: 5vh;
-	background-color:#F39C12;
-	
-	justify-content: space-around;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
-
-	p{
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		font-size: 5vh;
-		font-weight: bold;
-		align-self: center;
-		color:white;
-		
-	}
-}
-
-#comfortsection{
-	margin: 0 auto;
-	display:flex;
-
-	text-align: center;
-	width:65%;
-	height: 8vh;
-	margin-bottom: 5vh;
-	background-color:#34495E;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
-
-	justify-content: space-around;
 
 	p{
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
