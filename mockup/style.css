@@ -683,7 +683,7 @@ body, html {
   bottom: 100%;
   left: 0;
   right: 0;
-  background-color: #125688;
+  background-color: #083b99;
   width: 100%;
   height: 0;
   -webkit-transition: .5s ease;
@@ -833,7 +833,7 @@ body, html {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .menu-services {
@@ -853,7 +853,7 @@ body, html {
 }
 
 .menu-services a {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 40px;
   color: white;
   font-weight: bold;
@@ -870,8 +870,8 @@ body, html {
   border: none;
   background-position: center center;
   background-size: cover;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 }
@@ -971,7 +971,6 @@ body, html {
 .scheduler {
   margin: 10vh auto;
   width: 80%;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -982,73 +981,330 @@ body, html {
 }
 
 .time-selector {
-  background: #ff8400;
-  -webkit-box-flex: 2;
-      -ms-flex: 2 1 0px;
-          flex: 2 1 0;
+  background: #083b99;
+  color: #fdfffc;
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 0px;
+          flex: 3 1 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .time-selector #book-query {
-  background: red;
   -webkit-box-flex: 3;
       -ms-flex: 3 1 0px;
           flex: 3 1 0;
   text-align: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  font-size: 2rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #211a1d;
+}
+
+.time-selector input,
+.time-selector select {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin: 1vh auto;
+  text-align: center;
+  padding: 14px 10px;
+  border: 0;
+  outline: none;
+  border-radius: 24px;
+  font-weight: bold;
+  opacity: 0.5;
+  background-color: #d7cdcc;
+}
+
+.time-selector input:hover,
+.time-selector select:hover {
+  opacity: 1;
 }
 
 .time-selector .tsel-item1 {
-  background: blue;
-  -webkit-box-flex: 5;
-      -ms-flex: 5 1 0px;
-          flex: 5 1 0;
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 0px;
+          flex: 3 1 0;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
   text-align: center;
-}
-
-.time-selector .tsel-item1 .tsel-up {
-  text-align: center;
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
 
-.time-selector .tsel-item1 .tsel-down {
+.time-selector .tsel-item1 .tsel-up {
+  -webkit-box-flex: 6;
+      -ms-flex: 6 1 0px;
+          flex: 6 1 0;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.time-selector .tsel-item2 {
-  background: yellow;
+.time-selector .tsel-item1 .tsel-up .weeks {
   -webkit-box-flex: 5;
       -ms-flex: 5 1 0px;
           flex: 5 1 0;
+  background-color: #6e6968;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  opacity: 0.8;
+}
+
+.time-selector .tsel-item1 .tsel-up .weeks input {
+  width: 30%;
+}
+
+.time-selector .tsel-item1 .tsel-up .days {
+  -webkit-box-flex: 5;
+      -ms-flex: 5 1 0px;
+          flex: 5 1 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.time-selector .tsel-item1 .tsel-up .days select {
+  margin: 6% 3%;
+}
+
+.time-selector .tsel-item1 .tsel-down {
+  -webkit-box-flex: 4;
+      -ms-flex: 4 1 0px;
+          flex: 4 1 0;
+  text-align: center;
+  background-color: #6e6968;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  opacity: 0.8;
+}
+
+.time-selector .tsel-item1 .tsel-down span {
+  margin: 3% 0;
+}
+
+.time-selector .tsel-item2 {
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 0px;
+          flex: 3 1 0;
   text-align: center;
 }
 
+.time-selector .tsel-item2 select {
+  width: 30%;
+  margin: 2% 0;
+  background-color: #d7cdcc;
+}
+
+.row-separator {
+  margin: 0;
+  padding: 0;
+  background-color: #d7cdcc;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 3px;
+  height: 100%;
+}
+
+.column-separator {
+  margin: 0;
+  padding: 0;
+  background-color: #d7cdcc;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 3px;
+  width: 100%;
+}
+
 .time-display {
-  background: #125688;
-  -webkit-box-flex: 10;
-      -ms-flex: 10 1 0px;
-          flex: 10 1 0;
+  background: #080357;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.time-display * {
+.time-display .display-day {
+  color: #fdfffc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0px;
           flex: 1 1 0;
 }
 
-.pagination {
+.time-display .display-day > p {
+  margin: 2% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.time-display .display-day > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #d7cdcc;
+}
+
+.time-display .display-day > div .display-slot {
+  border: 3px solid #211a1d;
+  margin: 2px;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+}
+
+.time-display .display-day > div .display-slot .hour {
+  width: 60px;
+  text-align: center;
+}
+
+.time-display .display-day > div .display-slot .empty {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0px;
           flex: 1 1 0;
+  font-size: 26px;
+  text-align: center;
+}
+
+.time-display .display-day > div .display-slot .icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0 3px;
+}
+
+.time-display .display-day > div .display-slot .service {
+  font-size: 24px;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+}
+
+.time-display .display-day > div .display-slot .info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  font-size: 14px;
+}
+
+.time-display .display-day > div .display-slot .info .service {
+  font-size: 16px;
+}
+
+.time-display .display-day > div .display-slot .of {
+  font-size: 16px;
+  color: #ff8400;
+}
+
+.time-display .display-day > div .display-slot .pet {
+  font-size: 16px;
+}
+
+.time-display .display-day > div .free {
+  background-color: #0ec70b;
+}
+
+.time-display .display-day > div .reserved {
+  background-color: #6e6968;
+}
+
+.pagination {
+  -webkit-box-flex: 0.5;
+      -ms-flex: 0.5 1 0px;
+          flex: 0.5 1 0;
   padding: 2vh 5vh;
   background: #211a1d;
   text-align: center;
@@ -1075,7 +1331,7 @@ body, html {
   float: right;
 }
 
-.pagination input [type=number] {
+.pagination input [type="number"] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
