@@ -8,5 +8,3 @@
 
 Use Postman to interact with the server and "MongoDB Compass" to check the Database.
 Have fun!
-
-Author: Vitor Santana Cordeiro, 10734345
