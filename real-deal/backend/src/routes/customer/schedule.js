@@ -1,0 +1,13 @@
+const { Router } = require('express');
+
+const scheduleController = require('../../controllers/schedule');
+
+const router = Router();
+
+// POST /schedule → associate a service with an empty slot; the req body, thus,
+// must contain the date(e.g. 20 / 08 / 2020) and time(e.g. 10: 00) of the slot
+// that must be filled and the service slug(customers don’t have access to service ID);
+// if the year is not informed, it defaults to the current year.
+router.post('/', scheduleController.fillSlotByServiceSlug);
+
+exports = router;

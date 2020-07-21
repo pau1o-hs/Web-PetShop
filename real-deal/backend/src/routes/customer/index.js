@@ -1,10 +1,10 @@
 const { Router } = require('express');
 const profileRoute = require('./profile');
-const authRoute = require('./auth');
-const petsRoute = require('./pets');
 const productsRoute = require('./products');
 const servicesRoute = require('./services');
 const ordersRoute = require('./orders');
+const scheduleRoute = require('./schedule');
+const customerController = require('../../controllers/customer');
 
 const router = Router();
 
@@ -14,12 +14,12 @@ router.get('/', (req, res) => {
     version: '1.0.0',
   });
 });
+router.post('/auth', customerController.authenticate);
 
 router.use('/profile', profileRoute);
-router.use('/auth', authRoute);
-router.use('/pets', petsRoute);
 router.use('/products', productsRoute);
 router.use('/services', servicesRoute);
 router.use('/orders', ordersRoute);
+router.use('/schedule', scheduleRoute);
 
 exports = router;
