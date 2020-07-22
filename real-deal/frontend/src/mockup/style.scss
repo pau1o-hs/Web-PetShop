@@ -1,0 +1,21 @@
+@import "styles/colors";
+@import "styles/utils";
+@import "styles/header";
+@import "styles/footer";
+@import "styles/home";
+@import "styles/login";
+@import "styles/services";
+@import "styles/products";
+@import "styles/profile";
+@import "styles/admin";
+
+/* Ensures that all elements width and height already include the padding and border. */
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+	font-family: $font-stack;
+  margin: 0;
+}
