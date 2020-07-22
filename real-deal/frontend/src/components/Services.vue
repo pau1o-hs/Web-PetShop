@@ -17,7 +17,7 @@
             <a class="btn-serv serv4" href="#scheduler"><p>Vaccination</p></a>
             <a class="btn-serv serv5" href="#scheduler"><p>Training</p></a>
             <a class="btn-serv serv6" href="#scheduler"><p>Temporary accommodation</p></a>
-            <!-- <button class="btn-serv serv7"> Mais serviços em breve</button> -->
+            <!-- <button class="btn-serv serv7"> Mais serviï¿½os em breve</button> -->
         </section>
         <Footer></Footer>
     </div>
