@@ -77,7 +77,7 @@ exports.updateGroup = async (req, res) => {
 // Used by: Admin
 exports.deleteById = async (req, res) => {
   await repository
-    .delete(req.params.id)
+    .deleteById(req.params.id)
     .then(() => {
       res.status(200).send({
         message: 'Produto removido',
@@ -93,5 +93,17 @@ exports.deleteById = async (req, res) => {
 
 // Used by: Admin
 exports.deleteGroup = async (req, res) => {
-  return true;
+	await repository
+    .deleteGroup(req.params.tag)
+    .then(() => {
+      res.status(200).send({
+        message: 'Produto removido',
+      });
+    })
+    .catch((e) => {
+      res.status(400).send({
+        message: 'Falha ao remover produto',
+        data: e,
+      });
+	});
 };

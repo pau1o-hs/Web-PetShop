@@ -13,7 +13,7 @@ exports.getAllAdminsInfo = async () => {
 };
 
 exports.getMyChildrenInfo = async (id) => {
-  const res = await (await Admin.findById(id, 'childAdmins')).populate(
+  const res = (await Admin.findById(id, 'childAdmins')).populate(
     'childAdmins'
   );
   return res;

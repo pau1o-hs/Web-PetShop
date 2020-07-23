@@ -49,10 +49,10 @@ exports.updateGroup = async (data) => {
   });
 };
 
-exports.deleteById = async () => {
-  return true;
+exports.deleteById = async (id) => {
+	await Product.findByIdAndRemove({id});
 };
 
-exports.deleteGroup = async () => {
-  return true;
+exports.deleteGroup = async (tag) => {
+	await Product.deleteMany(tag);
 };
