@@ -35,9 +35,10 @@ const schema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  sold: {
+  totalSold: {
     type: Number,
     required: true,
+    default: 0,
   },
   active: {
     type: Boolean,

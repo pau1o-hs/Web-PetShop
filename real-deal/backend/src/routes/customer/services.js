@@ -4,8 +4,8 @@ const servicesController = require('../../controllers/services');
 
 const router = Router();
 
-router.get('/', servicesController.getAll);
+router.get('/', servicesController.getAllActives);
 router.get('/:slug', servicesController.getBySlug);
-router.get('/group', servicesController.getGroup);
+router.get('/tags', servicesController.getByTag);
 
 exports = router;

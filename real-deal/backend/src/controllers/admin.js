@@ -1,24 +1,26 @@
-// CONTROLLER
-
 const repository = require('../repositories/admins');
 const authService = require('../services/auth');
 const passCryptService = require('../services/password-crypt');
 
+// Used by: Admin
 exports.getMyInfo = async (req, res) => {
   const data = await repository.getMyInfo(req.params.CPF);
   res.status(200).send(data);
 };
 
+// Used by: Admin
 exports.getAllAdminsInfo = async (req, res) => {
   const data = await repository.getAllAdminsInfo();
   res.status(200).send(data);
 };
 
+// Used by: Admin
 exports.getMyChildrenInfo = async (req, res) => {
   const data = await repository.getMyChildrenInfo(req.params.childAdmins);
   res.status(200).send(data);
 };
 
+// Used by: Admin
 exports.createNewAdmin = async (req, res) => {
   await repository
     .createNewAdmin(req.body)
@@ -35,6 +37,7 @@ exports.createNewAdmin = async (req, res) => {
     });
 };
 
+// Used by: Admin
 exports.updateMyInfo = async (req, res) => {
   await repository
     .updateMyInfo(req.params.id, req.body)
@@ -51,6 +54,7 @@ exports.updateMyInfo = async (req, res) => {
     });
 };
 
+// Used by: Admin
 exports.deleteChildAdmin = async (req, res) => {
   await repository
     .deleteChildAdmin(req.params.childAdmins.id)
@@ -67,6 +71,7 @@ exports.deleteChildAdmin = async (req, res) => {
     });
 };
 
+// Used by: Admin
 exports.authenticate = async (req, res) => {
   return true;
 };

@@ -29,5 +29,5 @@ exports.updateBySlug = async (slug, data) => {
 };
 
 exports.deleteBySlug = async (slug) => {
-  await Pet.findOneAndRemove(slug);
+  await Pet.findOneAndDelete(slug);
 };

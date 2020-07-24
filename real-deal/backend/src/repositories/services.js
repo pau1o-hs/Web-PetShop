@@ -1,58 +1,50 @@
 const mongoose = require('mongoose');
 
-const Product = mongoose.model('service');
+const Service = mongoose.model('Service');
 
+// Admin
 exports.getAll = async () => {
-  const res = await Product.find({}, 'title price slug');
+  const res = await Service.find({});
+  return res;
+};
+
+// Customer
+exports.getAllActives = async () => {
+  const res = await Service.find({ active: true }, '-totalBooked -active');
   return res;
 };
 
 exports.getById = async (id) => {
-  const res = await Product.findById(id);
+  const res = await Service.findById(id);
   return res;
 };
 
 exports.getBySlug = async (slug) => {
-  const res = await Product.findOne({ slug }, 'title price slug');
+  const res = await Service.findOne(
+    { slug, active: true },
+    '-totalSold -active'
+  );
   return res;
 };
 
-exports.getGroup = async (tag) => {
-  const res = await Product.find({ tag }, 'title price slug');
+// Note that this function returns ALL information about the services.
+// The controller is responsible for not showing sensible information to non-admins.
+exports.getByTag = async (tag) => {
+  const res = await Service.find({ tags: tag, active: true });
   return res;
 };
 
 exports.createOne = async (data) => {
-  const product = new Product(data);
+  const product = new Service(data);
   await product.save();
 };
 
-exports.updateById = async (data) => {
-  await Product.findByIdAndUpdate(data.id, {
-    $set: {
-      title: data.title,
-      description: data.description,
-      price: data.price,
-      slug: data.slug,
-    },
-  });
-};
-
-exports.updateGroup = async (data) => {
-  await Product.updateMany(data.tag, {
-    $set: {
-      title: data.title,
-      description: data.description,
-      price: data.price,
-      slug: data.slug,
-    },
+exports.updateById = async (id, data) => {
+  await Service.findByIdAndUpdate(id, {
+    $set: data,
   });
 };
 
 exports.deleteById = async (id) => {
-	await Product.findByIdAndRemove({id});
-};
-
-exports.deleteGroup = async (tag) => {
-	await Product.deleteMany(tag);
+  await Service.findByIdAndDelete(id);
 };

@@ -1,3 +1,7 @@
+const mongoose = require('mongoose');
+
+const Schedule = mongoose.Model('Schedule');
+
 // Used by: Both
 exports.getCurrent = async (req, res) => {
   return true;

@@ -18,17 +18,27 @@ exports.create = async (data) => {
 };
 
 exports.updateById = async (data) => {
-  await Customer.findByIdAndUpdate(data.id, { $set: { data } });
+  await Customer.findByIdAndUpdate(data.id, {
+    $set: {
+      CPF: data.cpf,
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      photo: data.photo,
+      address: data.address,
+      phone: data.phone,
+    },
+  });
 };
 
-exports.deleteMyself = async () => {
-  return true;
+exports.deleteById = async (id) => {
+  await Customer.findByIdAndDelete(id);
 };
 
-exports.deleteById = async () => {
-  return true;
-};
-
-exports.authenticate = async () => {
-  return true;
+exports.authenticate = async (data) => {
+  const res = await Customer.findOne({
+    email: data.email,
+    password: data.password,
+  });
+  return res;
 };

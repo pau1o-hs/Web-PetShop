@@ -4,8 +4,8 @@ const productsController = require('../../controllers/products');
 
 const router = Router();
 
-router.get('/', productsController.getAll);
+router.get('/', productsController.getAllActives);
 router.get('/:slug', productsController.getBySlug);
-router.get('/group', productsController.getGroup);
+router.get('/tags', productsController.getByTag);
 
 exports = router;

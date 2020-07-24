@@ -1,7 +1,13 @@
 const repository = require('../repositories/products');
 
-// Used by: Both
+// Used by: Admin
 exports.getAll = async (req, res) => {
+  const data = await repository.getAll();
+  res.status(200).send(data);
+};
+
+// Used by: Customer
+exports.getAllActives = async (req, res) => {
   const data = await repository.getAll();
   res.status(200).send(data);
 };
@@ -19,8 +25,8 @@ exports.getBySlug = async (req, res) => {
 };
 
 // Used by: Both
-exports.getGroup = async (req, res) => {
-  const data = await repository.getGroup(req.params.tag);
+exports.getByTag = async (req, res) => {
+  const data = await repository.getByTag(req.params.tag);
   res.status(200).send(data);
 };
 
@@ -58,23 +64,6 @@ exports.updateById = async (req, res) => {
 };
 
 // Used by: Admin
-exports.updateGroup = async (req, res) => {
-  await repository
-    .updateGroup(req.params.tag, req.body)
-    .then(() => {
-      res.status(200).send({
-        message: 'Produtos atualizado',
-      });
-    })
-    .catch((e) => {
-      res.status(400).send({
-        message: 'Falha ao atualizar produtos',
-        data: e,
-      });
-    });
-};
-
-// Used by: Admin
 exports.deleteById = async (req, res) => {
   await repository
     .deleteById(req.params.id)
@@ -89,21 +78,4 @@ exports.deleteById = async (req, res) => {
         data: e,
       });
     });
-};
-
-// Used by: Admin
-exports.deleteGroup = async (req, res) => {
-	await repository
-    .deleteGroup(req.params.tag)
-    .then(() => {
-      res.status(200).send({
-        message: 'Produto removido',
-      });
-    })
-    .catch((e) => {
-      res.status(400).send({
-        message: 'Falha ao remover produto',
-        data: e,
-      });
-	});
 };

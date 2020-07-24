@@ -1,47 +1,34 @@
 const mongoose = require('mongoose');
 
-const Order = mongoose.model('order');
+const Order = mongoose.model('Order');
 
-// Used by: Admin
 exports.getAll = async () => {
-	const res = await Order.find({});
-	return res;
+  const res = await Order.find({})
+    .populate('customer', 'CPF name email')
+    .populate('products.product', 'title tags description price')
+    .populate('services.service', 'title tags description responsible price');
+  return res;
 };
 
-  // Used by: Admin
-  exports.getById = async (id) => {
-	const res = await Order.findById(id);
-	return res;
-  };
-  
-  // Used by: Admin
-  exports.getByCustomer = async (CPF) => {
-	const res = await Product.find({ CPF });
-	return res;
-  };
-  
-  // Used by: Admin
-  exports.getGroup = async (req, res) => {
-	return true;
-  };
-  
-  // Used by: Customer
-  exports.createOne = async (data) => {
-	const order = new Product(data);
-	await Order.save();
-  };
-  
-  // Used by: Admin
-  exports.updateAll = async (req, res) => {
-	return true;
-  };
-  
-  // Used by: Admin
-  exports.updateById = async (req, res) => {
-	return true;
-  };
-  
-  // Used by: Admin
-  exports.deleteById = async (id) => {
-	await Product.findByIdAndRemove({id});
+exports.getById = async (id) => {
+  const res = await Order.findById(id);
+  return res;
+};
+
+exports.getByCustomer = async (customerId) => {
+  const res = await Order.find({ customer: customerId });
+  return res;
+};
+
+exports.createOne = async (data) => {
+  const order = new Order(data);
+  await order.save();
+};
+
+exports.updateById = async (id, data) => {
+  await Order.findByIdAndUpdate(id, { $set: data });
+};
+
+exports.deleteById = async (id) => {
+  await Order.findByIdAndDelete(id);
 };

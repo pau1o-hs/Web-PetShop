@@ -13,9 +13,7 @@ exports.getAllAdminsInfo = async () => {
 };
 
 exports.getMyChildrenInfo = async (id) => {
-  const res = (await Admin.findById(id, 'childAdmins')).populate(
-    'childAdmins'
-  );
+  const res = (await Admin.findById(id, 'childAdmins')).populate('childAdmins');
   return res;
 };
 
@@ -24,17 +22,28 @@ exports.createNewAdmin = async (data) => {
   await admin.save();
 };
 
-exports.updateMyInfo = async (data) => {
-  await Admin.findByIdAndUpdate(data.id, {
+exports.updateMyInfo = async (id, data) => {
+  await Admin.findByIdAndUpdate(id, {
     $set: {
-      title: data.title,
-      description: data.description,
-      price: data.price,
-      slug: data.slug,
+      CPF: data.cpf,
+      name: data.name,
+      photo: data.photo,
+      phone: data.phone,
+      email: data.email,
+      admin: data.admin,
+      password: data.password,
     },
   });
 };
 
 exports.deleteChildAdmin = async (childId) => {
-  await Admin.findByIdAndRemove(childId);
+  await Admin.findByIdAndDelete(childId);
+};
+
+exports.authenticate = async (data) => {
+  const res = await Admin.findOne({
+    adminName: data.adminName,
+    password: data.password,
+  });
+  return res;
 };

@@ -1,9 +1,19 @@
 const mongoose = require('mongoose');
 
-const Product = mongoose.model('products');
+const Product = mongoose.model('Product');
 
+// Admin
 exports.getAll = async () => {
-  const res = await Product.find({}, 'title price slug');
+  const res = await Product.find({});
+  return res;
+};
+
+// Customer
+exports.getAllActives = async () => {
+  const res = await Product.find(
+    { active: true },
+    '-inStock -totalSold -active'
+  );
   return res;
 };
 
@@ -13,12 +23,17 @@ exports.getById = async (id) => {
 };
 
 exports.getBySlug = async (slug) => {
-  const res = await Product.findOne({ slug }, 'title price slug');
+  const res = await Product.findOne(
+    { slug, active: true },
+    '-inStock -totalSold -active'
+  );
   return res;
 };
 
-exports.getGroup = async (tag) => {
-  const res = await Product.find({ tag }, 'title price slug');
+// Note that this function returns ALL information about the products.
+// The controller is responsible for not showing sensible information to non-admins.
+exports.getByTag = async (tag) => {
+  const res = await Product.find({ tags: tag, active: true });
   return res;
 };
 
@@ -27,32 +42,12 @@ exports.createOne = async (data) => {
   await product.save();
 };
 
-exports.updateById = async (data) => {
-  await Product.findByIdAndUpdate(data.id, {
-    $set: {
-      title: data.title,
-      description: data.description,
-      price: data.price,
-      slug: data.slug,
-    },
-  });
-};
-
-exports.updateGroup = async (data) => {
-  await Product.updateMany(data.tag, {
-    $set: {
-      title: data.title,
-      description: data.description,
-      price: data.price,
-      slug: data.slug,
-    },
+exports.updateById = async (id, data) => {
+  await Product.findByIdAndUpdate(id, {
+    $set: data,
   });
 };
 
 exports.deleteById = async (id) => {
-	await Product.findByIdAndRemove({id});
-};
-
-exports.deleteGroup = async (tag) => {
-	await Product.deleteMany(tag);
+  await Product.findByIdAndDelete(id);
 };
