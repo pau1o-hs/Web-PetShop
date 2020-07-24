@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Admin = mongoose.model('Admin');
 
-exports.getMyInfo = async (id) => {
+exports.getById = async (id) => {
   const res = await Admin.findById(id, '-childAdmins -password');
   return res;
 };
@@ -17,12 +17,19 @@ exports.getMyChildrenInfo = async (id) => {
   return res;
 };
 
+exports.getByAdminName = async (adminName) => {
+  const res = await Admin.findOne({
+    adminName,
+  });
+  return res;
+};
+
 exports.createNewAdmin = async (data) => {
   const admin = new Admin(data);
   await admin.save();
 };
 
-exports.updateMyInfo = async (id, data) => {
+exports.updateById = async (id, data) => {
   await Admin.findByIdAndUpdate(id, {
     $set: {
       CPF: data.cpf,
@@ -38,12 +45,4 @@ exports.updateMyInfo = async (id, data) => {
 
 exports.deleteChildAdmin = async (childId) => {
   await Admin.findByIdAndDelete(childId);
-};
-
-exports.authenticate = async (data) => {
-  const res = await Admin.findOne({
-    adminName: data.adminName,
-    password: data.password,
-  });
-  return res;
 };

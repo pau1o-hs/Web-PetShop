@@ -1,77 +1,181 @@
 const repository = require('../repositories/admins');
 const authService = require('../services/auth');
-const passCryptService = require('../services/password-crypt');
+const passwordEncrypter = require('../services/password-crypt');
 
+/*
+  Testar no casos:
+  - Token invalido
+  - Id que nao existe no BD (admin not found)
+  - Sucesso
+*/
 // Used by: Admin
 exports.getMyInfo = async (req, res) => {
-  const data = await repository.getMyInfo(req.params.CPF);
-  res.status(200).send(data);
+  try {
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    const data = await repository.getById(decoded.id);
+    // Guard clause
+    if (!data) {
+      res.status(404).send({
+        message: 'Admin not found',
+      });
+      return;
+    }
+    res.status(200).send(data);
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing request.',
+      error: e,
+    });
+  }
 };
 
+/*
+  Testar no casos:
+  - Sucesso
+*/
 // Used by: Admin
 exports.getAllAdminsInfo = async (req, res) => {
-  const data = await repository.getAllAdminsInfo();
-  res.status(200).send(data);
+  try {
+    const data = await repository.getAllAdminsInfo();
+    res.status(200).send(data);
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing request.',
+      error: e,
+    });
+  }
 };
 
+/*
+  Testar no casos:
+  - Token invalido
+  - Id que nao existe no BD (admin not found)
+  - Sucesso
+*/
 // Used by: Admin
 exports.getMyChildrenInfo = async (req, res) => {
-  const data = await repository.getMyChildrenInfo(req.params.childAdmins);
-  res.status(200).send(data);
+  try {
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    const data = await repository.getMyChildrenInfo(decoded.id);
+    res.status(200).send(data);
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing request.',
+      error: e,
+    });
+  }
 };
 
+/*
+  Testar no casos:
+  - CPF repetido
+  - email repetido
+  - password esta encriptado
+  - adminName repetido
+  - Sucesso
+*/
 // Used by: Admin
 exports.createNewAdmin = async (req, res) => {
-  await repository
-    .createNewAdmin(req.body)
-    .then(() => {
-      res.status(201).send({
-        message: 'Admin cadastrado!',
-      });
-    })
-    .catch((e) => {
-      res.status(400).send({
-        message: 'Falha no cadastrado',
-        data: e,
-      });
+  try {
+    await repository.createNewAdmin({
+      CPF: req.body.cpf,
+      name: req.body.name,
+      phone: req.body.phone,
+      email: req.body.email,
+      adminName: req.body.adminName,
+      password: passwordEncrypter.encrypt(req.body.password),
     });
+    res.status(201).send(req.body);
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing request.',
+      error: e,
+    });
+  }
 };
 
+/*
+  Testar no casos:
+  - Token invalido
+  - Id que nao existe no BD (admin not found)
+  - CPF, email, adminName repetidos (deve dar erro)
+  - Sucesso
+*/
 // Used by: Admin
 exports.updateMyInfo = async (req, res) => {
-  await repository
-    .updateMyInfo(req.params.id, req.body)
-    .then(() => {
-      res.status(200).send({
-        message: 'Admin atualizado',
-      });
-    })
-    .catch((e) => {
-      res.status(400).send({
-        message: 'Falha ao atualizar Admin',
-        data: e,
-      });
+  try {
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    await repository.updateById(decoded.id, {
+      CPF: req.body.cpf,
+      name: req.body.name,
+      phone: req.body.phone,
+      email: req.body.email,
+      adminName: req.body.adminName,
+      password: passwordEncrypter.encrypt(req.body.password),
     });
+    res.status(200).send(req.body);
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing request.',
+      error: e,
+    });
+  }
 };
 
 // Used by: Admin
 exports.deleteChildAdmin = async (req, res) => {
-  await repository
-    .deleteChildAdmin(req.params.childAdmins.id)
-    .then(() => {
-      res.status(200).send({
-        message: 'Produto removido',
-      });
-    })
-    .catch((e) => {
-      res.status(400).send({
-        message: 'Falha ao remover produto',
-        data: e,
-      });
+  try {
+    await repository.deleteChildAdmin(req.params.id); // Child ID
+    res.status(200).send({ message: 'Child admin removed successfully.' });
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing request.',
+      error: e,
     });
+  }
 };
 
 // Used by: Admin
 exports.authenticate = async (req, res) => {
-  return true;
+  try {
+    const admin = await repository.getByAdminName({
+      adminName: req.body.adminName,
+    });
+    // Guard clauses
+    if (!admin) {
+      res.status(404).send({
+        message: 'Invalid admin-name.',
+      });
+      return;
+    }
+    if (!passwordEncrypter.isCorrect(req.body.password, admin.password)) {
+      res.status(401).send({
+        message: 'Invalid password.',
+      });
+      return;
+    }
+
+    const token = await authService.generateToken({
+      id: admin._id,
+      isAdmin: true,
+    });
+
+    res.status(200).send({
+      token,
+    });
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing request.',
+      error: e,
+    });
+  }
 };

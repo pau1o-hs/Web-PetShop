@@ -11,7 +11,7 @@ exports.decodeToken = async (token) => {
 };
 
 // Middleware
-exports.authorize = (req, res, next) => {
+exports.isAuthenticated = (req, res, next) => {
   const token =
     req.body.token || req.query.token || req.headers['x-access-token'];
 
@@ -32,28 +32,28 @@ exports.authorize = (req, res, next) => {
   }
 };
 
-// // Middleware
-// exports.isAdmin = (req, res, next) => {
-//   const token =
-//     req.body.token || req.query.token || req.headers['x-access-token'];
+// Middleware
+exports.isAuthenticatedAdmin = (req, res, next) => {
+  const token =
+    req.body.token || req.query.token || req.headers['x-access-token'];
 
-//   if (!token) {
-//     res.status(401).json({
-//       message: 'Restrict access',
-//     });
-//   } else {
-//     jwt.verify(token, process.env.JWT_SALT_KEY, function (error, decoded) {
-//       if (error) {
-//         res.status(401).json({
-//           message: 'Invalid token',
-//         });
-//       } else if (decoded.roles.includes('admin')) {
-//         next();
-//       } else {
-//         res.status(403).json({
-//           message: 'Esta funcionalidade é restrita para administradores',
-//         });
-//       }
-//     });
-//   }
-// };
+  if (!token) {
+    res.status(401).json({
+      message: 'Restrict access',
+    });
+  } else {
+    jwt.verify(token, process.env.JWT_SALT_KEY, (error, decoded) => {
+      if (error) {
+        res.status(401).json({
+          message: 'Invalid token',
+        });
+      } else if (decoded.isAdmin) {
+        next();
+      } else {
+        res.status(403).json({
+          message: 'This functionality is restricted to admins only.',
+        });
+      }
+    });
+  }
+};

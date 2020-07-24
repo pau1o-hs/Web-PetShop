@@ -1,5 +1,14 @@
+require('dotenv').config();
 const bcrypt = require('bcrypt');
 
-module.exports = {
-  message: 'not implemented yet',
+const saltRounds = process.env.SALT_ROUNDS;
+
+exports.encrypt = async (plainPassword) => {
+  const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
+  return hashedPassword;
+};
+
+exports.isCorrect = async (plainPassword, hashedPassword) => {
+  const res = await bcrypt.compare(plainPassword, hashedPassword);
+  return res;
 };

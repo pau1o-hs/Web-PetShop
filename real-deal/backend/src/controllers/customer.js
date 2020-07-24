@@ -1,6 +1,6 @@
 const repository = require('../repositories/customers');
 const authService = require('../services/auth');
-const passCryptService = require('../services/password-crypt');
+const passwordEncrypter = require('../services/password-crypt');
 
 // Used by: Customer
 exports.getMyInfo = async (req, res) => {
@@ -44,5 +44,36 @@ exports.deleteById = async (req, res) => {
 
 // Used by: Customer
 exports.authenticate = async (req, res) => {
-  return true;
+  try {
+    const customer = await repository.getByAdminName({
+      email: req.body.email,
+    });
+    // Guard clauses
+    if (!customer) {
+      res.status(404).send({
+        message: 'Invalid email.',
+      });
+      return;
+    }
+    if (!passwordEncrypter.isCorrect(req.body.password, customer.password)) {
+      res.status(401).send({
+        message: 'Invalid password.',
+      });
+      return;
+    }
+
+    const token = await authService.generateToken({
+      id: customer._id,
+      isAdmin: false,
+    });
+
+    res.status(200).send({
+      token,
+    });
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing request.',
+      error: e,
+    });
+  }
 };

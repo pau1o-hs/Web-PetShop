@@ -1,10 +1,12 @@
 const { Router } = require('express');
+const customerController = require('../../controllers/customer');
+const authService = require('../../services/auth');
+
 const profileRoute = require('./profile');
 const productsRoute = require('./products');
 const servicesRoute = require('./services');
 const ordersRoute = require('./orders');
 const scheduleRoute = require('./schedule');
-const customerController = require('../../controllers/customer');
 
 const router = Router();
 
@@ -19,7 +21,7 @@ router.post('/auth', customerController.authenticate);
 router.use('/profile', profileRoute);
 router.use('/products', productsRoute);
 router.use('/services', servicesRoute);
-router.use('/orders', ordersRoute);
-router.use('/schedule', scheduleRoute);
+router.use('/orders', authService.isAuthenticated, ordersRoute);
+router.use('/schedule', authService.isAuthenticated, scheduleRoute);
 
 exports = router;

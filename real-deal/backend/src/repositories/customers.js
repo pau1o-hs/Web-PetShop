@@ -12,6 +12,13 @@ exports.getById = async (id) => {
   return res;
 };
 
+exports.getByEmail = async (email) => {
+  const res = await Customer.findOne({
+    email,
+  });
+  return res;
+};
+
 exports.create = async (data) => {
   const customer = new Customer(data);
   await customer.save();
@@ -33,12 +40,4 @@ exports.updateById = async (data) => {
 
 exports.deleteById = async (id) => {
   await Customer.findByIdAndDelete(id);
-};
-
-exports.authenticate = async (data) => {
-  const res = await Customer.findOne({
-    email: data.email,
-    password: data.password,
-  });
-  return res;
 };
