@@ -1,17 +1,26 @@
 ﻿<template>
   <div class="foods">
     <section id="foods">
-      <div
-        class="item-unity food1"
-        v-for="(item, index) in products"
-        :key="item.username"
-      >
-        <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" />
-        <h2 id="nome-item">Data: {{ item.username }}</h2>
-        <p id="descricao-item">{{ index }}</p>
-        <p id="preco">R$0,00</p>
-        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-      </div>
+      <v-container class="my-5">
+        <div
+          class="item-unity food1"
+          v-for="(item, index) in products"
+          :key="item.username"
+        >
+          <v-layout row>
+            <v-flex xs12 md6>
+              <img
+                src="../mockup/images/racoes/racao-gato.jpg"
+                alt="Ração de gato"
+              />
+              <h2 id="nome-item">{{ item.username }}</h2>
+              <p id="descricao-item">{{ index }}</p>
+              <p id="preco">R$0,00</p>
+              <button id="adicionar-carrinho">Adicionar ao carrinho</button>
+            </v-flex>
+          </v-layout>
+        </div>
+      </v-container>
     </section>
   </div>
 </template>
