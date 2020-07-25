@@ -20,7 +20,7 @@ exports.getCurrent = async (req, res) => {
 exports.fillSlotByServiceSlug = async (req, res) => {
   // PetID is also given in req.body
   try {
-    const service = await serviceRepository.getBySlug(req.body.service);
+    const service = await serviceRepository.getBySlug(req.body.serviceSlug);
     // Guard clause
     if (!service) {
       res.send(404).send({
