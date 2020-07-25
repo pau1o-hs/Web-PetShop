@@ -3,3 +3,7 @@
     <router-view />
   </div>
 </template>
+
+<style>
+@import "./mockup/style.css";
+</style>

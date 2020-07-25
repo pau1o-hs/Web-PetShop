@@ -1,33 +1,19 @@
 ﻿<template>
   <div class="foods">
     <section id="foods">
-      <v-container class="my-5">
-        <div
-          class="item-unity food1"
-          v-for="(item, index) in products"
-          :key="item.username"
-        >
-          <v-layout row>
-            <v-flex xs12 md6>
-              <img
-                src="../mockup/images/racoes/racao-gato.jpg"
-                alt="Ração de gato"
-              />
-              <h2 id="nome-item">{{ item.username }}</h2>
-              <p id="descricao-item">{{ index }}</p>
-              <p id="preco">R$0,00</p>
-              <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-            </v-flex>
-          </v-layout>
-        </div>
-      </v-container>
+      <div class="item-unity" v-for="item in products" :key="item.username">
+        <img src="@/mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" />
+        <h2 id="nome-item">{{ item.name }}</h2>
+        <p id="descricao-item">{{ item.description }}</p>
+        <p id="preco">{{ item.price }}</p>
+        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
+      </div>
     </section>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-// const url = "http://localhost:8080/api/products/";
 
 export default {
   name: "Foods",
@@ -38,13 +24,16 @@ export default {
     };
   },
   mounted() {
-    var vm = this;
-    axios
-      .get("https://run.mocky.io/v3/baa0bfa5-b6a0-472f-acad-25a53ebdc89b")
-      .then((response) => {
-        // console.log(response.data.data);
-        vm.products = response.data.data;
-      });
+    axios.get("http://localhost:8080/api/products/").then((response) => {
+      console.log(response.data);
+      this.products = response.data;
+    });
+  },
+  methods: {
+    getImage(path) {
+      alert(path);
+      return path;
+    },
   },
   /* async created() {
     try {

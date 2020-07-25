@@ -37,7 +37,7 @@ module.exports = async function () {
   await repos.product.createOne({
     name: 'Ração para gatos',
     tag: ['foods'],
-    photo: 'um/exemplo',
+    photo: '../mockup/images/racoes/racao-gato.jpg',
     description: 'Ração deliciosa e nutritiva para o seu gatinho.',
     price: 9.99,
     inStock: 42,
@@ -47,7 +47,7 @@ module.exports = async function () {
   await repos.product.createOne({
     name: 'Ração para cachorros',
     tag: ['foods'],
-    photo: 'um/exemplo2',
+    photo: '../mockup/images/racoes/racao-cao.jpg',
     description: 'Ração deliciosa e nutritiva para o seu cachorrinho.',
     price: 11.99,
     inStock: 30,

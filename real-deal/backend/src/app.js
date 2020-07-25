@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes');
 const populateDb = require('./populate');
 
@@ -16,6 +17,8 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.DB_CONNECTION_STRING).then(async () => {
   await populateDb();
 });
+
+app.use(cors());
 
 app.use(express.json());
 app.use('/api', routes);

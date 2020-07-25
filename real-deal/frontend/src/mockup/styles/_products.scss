@@ -7,29 +7,28 @@ $navbar-top: $my-blue;
 	padding: 0px;
 }
 
-#service-title{
+#service-title {
 	width: 100%;
 	margin: 5vh 0px;
-	text-align:center;
+	text-align: center;
 	align-self: center;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-
-#menu-products{
+#menu-products {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 
 	width: 65%;
 	height: 70vh;
 	margin: 0 auto;
-	background-color: none;	
+	background-color: none;
 	grid-gap: 2.5vh;
 	grid-template-areas: "a b f" "a c d" "e c d";
 	align-self: center;
 	margin-bottom: 5vh;
 	a {
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 		font-size: 40px;
 		color: white;
 		font-weight: bold;
@@ -38,15 +37,15 @@ $navbar-top: $my-blue;
 	}
 }
 
-#foods{
+#foods {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 
 	width: 65%;
 	height: auto;
-	
+
 	margin: 0 auto;
-	background-color: none;	
+	background-color: none;
 	justify-content: space-between;
 	grid-gap: 2.5vh;
 
@@ -54,18 +53,15 @@ $navbar-top: $my-blue;
 	align-self: center;
 	margin-bottom: 5vh;
 	div {
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 		font-size: 1.5vh;
 		color: black;
 		//font-weight:none;
 		//text-shadow: 0px 0px 3px black;
-		
 	}
 }
 
-
-.btn-prod{
-	
+.btn-prod {
 	width: 100%;
 	max-width: 100%;
 	overflow: hidden;
@@ -75,111 +71,114 @@ $navbar-top: $my-blue;
 	border: none;
 	background-position: center center;
 	background-size: cover;
-	transition: all .5s;
+	transition: all 0.5s;
 
-	// text-align: center; 
+	// text-align: center;
 	// align-self: center;
 
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 
-	&:before { 
-		content:"";
-		position:absolute; top:0;right:0;bottom:0;left:0;
-		background:inherit;
-		transition:inherit;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: inherit;
+		transition: inherit;
 		// cursor: pointer;
 	}
 
-	&:hover:before { 
+	&:hover:before {
 		transform: scale(1.1);
 	}
 
 	p {
 		position: relative;
-		text-align: center; 
+		text-align: center;
 		top: 42%;
 	}
 }
 
 // Banho e tosa
-.prod1{
-	background-image:url(images/categorias/alimentacao.jpg);	
+.prod1 {
+	background-image: url(images/categorias/alimentacao.jpg);
 	grid-area: a;
-	
-	&:hover:before{
-		background-image:url(images/categorias/alimentacao.jpg);	
+
+	&:hover:before {
+		background-image: url(images/categorias/alimentacao.jpg);
 	}
 }
 
 // Castração
-.prod2{
-	background-image:url(images/categorias/products.jpg);
+.prod2 {
+	background-image: url(images/categorias/products.jpg);
 	grid-area: b;
-	
+
 	&:hover:before {
-		background-image:url(images/categorias/products.jpg);
+		background-image: url(images/categorias/products.jpg);
 	}
 }
 
 // Consulta
-.prod3{
-	background-image:url(images/categorias/petiscos.jpg);
+.prod3 {
+	background-image: url(images/categorias/petiscos.jpg);
 	grid-area: c;
 
 	&:hover:before {
-		background-image:url(images/categorias/petiscos.jpg);
+		background-image: url(images/categorias/petiscos.jpg);
 	}
 }
 
 // Vacinacao
-.prod4{
-	background-image:url(images/categorias/passeio.jpg);
+.prod4 {
+	background-image: url(images/categorias/passeio.jpg);
 	grid-area: d;
-	
+
 	&:hover:before {
-		background-image:url(images/categorias/passeio.jpg);
+		background-image: url(images/categorias/passeio.jpg);
 	}
 }
 
 // Adestracao
-.prod5{
-	background-image:url(images/categorias/clothes.jpg);
+.prod5 {
+	background-image: url(images/categorias/clothes.jpg);
 	grid-area: e;
 
 	&:hover:before {
-		background-image:url(images/categorias/clothes.jpg);
+		background-image: url(images/categorias/clothes.jpg);
 	}
 }
 
 // Lar temporario
-.prod6{
-	background-image:url(images/categorias/ambiente.jpg);
+.prod6 {
+	background-image: url(images/categorias/ambiente.jpg);
 	grid-area: f;
-	
-	&:hover:before {
-		background-image:url(images/categorias/ambiente.jpg);
 
+	&:hover:before {
+		background-image: url(images/categorias/ambiente.jpg);
 	}
 }
 // - 0 +
-.item-unity{
-	
+.item-unity {
 	width: 100%;
 	max-width: 100%;
 	height: 100%;
-	
-	display:grid;
+
+	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	//grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
-	grid-template-areas:						"imagem imagem titulo titulo titulo"
-												"imagem imagem descricao descricao descricao"
-												"imagem imagem descricao descricao descricao"
-												"imagem imagem preco preco preco"
-												"buttonadd buttonadd buttonadd buttonadd buttonadd";
-												
+	grid-template-areas:
+		"imagem imagem titulo titulo titulo"
+		"imagem imagem descricao descricao descricao"
+		"imagem imagem descricao descricao descricao"
+		"imagem imagem preco preco preco"
+		"buttonadd buttonadd buttonadd buttonadd buttonadd";
+
 	//grid-gap:0.3;
-	grid-column-gap:0.0vh ;
-	
+	grid-column-gap: 0vh;
+
 	margin: 0 auto;
 	padding: 0;
 	border: none;
@@ -189,35 +188,33 @@ $navbar-top: $my-blue;
 	justify-items: center;
 	// align-items: center;
 	//text-align: center;
-	
+
 	transition-duration: 0.3s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
-	
-	img{
+
+	img {
 		grid-area: imagem;
-		width:100%;
+		width: 100%;
 		height: 100%;
 		object-fit: contain;
 		// size: 10vw;
-
 	}
-	#nome-item{
+	#nome-item {
 		margin-top: 2vh;
-		width:90%;
+		width: 90%;
 		height: 100%;
 		// padding:0.5;
 		grid-area: titulo;
-		justify-self:start;
+		justify-self: start;
 		text-align: left;
-	
 	}
-	#descricao-item{
+	#descricao-item {
 		width: 90%;
 		height: 100%;
-		justify-self:start;
+		justify-self: start;
 		grid-area: descricao;
 		text-align: left;
-		//background-color: red;	
+		//background-color: red;
 	}
 
 	#preco {
@@ -228,43 +225,41 @@ $navbar-top: $my-blue;
 		grid-area: preco;
 	}
 
-	#adicionar-carrinho{
-		grid-area:buttonadd;
+	#adicionar-carrinho {
+		grid-area: buttonadd;
 		width: 100%;
 		height: 5vh;
 		// padding: 60vh auto;
 		//width: 70%;
 		//height: 40%;
-		align-self:end;
+		align-self: end;
 		background-color: gainsboro;
 		outline: none;
 		border: 0;
 		font-size: 1.5vh;
 		font-weight: bold;
 		// color:white;
-		transition: all .3s;
-		// padding: 
+		transition: all 0.3s;
+		// padding:
 		&:hover {
 			background-color: cadetblue;
 			// box-shadow: 0 0 10px cadetblue;
 			// transform: scale(1.05);
 		}
-	}	
+	}
 
 	div {
 		grid-area: addremove;
 		width: 100%;
 	}
-
 }
 
 .btn-handleItemAmount {
-	
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	
+
 	input {
 		// background-color: floralwhite;
 		text-align: center;
@@ -273,27 +268,28 @@ $navbar-top: $my-blue;
 		border: 0;
 		outline: none;
 		font-weight: bold;
-		transition: all .05s;
+		transition: all 0.05s;
 		// color: white;
-		
+
 		//border-width: thin;
 		// border-color: black;
-		&:focus, &:hover {
+		&:focus,
+		&:hover {
 			background-color: khaki;
 			// box-shadow: 0 0 10px khaki;
 			transform: scale(1.1);
 		}
-	}	 
+	}
 
 	button {
-		color:white;
+		color: white;
 		font-weight: bold;
 		// background-color: floralwhite;
 		width: 100%;
 		height: 100%;
 		outline: none;
 		border: 0;
-		transition: all .05s;
+		transition: all 0.05s;
 	}
 
 	#less {
@@ -315,65 +311,56 @@ $navbar-top: $my-blue;
 	}
 }
 
-.food1{
-	grid-area:food1;
+.food1 {
+	grid-area: food1;
 	width: 100%;
-	
 }
-.food2{
-	grid-area:food2;
+.food2 {
+	grid-area: food2;
 	width: 100%;
-	
 }
-.food3{
-	grid-area:food3;
+.food3 {
+	grid-area: food3;
 	width: 100%;
-	
 }
-.food4{
-	grid-area:food4;
+.food4 {
+	grid-area: food4;
 	width: 100%;
-	
 }
-.food5{
-	grid-area:food5;
+.food5 {
+	grid-area: food5;
 	width: 100%;
-	
 }
-.food6{
-	grid-area:food6;
+.food6 {
+	grid-area: food6;
 	width: 100%;
-	
 }
-.food7{
-	grid-area:food7;
+.food7 {
+	grid-area: food7;
 	width: 100%;
-	
 }
-.food8{
-	grid-area:food8;
+.food8 {
+	grid-area: food8;
 	width: 100%;
-	
 }
 
-.customsection{
+.customsection {
 	margin: 0 auto;
-	display:flex;
+	display: flex;
 
 	text-align: center;
-	width:65%;
+	width: 65%;
 	height: 8vh;
 	margin-bottom: 5vh;
 	// background-color:#8E44AD;
 	justify-content: space-around;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 
-	p{
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	p {
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 		font-size: 5vh;
 		font-weight: bold;
 		align-self: center;
-		color:white;
-		
+		color: white;
 	}
 }

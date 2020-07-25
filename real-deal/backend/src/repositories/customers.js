@@ -14,7 +14,6 @@ exports.getByEmail = async (email) => {
   const res = await Customer.findOne({
     email,
   });
-  console.log(res);
   return res;
 };
 
