@@ -14,6 +14,7 @@ exports.getByEmail = async (email) => {
   const res = await Customer.findOne({
     email,
   });
+  console.log(res);
   return res;
 };
 
@@ -22,17 +23,9 @@ exports.create = async (data) => {
   await customer.save();
 };
 
-exports.updateById = async (data) => {
-  await Customer.findByIdAndUpdate(data.id, {
-    $set: {
-      CPF: data.CPF,
-      name: data.name,
-      email: data.email,
-      password: data.password,
-      photo: data.photo,
-      address: data.address,
-      phone: data.phone,
-    },
+exports.updateById = async (id, data) => {
+  await Customer.findByIdAndUpdate(id, {
+    $set: data,
   });
 };
 

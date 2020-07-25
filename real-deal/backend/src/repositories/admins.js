@@ -29,15 +29,7 @@ exports.createNewAdmin = async (data) => {
 
 exports.updateById = async (id, data) => {
   await Admin.findByIdAndUpdate(id, {
-    $set: {
-      CPF: data.CPF,
-      name: data.name,
-      photo: data.photo,
-      phone: data.phone,
-      email: data.email,
-      admin: data.admin,
-      password: data.password,
-    },
+    $set: data,
   });
 };
 

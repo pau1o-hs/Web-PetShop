@@ -107,7 +107,7 @@ exports.updateMyInfo = async (req, res) => {
     const decoded = await authService.decodeToken(token);
 
     await repository.updateById(decoded.id, {
-      password: passwordEncrypter.encrypt(req.body.password),
+      // password: passwordEncrypter.encrypt(req.body.password),
       ...req.body,
     });
     res.status(200).send(req.body);
@@ -192,9 +192,7 @@ exports.deleteById = async (req, res) => {
 // Used by: Customer
 exports.authenticate = async (req, res) => {
   try {
-    const customer = await repository.getByEmail({
-      email: req.body.email,
-    });
+    const customer = await repository.getByEmail(req.body.email);
     // Guard clauses
     if (!customer) {
       res.status(404).send({

@@ -27,12 +27,7 @@ exports.updateBySlug = async (ownerId, slug, data) => {
   await Pet.findOneAndUpdate(
     { owner: ownerId, slug },
     {
-      $set: {
-        name: data.name,
-        photo: data.photo,
-        race: data.race,
-        age: data.age,
-      },
+      $set: data,
     }
   );
 };

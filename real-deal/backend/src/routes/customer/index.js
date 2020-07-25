@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const customerController = require('../../controllers/customer');
+const customerValidator = require('../../validators/customer');
 const authService = require('../../services/auth');
 
 const profileRoute = require('./profile');
@@ -16,7 +17,12 @@ router.get('/', (req, res) => {
     version: '1.0.0',
   });
 });
-router.post('/auth', customerController.authenticate);
+router.post(
+  '/auth',
+  customerValidator.rules(),
+  customerValidator.validate,
+  customerController.authenticate
+);
 
 router.use('/profile', profileRoute);
 router.use('/products', productsRoute);

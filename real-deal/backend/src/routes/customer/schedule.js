@@ -5,6 +5,8 @@ const validator = require('../../validators/schedule');
 
 const router = Router();
 
+router.get('/', scheduleController.getCurrent);
+
 // POST /schedule → associate a service with an empty slot; the req body, thus,
 // must contain the date (e.g. 20/08/2020) and time (e.g. 10:00) of the slot
 // that must be filled, the service slug (customers don’t have access to service ID)
