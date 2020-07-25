@@ -61,23 +61,26 @@ exports.getBySlug = async (req, res) => {
   }
 };
 
-function filterData(data) {
+function filterData(prodArr) {
   // Customers cannot see quantity in stock, if the product is active or the total sold.
-  return {
-    title: data.title,
-    slug: data.slug,
-    tags: data.tags,
-    photo: data.photo,
-    price: data.price,
-    description: data.description,
-  };
+  const newProdArr = prodArr.map((prod) => {
+    return {
+      title: prod.title,
+      slug: prod.slug,
+      tags: prod.tags,
+      photo: prod.photo,
+      price: prod.price,
+      description: prod.description,
+    };
+  });
+  return newProdArr;
 }
 
 // Used by: Both
 exports.getByTag = async (req, res) => {
   try {
-    const data = await repository.getByTag(req.body.tag);
-    if (!data) {
+    const prodArr = await repository.getByTag(req.body.tag);
+    if (!prodArr) {
       res.status(404).send({
         message: 'Product not found',
       });
@@ -88,17 +91,17 @@ exports.getByTag = async (req, res) => {
       req.body.token || req.query.token || req.headers['x-access-token'];
     if (!token) {
       // this is a customer not logged in
-      res.status(200).send(filterData(data));
+      res.status(200).send(filterData(prodArr));
       return;
     }
 
     const decoded = await authService.decodeToken(token);
     if (!decoded.isAdmin) {
-      res.status(200).send(filterData(data));
+      res.status(200).send(filterData(prodArr));
       return;
     }
 
-    res.status(200).send(data);
+    res.status(200).send(prodArr);
   } catch (error) {
     res.status(500).send({
       message: ' Request Error,it was not possible to get the product',

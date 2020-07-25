@@ -7,7 +7,7 @@ const router = Router();
 
 router.get('/', servicesController.getAll);
 router.get('/:id', servicesController.getById);
-router.get('/tags', servicesController.getByTag);
+router.post('/tags', servicesController.getByTag); // Same purpose as GET
 
 router.post(
   '/',

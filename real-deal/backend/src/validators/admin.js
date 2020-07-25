@@ -9,7 +9,7 @@ exports.rules = () => {
     }),
     body('email').optional().isEmail(),
     body('adminName').optional().isAscii().isLowercase().not().contains(' '),
-    body('password').optional().isLength({ min: 8 }).not().contains(' '),
+    body('password').optional().not().contains(' '),
   ];
 };
 

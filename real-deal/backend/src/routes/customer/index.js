@@ -14,7 +14,7 @@ const router = Router();
 router.get('/', (req, res) => {
   res.status(200).send({
     title: 'PetShop customer API',
-    version: '1.0.0',
+    version: '1.0.1',
   });
 });
 router.post(

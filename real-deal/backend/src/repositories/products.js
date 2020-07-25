@@ -33,7 +33,6 @@ exports.getBySlug = async (slug) => {
 // The controller is responsible for not showing sensible information to non-admins.
 exports.getByTag = async (tag) => {
   const res = await Product.find({ tags: tag, active: true });
-  console.log(res);
   return res;
 };
 
