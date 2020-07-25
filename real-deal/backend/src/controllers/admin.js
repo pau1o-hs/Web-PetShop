@@ -84,7 +84,7 @@ exports.getMyChildrenInfo = async (req, res) => {
 exports.createNewAdmin = async (req, res) => {
   try {
     await repository.createNewAdmin({
-      password: passwordEncrypter.encrypt(req.body.password),
+      password: await passwordEncrypter.encrypt(req.body.password),
       ...req.body,
     });
     res.status(201).send(req.body);
@@ -111,7 +111,7 @@ exports.updateMyInfo = async (req, res) => {
     const decoded = await authService.decodeToken(token);
 
     await repository.updateById(decoded.id, {
-      password: passwordEncrypter.encrypt(req.body.password),
+      password: await passwordEncrypter.encrypt(req.body.password),
       ...req.body,
     });
     res.status(200).send(req.body);
@@ -160,7 +160,12 @@ exports.authenticate = async (req, res) => {
       });
       return;
     }
-    if (!passwordEncrypter.isCorrect(req.body.password, admin.password)) {
+
+    const isPasswordCorrect = await passwordEncrypter.isCorrect(
+      req.body.password,
+      admin.password
+    );
+    if (!isPasswordCorrect) {
       res.status(401).send({
         message: 'Invalid password.',
       });

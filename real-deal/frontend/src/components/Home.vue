@@ -1,32 +1,31 @@
 <template>
-    <div id="Home">
-        <div class="container">
-            <Header></Header>
-            <Escorregador></Escorregador>
-        </div>
-        <Index></Index>
-        <Footer></Footer>
+  <div id="Home">
+    <div class="container">
+      <Header></Header>
+      <Escorregador></Escorregador>
     </div>
+    <Index></Index>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
-    import Home from './Home.vue';
-    import Header from './Header.vue';
-    import Footer from './Footer.vue';
-    import Escorregador from './escorregador.vue';
-    import Index from './Index.vue';
-    import Products from './Products.vue';
+import Header from "./Header.vue";
+import Footer from "./Footer.vue";
+import Escorregador from "./escorregador.vue";
+import Index from "./Index.vue";
 
-    export default {
-        name: 'Home',
-        components: {
-            Home, Header, Footer, Products, Index, Escorregador
-        }
-    };
+export default {
+  name: "Home",
+  components: {
+    Header,
+    Footer,
+    Index,
+    Escorregador,
+  },
+};
 </script>
 
 <style>
-    @import '../mockup/style.css';
+@import "../mockup/style.css";
 </style>
-
-

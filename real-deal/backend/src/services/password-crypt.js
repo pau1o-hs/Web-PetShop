@@ -1,11 +1,10 @@
 require('dotenv').config();
 const bcrypt = require('bcrypt');
 
+const saltRounds = 10;
+
 exports.encrypt = async (plainPassword) => {
-  const hashedPassword = await bcrypt.hash(
-    plainPassword,
-    process.env.SALT_ROUNDS
-  );
+  const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
   return hashedPassword;
 };
 

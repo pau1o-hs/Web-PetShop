@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+const populateDb = require('./populate');
 
 const app = express();
 
@@ -12,7 +13,9 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
 // Connect to the database
-mongoose.connect(process.env.DB_CONNECTION_STRING);
+mongoose.connect(process.env.DB_CONNECTION_STRING).then(async () => {
+  await populateDb();
+});
 
 app.use(express.json());
 app.use('/api', routes);

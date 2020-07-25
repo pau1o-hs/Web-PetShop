@@ -1,12 +1,11 @@
 const Slot = require('../models/slot');
 const serviceRepository = require('../repositories/services');
+const scheduleRepository = require('../repositories/schedule');
 
 // Used by: Both
 exports.getCurrent = async (req, res) => {
   try {
-    const schedule = await Slot.find({}) // get ALL open or booked slots
-      .populate('service', 'title photo')
-      .populate('pet', 'name photo');
+    const schedule = await scheduleRepository.getCurrent();
     res.status(200).send(schedule);
   } catch (e) {
     res.status(500).send({
@@ -28,13 +27,12 @@ exports.fillSlotByServiceSlug = async (req, res) => {
       });
     }
 
-    const bookedSlot = new Slot({
+    await scheduleRepository.fillSlot({
       service: service._id,
       date: req.body.date,
       pet: req.body.pet,
       state: 'BOOKED',
     });
-    await bookedSlot.save();
 
     res.status(201).send({ message: 'Service booked successfully!' });
   } catch (e) {
@@ -57,11 +55,10 @@ exports.fillSlotByServiceId = async (req, res) => {
       });
     }
 
-    const openSlot = new Slot({
+    await scheduleRepository.fillSlot({
       service: service._id,
       date: req.body.date,
     });
-    await openSlot.save();
 
     res.status(201).send({ message: 'Service slot opened successfully!' });
   } catch (e) {
@@ -76,10 +73,9 @@ exports.fillSlotByServiceId = async (req, res) => {
 exports.changeSlotService = async (req, res) => {
   // the new ServiceID is given in req.body
   try {
-    await Slot.findOneAndUpdate(
-      { date: req.body.date },
-      { $set: { service: req.body.service } }
-    );
+    await scheduleRepository.changeSlot(req.body.date, {
+      service: req.body.service,
+    });
     res.status(200).send({ message: 'Service slot successfully update!' });
   } catch (e) {
     res.status(500).send({
@@ -92,7 +88,7 @@ exports.changeSlotService = async (req, res) => {
 // Used by: Admin
 exports.emptySlot = async (req, res) => {
   try {
-    await Slot.findOneAndDelete({ date: req.body.date });
+    await scheduleRepository.emptySlot(req.body.date);
     res.status(200).send({ message: 'Service slot successfully deleted!' });
   } catch (e) {
     res.status(500).send({

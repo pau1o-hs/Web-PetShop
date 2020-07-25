@@ -107,7 +107,7 @@ exports.updateMyInfo = async (req, res) => {
     const decoded = await authService.decodeToken(token);
 
     await repository.updateById(decoded.id, {
-      // password: passwordEncrypter.encrypt(req.body.password),
+      password: await passwordEncrypter.encrypt(req.body.password),
       ...req.body,
     });
     res.status(200).send(req.body);
@@ -130,7 +130,7 @@ exports.updateMyInfo = async (req, res) => {
 exports.updateById = async (req, res) => {
   try {
     await repository.updateById(req.params.id, {
-      password: passwordEncrypter.encrypt(req.body.password),
+      password: await passwordEncrypter.encrypt(req.body.password),
       ...req.body,
     });
     res.status(200).send(req.body);
@@ -200,7 +200,12 @@ exports.authenticate = async (req, res) => {
       });
       return;
     }
-    if (!passwordEncrypter.isCorrect(req.body.password, customer.password)) {
+
+    const isPasswordCorrect = await passwordEncrypter.isCorrect(
+      req.body.password,
+      customer.password
+    );
+    if (!isPasswordCorrect) {
       res.status(401).send({
         message: 'Invalid password.',
       });
