@@ -26,7 +26,7 @@ exports.getMyInfo = async (req, res) => {
     res.status(200).send(data);
   } catch (e) {
     res.status(500).send({
-      message: 'Error while processing request.',
+      message: 'Error while processing the request.',
       error: e,
     });
   }
@@ -39,11 +39,11 @@ exports.getMyInfo = async (req, res) => {
 // Used by: Admin
 exports.getAllAdminsInfo = async (req, res) => {
   try {
-    const data = await repository.getAllAdminsInfo();
+    const data = await repository.getAll();
     res.status(200).send(data);
   } catch (e) {
     res.status(500).send({
-      message: 'Error while processing request.',
+      message: 'Error while processing the request.',
       error: e,
     });
   }
@@ -62,11 +62,11 @@ exports.getMyChildrenInfo = async (req, res) => {
       req.body.token || req.query.token || req.headers['x-access-token'];
     const decoded = await authService.decodeToken(token);
 
-    const data = await repository.getMyChildrenInfo(decoded.id);
+    const data = await repository.getMyChildren(decoded.id);
     res.status(200).send(data);
   } catch (e) {
     res.status(500).send({
-      message: 'Error while processing request.',
+      message: 'Error while processing the request.',
       error: e,
     });
   }
@@ -94,7 +94,7 @@ exports.createNewAdmin = async (req, res) => {
     res.status(201).send(req.body);
   } catch (e) {
     res.status(500).send({
-      message: 'Error while processing request.',
+      message: 'Error while processing the request.',
       error: e,
     });
   }
@@ -125,12 +125,17 @@ exports.updateMyInfo = async (req, res) => {
     res.status(200).send(req.body);
   } catch (e) {
     res.status(500).send({
-      message: 'Error while processing request.',
+      message: 'Error while processing the request.',
       error: e,
     });
   }
 };
 
+/*
+  Testar no casos:
+  - Id inválido
+  - Sucesso
+*/
 // Used by: Admin
 exports.deleteChildAdmin = async (req, res) => {
   try {
@@ -138,12 +143,18 @@ exports.deleteChildAdmin = async (req, res) => {
     res.status(200).send({ message: 'Child admin removed successfully.' });
   } catch (e) {
     res.status(500).send({
-      message: 'Error while processing request.',
+      message: 'Error while processing the request.',
       error: e,
     });
   }
 };
 
+/*
+  Testar no casos:
+  - Admin-name invalido
+  - Password invalido
+  - Sucesso
+*/
 // Used by: Admin
 exports.authenticate = async (req, res) => {
   try {
@@ -174,7 +185,7 @@ exports.authenticate = async (req, res) => {
     });
   } catch (e) {
     res.status(500).send({
-      message: 'Error while processing request.',
+      message: 'Error while processing the request.',
       error: e,
     });
   }

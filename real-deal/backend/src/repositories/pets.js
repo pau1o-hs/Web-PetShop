@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const Pet = mongoose.Model('Pet');
 
@@ -7,27 +8,37 @@ exports.getAll = async (ownerId) => {
   return res;
 };
 
-exports.getBySlug = async (slug) => {
-  const res = await Pet.findOne({ slug }, 'name race photo age');
+exports.getBySlug = async (ownerId, slug) => {
+  const res = await Pet.findOne(
+    { owner: ownerId, slug },
+    'name race photo age'
+  );
   return res;
 };
 
-exports.createOne = async (data) => {
-  const pet = new Pet(data);
+exports.createOne = async (ownerId, data) => {
+  const pet = new Pet({
+    owner: ownerId,
+    slug: slugify(data.name, { lower: true, strict: true }),
+    ...data,
+  });
   await pet.save();
 };
 
-exports.updateBySlug = async (slug, data) => {
-  await Pet.findOneAndUpdate(slug, {
-    $set: {
-      name: data.name,
-      photo: data.photo,
-      race: data.race,
-      age: data.age,
-    },
-  });
+exports.updateBySlug = async (ownerId, slug, data) => {
+  await Pet.findOneAndUpdate(
+    { owner: ownerId, slug },
+    {
+      $set: {
+        name: data.name,
+        photo: data.photo,
+        race: data.race,
+        age: data.age,
+      },
+    }
+  );
 };
 
-exports.deleteBySlug = async (slug) => {
-  await Pet.findOneAndDelete(slug);
+exports.deleteBySlug = async (ownerId, slug) => {
+  await Pet.findOneAndDelete({ owner: ownerId, slug });
 };

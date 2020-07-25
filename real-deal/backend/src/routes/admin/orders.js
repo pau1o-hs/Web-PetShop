@@ -7,13 +7,7 @@ const router = Router();
 
 router.get('/', ordersController.getAll);
 router.get('/:orderId', ordersController.getById);
-router.get('/:customerId', ordersController.getByCustomer);
-router.put(
-  '/orders',
-  validator.rules(),
-  validator.validate,
-  ordersController.updateAll
-);
+router.get('/customer/:customerId', ordersController.getByCustomer);
 router.put(
   '/:orderId',
   validator.rules(),

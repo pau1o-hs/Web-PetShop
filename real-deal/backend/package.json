@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
     "test": "NODE_ENV=test jest",
     "lint": "npx eslint ."
   },
@@ -17,7 +17,9 @@
     "express": "^4.17.1",
     "express-validator": "^6.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.22"
+    "mongoose": "^5.9.22",
+    "slugify": "^1.4.4",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "eslint": "^7.4.0",

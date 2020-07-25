@@ -1,70 +1,93 @@
 const repository = require('../repositories/pets');
+const authService = require('../services/auth');
 
 // Used by: Customer
 exports.getAll = async (req, res) => {
-  const data = await repository.getAll();
-  res.status(200).send(data);
+  try {
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    const data = await repository.getAll(decoded.id);
+    res.status(200).send(data);
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing the request.',
+      error: e,
+    });
+  }
 };
 
 // Used by: Customer
 exports.getBySlug = async (req, res) => {
   try {
-    const data = await repository.getBySlug(req.params.slug);
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    const data = await repository.getBySlug(decoded.id, req.body.slug);
+    if (!data) {
+      res.status(404).send({
+        message: 'Pet not found',
+      });
+      return;
+    }
     res.status(200).send(data);
-  } catch (error) {
+  } catch (e) {
     res.status(500).send({
-      message: '',
+      message: 'Error while processing the request.',
+      error: e,
     });
   }
 };
 
 // Used by: Customer
 exports.createOne = async (req, res) => {
-  await repository
-    .createOne(req.body)
-    .then(() => {
-      res.status(201).send({
-        message: 'Product Registred!',
-      });
-    })
-    .catch((e) => {
-      res.status(400).send({
-        message: 'Error to register a product',
-        data: e,
-      });
+  try {
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    await repository.createOne(decoded.id, req.body);
+    res.status(201).send(req.body);
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing the request.',
+      error: e,
     });
+  }
 };
 
 // Used by: Customer
 exports.updateBySlug = async (req, res) => {
-  await repository
-    .updateBySlug(req.params.slug, req.body)
-    .then(() => {
-      res.status(200).send({
-        message: 'Produto atualizado',
-      });
-    })
-    .catch((e) => {
-      res.status(400).send({
-        message: 'Falha ao atualizar produto',
-        data: e,
-      });
+  try {
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    await repository.updateBySlug(decoded.id, req.body.slug, req.body);
+    res.status(200).send(req.body);
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing the request.',
+      error: e,
     });
+  }
 };
 
 // Used by: Customer
 exports.deleteBySlug = async (req, res) => {
-  await repository
-    .deleteById(req.params.id)
-    .then(() => {
-      res.status(200).send({
-        message: 'Produto removido',
-      });
-    })
-    .catch((e) => {
-      res.status(400).send({
-        message: 'Falha ao remover produto',
-        data: e,
-      });
+  try {
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    await repository.deleteBySlug(decoded.id, req.body.slug);
+    res.status(204).send();
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing the request.',
+      error: e,
     });
+  }
 };

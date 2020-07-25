@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const Service = mongoose.model('Service');
 
@@ -35,7 +36,10 @@ exports.getByTag = async (tag) => {
 };
 
 exports.createOne = async (data) => {
-  const product = new Service(data);
+  const product = new Service({
+    slug: slugify(data.name, { lower: true, strict: true }),
+    ...data,
+  });
   await product.save();
 };
 

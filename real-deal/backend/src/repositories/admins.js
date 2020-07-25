@@ -7,12 +7,12 @@ exports.getById = async (id) => {
   return res;
 };
 
-exports.getAllAdminsInfo = async () => {
+exports.getAll = async () => {
   const res = await Admin.find({}, 'name photo phone email');
   return res;
 };
 
-exports.getMyChildrenInfo = async (id) => {
+exports.getMyChildren = async (id) => {
   const res = (await Admin.findById(id, 'childAdmins')).populate('childAdmins');
   return res;
 };
