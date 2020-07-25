@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-const Order = mongoose.model('Order');
+const Order = require('../models/order');
 
 exports.getAll = async () => {
   const res = await Order.find({})

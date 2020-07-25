@@ -8,4 +8,4 @@ router.get('/', productsController.getAllActives);
 router.get('/:slug', productsController.getBySlug);
 router.get('/tags', productsController.getByTag);
 
-exports = router;
+module.exports = router;

@@ -14,6 +14,6 @@ router.put(
   validator.validate,
   ordersController.updateById
 );
-router.delete('/:orderId', ordersController.deleteByID);
+router.delete('/:orderId', ordersController.deleteById);
 
-exports = router;
+module.exports = router;

@@ -15,4 +15,4 @@ router.put(
 );
 router.delete('/:id', customersController.deleteById);
 
-exports = router;
+module.exports = router;

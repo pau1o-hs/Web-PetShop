@@ -1,7 +1,5 @@
-const mongoose = require('mongoose');
 const slugify = require('slugify');
-
-const Service = mongoose.model('Service');
+const Service = require('../models/service');
 
 // Admin
 exports.getAll = async () => {

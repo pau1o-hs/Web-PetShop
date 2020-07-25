@@ -2,10 +2,10 @@ const { body, validationResult } = require('express-validator');
 
 exports.rules = () => {
   return [
-    body('slug').isSlug(),
-    body('tags').isArray(),
-    body('price').isDecimal(),
-    body('totalBooked').isInt(),
+    body('slug').optional().isSlug(),
+    body('tags').optional().isArray(),
+    body('price').optional().isDecimal(),
+    body('totalBooked').optional().isInt(),
   ];
 };
 

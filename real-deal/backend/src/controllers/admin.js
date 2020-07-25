@@ -84,12 +84,8 @@ exports.getMyChildrenInfo = async (req, res) => {
 exports.createNewAdmin = async (req, res) => {
   try {
     await repository.createNewAdmin({
-      CPF: req.body.cpf,
-      name: req.body.name,
-      phone: req.body.phone,
-      email: req.body.email,
-      adminName: req.body.adminName,
       password: passwordEncrypter.encrypt(req.body.password),
+      ...req.body,
     });
     res.status(201).send(req.body);
   } catch (e) {
@@ -115,12 +111,8 @@ exports.updateMyInfo = async (req, res) => {
     const decoded = await authService.decodeToken(token);
 
     await repository.updateById(decoded.id, {
-      CPF: req.body.cpf,
-      name: req.body.name,
-      phone: req.body.phone,
-      email: req.body.email,
-      adminName: req.body.adminName,
       password: passwordEncrypter.encrypt(req.body.password),
+      ...req.body,
     });
     res.status(200).send(req.body);
   } catch (e) {

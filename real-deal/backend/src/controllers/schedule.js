@@ -1,4 +1,4 @@
-const Slot = require('mongoose').Model('Slot');
+const Slot = require('../models/slot');
 const serviceRepository = require('../repositories/services');
 
 // Used by: Both

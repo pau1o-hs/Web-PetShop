@@ -28,4 +28,4 @@ const schema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.Model('Pet', schema);
+module.exports = mongoose.model('Pet', schema);

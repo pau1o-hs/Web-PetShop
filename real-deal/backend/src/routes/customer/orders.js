@@ -9,7 +9,7 @@ router.post(
   '/',
   validator.rules(),
   validator.validate,
-  ordersController.create
+  ordersController.createOne
 );
 
-exports = router;
+module.exports = router;

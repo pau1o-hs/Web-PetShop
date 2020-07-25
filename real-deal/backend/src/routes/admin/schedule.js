@@ -36,4 +36,4 @@ router.put(
 // with the specified slot, the operation will silently fail.
 router.delete('/', scheduleController.emptySlot);
 
-exports = router;
+module.exports = router;

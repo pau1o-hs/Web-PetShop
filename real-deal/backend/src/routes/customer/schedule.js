@@ -16,4 +16,4 @@ router.post(
   scheduleController.fillSlotByServiceSlug
 );
 
-exports = router;
+module.exports = router;

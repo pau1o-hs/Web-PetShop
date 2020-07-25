@@ -2,14 +2,15 @@ const { body, validationResult } = require('express-validator');
 
 exports.rules = () => {
   return [
-    body('CPF').isNumeric().isLength({ min: 11, max: 11 }),
-    body('name').isLength({ min: 5, max: 25 }),
-    body('phone').isMobilePhone('pt-BR').isLength({
+    body('CPF').optional().isNumeric().isLength({ min: 11, max: 11 }),
+    body('name').optional().isLength({ min: 5, max: 25 }),
+    body('phone').optional().isMobilePhone('pt-BR').isLength({
       min: 10,
     }),
-    body('email').isEmail(),
-    body('adminName').isAscii().isLowercase().not().contains(' '),
-    body('password').isLength({ min: 8 }).not().contains(' '),
+    body('email').optional().isEmail(),
+    body('adminName').optional().isAscii().isLowercase().not().contains(' '),
+    body('password').optional().isLength({ min: 8 }).not().contains(' '),
+  ];
 };
 
 // Middleware

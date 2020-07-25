@@ -55,4 +55,4 @@ router.use('/services', authService.isAuthenticatedAdmin, servicesRoute);
 router.use('/orders', authService.isAuthenticatedAdmin, ordersRoute);
 router.use('/schedule', authService.isAuthenticatedAdmin, scheduleRoute);
 
-exports = router;
+module.exports = router;

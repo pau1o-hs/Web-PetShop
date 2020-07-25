@@ -3,9 +3,9 @@ const { body, validationResult } = require('express-validator');
 exports.rules = () => {
   return [
     body('date').isDate(),
-    body('service').isMongoId(),
-    body('serviceSlug').isSlug(),
-    body('pet').isMongoId(),
+    body('service').optional().isMongoId(),
+    body('serviceSlug').optional().isSlug(),
+    body('pet').optional().isMongoId(),
   ];
 };
 

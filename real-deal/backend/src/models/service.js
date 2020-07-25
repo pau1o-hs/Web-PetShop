@@ -48,4 +48,4 @@ const schema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.Model('Service', schema);
+module.exports = mongoose.model('Service', schema);

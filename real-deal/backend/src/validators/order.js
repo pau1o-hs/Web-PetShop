@@ -3,13 +3,13 @@ const { body, validationResult } = require('express-validator');
 exports.rules = () => {
   return [
     body('customer').isMongoId(),
-    body('products').isArray(),
-    body('products.product').isMongoId(),
-    body('products.quantity').isInt(),
-    body('services').isArray(),
-    body('services.service').isMongoId(),
-    body('services.pet').isMongoId(),
-    body('services.date').isDate(),
+    body('products').optional().isArray(),
+    body('products.product').optional().isMongoId(),
+    body('products.quantity').optional().isInt(),
+    body('services').optional().isArray(),
+    body('services.service').optional().isMongoId(),
+    body('services.pet').optional().isMongoId(),
+    body('services.date').optional().isDate(),
   ];
 };
 

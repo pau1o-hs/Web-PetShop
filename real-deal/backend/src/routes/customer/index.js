@@ -24,4 +24,4 @@ router.use('/services', servicesRoute);
 router.use('/orders', authService.isAuthenticated, ordersRoute);
 router.use('/schedule', authService.isAuthenticated, scheduleRoute);
 
-exports = router;
+module.exports = router;

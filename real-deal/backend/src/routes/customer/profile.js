@@ -29,4 +29,4 @@ router.delete(
 
 router.use('/pets', authService.isAuthenticated, petsRoute);
 
-exports = router;
+module.exports = router;

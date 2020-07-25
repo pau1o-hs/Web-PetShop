@@ -7,4 +7,4 @@ const router = Router();
 router.use('/', customerRoute);
 router.use('/admin', adminRoute);
 
-exports = router;
+module.exports = router;

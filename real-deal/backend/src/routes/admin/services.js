@@ -25,4 +25,4 @@ router.put(
 
 router.delete('/:id', servicesController.deleteById);
 
-exports = router;
+module.exports = router;

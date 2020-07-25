@@ -2,9 +2,9 @@ const { body, validationResult } = require('express-validator');
 
 exports.rules = () => {
   return [
-    body('owner').isMongoId(),
-    body('age').isInt(),
-    body('slug').isSlug(),
+    body('owner').optional().isMongoId(),
+    body('age').optional().isInt(),
+    body('slug').optional().isSlug(),
   ];
 };
 

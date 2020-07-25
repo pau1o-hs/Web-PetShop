@@ -25,4 +25,4 @@ const schema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.Model('Slot', schema);
+module.exports = mongoose.model('Slot', schema);

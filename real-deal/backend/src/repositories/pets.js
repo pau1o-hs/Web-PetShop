@@ -1,7 +1,5 @@
-const mongoose = require('mongoose');
 const slugify = require('slugify');
-
-const Pet = mongoose.Model('Pet');
+const Pet = require('../models/pet');
 
 exports.getAll = async (ownerId) => {
   const res = await Pet.find({ owner: ownerId }, '-owner');

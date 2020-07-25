@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-const Admin = mongoose.model('Admin');
+const Admin = require('../models/admin');
 
 exports.getById = async (id) => {
   const res = await Admin.findById(id, '-childAdmins -password');
@@ -32,7 +30,7 @@ exports.createNewAdmin = async (data) => {
 exports.updateById = async (id, data) => {
   await Admin.findByIdAndUpdate(id, {
     $set: {
-      CPF: data.cpf,
+      CPF: data.CPF,
       name: data.name,
       photo: data.photo,
       phone: data.phone,

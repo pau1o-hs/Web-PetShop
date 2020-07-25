@@ -9,13 +9,18 @@ const router = Router();
 // So, for instance, "getAll" means "get all pets owned by the customer", and so on...
 router.get('/', petsController.getAll);
 router.get('/:slug', petsController.getBySlug);
-router.post('/', validator.rules(), validator.validate, petsController.create);
+router.post(
+  '/',
+  validator.rules(),
+  validator.validate,
+  petsController.createOne
+);
 router.put(
   '/:slug',
   validator.rules(),
   validator.validate,
-  petsController.update
+  petsController.updateBySlug
 );
-router.delete('/:slug', petsController.delete);
+router.delete('/:slug', petsController.deleteBySlug);
 
-exports = router;
+module.exports = router;

@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-const Customer = mongoose.Model('Customer');
+const Customer = require('../models/customer');
 
 exports.getAll = async () => {
   const res = await Customer.find({}, '-password');
@@ -27,7 +25,7 @@ exports.create = async (data) => {
 exports.updateById = async (data) => {
   await Customer.findByIdAndUpdate(data.id, {
     $set: {
-      CPF: data.cpf,
+      CPF: data.CPF,
       name: data.name,
       email: data.email,
       password: data.password,
