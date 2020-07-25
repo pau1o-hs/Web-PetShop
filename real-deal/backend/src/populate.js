@@ -36,7 +36,7 @@ module.exports = async function () {
 
   await repos.product.createOne({
     name: 'Ração para gatos',
-    tags: ['foods'],
+    tags: ['foods', 'teste'],
     photo: '../mockup/images/racoes/racao-gato.jpg',
     description: 'Ração deliciosa e nutritiva para o seu gatinho.',
     price: 9.99,
@@ -54,44 +54,50 @@ module.exports = async function () {
     totalSold: 55,
   });
 
-  await repos.pet.createOne('5f1c5b6a44652540c66f0f28', {
+  const customers = await repos.customer.getAll();
+
+  await repos.pet.createOne(customers[0]._id, {
     name: 'Tchutchucão',
     photo: 'um/exemplo3',
     race: 'Dog do mal',
     age: 5,
   });
 
+  const services = await repos.service.getAllActives();
+  const pet = await repos.pet.getBySlug(customers[0], 'tchutchucao');
+  const products = await repos.product.getAllActives();
+
   await repos.order.createOne({
     number: uuid(),
-    customer: '5f1c5b6a44652540c66f0f28',
+    customer: customers[0]._id,
     services: [
       {
-        service: '5f1c61785f23af470a76ed97',
-        pet: '5f1c61785f23af470a76ed9a',
+        service: services[0]._id,
+        pet: services[0]._id,
         date: Date.UTC(2020, 6, 27, 12, 0), // 27/07/2020, as 12:00
       },
     ],
     products: [
       {
         quantity: 5,
-        products: '5f1c61785f23af470a76ed98',
+        product: products[0]._id,
       },
       {
         quantity: 8,
-        products: '5f1c61785f23af470a76ed99',
+        product: products[1]._id,
       },
     ],
   });
 
   await repos.schedule.fillSlot({
-    service: '5f1c61785f23af470a76ed97',
+    service: services[0]._id,
     date: Date.UTC(2020, 6, 27, 12, 0), // 27/07/2020, as 12:00
-    pet: '5f1c61785f23af470a76ed9a',
+    pet: pet._id,
     state: 'BOOKED',
   });
 
   await repos.schedule.fillSlot({
-    service: '5f1c61785f23af470a76ed97',
+    service: services[0]._id,
     date: Date.UTC(2020, 6, 27, 13, 0), // 27/07/2020, as 13:00
   });
 };

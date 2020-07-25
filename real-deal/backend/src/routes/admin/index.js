@@ -49,7 +49,7 @@ router.delete(
   adminController.deleteChildAdmin
 );
 
-router.use('/customers', authService.isAuthenticatedAdmin, customersRoute);
+router.use('/customers', customersRoute);
 router.use('/products', authService.isAuthenticatedAdmin, productsRoute);
 router.use('/services', authService.isAuthenticatedAdmin, servicesRoute);
 router.use('/orders', authService.isAuthenticatedAdmin, ordersRoute);

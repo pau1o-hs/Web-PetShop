@@ -2,7 +2,7 @@ const Slot = require('../models/slot');
 
 exports.getCurrent = async () => {
   const res = await Slot.find({}) // get ALL open or booked slots
-    .populate('service', 'title photo')
+    .populate('service', 'name photo')
     .populate('pet', 'name photo');
   return res;
 };

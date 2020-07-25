@@ -27,13 +27,12 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:8080/api/products/tags/", {
+      .post("http://localhost:8080/api/products/tags/", {
         tag: "foods"
       })
       .then(response => {
         console.log(response.data);
         this.products = response.data;
-        console.log(this.products[0].name);
       });
   }
 };
