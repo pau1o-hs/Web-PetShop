@@ -1,60 +1,11 @@
-
 <template>
-  <div class="snaks">
+  <div class="cloth">
     <section id="foods">
-      <div class="item-unity food1">
-        <img src="../mockup/images/roupas/roupa1.jpg" alt="Ração de gato" />
-        <h2 id="nome-item">Item name</h2>
-        <p id="descricao-item">Description</p>
-        <p id="preco">R$0,00</p>
-        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="item-unity food2">
-        <img src="../mockup/images/roupas/roupa2.jpg" alt="Ração de gato" />
-        <h2 id="nome-item">Item name</h2>
-        <p id="descricao-item">Description</p>
-        <p id="preco">R$0,00</p>
-        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="item-unity food3">
-        <img src="../mockup/images/roupas/roupa3.jpg" alt="Ração de gato" />
-        <h2 id="nome-item">Item name</h2>
-        <p id="descricao-item">Description</p>
-        <p id="preco">R$0,00</p>
-        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="item-unity food4">
-        <img src="../mockup/images/roupas/roupa4.jpg" alt="Ração de gato" />
-        <h2 id="nome-item">Item name</h2>
-        <p id="descricao-item">Description</p>
-        <p id="preco">R$0,00</p>
-        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="item-unity food5">
-        <img src="../mockup/images/roupas/roupa5.jpg" alt="Ração de gato" />
-        <h2 id="nome-item">Item name</h2>
-        <p id="descricao-item">Description</p>
-        <p id="preco">R$0,00</p>
-        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="item-unity food6">
-        <img src="../mockup/images/roupas/roupa6.jpg" alt="Ração de gato" />
-        <h2 id="nome-item">Item name</h2>
-        <p id="descricao-item">Description</p>
-        <p id="preco">R$0,00</p>
-        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="item-unity food7">
-        <img src="../mockup/images/roupas/roupa7.jpg" alt="Ração de gato" />
-        <h2 id="nome-item">Item name</h2>
-        <p id="descricao-item">Description</p>
-        <p id="preco">R$0,00</p>
+      <div class="item-unity" v-for="item in products" :key="item.username">
+        <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" />
+        <h2 id="nome-item">{{ item.name }}</h2>
+        <p id="descricao-item">{{ item.description }}</p>
+        <p id="preco">{{ item.price }}</p>
         <button id="adicionar-carrinho">Adicionar ao carrinho</button>
       </div>
     </section>
@@ -62,13 +13,27 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Cloth",
-  props: {
-    msg: String
+  data() {
+    return {
+      products: [],
+      error: ""
+    };
+  },
+  mounted() {
+    axios
+      .get("http://localhost:8080/api/products/tags/", {
+        tag: "food"
+      })
+      .then(response => {
+        console.log(response.data);
+        this.products = response.data;
+      });
   }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

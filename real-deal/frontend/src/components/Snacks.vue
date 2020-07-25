@@ -1,52 +1,39 @@
-
 <template>
-    <div class="snaks">
-        <section id="foods">
-            <div class="item-unity food1">
-                <img src="../mockup/images/petiscos/snack1.jpg" alt="Ra��o de gato">
-                <h2 id="nome-item">Item name</h2>
-                <p id="descricao-item">Description</p>
-                <p id="preco">R$0,00</p>
-                <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-
-            </div>
-
-            <div class="item-unity food2">
-                <img src="../mockup/images/petiscos/snack2.jpg" alt="Ra��o de gato">
-                <h2 id="nome-item">Item name</h2>
-                <p id="descricao-item">Description</p>
-                <p id="preco">R$0,00</p>
-                <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-            </div>
-
-            <div class="item-unity food3">
-                <img src="../mockup/images/petiscos/snack3.jpg" alt="Ra��o de gato">
-                <h2 id="nome-item">Item name</h2>
-                <p id="descricao-item">Description</p>
-                <p id="preco">R$0,00</p>
-                <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-            </div>
-
-            <div class="item-unity food4">
-                <img src="../mockup/images/petiscos/snack4.jpg" alt="Ra��o de gato">
-                <h2 id="nome-item">Item name</h2>
-                <p id="descricao-item">Description</p>
-                <p id="preco">R$0,00</p>
-                <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-
-            </div>
-        </section>
-    </div>
+  <div class="snacks">
+    <section id="foods">
+      <div class="item-unity" v-for="item in products" :key="item.username">
+        <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" />
+        <h2 id="nome-item">{{ item.name }}</h2>
+        <p id="descricao-item">{{ item.description }}</p>
+        <p id="preco">{{ item.price }}</p>
+        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'Snacks',
-        props: {
-            msg: String
-        }
+import axios from "axios";
+
+export default {
+  name: "Snacks",
+  data() {
+    return {
+      products: [],
+      error: ""
     };
+  },
+  mounted() {
+    axios
+      .get("http://localhost:8080/api/products/tags/", {
+        tag: "snacks"
+      })
+      .then(response => {
+        console.log(response.data);
+        this.products = response.data;
+      });
+  }
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

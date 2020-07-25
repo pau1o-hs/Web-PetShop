@@ -34,11 +34,7 @@
     </section>
 
     <!-- FOODS -->
-    <div
-      id="foodsection"
-      class="customsection"
-      style="background-color:#8E44AD;"
-    >
+    <div id="foodsection" class="customsection" style="background-color:#8E44AD;">
       <p>Foods</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -47,11 +43,7 @@
     <Foods></Foods>
 
     <!-- TOYS -->
-    <div
-      id="toysection"
-      class="customsection"
-      style="background-color:#2980B9;"
-    >
+    <div id="toysection" class="customsection" style="background-color:#2980B9;">
       <p>Toys</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -60,11 +52,7 @@
     <Toys></Toys>
 
     <!-- SNACK -->
-    <div
-      id="snacksection"
-      class="customsection"
-      style="background-color:#E74C3C;"
-    >
+    <div id="snacksection" class="customsection" style="background-color:#E74C3C;">
       <p>Snacks</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -73,11 +61,7 @@
     <Snacks></Snacks>
 
     <!-- WALKWAY -->
-    <div
-      id="walkwaysection"
-      class="customsection"
-      style="background-color:#27AE60;"
-    >
+    <div id="walkwaysection" class="customsection" style="background-color:#27AE60;">
       <p>Walkway</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -86,11 +70,7 @@
     <Walkway></Walkway>
 
     <!-- CLOTH -->
-    <div
-      id="clothsection"
-      class="customsection"
-      style="background-color:#F39C12;"
-    >
+    <div id="clothsection" class="customsection" style="background-color:#F39C12;">
       <p>Clothing</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -99,11 +79,7 @@
     <Cloth></Cloth>
 
     <!-- COMFORT -->
-    <div
-      id="comfortsection"
-      class="customsection"
-      style="background-color:#34495E;"
-    >
+    <div id="comfortsection" class="customsection" style="background-color:#34495E;">
       <p>Comfort</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -116,14 +92,14 @@
 </template>
 
 <script>
-import Header from "./Header.vue";
-import Footer from "./Footer.vue";
-import Foods from "./Foods.vue";
-import Toys from "./Toys.vue";
-import Snacks from "./Snacks.vue";
-import Walkway from "./Walkway.vue";
-import Cloth from "./Cloth.vue";
-import Comfort from "./Comfort.vue";
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+import Foods from "@/components/Foods.vue";
+import Toys from "@/components/Toys.vue";
+import Snacks from "@/components/Snacks.vue";
+import Walkway from "@/components/Walkway.vue";
+import Cloth from "@/components/Cloth.vue";
+import Comfort from "@/components/Comfort.vue";
 
 export default {
   name: "Products",
@@ -135,16 +111,16 @@ export default {
     Snacks,
     Walkway,
     Cloth,
-    Comfort,
+    Comfort
   },
   data() {
     return {
-      info: null,
+      info: null
     };
   },
   props: {
-    msg: String,
-  },
+    msg: String
+  }
 };
 </script>
 

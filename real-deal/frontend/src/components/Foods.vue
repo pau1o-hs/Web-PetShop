@@ -1,12 +1,14 @@
 ﻿<template>
   <div class="foods">
     <section id="foods">
-      <div class="item-unity" v-for="item in products" :key="item.username">
-        <img src="@/mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" />
+      <div class="item-unity" v-for="item in products" :key="item._id">
+        <!-- <div v-if="item.tags.includes('foods')"> -->
+        <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" />
         <h2 id="nome-item">{{ item.name }}</h2>
         <p id="descricao-item">{{ item.description }}</p>
         <p id="preco">{{ item.price }}</p>
         <button id="adicionar-carrinho">Adicionar ao carrinho</button>
+        <!-- </div> -->
       </div>
     </section>
   </div>
@@ -20,33 +22,20 @@ export default {
   data() {
     return {
       products: [],
-      error: "",
+      error: ""
     };
   },
   mounted() {
-    axios.get("http://localhost:8080/api/products/").then((response) => {
-      console.log(response.data);
-      this.products = response.data;
-    });
-  },
-  methods: {
-    getImage(path) {
-      alert(path);
-      return path;
-    },
-  },
-  /* async created() {
-    try {
-      const res = await axios.get(
-        "https://run.mocky.io/v3/baa0bfa5-b6a0-472f-acad-25a53ebdc89b"
-      );
-      const data = res.data; //     this.error = err;
-      this.products = data;
-      console.log(products);
-    } catch (err) {
-      this.error = err;
-    }
-  }, */
+    axios
+      .get("http://localhost:8080/api/products/tags/", {
+        tag: "foods"
+      })
+      .then(response => {
+        console.log(response.data);
+        this.products = response.data;
+        console.log(this.products[0].name);
+      });
+  }
 };
 </script>
 

@@ -1,11 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../components/Home.vue";
-import Products from "../components/Products.vue";
-import Services from "../components/Services.vue";
-import Admin from "../components/Admin.vue";
-import Login from "../components/Login.vue";
-import Profile from "../components/Profile.vue";
+import Home from "../views/Home.vue";
+import Products from "../views/Products.vue";
+import Services from "../views/Services.vue";
+import Admin from "../views/Admin.vue";
+import Login from "../views/Login.vue";
+import Profile from "../views/Profile.vue";
 
 Vue.use(VueRouter);
 

@@ -2,7 +2,7 @@
   <div id="Home">
     <div class="container">
       <Header></Header>
-      <Escorregador></Escorregador>
+      <Slider></Slider>
     </div>
     <Index></Index>
     <Footer></Footer>
@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import Header from "./Header.vue";
-import Footer from "./Footer.vue";
-import Escorregador from "./escorregador.vue";
-import Index from "./Index.vue";
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+import Slider from "@/components/Slider.vue";
+import Index from "@/components/Index.vue";
 
 export default {
   name: "Home",
@@ -21,8 +21,8 @@ export default {
     Header,
     Footer,
     Index,
-    Escorregador,
-  },
+    Slider
+  }
 };
 </script>
 

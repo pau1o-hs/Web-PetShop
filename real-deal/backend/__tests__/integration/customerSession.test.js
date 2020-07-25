@@ -6,26 +6,18 @@ describe('Customer authentication', () => {
     jest.useFakeTimers(); // makes jest stop giving an error when running test suites
   });
 
-  it('authenticates when given valid credentials', async () => {
+  it('should authenticate when given valid credentials', async () => {
     const res = await request(app)
       .post('/api/auth')
       .send({ email: 'bruno@jesus.usp', password: 'melhorquepele' });
     expect(res.status).toBe(200);
   });
 
-  it("doesn't autheticate when given invalid email", async () => {
+  it('should not autheticate when given invalid email', async () => {
     const res = await request(app)
       .post('/api/auth')
       .send({ email: 'bruno@jesus.unicamp', password: 'melhorquepele' });
     expect(res.status).toBe(404);
-    expect(res.body).toHaveProperty('message');
-  });
-
-  it("doesn't autheticate when given invalid password", async () => {
-    const res = await request(app)
-      .post('/api/auth')
-      .send({ email: 'bruno@jesus.usp', password: 'melhorquemaradona' });
-    expect(res.status).toBe(401);
     expect(res.body).toHaveProperty('message');
   });
 });

@@ -5,5 +5,5 @@
 </template>
 
 <style>
-@import "./mockup/style.css";
+/* @import "./mockup/style.css"; */
 </style>
