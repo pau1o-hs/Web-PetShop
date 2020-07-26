@@ -76,4 +76,18 @@ export default {
 </script>
 
 <style>
+.display-day {
+  color: #fdfffc;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+}
+.display-day > p {
+  margin: 2% 0;
+}
+.display-day > div {
+  display: flex;
+  flex-direction: column;
+  background-color: #d7cdcc;
+}
 </style>
