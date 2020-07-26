@@ -20,21 +20,18 @@ export default {
   data() {
     return {
       products: [],
-      error: ""
+      error: "",
     };
   },
   mounted() {
     axios
       .post("http://localhost:8080/api/products/tags/", {
-        tag: "comfort"
+        tag: "comfort",
       })
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         this.products = response.data;
       });
-  }
+  },
 };
 </script>
-
-<style scoped></style>
-

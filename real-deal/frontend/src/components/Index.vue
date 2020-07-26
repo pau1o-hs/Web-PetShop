@@ -19,11 +19,11 @@
 
 <script>
 export default {
-  name: "Index"
+  name: "Index",
 };
 </script>
 
-<style scoped>
+<style>
 #menu-home {
   display: grid;
   grid-template-columns: 1fr 1fr;
