@@ -24,12 +24,6 @@
           <img src="../../public/images/cart.png" style="width: 3.5vh; height: 3.5vh;" />
         </router-link>
       </div>
-
-      <!-- <div class="cart"> -->
-      <!-- <router-link to="/cart"> -->
-      <!-- <div class="fa fa-shopping-cart"></div> -->
-      <!-- </router-link> -->
-      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -149,22 +143,6 @@ export default {
   justify-content: left;
   align-content: center;
   height: 10vh;
-}
-
-.fa-shopping-cart {
-  border-radius: 50%;
-  border: orange solid 10px;
-  color: white;
-  background-color: orange;
-  font-size: 30px;
-  position: fixed;
-  right: 60px;
-  top: 4px;
-}
-
-.fa-shopping-cart:hover {
-  border: mediumseagreen solid 10px;
-  background-color: mediumseagreen;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */

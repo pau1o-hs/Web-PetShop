@@ -33,15 +33,17 @@
       <section class="infosection" style="width: 30%">
         <p>{{ user.name }}</p>
         <div>
-          <button class="fa fa-btn fa-plus-circle"></button>
+          <!-- <button class="fa fa-btn fa-plus-circle"> -->
+          <input type="file" class="fa fa-btn fa-plus-circle" />
+          <!-- </button> -->
         </div>
       </section>
 
       <section class="infosection" style="width: 30%">
-        <input type="text" :placeholder="name" />
-        <input type="text" :placeholder="address" />
-        <input type="text" :placeholder="phone" />
-        <input type="text" :placeholder="email" />
+        <input type="text" :placeholder="addUser.name" />
+        <input type="text" :placeholder="addUser.address" />
+        <input type="text" :placeholder="addUser.phone" />
+        <input type="text" :placeholder="addUser.email" />
         <input type="submit" text="Atualizar" />
       </section>
     </div>
@@ -58,15 +60,15 @@
         v-for="pet in pets"
         :key="pet.name"
       >
-        <img src="../../public/images/profile/pet1.png" width="100%" height="80%" />
+        <img :src="pet.photo" width="100%" height="80%" />
         <p>{{ pet.name }}</p>
         <hr />
         <button>Edit</button>
       </section>
       <div class="infosection">
-        <input type="text" placeholder="Name" />
-        <input type="select" placeholder="Race" />
-        <input type="number" placeholder="Age" />
+        <input type="text" :placeholder="addPet.name" />
+        <input type="select" :placeholder="addPet.race" />
+        <input type="number" :placeholder="addPet.age" />
         <button type="file" class="fa fa-btn1 fa-plus-circle">Photo</button>
         <button class="fa fa-btn1 fa-plus-circle" style="width: 50%;">Add Pet</button>
       </div>
@@ -111,10 +113,19 @@ export default {
   },
   data() {
     return {
-      name: "Full name",
-      address: "Address",
-      phone: "Phone",
-      email: "E-mail",
+      addUser: {
+        name: "Full name",
+        address: "Address",
+        phone: "Phone",
+        email: "E-mail",
+        photo: "Photo"
+      },
+      addPet: {
+        name: "Name",
+        race: "Race",
+        age: "Age",
+        photo: "Photo"
+      },
       user: { name: "" },
       pets: [],
       schedules: [],
@@ -122,11 +133,9 @@ export default {
     };
   },
   mounted() {
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWRkODliZmZkMTkzMjM0M2E1ZGRmNyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTU3OTIxNDIsImV4cCI6MTU5NTg3ODU0Mn0.F90JyxLKOJToc5anwniSEzINXZzxXU1rdsIzbwNg-jc";
     axios
       .get("http://localhost:8080/api/profile", {
-        headers: { "x-access-token": token }
+        headers: { "x-access-token": this.$token }
       })
       .then(response => {
         console.log(response.data);
@@ -135,7 +144,7 @@ export default {
 
     axios
       .get("http://localhost:8080/api/profile/pets", {
-        headers: { "x-access-token": token }
+        headers: { "x-access-token": this.$token }
       })
       .then(response => {
         console.log(response.data);
@@ -144,7 +153,7 @@ export default {
 
     axios
       .get("http://localhost:8080/api/schedule", {
-        headers: { "x-access-token": token }
+        headers: { "x-access-token": this.$token }
       })
       .then(response => {
         console.log(response.data);
@@ -153,7 +162,7 @@ export default {
 
     axios
       .put("http://localhost:8080/api/profile", {
-        headers: { "x-access-token": token }
+        headers: { "x-access-token": this.$token }
       })
       .then(response => {
         console.log(response.data);
@@ -241,8 +250,11 @@ export default {
   align-items: center;
 }
 .infosection p,
-.infosection .fa fa-btn fa-plus-circle,
-.infosection input {
+/* .infosection .fa fa-btn fa-plus-circle, */
+.infosection input[type="text"],
+.infosection input[type="select"],
+.infosection input[type="number"],
+.infosection input[type="submit"] {
   display: block;
   transition: 0.4s;
   width: 220px;
@@ -262,7 +274,7 @@ export default {
   opacity: 1;
 }
 .infosection p,
-.infosection .fa fa-btn fa-plus-circle,
+/* .infosection .fa fa-btn fa-plus-circle, */
 .infosection input[type="submit"] {
   background-color: mediumseagreen;
   box-shadow: 0 0 5px mediumseagreen;
@@ -338,7 +350,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  /* background-color: white; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
   width: 100%;
   height: 100%;

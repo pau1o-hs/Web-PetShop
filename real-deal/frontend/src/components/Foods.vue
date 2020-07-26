@@ -2,7 +2,7 @@
   <div class="foods">
     <section id="foods">
       <div class="item-unity" v-for="item in products" :key="item.name">
-        <img src="../../public/images/racoes/racao-gato.jpg" alt="Ração de gato" />
+        <img :src="item.photo" alt="Ração de gato" />
         <h2 id="nome-item">{{ item.name }}</h2>
         <p id="descricao-item">{{ item.description }}</p>
         <p id="preco">{{ item.price }}</p>

@@ -7,6 +7,7 @@ import Admin from "../views/Admin.vue";
 import Login from "../views/Login.vue";
 import Profile from "../views/Profile.vue";
 import Cart from "../components/Cart.vue";
+import AdminEarning from "../views/AdminEarnings.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: "/cart",
     name: "cart",
     component: Cart,
+  },
+  {
+    path: "/adminearnings",
+    name: "adminearning",
+    component: AdminEarning,
   },
 ];
 

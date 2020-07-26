@@ -40,6 +40,8 @@ module.exports = async function () {
   await repos.admin.createNewAdmin({
     CPF: '11111111111',
     name: 'Root Admin',
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/profile/admin1.jpg',
     phone: '11945678912',
     email: 'iamadmin@petshop.com',
     adminName: 'admin',
@@ -50,6 +52,8 @@ module.exports = async function () {
   await repos.customer.create({
     CPF: '48061459912',
     name: 'Bruno Jesus',
+    photo:
+      'https://conhecimentocientifico.r7.com/wp-content/uploads/2020/04/jesus-5.jpg',
     phone: '16912359876',
     email: 'bruno@jesus.usp',
     password: await passwordEncrypter.encrypt('melhorquepele'),
@@ -59,7 +63,8 @@ module.exports = async function () {
   await repos.service.createOne({
     name: 'Tosa',
     tags: ['tag1', 'tag2'],
-    photo: 'path/example',
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/categorias/banhotosa.png',
     description: 'Uma tosa bem suave para seu bichinho',
     responsible: 'Paulo Henrique',
     price: 50.0,
@@ -69,7 +74,8 @@ module.exports = async function () {
   await repos.product.createOne({
     name: 'Ração para gatos',
     tags: ['foods', 'walkway'],
-    photo: '../mockup/images/racoes/racao-gato.jpg',
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-gato.jpg',
     description: 'Ração deliciosa e nutritiva para o seu gatinho.',
     price: 9.99,
     inStock: 42,
@@ -79,7 +85,8 @@ module.exports = async function () {
   await repos.product.createOne({
     name: 'Ração para cachorros',
     tags: ['foods', 'snacks'],
-    photo: '../mockup/images/racoes/racao-cao.jpg',
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-cao.jpg',
     description: 'Ração deliciosa e nutritiva para o seu cachorrinho.',
     price: 11.99,
     inStock: 30,
@@ -90,7 +97,8 @@ module.exports = async function () {
 
   await repos.pet.createOne(customers[0]._id, {
     name: 'Tchutchucão',
-    photo: 'um/exemplo3',
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/tchutchucao.jpg',
     race: 'Dog do mal',
     age: 5,
   });

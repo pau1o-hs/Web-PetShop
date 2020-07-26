@@ -1,18 +1,17 @@
 <template>
-  <div id="cart">
+  <div>
     <div class="container">
       <Header></Header>
       <input type="radio" id="i1" name="images" checked />
       <div class="slide_img" id="one">
-        <img src="../../public/images/products-header.jpg" />
-        <h1>CART</h1>
+        <img src="https://images6.alphacoders.com/565/thumb-1920-565154.jpg" />
+        <h1>Earnings</h1>
       </div>
     </div>
 
-    <div class="above-slide">
-      <div class="title2">
-        <strong>See your selected items</strong>
-      </div>
+    <!-- FOODS -->
+    <div id="foodsection" class="customsection" style="background-color:#FFB918; margin-top:5vh;">
+      <p>Products Earnings</p>
     </div>
 
     <section class="main-block">
@@ -21,9 +20,10 @@
         <h2>{{ p.name }}</h2>
         <p>{{ p.description }}</p>
         <p>{{ p.price }}</p>
-        <p>{{ p.quantity }}</p>
+        <p>quantity</p>
       </div>
     </section>
+
     <Footer></Footer>
   </div>
 </template>
@@ -31,29 +31,17 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import axios from "axios";
 
 export default {
-  name: "cart",
+  name: "AdminEarnings",
   components: {
     Header,
     Footer
   },
   data() {
     return {
-      products: [],
-      error: ""
+      info: null
     };
-  },
-  mounted() {
-    axios
-      .get("http://localhost:8080/api/admin/products", {
-        headers: { "x-access-token": this.$token }
-      })
-      .then(response => {
-        console.log(response.data);
-        this.products = response.data;
-      });
   }
 };
 </script>

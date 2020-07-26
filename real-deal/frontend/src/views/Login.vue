@@ -12,9 +12,8 @@
         />
         <h1 style="color: white; font-weight: 10px;">Administrator</h1>
         <br />
-        <input type="text" v-model="adminName" placeholder="Admin name" />
-        <input type="password" v-model="adminPassword" placeholder="Password" />
-        <a href="admin.html">Forgot your password?</a>
+        <input type="text" v-model="adminName" placeholder="admin-name" />
+        <input type="password" v-model="adminPassword" placeholder="password" />
         <button class="send_info" type="submit" v-on:click="loginAdmin">Login</button>
         <div style="visibility: hidden;">Just to occupy space</div>
       </div>
@@ -29,9 +28,8 @@
         />
         <h1 style="color: white; font-weight: 10px;">Customer</h1>
         <br />
-        <input type="text" v-model="customerEmail" placeholder="E-mail" />
-        <input type="password" v-model="customerPassword" placeholder="Password" />
-        <a href="profile.html">Forgot your password?</a>
+        <input type="text" v-model="customerEmail" placeholder="e-mail" />
+        <input type="password" v-model="customerPassword" placeholder="password" />
         <button class="send_info" type="submit" v-on:click="loginCustomer">Login</button>
         <span>
           Not a member?
@@ -43,6 +41,7 @@
 </template>
 
 <script>
+import Vue from "vue";
 import axios from "axios";
 
 export default {
@@ -63,9 +62,16 @@ export default {
           password: this.adminPassword
         })
         .then(response => {
-          alert(response);
+          console.log(response.data.token);
+          Vue.prototype.$token = response.data.token;
+          this.$router.push("/admin");
         })
-        .catch(error => alert(error));
+        .catch(error => {
+          if (error.response) {
+            // The request was made and the server responded with a status code
+            console.log(error.response.data.errors);
+          }
+        });
     },
     loginCustomer: function() {
       axios
@@ -74,20 +80,14 @@ export default {
           password: this.customerPassword
         })
         .then(response => {
-          alert(response);
+          console.log(response.data.token);
+          Vue.prototype.$token = response.data.token;
+          this.$router.push("/profile");
         })
         .catch(error => {
           if (error.response) {
-            // Request made and server responded
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
-          } else if (error.request) {
-            // The request was made but no response was received
-            console.log(error.request);
-          } else {
-            // Something happened in setting up the request that triggered an Error
-            console.log("Error", error.message);
+            // The request was made and the server responded with a status code
+            console.log(error.response.data.errors);
           }
         });
     }

@@ -5,7 +5,7 @@
       <input type="radio" id="i1" name="images" checked />
       <div class="slide_img" id="one">
         <img src="../../public/images/profile/headeradmin.jpg" />
-        <h1>ADMINISTRATOR</h1>
+        <h1>ADMINISTRATORS</h1>
       </div>
     </div>
 
@@ -53,22 +53,22 @@
             <div class="infosection">
               <input type="text" :placeholder="childadmin.CPF" />
               <input type="text" :placeholder="childadmin.name" />
-              <input type="text" :placeholder="childadmin.adminname" />
+              <!-- <input type="text" :placeholder="childadmin.adminname" /> -->
               <input type="text" :placeholder="childadmin.phone" />
               <input type="text" :placeholder="childadmin.email" />
-              <input type="text" :placeholder="childadmin.password" />
-              <button class="btn-add2" style="width: 50%;">Edit</button>
+              <input type="text" placeholder="Senha" />
+              <button class="btn-add2" style="width: 50%;" v-on="createNew">Edit</button>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="polaroid pol2" style="background-color:mediumseagreen;">
+      <!-- <section class="polaroid pol2" style="background-color:mediumseagreen;">
         <img src="../../public/images/profile/admin2.jpg" width="100%" height="80%" />
         <p>Scooby-Doo</p>
         <hr />
         <button>Edit</button>
-      </section>
+      </section>-->
       <div class="infosection">
         <input type="text" placeholder="CPF" />
         <input type="text" placeholder="Name" />
@@ -152,249 +152,7 @@
     <div id="schedulesection-admin" class="customsection" style="background-color:darkslategray;">
       <p>Schedules</p>
     </div>
-
-    <!-- Scheduler -->
-    <div class="scheduler" id="scheduler">
-      <!-- TIME SELECTOR -->
-      <div class="time-selector">
-        <p id="book-query">I want to book:</p>
-        <div class="row-separator"></div>
-        <div class="tsel-item1">
-          <div class="tsel-up">
-            <div class="weeks">
-              <span>
-                In
-                <input type="number" value="0" min="0" />
-                weeks
-              </span>
-            </div>
-            <div class="days">
-              <span>On</span>
-              <select>
-                <option selected>Monday</option>
-                <option>Tuesday</option>
-                <option>Wednesday</option>
-                <option>Thursday</option>
-                <option>Friday</option>
-                <option>Saturday</option>
-                <option>Sunday</option>
-              </select>
-            </div>
-          </div>
-          <div class="column-separator"></div>
-          <div class="tsel-down">
-            <span>
-              For
-              <input class="date-input" type="date" />
-            </span>
-          </div>
-        </div>
-        <div class="row-separator"></div>
-        <div class="tsel-item2">
-          <span>Between</span>
-          <select>
-            <option selected>08:00</option>
-            <option>09:00</option>
-            <option>10:00</option>
-            <option>11:00</option>
-            <option>12:00</option>
-            <option>13:00</option>
-            <option>14:00</option>
-            <option>15:00</option>
-            <option>16:00</option>
-            <option>17:00</option>
-            <option>18:00</option>
-          </select>
-          <br />
-          <span>and</span>
-          <select>
-            <option>08:00</option>
-            <option>09:00</option>
-            <option>10:00</option>
-            <option>11:00</option>
-            <option>12:00</option>
-            <option selected>13:00</option>
-            <option>14:00</option>
-            <option>15:00</option>
-            <option>16:00</option>
-            <option>17:00</option>
-            <option>18:00</option>
-          </select>
-        </div>
-      </div>
-      <!-- TIME DISPLAY -->
-      <div class="time-display">
-        <div class="display-day">
-          <p>11/05</p>
-          <div>
-            <div class="display-slot reserved">
-              <p class="hour">14:30</p>
-              <p class="empty">EMPTY</p>
-            </div>
-            <div class="display-slot reserved">
-              <p class="hour">13:00</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <img class="icon" src="../../public/images/tchutchucao.jpg" alt="Pet image" />
-              <div class="info">
-                <p class="service">
-                  Vaccination
-                  <span class="of">of</span>
-                </p>
-                <p class="pet">Tchutchucão</p>
-              </div>
-            </div>
-            <div class="display-slot free">
-              <p class="hour">11:30</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <p class="service">Vaccination</p>
-            </div>
-            <div class="display-slot reserved">
-              <p class="hour">9:30</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <img class="icon" src="../../public/images/tchutchucao.jpg" alt="Pet image" />
-              <div class="info">
-                <p class="service">
-                  Vaccination
-                  <span class="of">of</span>
-                </p>
-                <p class="pet">Tchutchucão</p>
-              </div>
-            </div>
-            <div class="display-slot free">
-              <p class="hour">08:30</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <p class="service">Vaccination</p>
-            </div>
-          </div>
-        </div>
-        <div class="display-day">
-          <p>18/05</p>
-          <div>
-            <div class="display-slot free">
-              <p class="hour">11:30</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <p class="service">Vaccination</p>
-            </div>
-            <div class="display-slot reserved">
-              <p class="hour">14:30</p>
-              <p class="empty">EMPTY</p>
-            </div>
-            <div class="display-slot free">
-              <p class="hour">08:30</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <p class="service">Vaccination</p>
-            </div>
-            <div class="display-slot reserved">
-              <p class="hour">13:00</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <img class="icon" src="../../public/images/tchutchucao.jpg" alt="Pet image" />
-              <div class="info">
-                <p class="service">
-                  Vaccination
-                  <span class="of">of</span>
-                </p>
-                <p class="pet">Tchutchucão</p>
-              </div>
-            </div>
-            <div class="display-slot reserved">
-              <p class="hour">14:30</p>
-              <p class="empty">EMPTY</p>
-            </div>
-          </div>
-        </div>
-        <div class="display-day">
-          <p>25/05</p>
-          <div>
-            <div class="display-slot reserved">
-              <p class="hour">13:00</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <img class="icon" src="../../public/images/tchutchucao.jpg" alt="Pet image" />
-              <div class="info">
-                <p class="service">
-                  Vaccination
-                  <span class="of">of</span>
-                </p>
-                <p class="pet">Tchutchucão</p>
-              </div>
-            </div>
-            <div class="display-slot free">
-              <p class="hour">11:30</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <p class="service">Vaccination</p>
-            </div>
-            <div class="display-slot reserved">
-              <p class="hour">14:30</p>
-              <p class="empty">EMPTY</p>
-            </div>
-
-            <div class="display-slot free">
-              <p class="hour">08:30</p>
-              <img
-                class="icon"
-                src="../../public/images/categorias/vacinacao.jpg"
-                alt="Vaccination image"
-              />
-              <p class="service">Vaccination</p>
-            </div>
-
-            <div class="display-slot reserved">
-              <p class="hour">14:30</p>
-              <p class="empty">EMPTY</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- PAGINATION -->
-      <div class="pagination">
-        <ul>
-          <li class="prev">&#10094;</li>
-          <li class="next">&#10095;</li>
-          <li>
-            <span>
-              Page
-              <span style="color: yellow;">1</span>
-              of 10
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <Schedule />
     <Footer></Footer>
   </div>
 </template>
@@ -402,13 +160,15 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import Schedule from "@/components/Schedule.vue";
 import axios from "axios";
 
 export default {
   name: "Admin",
   components: {
     Header,
-    Footer
+    Footer,
+    Schedule
   },
   data() {
     return {
@@ -421,21 +181,23 @@ export default {
     };
   },
   methods: {
-    greet: function(event) {
+    //quando clicar no button
+    createNew: function() {
       // `this` dentro de métodos aponta para a instância Vue
-      alert("Olá " + this.name + "!");
-      // `event` é o evento DOM nativo
-      if (event) {
-        alert(event.target.tagName);
-      }
+      axios
+        .post("http://localhost:8080/api/admin/childadmins", {
+          headers: { "x-access-token": this.$token }
+        })
+        .then(response => {
+          console.log(response.data);
+          this.childadmins = response.data;
+        });
     }
   },
   mounted() {
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWRkZWVhNGQ3YjEwMmEwNmJhOTJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NTc5MzI4NiwiZXhwIjoxNTk1ODc5Njg2fQ.2EvRV9J3ecBItd0n_-TgIOH1GC_OPqGW60-PdYKATfQ";
     axios
-      .get("http://localhost:8080/api/admin/childadmins", {
-        headers: { "x-access-token": token }
+      .get("http://localhost:8080/api/admin/children", {
+        headers: { "x-access-token": this.$token }
       })
       .then(response => {
         console.log(response.data);
@@ -443,26 +205,30 @@ export default {
       });
     axios
       .get("http://localhost:8080/api/admin/customers", {
-        headers: { "x-access-token": token }
+        headers: { "x-access-token": this.$token }
       })
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         this.clients = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/admin/products", {
-        headers: { "x-access-token": token }
+        headers: { "x-access-token": this.$token }
       })
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         this.products = response.data;
       });
 
-    axios.get("http://localhost:8080/api/services").then(response => {
-      console.log(response.data);
-      this.services = response.data;
-    });
+    axios
+      .get("http://localhost:8080/api/admin/services", {
+        headers: { "x-access-token": this.$token }
+      })
+      .then(response => {
+        // console.log(response.data);
+        this.services = response.data;
+      });
   }
 };
 </script>

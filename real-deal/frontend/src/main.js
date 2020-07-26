@@ -5,6 +5,8 @@ import router from "./router";
 
 Vue.use(VueRouter);
 
+Vue.prototype.$token = "NONE";
+
 new Vue({
   el: "#app",
   router: router,
