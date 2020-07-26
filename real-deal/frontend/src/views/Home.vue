@@ -25,7 +25,3 @@ export default {
   }
 };
 </script>
-
-<style>
-@import "../mockup/style.css";
-</style>
