@@ -13,7 +13,6 @@
     </section>
   </div>
 </template>
-
 <script>
 import axios from "axios";
 
@@ -22,18 +21,18 @@ export default {
   data() {
     return {
       products: [],
-      error: ""
+      error: "",
     };
   },
   mounted() {
     axios
       .post("http://localhost:8080/api/products/tags/", {
-        tag: "foods"
+        tag: "foods",
       })
-      .then(response => {
+      .then((response) => {
         this.products = response.data;
       });
-  }
+  },
 };
 </script>
 

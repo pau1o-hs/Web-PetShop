@@ -67,114 +67,27 @@
       </div>
     </div>-->
     <!-- TIME DISPLAY -->
+    <ul>
+      <li v-for="day in displayDays" :key="day">
+        {{ day }}
+      </li>
+    </ul>
     <div class="time-display">
-      <Slot day=15/05 />
-      <div class="display-day">
-        <p>18/05</p>
-        <div>
-          <div class="display-slot free">
-            <p class="hour">14:30</p>
-            <img
-              class="icon"
-              src="../mockup/images/categorias/vacinacao.jpg"
-              alt="Vaccination image"
-            />
-            <p class="service">Vaccination</p>
-          </div>
-          <div class="display-slot reserved">
-            <p class="hour">13:00</p>
-            <p class="empty">EMPTY</p>
-          </div>
-          <div class="display-slot free">
-            <p class="hour">11:30</p>
-            <img
-              class="icon"
-              src="../mockup/images/categorias/vacinacao.jpg"
-              alt="Vaccination image"
-            />
-            <p class="service">Vaccination</p>
-          </div>
-          <div class="display-slot reserved">
-            <p class="hour">09:30</p>
-            <img
-              class="icon"
-              src="../mockup/images/categorias/vacinacao.jpg"
-              alt="Vaccination image"
-            />
-            <img class="icon" src="../mockup/images/tchutchucao.jpg" alt="Pet image" />
-            <div class="info">
-              <p class="service">
-                Vaccination
-                <span class="of">of</span>
-              </p>
-              <p class="pet">Tchutchucão</p>
-            </div>
-          </div>
-          <div class="display-slot reserved">
-            <p class="hour">08:00</p>
-            <p class="empty">EMPTY</p>
-          </div>
-        </div>
-      </div>
-      <div class="display-day">
-        <p>25/05</p>
-        <div>
-          <div class="display-slot reserved">
-            <p class="hour">15:30</p>
-            <img
-              class="icon"
-              src="../mockup/images/categorias/vacinacao.jpg"
-              alt="Vaccination image"
-            />
-            <img class="icon" src="../mockup/images/tchutchucao.jpg" alt="Pet image" />
-            <div class="info">
-              <p class="service">
-                Vaccination
-                <span class="of">of</span>
-              </p>
-              <p class="pet">Tchutchucão</p>
-            </div>
-          </div>
-          <div class="display-slot free">
-            <p class="hour">14:00</p>
-            <img
-              class="icon"
-              src="../mockup/images/categorias/vacinacao.jpg"
-              alt="Vaccination image"
-            />
-            <p class="service">Vaccination</p>
-          </div>
-          <div class="display-slot reserved">
-            <p class="hour">12:00</p>
-            <p class="empty">EMPTY</p>
-          </div>
-
-          <div class="display-slot free">
-            <p class="hour">10:00</p>
-            <img
-              class="icon"
-              src="../mockup/images/categorias/vacinacao.jpg"
-              alt="Vaccination image"
-            />
-            <p class="service">Vaccination</p>
-          </div>
-
-          <div class="display-slot reserved">
-            <p class="hour">08:30</p>
-            <p class="empty">EMPTY</p>
-          </div>
-        </div>
-      </div>
+      <ScheduleDay
+        v-for="day in displayDays"
+        v-bind:key="day"
+        v-bind:date="day"
+      />
     </div>
     <!-- PAGINATION -->
     <div class="pagination">
       <ul>
-        <li class="prev">&#10094;</li>
-        <li class="next">&#10095;</li>
+        <li class="prev"><button v-on:click="prevPage">&#10094;</button></li>
+        <li class="next"><button v-on:click="nextPage">&#10095;</button></li>
         <li>
           <span>
             Page
-            <span style="color: yellow;">{{ curPage }}</span>
+            <span style="color: yellow;">{{ curPage + 1 }}</span>
             of {{ numPages }}
           </span>
         </li>
@@ -184,21 +97,49 @@
 </template>
 
 <script>
-import Slot from "@/components/Slot.vue";
+import ScheduleDay from "@/components/ScheduleDay.vue";
+import moment from "moment";
 
 export default {
   name: "Schedule",
   components: {
-    Slot
+    ScheduleDay,
   },
   data() {
     return {
       curPage: 1,
-      numPages: 1,
-      daysToDisplay: 70, // Equivalent to 7 WEEKS
+      daysToDisplay: 70, // Equivalent to 10 WEEKS
       daysPerPage: 3,
-      today: Date.now()
+      today: moment(),
     };
-  }
+  },
+  methods: {
+    prevPage: function() {
+      if (this.curPage > 0) {
+        this.curPage -= 1;
+      }
+    },
+    nextPage: function() {
+      if (this.curPage < this.numPages - 1) {
+        this.curPage += 1;
+      }
+    },
+  },
+  computed: {
+    numPages: function() {
+      return Math.ceil(this.daysToDisplay / this.daysPerPage);
+    },
+    displayDays: function() {
+      const days = [];
+      for (let i = 0; i < this.daysPerPage; i++) {
+        const baseDay = moment(this.today).add(
+          this.curPage * this.daysPerPage,
+          "days"
+        );
+        days.push(moment(baseDay).add(i, "days"));
+      }
+      return days;
+    },
+  },
 };
 </script>
