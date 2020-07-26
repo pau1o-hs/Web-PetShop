@@ -12,10 +12,10 @@
         />
         <h1 style="color: white; font-weight: 10px;">Administrator</h1>
         <br />
-        <input type="text" placeholder="Admin name" />
-        <input type="password" placeholder="Password" />
+        <input type="text" v-model="adminName" placeholder="Admin name" />
+        <input type="password" v-model="adminPassword" placeholder="Password" />
         <a href="admin.html">Forgot your password?</a>
-        <router-link class="send_info" type="submit" to="/admin">Login</router-link>
+        <button class="send_info" type="submit" v-on:click="loginAdmin">Login</button>
         <div style="visibility: hidden;">Just to occupy space</div>
       </div>
       <div
@@ -29,10 +29,10 @@
         />
         <h1 style="color: white; font-weight: 10px;">Customer</h1>
         <br />
-        <input type="text" placeholder="E-mail" />
-        <input type="password" placeholder="Password" />
+        <input type="text" v-model="customerEmail" placeholder="E-mail" />
+        <input type="password" v-model="customerPassword" placeholder="Password" />
         <a href="profile.html">Forgot your password?</a>
-        <router-link class="send_info" type="submit" to="/profile">Login</router-link>
+        <button class="send_info" type="submit" v-on:click="loginCustomer">Login</button>
         <span>
           Not a member?
           <a href="index.html" id="register-now">Register now</a>
@@ -43,8 +43,55 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  name: "Login"
+  name: "Login",
+  data() {
+    return {
+      customerEmail: "",
+      customerPassword: "",
+      adminName: "",
+      adminPassword: ""
+    };
+  },
+  methods: {
+    loginAdmin: function() {
+      axios
+        .post("http://localhost:8080/api/admin/auth", {
+          adminName: this.adminName,
+          password: this.adminPassword
+        })
+        .then(response => {
+          alert(response);
+        })
+        .catch(error => alert(error));
+    },
+    loginCustomer: function() {
+      axios
+        .post("http://localhost:8080/api/auth", {
+          email: this.customerEmail,
+          password: this.customerPassword
+        })
+        .then(response => {
+          alert(response);
+        })
+        .catch(error => {
+          if (error.response) {
+            // Request made and server responded
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          } else if (error.request) {
+            // The request was made but no response was received
+            console.log(error.request);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            console.log("Error", error.message);
+          }
+        });
+    }
+  }
 };
 </script>
 

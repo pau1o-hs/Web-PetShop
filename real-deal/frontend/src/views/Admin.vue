@@ -38,22 +38,26 @@
     </div>
 
     <div class="scheduleform">
-      <section class="polaroid pol1" style="background-color:mediumseagreen;">
+      <section
+        class="polaroid"
+        style="background-color:#eeeeee;"
+        v-for="childadmin in childadmins"
+        :key="childadmin.name"
+      >
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <img src="../../public/images/profile/admin1.jpg" width="100%" height="80%" />
-            <p>Tchutchucão</p>
+            <p>{{childadmin.name}}</p>
           </div>
           <div class="flip-card-back">
             <div class="infosection">
-              <input type="text" placeholder="CPF" />
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="AdminName" />
-              <input type="text" placeholder="Phone" />
-              <input type="email" placeholder="E-mail" />
-              <input type="password" placeholder="Password" />
-              <button type="file" class="btn-add2">Photo</button>
-              <button class="btn-add2" style="width: 50%;">Add Admin</button>
+              <input type="text" :placeholder="childadmin.CPF" />
+              <input type="text" :placeholder="childadmin.name" />
+              <input type="text" :placeholder="childadmin.adminname" />
+              <input type="text" :placeholder="childadmin.phone" />
+              <input type="text" :placeholder="childadmin.email" />
+              <input type="text" :placeholder="childadmin.password" />
+              <button class="btn-add2" style="width: 50%;">Edit</button>
             </div>
           </div>
         </div>
@@ -70,8 +74,8 @@
         <input type="text" placeholder="Name" />
         <input type="text" placeholder="AdminName" />
         <input type="text" placeholder="Phone" />
-        <input type="email" placeholder="E-mail" />
-        <input type="password" placeholder="Password" />
+        <input type="text" placeholder="E-mail" />
+        <input type="text" placeholder="Password" />
         <button type="file" class="btn-add2">Photo</button>
         <button class="btn-add2" style="width: 50%;">Add Admin</button>
       </div>
@@ -412,12 +416,31 @@ export default {
       clients: [],
       products: [],
       services: [],
+      childadmins: [],
       error: ""
     };
   },
+  methods: {
+    greet: function(event) {
+      // `this` dentro de métodos aponta para a instância Vue
+      alert("Olá " + this.name + "!");
+      // `event` é o evento DOM nativo
+      if (event) {
+        alert(event.target.tagName);
+      }
+    }
+  },
   mounted() {
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWQwNmJjZmM3NTA1MDNmNTUyMzRkMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NTczNzc5MywiZXhwIjoxNTk1ODI0MTkzfQ.Ofmcp_L_6a9V56VeYbIEyNRTmYtqz0ClClBu9lI-Stc";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWRkZWVhNGQ3YjEwMmEwNmJhOTJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NTc5MzI4NiwiZXhwIjoxNTk1ODc5Njg2fQ.2EvRV9J3ecBItd0n_-TgIOH1GC_OPqGW60-PdYKATfQ";
+    axios
+      .get("http://localhost:8080/api/admin/childadmins", {
+        headers: { "x-access-token": token }
+      })
+      .then(response => {
+        console.log(response.data);
+        this.childadmins = response.data;
+      });
     axios
       .get("http://localhost:8080/api/admin/customers", {
         headers: { "x-access-token": token }
@@ -672,7 +695,7 @@ export default {
 }
 
 .flip-card-back {
-  background-color: #348e35;
+  background-color: #eeeeee;
   color: white;
   transform: rotateY(180deg);
 }

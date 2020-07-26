@@ -11,7 +11,12 @@ exports.getAll = async () => {
 };
 
 exports.getMyChildren = async (id) => {
-  const res = (await Admin.findById(id, 'childAdmins')).populate('childAdmins');
+  const adm = await Admin.findById(id, 'childAdmins');
+
+  const res = await Promise.all(
+    adm.childAdmins.map((childId) => Admin.findById(childId, '-password'))
+  );
+
   return res;
 };
 

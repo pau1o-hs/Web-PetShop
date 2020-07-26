@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-if="info.state === 'BOOKED'">
-      <button class="display-slot reserved">
+      <button :click="onClick" class="display-slot reserved">
         <p class="hour">{{ hour }}</p>
         <img class="icon" :src="info.service.photo" :alt="info.service.name + ' image'" />
         <img class="icon" :src="info.pet.photo" :alt="info.pet.name + ' image'" />
@@ -16,7 +16,7 @@
     </template>
 
     <template v-else-if="info.state === 'OPEN'">
-      <button class="display-slot free">
+      <button :click="onClick" class="display-slot free">
         <p class="hour">{{ hour }}</p>
         <img class="icon" :src="info.service.photo" :alt="info.service.name + ' image'" />
         <p class="service">{{ info.service.name }}</p>
@@ -24,7 +24,7 @@
     </template>
 
     <template v-else>
-      <button class="display-slot reserved">
+      <button :click="onClick" class="display-slot reserved">
         <p class="hour">{{ hour }}</p>
         <p class="empty">EMPTY</p>
       </button>
@@ -39,7 +39,17 @@ export default {
     hour: String,
     info: Object
   },
-  methods: {}
+  methods: {
+    onClick: function() {
+      if (this.info.state == "EMPTY") {
+        alert("Sorry, but there is no service allocated to this slot :(");
+      } else if (this.info.state == "BOOKED") {
+        alert("This slot was already reserved by another person.");
+      } else {
+        alert("HAHAHA AGORA VAI");
+      }
+    }
+  }
 };
 </script>
 

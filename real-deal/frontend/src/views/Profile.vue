@@ -38,10 +38,11 @@
       </section>
 
       <section class="infosection" style="width: 30%">
-        <input type="text" placeholder="Full name" />
-        <input type="text" placeholder="Adress" />
-        <input type="text" placeholder="Phone" />
-        <input type="text" placeholder="E-mail" />
+        <input type="text" :placeholder="name" />
+        <input type="text" :placeholder="address" />
+        <input type="text" :placeholder="phone" />
+        <input type="text" :placeholder="email" />
+        <input type="submit" text="Atualizar" />
       </section>
     </div>
 
@@ -84,11 +85,13 @@
         <img src="../../public/images/profile/pet1.png" width="100%" height="80%" />
         <p>{{ schedule.service.name }} (R${{ schedule.service.price }})</p>
         <hr />
-        <p>11:00 | 10-10-2020</p>
+        <p>{{ schedule.data }}</p>
       </section>
 
       <div class="petregister">
-        <button class="fa fa-btn fa-plus-circle"></button>
+        <router-link to="/services">
+          <button class="fa fa-btn fa-plus-circle"></button>
+        </router-link>
       </div>
     </div>
     <Footer></Footer>
@@ -108,6 +111,10 @@ export default {
   },
   data() {
     return {
+      name: "Full name",
+      address: "Address",
+      phone: "Phone",
+      email: "E-mail",
       user: { name: "" },
       pets: [],
       schedules: [],
@@ -116,7 +123,7 @@ export default {
   },
   mounted() {
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWNjODBhMTNlNzA5NGE5MTMyMmZhMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTU3MjE4NzMsImV4cCI6MTU5NTgwODI3M30.m8FYtgLH4Q6V7l_7bZ8QCvXE669cMtbYUwrTzFIMZzw";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWRkODliZmZkMTkzMjM0M2E1ZGRmNyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTU3OTIxNDIsImV4cCI6MTU5NTg3ODU0Mn0.F90JyxLKOJToc5anwniSEzINXZzxXU1rdsIzbwNg-jc";
     axios
       .get("http://localhost:8080/api/profile", {
         headers: { "x-access-token": token }
@@ -142,6 +149,15 @@ export default {
       .then(response => {
         console.log(response.data);
         this.schedules = response.data;
+      });
+
+    axios
+      .put("http://localhost:8080/api/profile", {
+        headers: { "x-access-token": token }
+      })
+      .then(response => {
+        console.log(response.data);
+        response.data.username = this.name;
       });
   }
 };
@@ -239,22 +255,27 @@ export default {
   font-weight: bold;
   opacity: 0.5;
 }
+
 .infosection p:hover,
 .infosection .fa fa-btn fa-plus-circle:hover,
 .infosection input:hover {
   opacity: 1;
 }
 .infosection p,
-.infosection .fa fa-btn fa-plus-circle {
+.infosection .fa fa-btn fa-plus-circle,
+.infosection input[type="submit"] {
   background-color: mediumseagreen;
   box-shadow: 0 0 5px mediumseagreen;
   color: white;
 }
-.infosection input {
+.infosection input[type="text"],
+.infosection input[type="select"],
+.infosection input[type="number"] {
   background: none;
   border: 2px solid dodgerblue;
 }
-.infosection input:focus {
+.infosection input[type="text"]:focus .infosection input[type="select"]:focus,
+.infosection input[type="number"]:focus {
   opacity: 1;
   background-color: white;
   width: 250px;
