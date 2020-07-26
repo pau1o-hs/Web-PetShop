@@ -1,6 +1,7 @@
 const { Router } = require('express');
 
 const scheduleController = require('../../controllers/schedule');
+const authService = require('../../services/auth');
 const validator = require('../../validators/schedule');
 
 const router = Router();
@@ -15,6 +16,7 @@ router.post(
   '/',
   validator.rules(),
   validator.validate,
+  authService.isAuthenticated,
   scheduleController.fillSlotByServiceSlug
 );
 

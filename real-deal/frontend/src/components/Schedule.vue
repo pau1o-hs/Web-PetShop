@@ -1,77 +1,6 @@
 <template>
-  <div class="scheduler" id="scheduler">
-    <!-- <div class="time-selector">
-      <p id="book-query">I want to book:</p>
-      <div class="row-separator"></div>
-      <div class="tsel-item1">
-        <div class="tsel-up">
-          <div class="weeks">
-            <span>
-              In
-              <input type="number" value="0" min="0" />
-              weeks
-            </span>
-          </div>
-          <div class="days">
-            <span>On</span>
-            <select>
-              <option selected>Monday</option>
-              <option>Tuesday</option>
-              <option>Wednesday</option>
-              <option>Thursday</option>
-              <option>Friday</option>
-              <option>Saturday</option>
-              <option>Sunday</option>
-            </select>
-          </div>
-        </div>
-        <div class="column-separator"></div>
-        <div class="tsel-down">
-          <span>
-            For
-            <input class="date-input" type="date" />
-          </span>
-        </div>
-      </div>
-      <div class="row-separator"></div>
-      <div class="tsel-item2">
-        <span>Between</span>
-        <select>
-          <option selected>08:00</option>
-          <option>09:00</option>
-          <option>10:00</option>
-          <option>11:00</option>
-          <option>12:00</option>
-          <option>13:00</option>
-          <option>14:00</option>
-          <option>15:00</option>
-          <option>16:00</option>
-          <option>17:00</option>
-          <option>18:00</option>
-        </select>
-        <br />
-        <span>and</span>
-        <select>
-          <option>08:00</option>
-          <option>09:00</option>
-          <option>10:00</option>
-          <option>11:00</option>
-          <option>12:00</option>
-          <option selected>13:00</option>
-          <option>14:00</option>
-          <option>15:00</option>
-          <option>16:00</option>
-          <option>17:00</option>
-          <option>18:00</option>
-        </select>
-      </div>
-    </div>-->
+  <div class="scheduler">
     <!-- TIME DISPLAY -->
-    <ul>
-      <li v-for="day in displayDays" :key="day">
-        {{ day }}
-      </li>
-    </ul>
     <div class="time-display">
       <ScheduleDay
         v-for="day in displayDays"
@@ -99,6 +28,7 @@
 <script>
 import ScheduleDay from "@/components/ScheduleDay.vue";
 import moment from "moment";
+import axios from "axios";
 
 export default {
   name: "Schedule",
@@ -111,6 +41,7 @@ export default {
       daysToDisplay: 70, // Equivalent to 10 WEEKS
       daysPerPage: 3,
       today: moment(),
+      currentBookings: [],
     };
   },
   methods: {
@@ -140,6 +71,11 @@ export default {
       }
       return days;
     },
+  },
+  mounted() {
+    axios.get("http://localhost:8080/api/schedule").then((response) => {
+      this.currentBookings = response.data;
+    });
   },
 };
 </script>

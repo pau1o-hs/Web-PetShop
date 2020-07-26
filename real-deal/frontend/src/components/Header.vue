@@ -1,5 +1,5 @@
 <template>
-  <div class="Header">
+  <div class="header">
     <div style="display: flex; flex: 4;">
       <!-- LOGO -->
       <div class="logo"></div>
@@ -19,8 +19,11 @@
 
       <div class="profile">
         <router-link to="/login">Login/Register</router-link>
-        <!--<a href="#">My Profile</a>-->
         <div id="profileimg"></div>
+        <router-link to="/"
+          ><img src="../mockup/images/cart.png" style="height: 5vh; width: 5vh;"
+        /></router-link>
+        <!--<a href="#">My Profile</a>-->
       </div>
     </div>
   </div>

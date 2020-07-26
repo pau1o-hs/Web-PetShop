@@ -1,81 +1,37 @@
 <template>
   <div class="display-day">
-    <p>{{ workingHours }}</p>
     <p>{{ day }}</p>
     <div>
-      <div class="display-slot reserved">
-        <p class="hour">14:30</p>
-        <p class="empty">EMPTY</p>
-      </div>
-      <div class="display-slot reserved">
-        <p class="hour">13:00</p>
-        <img
-          class="icon"
-          src="../mockup/images/categorias/vacinacao.jpg"
-          alt="Vaccination image"
-        />
-        <img
-          class="icon"
-          src="../mockup/images/tchutchucao.jpg"
-          alt="Pet image"
-        />
-        <div class="info">
-          <p class="service">
-            Vaccination
-            <span class="of">of</span>
-          </p>
-          <p class="pet">Tchutchucão</p>
-        </div>
-      </div>
-      <div class="display-slot free">
-        <p class="hour">11:30</p>
-        <img
-          class="icon"
-          src="../mockup/images/categorias/vacinacao.jpg"
-          alt="Vaccination image"
-        />
-        <p class="service">Vaccination</p>
-      </div>
-      <div class="display-slot reserved">
-        <p class="hour">09:30</p>
-        <img
-          class="icon"
-          src="../mockup/images/categorias/vacinacao.jpg"
-          alt="Vaccination image"
-        />
-        <img
-          class="icon"
-          src="../mockup/images/tchutchucao.jpg"
-          alt="Pet image"
-        />
-        <div class="info">
-          <p class="service">
-            Vaccination
-            <span class="of">of</span>
-          </p>
-          <p class="pet">Tchutchucão</p>
-        </div>
-      </div>
-      <div class="display-slot free">
-        <p class="hour">08:30</p>
-        <img
-          class="icon"
-          src="../mockup/images/categorias/vacinacao.jpg"
-          alt="Vaccination image"
-        />
-        <p class="service">Vaccination</p>
-      </div>
+      <ScheduleSlot
+        v-for="hour in workingHours"
+        v-bind:key="hour"
+        v-bind:state="getState()"
+        v-bind:hour="hour"
+        serviceName="alo"
+        serviceImage="alo"
+        petName="alo"
+        petImage="alo"
+      ></ScheduleSlot>
     </div>
   </div>
 </template>
 
 <script>
 import moment from "moment";
+import ScheduleSlot from "./ScheduleSlot.vue";
 
 export default {
   name: "ScheduleDay",
   props: {
     date: Object,
+  },
+  components: {
+    ScheduleSlot,
+  },
+  methods: {
+    getState() {
+      return "BOOKED";
+    },
   },
   computed: {
     day: function() {
@@ -88,10 +44,21 @@ export default {
         .hour(8)
         .minute(0)
         .second(0);
-      console.log(startHour);
-      for (let i = 0; i <= 10; i++) {
+
+      for (let i = 10; i >= 0; i--) {
         // 10 slots of 1 hour each
-        hours.push(moment(startHour).add(i, "hours"));
+        const date = moment(startHour).add(i, "hours");
+        const formattedHour =
+          date
+            .hour()
+            .toString()
+            .padStart(2, "0") +
+          ":" +
+          date
+            .minute()
+            .toString()
+            .padStart(2, "0");
+        hours.push(formattedHour);
       }
       return hours;
     },
