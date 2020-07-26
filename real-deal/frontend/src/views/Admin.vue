@@ -39,11 +39,26 @@
 
     <div class="scheduleform">
       <section class="polaroid pol1" style="background-color:mediumseagreen;">
-        <img src="../../public/images/profile/admin1.jpg" width="100%" height="80%" />
-        <p>Tchutchucão</p>
-        <hr />
-        <button>Edit</button>
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="../../public/images/profile/admin1.jpg" width="100%" height="80%" />
+            <p>Tchutchucão</p>
+          </div>
+          <div class="flip-card-back">
+            <div class="infosection">
+              <input type="text" placeholder="CPF" />
+              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="AdminName" />
+              <input type="text" placeholder="Phone" />
+              <input type="email" placeholder="E-mail" />
+              <input type="password" placeholder="Password" />
+              <button type="file" class="btn-add2">Photo</button>
+              <button class="btn-add2" style="width: 50%;">Add Admin</button>
+            </div>
+          </div>
+        </div>
       </section>
+
       <section class="polaroid pol2" style="background-color:mediumseagreen;">
         <img src="../../public/images/profile/admin2.jpg" width="100%" height="80%" />
         <p>Scooby-Doo</p>
@@ -626,5 +641,39 @@ export default {
 
 .pol2 {
   grid-area: polaroid2;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.polaroid:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: mediumseagreen;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #348e35;
+  color: white;
+  transform: rotateY(180deg);
 }
 </style>

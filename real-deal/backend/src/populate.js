@@ -6,19 +6,7 @@ const truncate = require('../__tests__/utils/truncate');
 module.exports = async function () {
   await truncate(); // clean up the database
 
-  // Create root admin
-  await repos.admin.createNewAdmin({
-    CPF: '11111111111',
-    name: 'Root Admin',
-    phone: '11945678912',
-    email: 'iamadmin@petshop.com',
-    adminName: 'admin',
-    password: await passwordEncrypter.encrypt('admin'),
-  });
-
   // Create child admins
-  const rootAdmin = repos.admin.getByAdminName('admin');
-
   await repos.admin.createNewAdmin({
     CPF: '11111111112',
     name: 'Bruno Santos',
@@ -46,10 +34,18 @@ module.exports = async function () {
     password: await passwordEncrypter.encrypt('vitor'),
   });
 
-  let newAdmins = await repos.admin.getAll();
-  newAdmins = newAdmins.slice(1);
+  const newAdmins = await repos.admin.getAll();
 
-  console.log(newAdmins);
+  // Create root admin
+  await repos.admin.createNewAdmin({
+    CPF: '11111111111',
+    name: 'Root Admin',
+    phone: '11945678912',
+    email: 'iamadmin@petshop.com',
+    adminName: 'admin',
+    childAdmins: newAdmins,
+    password: await passwordEncrypter.encrypt('admin'),
+  });
 
   await repos.customer.create({
     CPF: '48061459912',

@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-if="info.state === 'BOOKED'">
-      <div class="display-slot reserved">
+      <button class="display-slot reserved">
         <p class="hour">{{ hour }}</p>
         <img class="icon" :src="info.service.photo" :alt="info.service.name + ' image'" />
         <img class="icon" :src="info.pet.photo" :alt="info.pet.name + ' image'" />
@@ -12,22 +12,22 @@
           </p>
           <p class="pet">{{ info.pet.name }}</p>
         </div>
-      </div>
+      </button>
     </template>
 
     <template v-else-if="info.state === 'OPEN'">
-      <div class="display-slot free">
+      <button class="display-slot free">
         <p class="hour">{{ hour }}</p>
         <img class="icon" :src="info.service.photo" :alt="info.service.name + ' image'" />
         <p class="service">{{ info.service.name }}</p>
-      </div>
+      </button>
     </template>
 
     <template v-else>
-      <div class="display-slot reserved">
+      <button class="display-slot reserved">
         <p class="hour">{{ hour }}</p>
         <p class="empty">EMPTY</p>
-      </div>
+      </button>
     </template>
   </div>
 </template>
@@ -38,7 +38,8 @@ export default {
   props: {
     hour: String,
     info: Object
-  }
+  },
+  methods: {}
 };
 </script>
 
@@ -50,7 +51,18 @@ export default {
   display: flex;
   align-items: center;
   height: 60px;
+  width: 98%;
+  color: white;
 }
+
+.display-slot:hover {
+  border: 3px solid black;
+  opacity: 0.8;
+  height: 60px;
+  width: 98%;
+  color: white;
+}
+
 .display-slot .hour {
   width: 60px;
   text-align: center;

@@ -20,20 +20,23 @@
       <div class="profile">
         <router-link to="/login">Login/Register</router-link>
         <div id="profileimg"></div>
-      </div>
-
-      <div class="cart">
         <router-link to="/cart">
-          <div class="fa fa-shopping-cart"></div>
+          <img src="../../public/images/cart.png" style="width: 3.5vh; height: 3.5vh;" />
         </router-link>
       </div>
+
+      <!-- <div class="cart"> -->
+      <!-- <router-link to="/cart"> -->
+      <!-- <div class="fa fa-shopping-cart"></div> -->
+      <!-- </router-link> -->
+      <!-- </div> -->
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header",
+  name: "Header"
 };
 </script>
 
