@@ -106,4 +106,97 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
+.time-display {
+  background: #080357;
+  display: flex;
+}
+.time-display .display-day {
+  color: #fdfffc;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+}
+.time-display .display-day > p {
+  margin: 2% 0;
+}
+.time-display .display-day > div {
+  display: flex;
+  flex-direction: column;
+  background-color: #d7cdcc;
+}
+.time-display .display-day > div .display-slot {
+  border: 3px solid #211a1d;
+  margin: 2px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.time-display .display-day > div .display-slot .hour {
+  width: 60px;
+  text-align: center;
+}
+.time-display .display-day > div .display-slot .empty {
+  flex: 1 1 0;
+  font-size: 26px;
+  text-align: center;
+}
+.time-display .display-day > div .display-slot .icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0 3px;
+}
+.time-display .display-day > div .display-slot .service {
+  font-size: 24px;
+  text-align: center;
+  flex: 1 1 0;
+}
+.time-display .display-day > div .display-slot .info {
+  flex: 1 1 0;
+  align-self: center;
+  text-align: center;
+  font-size: 14px;
+}
+.time-display .display-day > div .display-slot .info .service {
+  font-size: 16px;
+}
+.time-display .display-day > div .display-slot .of {
+  font-size: 16px;
+  color: #ff8400;
+}
+.time-display .display-day > div .display-slot .pet {
+  font-size: 16px;
+}
+.time-display .display-day > div .free {
+  background-color: #0ec70b;
+}
+.time-display .display-day > div .reserved {
+  background-color: #6e6968;
+}
+
+.pagination {
+  flex: 0.5 1 0;
+  padding: 2vh 5vh;
+  background: #211a1d;
+  text-align: center;
+}
+.pagination ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.pagination ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.pagination .prev {
+  float: left;
+}
+.pagination .next {
+  float: right;
+}
 </style>
