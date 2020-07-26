@@ -11,13 +11,25 @@
       <div class="footer-item-bottom">
         <ul id="social-media-list">
           <li>
-            <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank"></a>
+            <a
+              href="https://www.facebook.com/"
+              class="fa fa-facebook"
+              target="_blank"
+            ></a>
           </li>
           <li>
-            <a href="https://www.instagram.com/" class="fa fa-instagram" target="_blank"></a>
+            <a
+              href="https://www.instagram.com/"
+              class="fa fa-instagram"
+              target="_blank"
+            ></a>
           </li>
           <li>
-            <a href="https://twitter.com/" class="fa fa-twitter" target="_blank"></a>
+            <a
+              href="https://twitter.com/"
+              class="fa fa-twitter"
+              target="_blank"
+            ></a>
           </li>
         </ul>
       </div>
@@ -41,7 +53,7 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
 };
 </script>
 

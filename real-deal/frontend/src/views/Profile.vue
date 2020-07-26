@@ -25,15 +25,19 @@
     </section>
 
     <!-- PROFILE -->
-    <div id="profilesection" class="customsection" style="background-color:mediumseagreen;">
+    <div
+      id="profilesection"
+      class="customsection"
+      style="background-color:mediumseagreen;"
+    >
       <p>Profile Information</p>
     </div>
 
     <div id="infoform">
       <section class="infosection" style="width: 30%">
-        <p>{{user.name}}</p>
+        <p>{{ user.name }}</p>
         <div>
-          <button class="btn-add">+</button>
+          <button class="fa fa-btn fa-plus-circle"></button>
         </div>
       </section>
 
@@ -46,7 +50,11 @@
     </div>
 
     <!-- PETS -->
-    <div id="petsection" class="customsection" style="background-color:#2980B9;">
+    <div
+      id="petsection"
+      class="customsection"
+      style="background-color:#2980B9;"
+    >
       <p>Pets Manager</p>
     </div>
 
@@ -57,8 +65,12 @@
         v-for="pet in pets"
         :key="pet.name"
       >
-        <img src="../mockup/images/profile/pet1.png" width="100%" height="80%" />
-        <p>{{pet.name}}</p>
+        <img
+          src="../mockup/images/profile/pet1.png"
+          width="100%"
+          height="80%"
+        />
+        <p>{{ pet.name }}</p>
         <hr />
         <button>Edit</button>
       </section>
@@ -66,13 +78,19 @@
         <input type="text" placeholder="Name" />
         <input type="select" placeholder="Race" />
         <input type="number" placeholder="Age" />
-        <button type="file" class="btn-add2">Photo</button>
-        <button class="btn-add2" style="width: 50%;">Add Pet</button>
+        <button type="file" class="fa fa-btn fa-plus-circle">Photo</button>
+        <button class="fa fa-btn fa-plus-circle" style="width: 50%;">
+          Add Pet
+        </button>
       </div>
     </div>
 
     <!-- SCHEDULES -->
-    <div id="schedulesection" class="customsection" style="background-color:#E74C3C;">
+    <div
+      id="schedulesection"
+      class="customsection"
+      style="background-color:#E74C3C;"
+    >
       <p>Reserved Schedules</p>
       <div class="search">
         <input type="text" placeholder=" Type one of your pets here..." />
@@ -80,15 +98,23 @@
     </div>
 
     <div class="scheduleform">
-      <section class="polaroid" v-for="schedule in schedules" :key="schedule._id">
-        <img src="../mockup/images/profile/pet1.png" width="100%" height="80%" />
-        <p>{{schedule.service.name}} (R${{schedule.service.price}})</p>
+      <section
+        class="pet-block"
+        v-for="schedule in schedules"
+        :key="schedule._id"
+      >
+        <img
+          src="../mockup/images/profile/pet1.png"
+          width="100%"
+          height="80%"
+        />
+        <p>{{ schedule.service.name }} (R${{ schedule.service.price }})</p>
         <hr />
         <p>11:00 | 10-10-2020</p>
       </section>
 
       <div class="petregister">
-        <button class="btn-add">+</button>
+        <button class="fa fa-btn fa-plus-circle"></button>
       </div>
     </div>
     <Footer></Footer>
@@ -104,14 +130,14 @@ export default {
   name: "Profile",
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
       user: { name: "" },
       pets: [],
       schedules: [],
-      error: ""
+      error: "",
     };
   },
   mounted() {
@@ -119,31 +145,31 @@ export default {
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWNjODBhMTNlNzA5NGE5MTMyMmZhMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTU3MjE4NzMsImV4cCI6MTU5NTgwODI3M30.m8FYtgLH4Q6V7l_7bZ8QCvXE669cMtbYUwrTzFIMZzw";
     axios
       .get("http://localhost:8080/api/profile", {
-        headers: { "x-access-token": token }
+        headers: { "x-access-token": token },
       })
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         this.user = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/profile/pets", {
-        headers: { "x-access-token": token }
+        headers: { "x-access-token": token },
       })
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         this.pets = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/schedule", {
-        headers: { "x-access-token": token }
+        headers: { "x-access-token": token },
       })
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         this.schedules = response.data;
       });
-  }
+  },
 };
 </script>
 
@@ -225,7 +251,7 @@ export default {
   align-items: center;
 }
 .infosection p,
-.infosection .btn-add2,
+.infosection .fa fa-btn fa-plus-circle,
 .infosection input {
   display: block;
   transition: 0.4s;
@@ -240,12 +266,12 @@ export default {
   opacity: 0.5;
 }
 .infosection p:hover,
-.infosection .btn-add2:hover,
+.infosection .fa fa-btn fa-plus-circle:hover,
 .infosection input:hover {
   opacity: 1;
 }
 .infosection p,
-.infosection .btn-add2 {
+.infosection .fa fa-btn fa-plus-circle {
   background-color: mediumseagreen;
   box-shadow: 0 0 5px mediumseagreen;
   color: white;
@@ -326,26 +352,20 @@ export default {
   margin: 2vh 1vw;
 }
 
-.btn-add {
-  width: 6vh;
-  height: 6vh;
-  font-size: 100px;
-  color: white;
-  background-color: mediumseagreen;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(65, 2, 2, 0.1);
-  border: 0;
-  outline: none;
-  border-radius: 1000%;
-  transition-duration: 0.5s;
-  opacity: 0.5;
-}
-.btn-add:hover {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
 .scheduleform {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 65%;
+  height: auto;
+  margin: 0 auto;
+  background-color: none;
+  justify-content: space-between;
+  grid-gap: 2.5vh;
+  grid-template-areas: "polaroid1 polaroid2 pet-register ";
+  align-self: center;
+  margin-bottom: 5vh;
+
+  /*   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 65%;
   height: 40%;
@@ -355,6 +375,71 @@ export default {
   grid-gap: 2.5vh;
   grid-template-areas: "polaroid1 polaroid2 pet-register";
   align-self: center;
-  margin-bottom: 5vh;
+  margin-bottom: 5vh; */
+}
+
+/* Editing font awesome favicons */
+.fa-btn {
+  font-size: 70px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+  border-radius: 50%;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(65, 2, 2, 0.1);
+  border: 0;
+}
+
+.fa-btn:hover {
+  transform: scale(1.1);
+}
+
+.fa-plus-circle {
+  background: white;
+  color: mediumseagreen;
+}
+
+.pet-block {
+  flex-direction: column;
+  background-color: #e74c3c;
+  box-shadow: 0 0 10px black;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.pet-block img {
+  object-fit: cover;
+}
+.pet-block p,
+.pet-block button {
+  transition: all 0.1s;
+  background: none;
+  border: 0;
+  outline: none;
+  font-weight: bolder;
+  font-size: large;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  padding: 5px 20px;
+  color: white;
+}
+.pet-block button {
+  width: 100%;
+  align-self: center;
+}
+.pet-block button:hover {
+  transform: scale(1.1);
+}
+
+.pol1 {
+  grid-area: polaroid1;
+}
+
+.pol2 {
+  grid-area: polaroid2;
 }
 </style>
