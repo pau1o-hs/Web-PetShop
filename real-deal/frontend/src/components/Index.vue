@@ -7,8 +7,8 @@
     </div>
 
     <section id="menu-home">
-      <router-link to="/products" class="home-button button1">PRODUCTS</router-link>
-      <router-link to="/products" class="home-button button2">SERVICES</router-link>
+      <router-link class="home-button button1" to="/products">PRODUCTS</router-link>
+      <router-link class="home-button button2" to="/products">SERVICES</router-link>
     </section>
   </div>
 </template>

@@ -9,7 +9,9 @@
       </div>
     </div>
 
-    <div class="title2">
+    <Schedule />
+
+    <!-- <div class="title2">
       <strong>Select a category</strong>
     </div>
     <section class="menu-services">
@@ -31,8 +33,7 @@
       <a class="btn-serv serv6" href="#scheduler">
         <p>Temporary accommodation</p>
       </a>
-      <!-- <button class="btn-serv serv7"> Mais servi�os em breve</button> -->
-    </section>
+    </section>-->
     <Footer></Footer>
   </div>
 </template>
@@ -40,15 +41,14 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import Schedule from "@/components/Schedule.vue";
 
 export default {
   name: "Services",
   components: {
     Header,
-    Footer
-  },
-  props: {
-    msg: String
+    Footer,
+    Schedule
   }
 };
 </script>

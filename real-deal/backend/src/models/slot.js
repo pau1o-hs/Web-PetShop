@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 // The schedule will only store the OPEN or BOOKED slots. All other slots must default
 // to EMPTY in the frontend
 const schema = mongoose.Schema({
+  customer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Customer',
+  },
   service: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Service',

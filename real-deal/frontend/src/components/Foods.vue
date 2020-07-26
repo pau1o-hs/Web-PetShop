@@ -1,7 +1,7 @@
 ﻿<template>
   <div class="foods">
     <section id="foods">
-      <div class="item-unity" v-for="item in products" :key="item._id">
+      <div class="item-unity" v-for="item in products" :key="item.name">
         <!-- <div v-if="item.tags.includes('foods')"> -->
         <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" />
         <h2 id="nome-item">{{ item.name }}</h2>
@@ -31,7 +31,6 @@ export default {
         tag: "foods"
       })
       .then(response => {
-        console.log(response.data);
         this.products = response.data;
       });
   }

@@ -60,20 +60,20 @@ exports.getBySlug = async (req, res) => {
     });
   }
 };
-function filterData(prodArr) {
+function filterData(servArr) {
   // Customers cannot see quantity in stock, if the product is active or the total sold.
-  const newProdArr = prodArr.map((prod) => {
+  const newServArr = servArr.map((serv) => {
     return {
-      title: prod.title,
-      slug: prod.slug,
-      tags: prod.tags,
-      photo: prod.photo,
-      price: prod.price,
-      description: prod.description,
-      responsible: data.responsible,
+      name: serv.name,
+      slug: serv.slug,
+      tags: serv.tags,
+      photo: serv.photo,
+      price: serv.price,
+      description: serv.description,
+      responsible: serv.responsible,
     };
   });
-  return newProdArr;
+  return newServArr;
 }
 
 // Used by: Both

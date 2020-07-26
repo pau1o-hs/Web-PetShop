@@ -19,7 +19,6 @@
       <a class="home-button prof2" href="#petsection">
         <p>PETS MANAGER</p>
       </a>
-      <!--<a class="home-button prof3" href="#purchasesection"><p>PURCHASES</p></a>-->
       <a class="home-button prof4" href="#schedulesection">
         <p>RESERVED SCHEDULES</p>
       </a>
@@ -32,7 +31,7 @@
 
     <div id="infoform">
       <section class="infosection" style="width: 30%">
-        <p>ID #0000</p>
+        <p>{{user.name}}</p>
         <div>
           <button class="btn-add">+</button>
         </div>
@@ -52,35 +51,23 @@
     </div>
 
     <div id="petform">
-      <section class="polaroid pol1" style="background-color:#2980B9;">
+      <section
+        class="polaroid"
+        style="background-color:#2980B9;"
+        v-for="pet in pets"
+        :key="pet.name"
+      >
         <img src="../mockup/images/profile/pet1.png" width="100%" height="80%" />
-        <p>Bobby</p>
+        <p>{{pet.name}}</p>
         <hr />
         <button>Edit</button>
       </section>
-      <section class="polaroid pol2" style="background-color:#2980B9;">
-        <img src="../mockup/images/profile/pet2.jpg" width="100%" height="80%" />
-        <p>Frajola</p>
-        <hr />
-        <button>Edit</button>
-      </section>
-      <section class="polaroid pol3" style="background-color:#2980B9;">
-        <img src="../mockup/images/profile/pet3.jpg" width="100%" height="80%" />
-        <p>Roger</p>
-        <hr />
-        <button>Edit</button>
-      </section>
-      <!-- <a class="home-button pet1" href="#schedulesection"><p>Bobby</p></a>
-        <a class="home-button pet2" href="#schedulesection"><p>Frajola</p></a>
-      <a class="home-button pet3" href="#schedulesection"><p>Roger</p></a>-->
       <div class="infosection">
         <input type="text" placeholder="Name" />
         <input type="select" placeholder="Race" />
         <input type="number" placeholder="Age" />
-        <!-- <section style="display: flex; width: 100%"> -->
         <button type="file" class="btn-add2">Photo</button>
         <button class="btn-add2" style="width: 50%;">Add Pet</button>
-        <!-- </section> -->
       </div>
     </div>
 
@@ -93,26 +80,16 @@
     </div>
 
     <div class="scheduleform">
-      <section class="polaroid pol1">
+      <section class="polaroid" v-for="schedule in schedules" :key="schedule._id">
         <img src="../mockup/images/profile/pet1.png" width="100%" height="80%" />
-        <p>Wash (R$0,00)</p>
+        <p>{{schedule.service.name}} (R${{schedule.service.price}})</p>
         <hr />
         <p>11:00 | 10-10-2020</p>
-      </section>
-
-      <section class="polaroid pol2">
-        <img src="../mockup/images/profile/pet3.jpg" width="100%" height="80%" />
-        <p>Appointment (R$0,00)</p>
-        <hr />
-        <p>10:30 | 10-10-2020</p>
       </section>
 
       <div class="petregister">
         <button class="btn-add">+</button>
       </div>
-      <!-- <p>Pet: <input type="text" value="Bobby" size="7" readonly></p>
-        <p>Service: <select><option selected>Wash</option></select></p>
-      <p>Date: <input type="datetime-local" value="2020-05-05T10:30" readonly></p>-->
     </div>
     <Footer></Footer>
   </div>
@@ -121,6 +98,7 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import axios from "axios";
 
 export default {
   name: "Profile",
@@ -130,6 +108,44 @@ export default {
   },
   props: {
     msg: String
+  },
+  data() {
+    return {
+      user: { name: "" },
+      pets: [],
+      schedules: [],
+      error: ""
+    };
+  },
+  mounted() {
+    const token =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWNjODBhMTNlNzA5NGE5MTMyMmZhMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTU3MjE4NzMsImV4cCI6MTU5NTgwODI3M30.m8FYtgLH4Q6V7l_7bZ8QCvXE669cMtbYUwrTzFIMZzw";
+    axios
+      .get("http://localhost:8080/api/profile", {
+        headers: { "x-access-token": token }
+      })
+      .then(response => {
+        console.log(response.data);
+        this.user = response.data;
+      });
+
+    axios
+      .get("http://localhost:8080/api/profile/pets", {
+        headers: { "x-access-token": token }
+      })
+      .then(response => {
+        console.log(response.data);
+        this.pets = response.data;
+      });
+
+    axios
+      .get("http://localhost:8080/api/schedule", {
+        headers: { "x-access-token": token }
+      })
+      .then(response => {
+        console.log(response.data);
+        this.schedules = response.data;
+      });
   }
 };
 </script>

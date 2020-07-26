@@ -1,6 +1,6 @@
-const Slot = require('../models/slot');
 const serviceRepository = require('../repositories/services');
 const scheduleRepository = require('../repositories/schedule');
+const authService = require('../services/auth');
 
 // Used by: Both
 exports.getCurrent = async (req, res) => {
@@ -16,7 +16,30 @@ exports.getCurrent = async (req, res) => {
 };
 
 // Used by: Customer
+exports.getCustomerReservations = async (req, res) => {
+  try {
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    const schedule = await scheduleRepository.getCustomerReservations(
+      decoded.id
+    );
+    res.status(200).send(schedule);
+  } catch (e) {
+    res.status(500).send({
+      message: 'Error while processing the request.',
+      error: e,
+    });
+  }
+};
+
+// Used by: Customer
 exports.fillSlotByServiceSlug = async (req, res) => {
+  // const token =
+  //   req.body.token || req.query.token || req.headers['x-access-token'];
+  // const decoded = await authService.decodeToken(token);
+
   // PetID is also given in req.body
   try {
     const service = await serviceRepository.getBySlug(req.body.serviceSlug);
@@ -28,6 +51,7 @@ exports.fillSlotByServiceSlug = async (req, res) => {
     }
 
     await scheduleRepository.fillSlot({
+      customer: req.body.customer,
       service: service._id,
       date: req.body.date,
       pet: req.body.pet,

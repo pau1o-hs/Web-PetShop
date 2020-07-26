@@ -25,7 +25,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:8080/api/products/tags/", {
+      .post("http://localhost:8080/api/products/tags/", {
         tag: "snacks"
       })
       .then(response => {

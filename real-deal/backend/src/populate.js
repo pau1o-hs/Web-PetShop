@@ -36,7 +36,7 @@ module.exports = async function () {
 
   await repos.product.createOne({
     name: 'Ração para gatos',
-    tags: ['foods', 'teste'],
+    tags: ['foods', 'walkway'],
     photo: '../mockup/images/racoes/racao-gato.jpg',
     description: 'Ração deliciosa e nutritiva para o seu gatinho.',
     price: 9.99,
@@ -46,7 +46,7 @@ module.exports = async function () {
 
   await repos.product.createOne({
     name: 'Ração para cachorros',
-    tags: ['foods'],
+    tags: ['foods', 'snacks'],
     photo: '../mockup/images/racoes/racao-cao.jpg',
     description: 'Ração deliciosa e nutritiva para o seu cachorrinho.',
     price: 11.99,
@@ -90,6 +90,7 @@ module.exports = async function () {
   });
 
   await repos.schedule.fillSlot({
+    customer: customers[0]._id,
     service: services[0]._id,
     date: Date.UTC(2020, 6, 27, 12, 0), // 27/07/2020, as 12:00
     pet: pet._id,

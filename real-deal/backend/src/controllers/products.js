@@ -65,7 +65,7 @@ function filterData(prodArr) {
   // Customers cannot see quantity in stock, if the product is active or the total sold.
   const newProdArr = prodArr.map((prod) => {
     return {
-      title: prod.title,
+      name: prod.name,
       slug: prod.slug,
       tags: prod.tags,
       photo: prod.photo,

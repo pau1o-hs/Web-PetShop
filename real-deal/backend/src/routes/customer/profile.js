@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const customerController = require('../../controllers/customer');
+const scheduleController = require('../../controllers/schedule');
 const validator = require('../../validators/customer');
 const authService = require('../../services/auth');
 
@@ -8,6 +9,12 @@ const petsRoute = require('./pets');
 const router = Router();
 
 router.get('/', authService.isAuthenticated, customerController.getMyInfo);
+router.get(
+  '/schedule',
+  authService.isAuthenticated,
+  scheduleController.getCustomerReservations
+);
+
 router.post(
   '/',
   validator.rules(),

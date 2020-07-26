@@ -7,6 +7,13 @@ exports.getCurrent = async () => {
   return res;
 };
 
+exports.getCustomerReservations = async (customerId) => {
+  const res = await Slot.find({ customer: customerId }) // get ALL booked slots for that customer
+    .populate('service', 'name price date photo')
+    .populate('pet', 'name photo');
+  return res;
+};
+
 exports.fillSlot = async (data) => {
   const slot = new Slot(data);
   await slot.save();
