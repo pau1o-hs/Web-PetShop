@@ -67,10 +67,7 @@
 
 <script>
 export default {
-  name: "Slider",
-  props: {
-    msg: String
-  }
+  name: "Slider"
 };
 </script>
 

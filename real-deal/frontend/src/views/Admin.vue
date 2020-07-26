@@ -439,9 +439,6 @@ export default {
     Header,
     Footer,
   },
-  props: {
-    msg: String,
-  },
   data() {
     return {
       admins: { name: "" },

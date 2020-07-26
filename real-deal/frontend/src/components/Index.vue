@@ -7,22 +7,19 @@
     </div>
 
     <section id="menu-home">
-      <router-link class="button-home button1" to="/products"
-        ><p>PRODUCTS</p></router-link
-      >
-      <router-link class="button-home button2" to="/services"
-        ><p>SERVICES</p></router-link
-      >
+      <router-link class="button-home button1" to="/products">
+        <p>PRODUCTS</p>
+      </router-link>
+      <router-link class="button-home button2" to="/services">
+        <p>SERVICES</p>
+      </router-link>
     </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Index",
-  props: {
-    msg: String,
-  },
+  name: "Index"
 };
 </script>
 

@@ -117,9 +117,6 @@ export default {
     return {
       info: null
     };
-  },
-  props: {
-    msg: String
   }
 };
 </script>

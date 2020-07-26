@@ -15,9 +15,7 @@
         <input type="text" placeholder="Admin name" />
         <input type="password" placeholder="Password" />
         <a href="admin.html">Forgot your password?</a>
-        <router-link class="send_info" type="submit" to="/admin"
-          >Login</router-link
-        >
+        <router-link class="send_info" type="submit" to="/admin">Login</router-link>
         <div style="visibility: hidden;">Just to occupy space</div>
       </div>
       <div
@@ -34,9 +32,7 @@
         <input type="text" placeholder="E-mail" />
         <input type="password" placeholder="Password" />
         <a href="profile.html">Forgot your password?</a>
-        <router-link class="send_info" type="submit" to="/profile"
-          >Login</router-link
-        >
+        <router-link class="send_info" type="submit" to="/profile">Login</router-link>
         <span>
           Not a member?
           <a href="index.html" id="register-now">Register now</a>
@@ -48,9 +44,6 @@
 
 <script>
 export default {
-  name: "Login",
-  props: {
-    msg: String,
-  },
+  name: "Login"
 };
 </script>

@@ -21,9 +21,9 @@
         <router-link to="/login">Login/Register</router-link>
         <div id="profileimg"></div>
         <!--<a href="#">My Profile</a>-->
-        <router-link to="/cart"
-          ><img src="../mockup/images/cart.png" style="height: 4vh; width: 4vh;"
-        /></router-link>
+        <router-link to="/cart">
+          <img src="../mockup/images/cart.png" style="height: 4vh; width: 4vh;" />
+        </router-link>
       </div>
     </div>
   </div>
@@ -31,10 +31,7 @@
 
 <script>
 export default {
-  name: "Header",
-  props: {
-    msg: String,
-  },
+  name: "Header"
 };
 </script>
 
