@@ -6,8 +6,23 @@ const truncate = require('../__tests__/utils/truncate');
 module.exports = async function () {
   await truncate(); // clean up the database
 
+  // Create root admin
+  await repos.admin.createNewAdmin(undefined, {
+    CPF: '11111111111',
+    name: 'Root Admin',
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/profile/admin1.jpg',
+    phone: '11945678912',
+    email: 'iamadmin@petshop.com',
+    adminName: 'admin',
+    password: await passwordEncrypter.encrypt('admin'),
+  });
+
+  const rootAdmin = await repos.admin.getByAdminName('admin');
+  const rootId = rootAdmin._id;
+
   // Create child admins
-  await repos.admin.createNewAdmin({
+  await repos.admin.createNewAdmin(rootId, {
     CPF: '11111111112',
     name: 'Bruno Santos',
     phone: '11945677438',
@@ -16,7 +31,7 @@ module.exports = async function () {
     password: await passwordEncrypter.encrypt('bruno'),
   });
 
-  await repos.admin.createNewAdmin({
+  await repos.admin.createNewAdmin(rootId, {
     CPF: '11111111113',
     name: 'Paulo Henrique',
     phone: '11954787439',
@@ -25,28 +40,13 @@ module.exports = async function () {
     password: await passwordEncrypter.encrypt('paulo'),
   });
 
-  await repos.admin.createNewAdmin({
+  await repos.admin.createNewAdmin(rootId, {
     CPF: '11111111114',
     name: 'Vitor Santana',
     phone: '11947831245',
     email: 'vitors@petshop.com',
     adminName: 'vitor',
     password: await passwordEncrypter.encrypt('vitor'),
-  });
-
-  const newAdmins = await repos.admin.getAll();
-
-  // Create root admin
-  await repos.admin.createNewAdmin({
-    CPF: '11111111111',
-    name: 'Root Admin',
-    photo:
-      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/profile/admin1.jpg',
-    phone: '11945678912',
-    email: 'iamadmin@petshop.com',
-    adminName: 'admin',
-    childAdmins: newAdmins,
-    password: await passwordEncrypter.encrypt('admin'),
   });
 
   await repos.customer.create({

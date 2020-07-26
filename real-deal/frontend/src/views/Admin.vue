@@ -33,7 +33,11 @@
       </a>
     </section>
 
-    <div id="adminsection" class="customsection" style="background-color:mediumseagreen;">
+    <div
+      id="adminsection"
+      class="customsection"
+      style="background-color:mediumseagreen;"
+    >
       <p>Child Administrators</p>
     </div>
 
@@ -46,66 +50,114 @@
       >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="../../public/images/profile/admin1.jpg" width="100%" height="80%" />
-            <p>{{childadmin.name}}</p>
+            <img
+              src="../../public/images/profile/admin1.jpg"
+              width="100%"
+              height="80%"
+            />
+            <p>{{ childadmin.name }}</p>
           </div>
           <div class="flip-card-back">
             <div class="infosection">
-              <input type="text" :placeholder="childadmin.CPF" />
-              <input type="text" :placeholder="childadmin.name" />
-              <!-- <input type="text" :placeholder="childadmin.adminname" /> -->
-              <input type="text" :placeholder="childadmin.phone" />
-              <input type="text" :placeholder="childadmin.email" />
-              <input type="text" placeholder="Senha" />
-              <button class="btn-add2" style="width: 50%;" v-on="createNew">Edit</button>
+              <input type="text" placeholder="CPF" v-model="childadmin.CPF" />
+              <input type="text" placeholder="Name" v-model="childadmin.name" />
+              <input
+                type="text"
+                placeholder="AdminName"
+                v-model="childadmin.adminName"
+              />
+              <input
+                type="text"
+                placeholder="Phone"
+                v-model="childadmin.phone"
+              />
+              <input
+                type="text"
+                placeholder="E-mail"
+                v-model="childadmin.email"
+              />
+              <input
+                type="text"
+                placeholder="Senha"
+                v-model="childadmin.password"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <!-- <section class="polaroid pol2" style="background-color:mediumseagreen;">
-        <img src="../../public/images/profile/admin2.jpg" width="100%" height="80%" />
-        <p>Scooby-Doo</p>
-        <hr />
-        <button>Edit</button>
-      </section>-->
       <div class="infosection">
-        <input type="text" placeholder="CPF" />
-        <input type="text" placeholder="Name" />
-        <input type="text" placeholder="AdminName" />
-        <input type="text" placeholder="Phone" />
-        <input type="text" placeholder="E-mail" />
-        <input type="text" placeholder="Password" />
+        <input type="text" placeholder="CPF" v-model="newAdmin.cpf" />
+
+        <input type="text" placeholder="Name" v-model="newAdmin.name" />
+        <input
+          type="text"
+          placeholder="AdminName"
+          v-model="newAdmin.adminName"
+        />
+        <input type="text" placeholder="Phone" v-model="newAdmin.phone" />
+        <input type="text" placeholder="Email" v-model="newAdmin.email" />
+        <input type="text" placeholder="Senha" v-model="newAdmin.password" />
         <button type="file" class="btn-add2">Photo</button>
-        <button class="btn-add2" style="width: 50%;">Add Admin</button>
+        <button class="btn-add2" style="width: 50%;" v-on:click="createNew()">
+          Add Admin
+        </button>
       </div>
     </div>
 
-    <div id="clientsection" class="customsection" style="background-color:#2980B9;">
+    <div
+      id="clientsection"
+      class="customsection"
+      style="background-color:#2980B9;"
+    >
       <p>Clients</p>
     </div>
 
     <div class="scheduleform">
       <section
-        class="polaroid"
         style="background-color:#2980B9;"
         v-for="client in clients"
         v-bind:key="client.name"
       >
-        <img src="../../public/images/profile/cliente1.jpg" width="100%" height="80%" />
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img :src="client.photo" width="100%" height="80%" />
+            <p>{{ client.name }}</p>
+          </div>
+          <div class="flip-card-back">
+            <div class="infosection">
+              <input type="text" placeholder="CPF" v-model="client.CPF" />
+              <input type="text" placeholder="Name" v-model="client.name" />
+              <input type="text" placeholder="Phone" v-model="client.phone" />
+              <input type="text" placeholder="E-mail" v-model="client.email" />
+              <input
+                type="text"
+                placeholder="Senha"
+                v-model="client.password"
+              />
+            </div>
+          </div>
+        </div>
         <p>{{ client.name }}</p>
         <hr />
         <button>Edit</button>
       </section>
     </div>
 
-    <div id="productssection" class="customsection" style="background-color:slateblue;">
+    <div
+      id="productssection"
+      class="customsection"
+      style="background-color:slateblue;"
+    >
       <p>Products</p>
     </div>
 
     <section id="foods">
       <div class="item-unity" v-for="product in products" :key="product._id">
-        <img src="../../public/images/racoes/racao-cao.jpg" alt="Ração de gato" />
+        <img
+          src="../../public/images/racoes/racao-cao.jpg"
+          alt="Ração de gato"
+        />
         <h2 id="nome-item">{{ product.name }}</h2>
         <p id="descricao-item">{{ product.description }}</p>
         <p id="preco">R${{ product.price }}</p>
@@ -121,7 +173,11 @@
       </div>
     </section>
 
-    <div id="servicessection" class="customsection" style="background-color:#E74C3C;">
+    <div
+      id="servicessection"
+      class="customsection"
+      style="background-color:#E74C3C;"
+    >
       <p>Services</p>
     </div>
 
@@ -132,7 +188,11 @@
         v-for="service in services"
         :key="service._id"
       >
-        <img src="../../public/images/categorias/services.jpg" width="100%" height="80%" />
+        <img
+          src="../../public/images/categorias/services.jpg"
+          width="100%"
+          height="80%"
+        />
         <p>{{ service.name }}</p>
         <hr />
         <button>Edit</button>
@@ -149,7 +209,11 @@
       </div>
     </div>
 
-    <div id="schedulesection-admin" class="customsection" style="background-color:darkslategray;">
+    <div
+      id="schedulesection-admin"
+      class="customsection"
+      style="background-color:darkslategray;"
+    >
       <p>Schedules</p>
     </div>
     <Schedule />
@@ -168,16 +232,25 @@ export default {
   components: {
     Header,
     Footer,
-    Schedule
+    Schedule,
   },
   data() {
     return {
+      newAdmin: {
+        cpf: "",
+        name: "",
+        adminName: "",
+        phone: "",
+        email: "",
+        password: "",
+        _id: "",
+      },
       admins: { name: "" },
       clients: [],
       products: [],
       services: [],
       childadmins: [],
-      error: ""
+      error: "",
     };
   },
   methods: {
@@ -185,51 +258,60 @@ export default {
     createNew: function() {
       // `this` dentro de métodos aponta para a instância Vue
       axios
-        .post("http://localhost:8080/api/admin/childadmins", {
-          headers: { "x-access-token": this.$token }
-        })
-        .then(response => {
-          console.log(response.data);
-          this.childadmins = response.data;
+        .post(
+          "http://localhost:8080/api/admin/children",
+          {
+            headers: { "x-access-token": this.$token },
+          },
+          {
+            CPF: this.newAdmin.cpf,
+            name: this.newAdmin.name,
+            phone: this.newAdmin.phone,
+            email: this.newAdmin.email,
+            adminName: this.newAdmin.adminName,
+            password: this.newAdmin.password,
+          }
+        )
+        .then((response) => {
+          this.childadmins.push(response.data);
         });
-    }
+    },
   },
   mounted() {
     axios
       .get("http://localhost:8080/api/admin/children", {
-        headers: { "x-access-token": this.$token }
+        headers: { "x-access-token": this.$token },
       })
-      .then(response => {
-        console.log(response.data);
+      .then((response) => {
         this.childadmins = response.data;
       });
     axios
       .get("http://localhost:8080/api/admin/customers", {
-        headers: { "x-access-token": this.$token }
+        headers: { "x-access-token": this.$token },
       })
-      .then(response => {
+      .then((response) => {
         // console.log(response.data);
         this.clients = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/admin/products", {
-        headers: { "x-access-token": this.$token }
+        headers: { "x-access-token": this.$token },
       })
-      .then(response => {
+      .then((response) => {
         // console.log(response.data);
         this.products = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/admin/services", {
-        headers: { "x-access-token": this.$token }
+        headers: { "x-access-token": this.$token },
       })
-      .then(response => {
+      .then((response) => {
         // console.log(response.data);
         this.services = response.data;
       });
-  }
+  },
 };
 </script>
 

@@ -27,9 +27,14 @@ exports.getByAdminName = async (adminName) => {
   return res;
 };
 
-exports.createNewAdmin = async (data) => {
+exports.createNewAdmin = async (parentId, data) => {
   const admin = new Admin(data);
   await admin.save();
+  if (parentId !== undefined) {
+    await Admin.findByIdAndUpdate(parentId, {
+      $push: { childAdmins: admin._id },
+    });
+  }
 };
 
 exports.updateById = async (id, data) => {

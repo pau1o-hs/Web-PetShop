@@ -83,7 +83,11 @@ exports.getMyChildrenInfo = async (req, res) => {
 // Used by: Admin
 exports.createNewAdmin = async (req, res) => {
   try {
-    await repository.createNewAdmin({
+    const token =
+      req.body.token || req.query.token || req.headers['x-access-token'];
+    const decoded = await authService.decodeToken(token);
+
+    await repository.createNewAdmin(decoded.id, {
       password: await passwordEncrypter.encrypt(req.body.password),
       ...req.body,
     });

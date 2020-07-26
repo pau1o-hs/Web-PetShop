@@ -25,7 +25,11 @@
     </section>
 
     <!-- PROFILE -->
-    <div id="profilesection" class="customsection" style="background-color:mediumseagreen;">
+    <div
+      id="profilesection"
+      class="customsection"
+      style="background-color:mediumseagreen;"
+    >
       <p>Profile Information</p>
     </div>
 
@@ -40,16 +44,20 @@
       </section>
 
       <section class="infosection" style="width: 30%">
-        <input type="text" :placeholder="addUser.name" />
-        <input type="text" :placeholder="addUser.address" />
-        <input type="text" :placeholder="addUser.phone" />
-        <input type="text" :placeholder="addUser.email" />
-        <input type="submit" text="Atualizar" />
+        <input type="text" v-model="addUser.name" placeholder="Name" />
+        <input type="text" v-model="addUser.address" placeholder="Address" />
+        <input type="text" v-model="addUser.phone" placeholder="Phone" />
+        <input type="text" v-model="addUser.email" placeholder="E-mail" />
+        <input type="submit" text="Atualizar" v-on:click="updateUserInfo()" />
       </section>
     </div>
 
     <!-- PETS -->
-    <div id="petsection" class="customsection" style="background-color:#2980B9;">
+    <div
+      id="petsection"
+      class="customsection"
+      style="background-color:#2980B9;"
+    >
       <p>Pets Manager</p>
     </div>
 
@@ -66,16 +74,22 @@
         <button>Edit</button>
       </section>
       <div class="infosection">
-        <input type="text" :placeholder="addPet.name" />
-        <input type="select" :placeholder="addPet.race" />
-        <input type="number" :placeholder="addPet.age" />
+        <input type="text" v-model="addPet.name" placeholder="name" />
+        <input type="select" v-model="addPet.race" placeholder="race" />
+        <input type="number" v-model="addPet.age" placeholder="Age" />
         <button type="file" class="fa fa-btn1 fa-plus-circle">Photo</button>
-        <button class="fa fa-btn1 fa-plus-circle" style="width: 50%;">Add Pet</button>
+        <button class="fa fa-btn1 fa-plus-circle" style="width: 50%;">
+          Add Pet
+        </button>
       </div>
     </div>
 
     <!-- SCHEDULES -->
-    <div id="schedulesection" class="customsection" style="background-color:#E74C3C;">
+    <div
+      id="schedulesection"
+      class="customsection"
+      style="background-color:#E74C3C;"
+    >
       <p>Reserved Schedules</p>
       <div class="search">
         <input type="text" placeholder=" Type one of your pets here..." />
@@ -83,8 +97,16 @@
     </div>
 
     <div class="scheduleform">
-      <section class="pet-block" v-for="schedule in schedules" :key="schedule._id">
-        <img src="../../public/images/profile/pet1.png" width="100%" height="80%" />
+      <section
+        class="pet-block"
+        v-for="schedule in schedules"
+        :key="schedule._id"
+      >
+        <img
+          src="../../public/images/profile/pet1.png"
+          width="100%"
+          height="80%"
+        />
         <p>{{ schedule.service.name }} (R${{ schedule.service.price }})</p>
         <hr />
         <p>{{ schedule.data }}</p>
@@ -109,7 +131,7 @@ export default {
   name: "Profile",
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
@@ -118,57 +140,71 @@ export default {
         address: "Address",
         phone: "Phone",
         email: "E-mail",
-        photo: "Photo"
+        photo: "Photo",
       },
       addPet: {
         name: "Name",
         race: "Race",
-        age: "Age",
-        photo: "Photo"
+        age: null,
+        photo: "Photo",
       },
       user: { name: "" },
       pets: [],
       schedules: [],
-      error: ""
+      error: "",
     };
+  },
+  methods: {
+    updateUserInfo: function() {
+      console.log("AH");
+      axios
+        .put(
+          "http://localhost:8080/api/profile",
+          {
+            data: {
+              name: "Joaozito",
+            },
+          },
+          {
+            headers: {
+              "x-access-token": this.$token,
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response.data);
+        });
+    },
   },
   mounted() {
     axios
       .get("http://localhost:8080/api/profile", {
-        headers: { "x-access-token": this.$token }
+        headers: { "x-access-token": this.$token },
       })
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         this.user = response.data;
+        this.addUser = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/profile/pets", {
-        headers: { "x-access-token": this.$token }
+        headers: { "x-access-token": this.$token },
       })
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         this.pets = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/schedule", {
-        headers: { "x-access-token": this.$token }
+        headers: { "x-access-token": this.$token },
       })
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         this.schedules = response.data;
       });
-
-    axios
-      .put("http://localhost:8080/api/profile", {
-        headers: { "x-access-token": this.$token }
-      })
-      .then(response => {
-        console.log(response.data);
-        response.data.username = this.name;
-      });
-  }
+  },
 };
 </script>
 
@@ -183,6 +219,7 @@ export default {
   justify-content: space-around;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 }
+
 .customsection p {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 5vh;
