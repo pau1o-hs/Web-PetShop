@@ -1763,14 +1763,33 @@ body {
 	margin: 0;
 }
 
-.cart-model {
-	margin-top: 10px;
-	flex-direction: column;
-	background-color: gray;
-	box-shadow: 0 0 10px black;
-	align-self: center;
+.main-block {
+	display: grid;
+	width: 90%;
+	margin: 5vh auto;
 	align-items: center;
 	justify-content: center;
-	width: 60vw;
-	height: 10vh;
+}
+.cart-model {
+	flex-direction: column;
+	background-color: #eeeeee;
+	/* border-style: solid; */
+
+	/* border-width: 1px 0px; */
+	border-bottom: 0.1vh solid #333;
+	border-color: #333;
+	/* box-shadow: 0 0 10px black; */
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	width: 70vw;
+}
+.cart-model p {
+	align-self: center;
+	justify-content: space-around;
+}
+
+.cart-model h2 {
+	align-self: center;
+	justify-content: space-around;
 }

@@ -27,15 +27,15 @@ export default {
   },
   methods: {
     getSlotInHour: function(hour) {
-      console.log(
-        this.slots.find((slot) => {
-          moment(slot.date).hour() == moment(slot.date).hour();
-        })
-      );
-      if (this.slots[0] === undefined) {
+      const result = this.slots.find((slot) => {
+        return moment.utc(slot.date).format("HH:mm") == hour;
+      });
+      // Guard clause
+      if (result === undefined) {
         return { state: "EMPTY" };
       }
-      return this.slots[0];
+      console.log(result);
+      return result;
     },
   },
   computed: {

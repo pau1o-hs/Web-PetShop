@@ -1,9 +1,8 @@
 <template>
   <div>
-    <template v-if="info.state == 'BOOKED'">
+    <template v-if="info.state === 'BOOKED'">
       <div class="display-slot reserved">
         <p class="hour">{{ hour }}</p>
-
         <img
           class="icon"
           :src="info.service.photo"
@@ -24,12 +23,13 @@
       </div>
     </template>
 
-    <template v-else-if="info.state == 'OPEN'">
+    <template v-else-if="info.state === 'OPEN'">
       <div class="display-slot free">
+        <p class="hour">{{ hour }}</p>
         <img
           class="icon"
-          :src="info.pet.photo"
-          :alt="info.pet.name + ' image'"
+          :src="info.service.photo"
+          :alt="info.service.name + ' image'"
         />
         <p class="service">{{ info.service.name }}</p>
       </div>
