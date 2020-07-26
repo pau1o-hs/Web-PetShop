@@ -1,5 +1,5 @@
 <template>
-  <div id="profile">
+  <div>
     <div class="container">
       <Header></Header>
       <input type="radio" id="i1" name="images" checked />
@@ -148,4 +148,226 @@ export default {
 </script>
 
 <style>
+/* #menu-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 65%;
+  height: 70vh;
+  margin: 0 auto;
+  background-color: none;
+  justify-content: space-between;
+  grid-gap: 2.5vh;
+  grid-template-areas: "btn-prof1 btn-prof2 btn-prof2" "btn-prof1 btn-prof4 btn-prof4";
+  align-self: center;
+  margin-bottom: 5vh;
+}
+#menu-profile a {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px black;
+  text-decoration: none;
+}
+
+.prof1 {
+  background-image: url("../../public/images/profile/profileinfo.jpg");
+  grid-area: btn-prof1;
+}
+
+.prof2 {
+  background-image: url("../../public/images/profile/petmanager.jpg");
+  grid-area: btn-prof2;
+}
+
+.prof3 {
+  background-image: url("../../public/images/products-header.jpg");
+  grid-area: btn-prof3;
+}
+
+.prof4 {
+  background-image: url("../../public/images/profile/schedule.jpg");
+  grid-area: btn-prof4;
+}
+
+#infoform {
+  display: flex;
+  width: 65%;
+  height: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.infosection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.infosection p,
+.infosection .btn-add2,
+.infosection input {
+  display: block;
+  transition: 0.4s;
+  width: 220px;
+  margin: 1vh auto;
+  text-align: center;
+  padding: 14px 10px;
+  border: 0;
+  outline: none;
+  border-radius: 24px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+.infosection p:hover,
+.infosection .btn-add2:hover,
+.infosection input:hover {
+  opacity: 1;
+}
+.infosection p,
+.infosection .btn-add2 {
+  background-color: mediumseagreen;
+  box-shadow: 0 0 5px mediumseagreen;
+  color: white;
+}
+.infosection input {
+  background: none;
+  border: 2px solid dodgerblue;
+}
+.infosection input:focus {
+  opacity: 1;
+  background-color: white;
+  width: 250px;
+}
+.infosection div {
+  width: 75%;
+  height: 37.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+}
+
+#petform {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 65%;
+  height: 40%;
+  margin: 0 auto;
+  background-color: none;
+  justify-content: space-between;
+  grid-gap: 2.5vh;
+  grid-template-areas: "polaroid1 polaroid2 polaroid3 pet-register";
+  align-self: center;
+  margin-bottom: 5vh;
+}
+#petform a {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px black;
+  text-decoration: none;
+}
+
+.pet1 {
+  background-image: url("../../public/images/profile/pet1.png");
+  grid-area: btn-pet1;
+}
+
+.pet2 {
+  background-image: url("../../public/images/profile/pet2.jpg");
+  grid-area: btn-pet2;
+}
+
+.pet3 {
+  background-image: url("../../public/images/profile/pet3.jpg");
+  grid-area: btn-pet3;
+}
+
+.pet4 {
+  background-image: url("../../public/images/profile/admin1.jpg");
+  grid-area: btn-pet4;
+}
+
+.petregister {
+  grid-area: pet-register;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+  width: 100%;
+  height: 100%;
+}
+.petregister input {
+  margin: 2vh 1vw;
+}
+
+.btn-add {
+  width: 6vh;
+  height: 6vh;
+  font-size: 100px;
+  color: white;
+  background-color: mediumseagreen;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(65, 2, 2, 0.1);
+  border: 0;
+  outline: none;
+  border-radius: 1000%;
+  transition-duration: 0.5s;
+  opacity: 0.5;
+}
+.btn-add:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.scheduleform {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 65%;
+  height: 40%;
+  margin: 0 auto;
+  background-color: none;
+  justify-content: space-between;
+  grid-gap: 2.5vh;
+  grid-template-areas: "polaroid1 polaroid2 pet-register";
+  align-self: center;
+  margin-bottom: 5vh;
+}
+
+.polaroid {
+  box-shadow: 0 0 10px black;
+  align-self: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.polaroid img {
+  object-fit: cover;
+}
+.polaroid p {
+  font-weight: bolder;
+  font-size: large;
+  align-self: center;
+  text-align: center;
+  padding: 5px 20px;
+  color: white;
+}
+
+.pol1 {
+  grid-area: polaroid1;
+}
+
+.pol2 {
+  grid-area: polaroid2;
+}
+
+.pol2 {
+  grid-area: polaroid3;
+} */
 </style>

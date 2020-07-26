@@ -141,4 +141,31 @@ export default {
 .container #nav_slide #dot4:hover {
   background: #4caf50;
 }
+
+@media screen and (max-width: 68.5vh) {
+  .container {
+    border: none;
+    width: 100%;
+    height: 0;
+    padding-bottom: 55%;
+  }
+  .container .slide_img .prev,
+  .container .slide_img .next {
+    width: 15%;
+  }
+  .container .slide_img .prev span,
+  .container .slide_img .next span {
+    border: solid 12px;
+  }
+  .container .slide_img .prev span {
+    border-color: transparent #fff transparent transparent;
+  }
+  .container .slide_img .next span {
+    border-color: transparent transparent transparent #fff;
+  }
+  .container #nav_slide .dots {
+    width: 12px;
+    height: 12px;
+  }
+}
 </style>
