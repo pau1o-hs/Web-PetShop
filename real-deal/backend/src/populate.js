@@ -46,7 +46,10 @@ module.exports = async function () {
     password: await passwordEncrypter.encrypt('vitor'),
   });
 
-  const newAdmins = await repos.admin.getAll();
+  let newAdmins = await repos.admin.getAll();
+  newAdmins = newAdmins.slice(1);
+
+  console.log(newAdmins);
 
   await repos.customer.create({
     CPF: '48061459912',

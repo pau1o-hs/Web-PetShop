@@ -4,7 +4,7 @@
       <Header></Header>
       <input type="radio" id="i1" name="images" checked />
       <div class="slide_img" id="one">
-        <img src="../mockup/images/dogs3.jpg" />
+        <img src="../../public/images/dogs3.jpg" />
         <h1>SERVICES</h1>
       </div>
     </div>
@@ -24,7 +24,7 @@ export default {
   components: {
     Header,
     Footer,
-    Schedule,
-  },
+    Schedule
+  }
 };
 </script>

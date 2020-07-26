@@ -4,7 +4,7 @@
       <Header></Header>
       <input type="radio" id="i1" name="images" checked />
       <div class="slide_img" id="one">
-        <img src="../mockup/images/profile/headeradmin.jpg" />
+        <img src="../../public/images/profile/headeradmin.jpg" />
         <h1>ADMINISTRATOR</h1>
       </div>
     </div>
@@ -33,31 +33,19 @@
       </a>
     </section>
 
-    <div
-      id="adminsection"
-      class="customsection"
-      style="background-color:mediumseagreen;"
-    >
+    <div id="adminsection" class="customsection" style="background-color:mediumseagreen;">
       <p>Child Administrators</p>
     </div>
 
     <div class="scheduleform">
       <section class="polaroid pol1" style="background-color:mediumseagreen;">
-        <img
-          src="../mockup/images/profile/admin1.jpg"
-          width="100%"
-          height="80%"
-        />
+        <img src="../../public/images/profile/admin1.jpg" width="100%" height="80%" />
         <p>Tchutchucão</p>
         <hr />
         <button>Edit</button>
       </section>
       <section class="polaroid pol2" style="background-color:mediumseagreen;">
-        <img
-          src="../mockup/images/profile/admin2.jpg"
-          width="100%"
-          height="80%"
-        />
+        <img src="../../public/images/profile/admin2.jpg" width="100%" height="80%" />
         <p>Scooby-Doo</p>
         <hr />
         <button>Edit</button>
@@ -74,11 +62,7 @@
       </div>
     </div>
 
-    <div
-      id="clientsection"
-      class="customsection"
-      style="background-color:#2980B9;"
-    >
+    <div id="clientsection" class="customsection" style="background-color:#2980B9;">
       <p>Clients</p>
     </div>
 
@@ -89,28 +73,20 @@
         v-for="client in clients"
         v-bind:key="client.name"
       >
-        <img
-          src="../mockup/images/profile/cliente1.jpg"
-          width="100%"
-          height="80%"
-        />
+        <img src="../../public/images/profile/cliente1.jpg" width="100%" height="80%" />
         <p>{{ client.name }}</p>
         <hr />
         <button>Edit</button>
       </section>
     </div>
 
-    <div
-      id="productssection"
-      class="customsection"
-      style="background-color:slateblue;"
-    >
+    <div id="productssection" class="customsection" style="background-color:slateblue;">
       <p>Products</p>
     </div>
 
     <section id="foods">
       <div class="item-unity" v-for="product in products" :key="product._id">
-        <img src="../mockup/images/racoes/racao-cao.jpg" alt="Ração de gato" />
+        <img src="../../public/images/racoes/racao-cao.jpg" alt="Ração de gato" />
         <h2 id="nome-item">{{ product.name }}</h2>
         <p id="descricao-item">{{ product.description }}</p>
         <p id="preco">R${{ product.price }}</p>
@@ -126,11 +102,7 @@
       </div>
     </section>
 
-    <div
-      id="servicessection"
-      class="customsection"
-      style="background-color:#E74C3C;"
-    >
+    <div id="servicessection" class="customsection" style="background-color:#E74C3C;">
       <p>Services</p>
     </div>
 
@@ -141,11 +113,7 @@
         v-for="service in services"
         :key="service._id"
       >
-        <img
-          src="../mockup/images/categorias/services.jpg"
-          width="100%"
-          height="80%"
-        />
+        <img src="../../public/images/categorias/services.jpg" width="100%" height="80%" />
         <p>{{ service.name }}</p>
         <hr />
         <button>Edit</button>
@@ -162,11 +130,7 @@
       </div>
     </div>
 
-    <div
-      id="schedulesection-admin"
-      class="customsection"
-      style="background-color:darkslategray;"
-    >
+    <div id="schedulesection-admin" class="customsection" style="background-color:darkslategray;">
       <p>Schedules</p>
     </div>
 
@@ -252,14 +216,10 @@
               <p class="hour">13:00</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
-              <img
-                class="icon"
-                src="../mockup/images/tchutchucao.jpg"
-                alt="Pet image"
-              />
+              <img class="icon" src="../../public/images/tchutchucao.jpg" alt="Pet image" />
               <div class="info">
                 <p class="service">
                   Vaccination
@@ -272,7 +232,7 @@
               <p class="hour">11:30</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
               <p class="service">Vaccination</p>
@@ -281,14 +241,10 @@
               <p class="hour">9:30</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
-              <img
-                class="icon"
-                src="../mockup/images/tchutchucao.jpg"
-                alt="Pet image"
-              />
+              <img class="icon" src="../../public/images/tchutchucao.jpg" alt="Pet image" />
               <div class="info">
                 <p class="service">
                   Vaccination
@@ -301,7 +257,7 @@
               <p class="hour">08:30</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
               <p class="service">Vaccination</p>
@@ -315,7 +271,7 @@
               <p class="hour">11:30</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
               <p class="service">Vaccination</p>
@@ -328,7 +284,7 @@
               <p class="hour">08:30</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
               <p class="service">Vaccination</p>
@@ -337,14 +293,10 @@
               <p class="hour">13:00</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
-              <img
-                class="icon"
-                src="../mockup/images/tchutchucao.jpg"
-                alt="Pet image"
-              />
+              <img class="icon" src="../../public/images/tchutchucao.jpg" alt="Pet image" />
               <div class="info">
                 <p class="service">
                   Vaccination
@@ -366,14 +318,10 @@
               <p class="hour">13:00</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
-              <img
-                class="icon"
-                src="../mockup/images/tchutchucao.jpg"
-                alt="Pet image"
-              />
+              <img class="icon" src="../../public/images/tchutchucao.jpg" alt="Pet image" />
               <div class="info">
                 <p class="service">
                   Vaccination
@@ -386,7 +334,7 @@
               <p class="hour">11:30</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
               <p class="service">Vaccination</p>
@@ -400,7 +348,7 @@
               <p class="hour">08:30</p>
               <img
                 class="icon"
-                src="../mockup/images/categorias/vacinacao.jpg"
+                src="../../public/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
               <p class="service">Vaccination</p>
@@ -441,7 +389,7 @@ export default {
   name: "Admin",
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
@@ -449,7 +397,7 @@ export default {
       clients: [],
       products: [],
       services: [],
-      error: "",
+      error: ""
     };
   },
   mounted() {
@@ -457,27 +405,27 @@ export default {
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWQwNmJjZmM3NTA1MDNmNTUyMzRkMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NTczNzc5MywiZXhwIjoxNTk1ODI0MTkzfQ.Ofmcp_L_6a9V56VeYbIEyNRTmYtqz0ClClBu9lI-Stc";
     axios
       .get("http://localhost:8080/api/admin/customers", {
-        headers: { "x-access-token": token },
+        headers: { "x-access-token": token }
       })
-      .then((response) => {
+      .then(response => {
         console.log(response.data);
         this.clients = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/admin/products", {
-        headers: { "x-access-token": token },
+        headers: { "x-access-token": token }
       })
-      .then((response) => {
+      .then(response => {
         console.log(response.data);
         this.products = response.data;
       });
 
-    axios.get("http://localhost:8080/api/services").then((response) => {
+    axios.get("http://localhost:8080/api/services").then(response => {
       console.log(response.data);
       this.services = response.data;
     });
-  },
+  }
 };
 </script>
 

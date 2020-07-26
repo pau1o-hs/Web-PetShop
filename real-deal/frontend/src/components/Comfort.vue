@@ -2,7 +2,7 @@
   <div class="confort">
     <section id="foods">
       <div class="item-unity" v-for="item in products" :key="item.username">
-        <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" />
+        <img src="../../public/images/racoes/racao-gato.jpg" alt="Ração de gato" />
         <h2 id="nome-item">{{ item.name }}</h2>
         <p id="descricao-item">{{ item.description }}</p>
         <p id="preco">{{ item.price }}</p>
@@ -20,18 +20,18 @@ export default {
   data() {
     return {
       products: [],
-      error: "",
+      error: ""
     };
   },
   mounted() {
     axios
       .post("http://localhost:8080/api/products/tags/", {
-        tag: "comfort",
+        tag: "comfort"
       })
-      .then((response) => {
+      .then(response => {
         console.log(response.data);
         this.products = response.data;
       });
-  },
+  }
 };
 </script>

@@ -4,7 +4,7 @@
       <Header></Header>
       <input type="radio" id="i1" name="images" checked />
       <div class="slide_img" id="one">
-        <img src="../mockup/images/products-header.jpg" />
+        <img src="../../public/images/products-header.jpg" />
         <h1>CART</h1>
       </div>
     </div>
@@ -17,7 +17,7 @@
 
     <section class="main-block">
       <div class="cart-model" v-for="p in products" :key="p._id">
-        <!--  <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" /> -->
+        <!--  <img src="../../public/images/racoes/racao-gato.jpg" alt="Ração de gato" /> -->
         <h2>{{ p.name }}</h2>
         <p>{{ p.description }}</p>
         <p>{{ p.price }}</p>

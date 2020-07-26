@@ -4,7 +4,7 @@
       <Header></Header>
       <input type="radio" id="i1" name="images" checked />
       <div class="slide_img" id="one">
-        <img src="../mockup/images/profile/header.jpg" />
+        <img src="../../public/images/profile/header.jpg" />
         <h1>PROFILE</h1>
       </div>
     </div>
@@ -25,11 +25,7 @@
     </section>
 
     <!-- PROFILE -->
-    <div
-      id="profilesection"
-      class="customsection"
-      style="background-color:mediumseagreen;"
-    >
+    <div id="profilesection" class="customsection" style="background-color:mediumseagreen;">
       <p>Profile Information</p>
     </div>
 
@@ -50,11 +46,7 @@
     </div>
 
     <!-- PETS -->
-    <div
-      id="petsection"
-      class="customsection"
-      style="background-color:#2980B9;"
-    >
+    <div id="petsection" class="customsection" style="background-color:#2980B9;">
       <p>Pets Manager</p>
     </div>
 
@@ -65,11 +57,7 @@
         v-for="pet in pets"
         :key="pet.name"
       >
-        <img
-          src="../mockup/images/profile/pet1.png"
-          width="100%"
-          height="80%"
-        />
+        <img src="../../public/images/profile/pet1.png" width="100%" height="80%" />
         <p>{{ pet.name }}</p>
         <hr />
         <button>Edit</button>
@@ -79,18 +67,12 @@
         <input type="select" placeholder="Race" />
         <input type="number" placeholder="Age" />
         <button type="file" class="fa fa-btn1 fa-plus-circle">Photo</button>
-        <button class="fa fa-btn1 fa-plus-circle" style="width: 50%;">
-          Add Pet
-        </button>
+        <button class="fa fa-btn1 fa-plus-circle" style="width: 50%;">Add Pet</button>
       </div>
     </div>
 
     <!-- SCHEDULES -->
-    <div
-      id="schedulesection"
-      class="customsection"
-      style="background-color:#E74C3C;"
-    >
+    <div id="schedulesection" class="customsection" style="background-color:#E74C3C;">
       <p>Reserved Schedules</p>
       <div class="search">
         <input type="text" placeholder=" Type one of your pets here..." />
@@ -98,16 +80,8 @@
     </div>
 
     <div class="scheduleform">
-      <section
-        class="pet-block"
-        v-for="schedule in schedules"
-        :key="schedule._id"
-      >
-        <img
-          src="../mockup/images/profile/pet1.png"
-          width="100%"
-          height="80%"
-        />
+      <section class="pet-block" v-for="schedule in schedules" :key="schedule._id">
+        <img src="../../public/images/profile/pet1.png" width="100%" height="80%" />
         <p>{{ schedule.service.name }} (R${{ schedule.service.price }})</p>
         <hr />
         <p>11:00 | 10-10-2020</p>
@@ -130,14 +104,14 @@ export default {
   name: "Profile",
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
       user: { name: "" },
       pets: [],
       schedules: [],
-      error: "",
+      error: ""
     };
   },
   mounted() {
@@ -145,31 +119,31 @@ export default {
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWNjODBhMTNlNzA5NGE5MTMyMmZhMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTU3MjE4NzMsImV4cCI6MTU5NTgwODI3M30.m8FYtgLH4Q6V7l_7bZ8QCvXE669cMtbYUwrTzFIMZzw";
     axios
       .get("http://localhost:8080/api/profile", {
-        headers: { "x-access-token": token },
+        headers: { "x-access-token": token }
       })
-      .then((response) => {
+      .then(response => {
         console.log(response.data);
         this.user = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/profile/pets", {
-        headers: { "x-access-token": token },
+        headers: { "x-access-token": token }
       })
-      .then((response) => {
+      .then(response => {
         console.log(response.data);
         this.pets = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/schedule", {
-        headers: { "x-access-token": token },
+        headers: { "x-access-token": token }
       })
-      .then((response) => {
+      .then(response => {
         console.log(response.data);
         this.schedules = response.data;
       });
-  },
+  }
 };
 </script>
 

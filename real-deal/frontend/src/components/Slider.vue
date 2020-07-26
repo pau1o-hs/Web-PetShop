@@ -6,7 +6,7 @@
     <input type="radio" id="i4" name="images" />
 
     <div class="slide_img" id="one">
-      <img src="../mockup/images/cat1.jpg" />
+      <img src="../../public/images/cat1.jpg" />
 
       <h1 class="slider_text">
         WELCOME TO
@@ -21,7 +21,7 @@
     </div>
 
     <div class="slide_img" id="two">
-      <img src="../mockup/images/dogs3.jpg" />
+      <img src="../../public/images/dogs3.jpg" />
 
       <h1 class="slider_text">FIND EVERYTHING</h1>
       <label class="prev" for="i1">
@@ -33,7 +33,7 @@
     </div>
 
     <div class="slide_img" id="three">
-      <img src="../mockup/images/fish1.jpg" />
+      <img src="../../public/images/fish1.jpg" />
 
       <h1 class="slider_text">FOR ALL KIND</h1>
       <label class="prev" for="i2">
@@ -45,7 +45,7 @@
     </div>
 
     <div class="slide_img" id="four">
-      <img src="../mockup/images/bird2.jpg" />
+      <img src="../../public/images/bird2.jpg" />
 
       <h1 class="slider_text">OF PETS</h1>
       <label class="prev" for="i3">
@@ -67,6 +67,6 @@
 
 <script>
 export default {
-  name: "Slider",
+  name: "Slider"
 };
 </script>
