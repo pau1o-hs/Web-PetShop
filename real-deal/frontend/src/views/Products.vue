@@ -1,10 +1,10 @@
 ﻿<template>
-  <div class="products">
+  <div>
     <div class="container">
       <Header></Header>
       <input type="radio" id="i1" name="images" checked />
       <div class="slide_img" id="one">
-        <img src="../mockup/images/bird2.jpg" />
+        <img src="../../public/images/bird2.jpg" />
         <h1>PRODUCTS</h1>
       </div>
     </div>
@@ -121,4 +121,83 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+.btn-prod {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  border: none;
+  background-position: center center;
+  background-size: cover;
+  transition: all 0.5s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+}
+.btn-prod:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  transition: inherit;
+}
+.btn-prod:hover:before {
+  transform: scale(1.1);
+}
+.btn-prod p {
+  position: relative;
+  text-align: center;
+  top: 42%;
+}
+
+.prod1 {
+  background-image: url(../../public/images/categorias/alimentacao.jpg);
+  grid-area: a;
+}
+.prod1:hover:before {
+  background-image: url(../../public/images/categorias/alimentacao.jpg);
+}
+
+.prod2 {
+  background-image: url(../../public/images/categorias/products.jpg);
+  grid-area: b;
+}
+.prod2:hover:before {
+  background-image: url(../../public/images/categorias/products.jpg);
+}
+
+.prod3 {
+  background-image: url(../../public/images/categorias/petiscos.jpg);
+  grid-area: c;
+}
+.prod3:hover:before {
+  background-image: url(../../public/images/categorias/petiscos.jpg);
+}
+
+.prod4 {
+  background-image: url(../../public/images/categorias/passeio.jpg);
+  grid-area: d;
+}
+.prod4:hover:before {
+  background-image: url(../../public/images/categorias/passeio.jpg);
+}
+
+.prod5 {
+  background-image: url(../../public/images/categorias/clothes.jpg);
+  grid-area: e;
+}
+.prod5:hover:before {
+  background-image: url(../../public/images/categorias/clothes.jpg);
+}
+
+.prod6 {
+  background-image: url(../../public/images/categorias/ambiente.jpg);
+  grid-area: f;
+}
+.prod6:hover:before {
+  background-image: url(../../public/images/categorias/ambiente.jpg);
+}
+</style>
