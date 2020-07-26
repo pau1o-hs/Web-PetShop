@@ -9,7 +9,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/products">Products</router-link>
         <router-link to="/services">Services</router-link>
-        <router-link to="/admin">Profile</router-link>
+        <router-link to="/profile">Profile</router-link>
       </div>
 
       <!-- SEARCH BAR -->
