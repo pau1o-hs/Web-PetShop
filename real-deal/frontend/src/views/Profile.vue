@@ -78,8 +78,8 @@
         <input type="text" placeholder="Name" />
         <input type="select" placeholder="Race" />
         <input type="number" placeholder="Age" />
-        <button type="file" class="fa fa-btn fa-plus-circle">Photo</button>
-        <button class="fa fa-btn fa-plus-circle" style="width: 50%;">
+        <button type="file" class="fa fa-btn1 fa-plus-circle">Photo</button>
+        <button class="fa fa-btn1 fa-plus-circle" style="width: 50%;">
           Add Pet
         </button>
       </div>
@@ -379,6 +379,21 @@ export default {
 }
 
 /* Editing font awesome favicons */
+.fa-btn1 {
+  font-size: 20px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 1vh;
+  border-radius: 50%;
+  /*  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(65, 2, 2, 0.1); */
+  border: 0;
+}
+
+.fa-btn1:hover {
+  transform: scale(1.1);
+}
 .fa-btn {
   font-size: 70px;
   width: 60px;
@@ -396,7 +411,7 @@ export default {
 }
 
 .fa-plus-circle {
-  background: white;
+  background: #eeeeee;
   color: mediumseagreen;
 }
 
@@ -420,7 +435,7 @@ export default {
   border: 0;
   outline: none;
   font-weight: bolder;
-  font-size: large;
+  font-size: 2vh;
   justify-self: center;
   align-self: center;
   text-align: center;
