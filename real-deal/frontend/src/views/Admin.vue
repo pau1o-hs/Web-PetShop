@@ -34,7 +34,7 @@
     </section>
 
     <div id="adminsection" class="customsection" style="background-color:mediumseagreen;">
-      <p>Administratos</p>
+      <p>Child Administrators</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
       </div>
@@ -444,4 +444,111 @@ export default {
 </script>
 
 <style>
+#menu-profile-admin {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 65%;
+  height: 70vh;
+  margin: 0 auto;
+  background-color: none;
+  justify-content: space-between;
+  grid-gap: 2.5vh;
+  grid-template-areas: "btn-admin1 btn-admin1 btn-admin2 btn-admin2" "btn-admin1 btn-admin1 btn-admin3 btn-admin3" "btn-admin5 btn-admin5 btn-admin4 btn-admin4";
+  align-self: center;
+  margin-bottom: 5vh;
+}
+#menu-profile-admin a {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px black;
+  text-decoration: none;
+}
+
+.admin1 {
+  background-image: url("../../public/images/profile/profileinfo.jpg");
+  grid-area: btn-admin1;
+}
+
+.admin2 {
+  background-image: url("../../public/images/profile/clients.jpeg");
+  grid-area: btn-admin2;
+}
+
+.admin3 {
+  background-image: url("../../public/images/products-header.jpg");
+  grid-area: btn-admin3;
+}
+
+.admin4 {
+  background-image: url("../../public/images/profile/schedule.jpg");
+  grid-area: btn-admin4;
+}
+
+.admin5 {
+  background-image: url("../../public/images/profile/services.jpeg");
+  grid-area: btn-admin5;
+}
+
+#infoform {
+  display: flex;
+  width: 65%;
+  height: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.infosection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.infosection p,
+.infosection .btn-add2,
+.infosection input {
+  display: block;
+  transition: 0.4s;
+  width: 220px;
+  margin: 0.7vh auto;
+  text-align: center;
+  padding: 8px 10px;
+  border: 0;
+  outline: none;
+  border-radius: 24px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+.infosection p:hover,
+.infosection .btn-add2:hover,
+.infosection input:hover {
+  opacity: 1;
+}
+.infosection p,
+.infosection .btn-add2 {
+  background-color: mediumseagreen;
+  box-shadow: 0 0 5px mediumseagreen;
+  color: white;
+}
+.infosection input {
+  background: none;
+  border: 2px solid dodgerblue;
+}
+.infosection input:focus {
+  opacity: 1;
+  background-color: white;
+  width: 250px;
+}
+.infosection div {
+  width: 75%;
+  height: 37.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+}
 </style>

@@ -42,12 +42,12 @@ export default {
   name: "cart",
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
       products: [],
-      error: "",
+      error: ""
     };
   },
   mounted() {
@@ -56,16 +56,48 @@ export default {
 
     axios
       .get("http://localhost:8080/api/admin/products", {
-        headers: { "x-access-token": token },
+        headers: { "x-access-token": token }
       })
-      .then((response) => {
+      .then(response => {
         console.log(response.data);
         this.products = response.data;
       });
-  },
+  }
 };
 </script>
 
 <style>
-/* @import "../mockup/style.css"; */
+.main-block {
+  display: grid;
+  width: 90%;
+  margin: 5vh auto;
+  align-items: center;
+  justify-content: center;
+}
+.cart-model {
+  flex-direction: column;
+  background-color: #eeeeee;
+  /* border-style: solid; */
+
+  /* border-width: 1px 0px; */
+  border-bottom: 0.1vh solid #333;
+  border-color: #333;
+  /* box-shadow: 0 0 10px black; */
+
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 70vw;
+}
+.cart-model p {
+  padding-top: 1vh;
+  align-self: center;
+  justify-content: space-around;
+}
+
+.cart-model h2 {
+  padding-top: 1vh;
+  align-self: center;
+  justify-content: space-around;
+}
 </style>

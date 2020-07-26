@@ -6,15 +6,21 @@
 
 <style>
 @import "./mockup/style.css";
-@import url("https://fonts.googleapis.com/css?family=Just+Another+Hand");
 
 body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
   background-color: #eeeeee;
 }
 
 * {
   margin: 0px;
   padding: 0px;
+}
+
+/* Ensures that all elements width and height already include the padding and border. */
+* {
+  box-sizing: border-box;
 }
 
 .title2 {

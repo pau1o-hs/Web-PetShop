@@ -148,7 +148,25 @@ export default {
 </script>
 
 <style>
-/* #menu-profile {
+.customsection {
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  width: 65%;
+  height: 8vh;
+  margin-bottom: 5vh;
+  justify-content: space-around;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
+}
+.customsection p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 5vh;
+  font-weight: bold;
+  align-self: center;
+  color: white;
+}
+
+#menu-profile {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 65%;
@@ -339,35 +357,4 @@ export default {
   align-self: center;
   margin-bottom: 5vh;
 }
-
-.polaroid {
-  box-shadow: 0 0 10px black;
-  align-self: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.polaroid img {
-  object-fit: cover;
-}
-.polaroid p {
-  font-weight: bolder;
-  font-size: large;
-  align-self: center;
-  text-align: center;
-  padding: 5px 20px;
-  color: white;
-}
-
-.pol1 {
-  grid-area: polaroid1;
-}
-
-.pol2 {
-  grid-area: polaroid2;
-}
-
-.pol2 {
-  grid-area: polaroid3;
-} */
 </style>
