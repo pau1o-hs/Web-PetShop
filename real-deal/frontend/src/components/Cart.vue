@@ -79,20 +79,16 @@ export default {
   border-color: #333;
   /* box-shadow: 0 0 10px black; */
 
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 150px;
   width: 70vw;
 }
 .cart-model p {
-  padding-top: 1vh;
-  align-self: center;
-  justify-content: space-around;
+  padding-top: 1.5vh;
 }
 
 .cart-model h2 {
   padding-top: 1vh;
-  align-self: center;
-  justify-content: space-around;
 }
 </style>
