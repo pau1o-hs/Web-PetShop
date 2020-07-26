@@ -7,7 +7,7 @@
         v-bind:key="hour"
         v-bind:state="getState()"
         v-bind:hour="hour"
-        v-bind:info="getSlotsInHour(hour)"
+        v-bind:info="getSlotsInHour()"
       ></ScheduleSlot>
     </div>
   </div>
@@ -21,7 +21,7 @@ export default {
   name: "ScheduleDay",
   props: {
     date: Object,
-    slots: Array,
+    slots: Array, // array of objects
   },
   components: {
     ScheduleSlot,
@@ -31,7 +31,7 @@ export default {
       return "BOOKED";
     },
     getSlotsInHour: function(hour) {
-      console.log(hour);
+      this.slots.forEach();
       return {
         serviceName: "salve",
         serviceImage: "a",

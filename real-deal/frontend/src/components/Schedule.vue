@@ -61,6 +61,7 @@ export default {
     },
     getDaysAndSlots: function() {
       const daysAndSlots = [];
+
       for (let i = 0; i < this.daysPerPage; i++) {
         const baseDay = moment(this.today).add(
           this.curPage * this.daysPerPage,
@@ -68,13 +69,21 @@ export default {
         );
         const day = moment(baseDay).add(i, "days");
 
-        const slots = [];
+        const slots = this.currentSlots.filter((slot) => {
+          const momDate = moment(slot.date);
+          const isSame =
+            momDate.year() == day.year() &&
+            momDate.dayOfYear() == day.dayOfYear();
+          return isSame;
+        });
 
         daysAndSlots.push({
           day,
           slots,
         });
       }
+
+      console.log(daysAndSlots);
       return daysAndSlots;
     },
   },
