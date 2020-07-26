@@ -17,16 +17,11 @@
 
     <section class="main-block">
       <div class="cart-model" v-for="p in products" :key="p._id">
-        <div>
-          <!--  <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" /> -->
-          <h2>{{ p.name }}</h2>
-          <p>{{ p.description }}</p>
-          <p></p>
-          <p>{{ p.price }}</p>
-          <p></p>
-          <p>quantity</p>
-          <p></p>
-        </div>
+        <!--  <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" /> -->
+        <h2>{{ p.name }}</h2>
+        <p>{{ p.description }}</p>
+        <p>{{ p.price }}</p>
+        <p>quantity</p>
       </div>
     </section>
     <Footer></Footer>
