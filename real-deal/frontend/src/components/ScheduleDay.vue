@@ -20,23 +20,22 @@ export default {
   name: "ScheduleDay",
   props: {
     date: Object,
-    slots: Array // array of objects
+    slots: Array, // array of objects
   },
   components: {
-    ScheduleSlot
+    ScheduleSlot,
   },
   methods: {
     getSlotInHour: function(hour) {
-      const result = this.slots.find(slot => {
+      const result = this.slots.find((slot) => {
         return moment.utc(slot.date).format("HH:mm") == hour;
       });
       // Guard clause
       if (result === undefined) {
         return { state: "EMPTY" };
       }
-      console.log(result);
       return result;
-    }
+    },
   },
   computed: {
     day: function() {
@@ -70,8 +69,8 @@ export default {
         hours.push(formattedHour);
       }
       return hours;
-    }
-  }
+    },
+  },
 };
 </script>
 

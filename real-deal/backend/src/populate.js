@@ -62,7 +62,7 @@ module.exports = async function () {
 
   await repos.service.createOne({
     name: 'Tosa',
-    tags: ['tag1', 'tag2'],
+    tags: ['tosa', 'banho'],
     photo:
       'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/categorias/banhotosa.png',
     description: 'Uma tosa bem suave para seu bichinho',
@@ -72,8 +72,8 @@ module.exports = async function () {
   });
 
   await repos.product.createOne({
-    name: 'Ração para gatos',
-    tags: ['foods', 'walkway'],
+    name: 'Ração para gatos 1',
+    tags: ['foods'],
     photo:
       'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-gato.jpg',
     description: 'Ração deliciosa e nutritiva para o seu gatinho.',
@@ -83,11 +83,341 @@ module.exports = async function () {
   });
 
   await repos.product.createOne({
-    name: 'Ração para cachorros',
-    tags: ['foods', 'snacks'],
+    name: 'Ração para gatos 2',
+    tags: ['foods'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-gato2.jpg',
+    description: 'Ração deliciosa e nutritiva para o seu gatinho.',
+    price: 9.99,
+    inStock: 42,
+    totalSold: 17,
+  });
+
+  await repos.product.createOne({
+    name: 'Ração para gatos 3',
+    tags: ['foods'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-gato3.jpg',
+    description: 'Ração deliciosa e nutritiva para o seu gatinho.',
+    price: 9.99,
+    inStock: 42,
+    totalSold: 17,
+  });
+
+  await repos.product.createOne({
+    name: 'Ração para gatos 4',
+    tags: ['foods'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-gato4.jpg',
+    description: 'Ração deliciosa e nutritiva para o seu gatinho.',
+    price: 9.99,
+    inStock: 42,
+    totalSold: 17,
+  });
+
+  await repos.product.createOne({
+    name: 'Ração para cachorros 1',
+    tags: ['foods'],
     photo:
       'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-cao.jpg',
     description: 'Ração deliciosa e nutritiva para o seu cachorrinho.',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Ração para cachorros 2',
+    tags: ['foods'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-cao2.jpg',
+    description: 'Ração deliciosa e nutritiva para o seu cachorrinho.',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Ração para cachorros 3',
+    tags: ['foods'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-cao3.jpg',
+    description: 'Ração deliciosa e nutritiva para o seu cachorrinho.',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Ração para cachorros 4',
+    tags: ['foods'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-cao4.jpg',
+    description: 'Ração deliciosa e nutritiva para o seu cachorrinho.',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Ração para Passaros',
+    tags: ['foods'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-passaro.jpg',
+    description: 'Ração deliciosa e nutritiva para o seu passarinho.',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Ração para Peixes',
+    tags: ['foods'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/racoes/racao-peixe.jpg',
+    description: 'Ração deliciosa e nutritiva para o seu peixinho.',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Brinquedo 1',
+    tags: ['toys'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/brinquedos/brinquedo1.jpg',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Brinquedo 2',
+    tags: ['toys'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/brinquedos/brinquedo2.jpg',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Brinquedo 3',
+    tags: ['toys'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/brinquedos/brinquedo3.jpg',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Brinquedo 4',
+    tags: ['toys'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/brinquedos/brinquedo4.jpg',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Brinquedo 5',
+    tags: ['toys'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/brinquedos/brinquedo5.jpg',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Petisco 1',
+    tags: ['snacks'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/petiscos/snack1.jpg',
+    description: 'Petiscos',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Petisco 2',
+    tags: ['snacks'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/petiscos/snack2.jpg',
+    description: 'Petiscos',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Petisco 3',
+    tags: ['snacks'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/petiscos/snack3.jpg',
+    description: 'Petiscos',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Petisco 4',
+    tags: ['snacks'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/petiscos/snack4.jpg',
+    description: 'Petiscos',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Passeio 1',
+    tags: ['walkway'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira1.png',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Passeio 2',
+    tags: ['walkway'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira2.webp',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Passeio 3',
+    tags: ['walkway'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira3.webp',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Passeio 4',
+    tags: ['walkway'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira4.webp',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Passeio 5',
+    tags: ['walkway'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira5.webp',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Passeio 6',
+    tags: ['walkway'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira6.webp',
+    description: 'Brinquedo',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Roupa 1',
+    tags: ['cloths'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira1.png',
+    description: 'Roupa',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Roupa 2',
+    tags: ['cloths'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira2.webp',
+    description: 'Roupa',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Roupa 3',
+    tags: ['cloths'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira3.webp',
+    description: 'Roupa',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Roupa 4',
+    tags: ['cloths'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira4.webp',
+    description: 'Roupa',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Roupa 5',
+    tags: ['cloths'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira5.webp',
+    description: 'Roupa',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Roupa 6',
+    tags: ['cloths'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira5.webp',
+    description: 'Roupa',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Roupa 7',
+    tags: ['cloths'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira6.webp',
+    description: 'Roupa',
     price: 11.99,
     inStock: 30,
     totalSold: 55,

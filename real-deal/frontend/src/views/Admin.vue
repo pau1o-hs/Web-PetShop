@@ -45,7 +45,7 @@
       <section
         class="polaroid"
         style="background-color:#eeeeee;"
-        v-for="childadmin in childadmins"
+        v-for="childadmin in childAdmins"
         :key="childadmin.name"
       >
         <div class="flip-card-inner">
@@ -81,6 +81,13 @@
                 placeholder="Senha"
                 v-model="childadmin.password"
               />
+              <button
+                class="btn-add2"
+                style="width: 50%;"
+                v-on:click="deleteAdmin(childadmin._id)"
+              >
+                Delete Admin
+              </button>
             </div>
           </div>
         </div>
@@ -115,6 +122,7 @@
 
     <div class="scheduleform">
       <section
+        class="polaroid"
         style="background-color:#2980B9;"
         v-for="client in clients"
         v-bind:key="client.name"
@@ -138,9 +146,6 @@
             </div>
           </div>
         </div>
-        <p>{{ client.name }}</p>
-        <hr />
-        <button>Edit</button>
       </section>
     </div>
 
@@ -249,7 +254,7 @@ export default {
       clients: [],
       products: [],
       services: [],
-      childadmins: [],
+      childAdmins: [],
       error: "",
     };
   },
@@ -273,7 +278,17 @@ export default {
           }
         )
         .then((response) => {
-          this.childadmins.push(response.data);
+          this.childAdmins.push(response.data);
+        });
+    },
+    deleteAdmin: function(id) {
+      // `this` dentro de métodos aponta para a instância Vue
+      axios
+        .delete("http://localhost:8080/api/admin/children/" + id, {
+          headers: { "x-access-token": this.$token },
+        })
+        .then((response) => {
+          this.childAdmins.push(response.data);
         });
     },
   },
@@ -283,7 +298,7 @@ export default {
         headers: { "x-access-token": this.$token },
       })
       .then((response) => {
-        this.childadmins = response.data;
+        this.childAdmins = response.data;
       });
     axios
       .get("http://localhost:8080/api/admin/customers", {
@@ -466,7 +481,7 @@ export default {
   background-color: none;
   justify-content: space-between;
   grid-gap: 2.5vh;
-  grid-template-areas: "polaroid1 polaroid2 pet-register";
+  grid-template-areas: "polaroid1 polaroid2 polaroid3 polaroid4" "polaroid5 polaroid6 polaroid7 pet-register";
   align-self: center;
   margin-bottom: 5vh;
 }
@@ -512,6 +527,20 @@ export default {
 
 .pol2 {
   grid-area: polaroid2;
+}
+.pol3 {
+  grid-area: polaroid3;
+}
+
+.pol4 {
+  grid-area: polaroid4;
+}
+.pol5 {
+  grid-area: polaroid5;
+}
+
+.pol6 {
+  grid-area: polaroid6;
 }
 
 .flip-card-inner {

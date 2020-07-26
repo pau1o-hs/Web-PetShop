@@ -1,8 +1,8 @@
 ﻿<template>
   <div class="foods">
     <section id="foods">
-      <div class="item-unity" v-for="item in products" :key="item.name">
-        <img :src="item.photo" alt="Ração de gato" />
+      <div class="item-unity" v-for="item in products" :key="item._id">
+        <img :src="item.photo" />
         <h2 id="nome-item">{{ item.name }}</h2>
         <p id="descricao-item">{{ item.description }}</p>
         <p id="preco">{{ item.price }}</p>
@@ -19,18 +19,18 @@ export default {
   data() {
     return {
       products: [],
-      error: ""
+      error: "",
     };
   },
   mounted() {
     axios
       .post("http://localhost:8080/api/products/tags/", {
-        tag: "foods"
+        tag: "foods",
       })
-      .then(response => {
+      .then((response) => {
         this.products = response.data;
       });
-  }
+  },
 };
 </script>
 

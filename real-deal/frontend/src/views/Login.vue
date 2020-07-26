@@ -14,7 +14,9 @@
         <br />
         <input type="text" v-model="adminName" placeholder="admin-name" />
         <input type="password" v-model="adminPassword" placeholder="password" />
-        <button class="send_info" type="submit" v-on:click="loginAdmin">Login</button>
+        <button class="send_info" type="submit" v-on:click="loginAdmin">
+          Login
+        </button>
         <div style="visibility: hidden;">Just to occupy space</div>
       </div>
       <div
@@ -29,11 +31,17 @@
         <h1 style="color: white; font-weight: 10px;">Customer</h1>
         <br />
         <input type="text" v-model="customerEmail" placeholder="e-mail" />
-        <input type="password" v-model="customerPassword" placeholder="password" />
-        <button class="send_info" type="submit" v-on:click="loginCustomer">Login</button>
+        <input
+          type="password"
+          v-model="customerPassword"
+          placeholder="password"
+        />
+        <button class="send_info" type="submit" v-on:click="loginCustomer">
+          Login
+        </button>
         <span>
           Not a member?
-          <a href="index.html" id="register-now">Register now</a>
+          <router-link to="/signup" id="register-now">Register now</router-link>
         </span>
       </div>
     </div>
@@ -51,7 +59,7 @@ export default {
       customerEmail: "",
       customerPassword: "",
       adminName: "",
-      adminPassword: ""
+      adminPassword: "",
     };
   },
   methods: {
@@ -59,14 +67,14 @@ export default {
       axios
         .post("http://localhost:8080/api/admin/auth", {
           adminName: this.adminName,
-          password: this.adminPassword
+          password: this.adminPassword,
         })
-        .then(response => {
+        .then((response) => {
           console.log(response.data.token);
           Vue.prototype.$token = response.data.token;
           this.$router.push("/admin");
         })
-        .catch(error => {
+        .catch((error) => {
           if (error.response) {
             // The request was made and the server responded with a status code
             console.log(error.response.data.errors);
@@ -77,21 +85,21 @@ export default {
       axios
         .post("http://localhost:8080/api/auth", {
           email: this.customerEmail,
-          password: this.customerPassword
+          password: this.customerPassword,
         })
-        .then(response => {
+        .then((response) => {
           console.log(response.data.token);
           Vue.prototype.$token = response.data.token;
           this.$router.push("/profile");
         })
-        .catch(error => {
+        .catch((error) => {
           if (error.response) {
             // The request was made and the server responded with a status code
             console.log(error.response.data.errors);
           }
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -181,5 +189,5 @@ export default {
   height: 64px;
   width: 64px;
   border: 4px solid #fdfffc;
-}
-</style>>
+}</style
+>>

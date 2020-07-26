@@ -5,6 +5,7 @@ import Products from "../views/Products.vue";
 import Services from "../views/Services.vue";
 import Admin from "../views/Admin.vue";
 import Login from "../views/Login.vue";
+import SignUp from "../views/SignUp.vue";
 import Profile from "../views/Profile.vue";
 import Cart from "../components/Cart.vue";
 import AdminEarning from "../views/AdminEarnings.vue";
@@ -41,6 +42,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: Login,
+  },
+  {
+    path: "/signup",
+    name: "signup",
+    component: SignUp,
   },
   {
     path: "/cart",
