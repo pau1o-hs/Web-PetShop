@@ -8,17 +8,18 @@
 	width: 65%;
 	height: 70vh;
 	margin: 0 auto;
-	background-color: none;	
+	background-color: none;
 	justify-content: space-between;
 	grid-gap: 2.5vh;
-	grid-template-areas: 	                    "btn-admin1 btn-admin1 btn-admin2 btn-admin2" 
-												"btn-admin1 btn-admin1 btn-admin3 btn-admin3"
-												"btn-admin5 btn-admin5 btn-admin4 btn-admin4";
+	grid-template-areas:
+		"btn-admin1 btn-admin1 btn-admin2 btn-admin2"
+		"btn-admin1 btn-admin1 btn-admin3 btn-admin3"
+		"btn-admin5 btn-admin5 btn-admin4 btn-admin4";
 	align-self: center;
 	margin-bottom: 5vh;
 
 	a {
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 		font-size: 40px;
 		color: white;
 		font-weight: bold;
@@ -27,27 +28,27 @@
 	}
 }
 
-.admin1{
-	background-image:url("images/profile/profileinfo.jpg");	
+.admin1 {
+	background-image: url("images/profile/profileinfo.jpg");
 	grid-area: btn-admin1;
 }
 
-.admin2{
-	background-image:url("images/profile/clients.jpeg");	
+.admin2 {
+	background-image: url("images/profile/clients.jpeg");
 	grid-area: btn-admin2;
 }
 
-.admin3{
-	background-image:url("images/products-header.jpg");	
+.admin3 {
+	background-image: url("images/products-header.jpg");
 	grid-area: btn-admin3;
 }
 
-.admin4{
-	background-image:url("images/profile/schedule.jpg");	
+.admin4 {
+	background-image: url("images/profile/schedule.jpg");
 	grid-area: btn-admin4;
 }
-.admin5{
-	background-image:url("images/profile/services.jpeg");	
+.admin5 {
+	background-image: url("images/profile/services.jpeg");
 	grid-area: btn-admin5;
 }
 
@@ -58,16 +59,16 @@
 	width: 65%;
 	height: 50%;
 	margin: 0 auto;
-	// background-color: white;	
+	// background-color: white;
 	justify-content: center;
 	align-items: center;
-	
+
 	// grid-gap: 2.5vh;
 	margin-bottom: 5vh;
 }
 
 .infosection {
-	display: flex; 
+	display: flex;
 	// background-color: white;
 	// box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 
@@ -76,27 +77,29 @@
 	justify-content: center;
 	align-items: center;
 
-	p, .btn-add2, input {
+	p,
+	.btn-add2,
+	input {
 		display: block;
 		transition: 0.4s;
 		width: 220px;
-		
-		
-		margin: .7vh auto;
+
+		margin: 0.7vh auto;
 		text-align: center;
 		padding: 8px 10px;
 		border: 0;
 		outline: none;
 		border-radius: 24px;
 		font-weight: bold;
-		opacity: .5;
-		
-		&:hover{
+		opacity: 0.5;
+
+		&:hover {
 			opacity: 1;
 		}
 	}
 
-	p ,.btn-add2 {
+	p,
+	.btn-add2 {
 		background-color: mediumseagreen;
 		box-shadow: 0 0 5px mediumseagreen;
 
@@ -115,7 +118,6 @@
 	}
 
 	div {
-						
 		width: 75%;
 		height: 37.5vh;
 
@@ -128,37 +130,37 @@
 	}
 }
 
-.pet1{
-	background-image:url("images/profile/pet1.png");	
+.pet1 {
+	background-image: url("images/profile/pet1.png");
 	grid-area: btn-pet1;
 }
 
-.pet2{
-	background-image:url("images/profile/pet2.jpg");
+.pet2 {
+	background-image: url("images/profile/pet2.jpg");
 	grid-area: btn-pet2;
 }
 
-.pet3{
-	background-image:url("images/profile/pet3.jpg");	
+.pet3 {
+	background-image: url("images/profile/pet3.jpg");
 	grid-area: btn-pet3;
 }
 
-.pet4{
-	background-image:url("images/profile/admin1.jpg");	
+.pet4 {
+	background-image: url("images/profile/admin1.jpg");
 	grid-area: btn-pet4;
 }
 
 .petregister {
 	grid-area: pet-register;
-	
+
 	display: flex;
 	flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	align-items: center;
+	justify-content: center;
 
 	background-color: white;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
-	
+
 	width: 100%;
 	height: 100%;
 
@@ -168,26 +170,26 @@
 }
 
 .btn-add {
-		width: 6vw;
-		height: 6vw;
+	width: 6vw;
+	height: 6vw;
 
-		font-size: 100px;
-		color: white;
+	font-size: 100px;
+	color: white;
 
-		background-color: mediumseagreen;
-		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(65, 2, 2, 0.1);
-		
-		border: 0;
-		outline: none;
-		border-radius: 1000%;
-		transition-duration: 0.5s;
+	background-color: mediumseagreen;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(65, 2, 2, 0.1);
 
-		opacity: 0.5;
+	border: 0;
+	outline: none;
+	border-radius: 1000%;
+	transition-duration: 0.5s;
 
-		&:hover {
-			transform: scale(1.1);
-			opacity: 1;
-		}
+	opacity: 0.5;
+
+	&:hover {
+		transform: scale(1.1);
+		opacity: 1;
+	}
 }
 
 .scheduleform {
@@ -197,10 +199,10 @@
 	width: 65%;
 	height: 40%;
 	margin: 0 auto;
-	background-color: none;	
+	background-color: none;
 	justify-content: space-between;
 	grid-gap: 2.5vh;
-	grid-template-areas: 	"polaroid1 polaroid2 pet-register";
+	grid-template-areas: "polaroid1 polaroid2 pet-register";
 	align-self: center;
 	margin-bottom: 5vh;
 
@@ -216,7 +218,7 @@
 
 .polaroid {
 	flex-direction: column;
-	background-color: #E74C3C; 
+	background-color: #e74c3c;
 	box-shadow: 0 0 10px black;
 	align-self: center;
 	align-items: center;
@@ -226,7 +228,8 @@
 		object-fit: cover;
 	}
 
-	p, button {
+	p,
+	button {
 		transition: all 0.1s;
 
 		background: none;
@@ -237,7 +240,7 @@
 		font-size: large;
 		justify-self: center;
 		align-self: center;
-		text-align: center; 
+		text-align: center;
 		padding: 5px 20px;
 		color: white;
 		// box-shadow: 0 0 30px #E74C3C;

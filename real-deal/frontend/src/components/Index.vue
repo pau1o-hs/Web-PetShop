@@ -7,11 +7,11 @@
     </div>
 
     <section id="menu-home">
-      <router-link class="home-button button1" to="/products"
-        >PRODUCTS</router-link
+      <router-link class="button-home button1" to="/products"
+        ><p>PRODUCTS</p></router-link
       >
-      <router-link class="home-button button2" to="/products"
-        >SERVICES</router-link
+      <router-link class="button-home button2" to="/services"
+        ><p>SERVICES</p></router-link
       >
     </section>
   </div>

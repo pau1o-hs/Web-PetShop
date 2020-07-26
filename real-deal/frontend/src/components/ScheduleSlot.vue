@@ -4,14 +4,18 @@
       <div class="display-slot reserved">
         <p class="hour">{{ hour }}</p>
 
-        <img class="icon" :src="serviceImage" :alt="serviceName + ' image'" />
-        <img class="icon" :src="petImage" :alt="petName + ' image'" />
+        <img
+          class="icon"
+          :src="info.serviceImage"
+          :alt="info.serviceName + ' image'"
+        />
+        <img class="icon" :src="info.petImage" :alt="info.petName + ' image'" />
         <div class="info">
           <p class="service">
-            {{ serviceName }}
+            {{ info.serviceName }}
             <span class="of">of</span>
           </p>
-          <p class="pet">{{ petName }}</p>
+          <p class="pet">{{ info.petName }}</p>
         </div>
       </div>
     </template>
@@ -41,10 +45,7 @@ export default {
   props: {
     state: String,
     hour: String,
-    serviceName: String,
-    serviceImage: String,
-    petName: String,
-    petImage: String,
+    info: Object,
   },
   mouted() {
     console.log(this.state);

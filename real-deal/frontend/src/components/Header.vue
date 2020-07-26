@@ -20,10 +20,10 @@
       <div class="profile">
         <router-link to="/login">Login/Register</router-link>
         <div id="profileimg"></div>
-        <router-link to="/"
-          ><img src="../mockup/images/cart.png" style="height: 5vh; width: 5vh;"
-        /></router-link>
         <!--<a href="#">My Profile</a>-->
+        <router-link to="/cart"
+          ><img src="../mockup/images/cart.png" style="height: 4vh; width: 4vh;"
+        /></router-link>
       </div>
     </div>
   </div>

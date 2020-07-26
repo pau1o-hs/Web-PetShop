@@ -6,6 +6,7 @@ import Services from "../views/Services.vue";
 import Admin from "../views/Admin.vue";
 import Login from "../views/Login.vue";
 import Profile from "../views/Profile.vue";
+import Cart from "../components/Cart.vue";
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: Login,
+  },
+  {
+    path: "/cart",
+    name: "cart",
+    component: Cart,
   },
 ];
 

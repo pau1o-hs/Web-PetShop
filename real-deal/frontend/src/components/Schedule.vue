@@ -1,14 +1,13 @@
 <template>
   <div class="scheduler">
-    <!-- TIME DISPLAY -->
     <div class="time-display">
       <ScheduleDay
-        v-for="day in displayDays"
-        v-bind:key="day"
-        v-bind:date="day"
+        v-for="pair in getDaysAndSlots"
+        v-bind:key="pair.day"
+        v-bind:date="pair.day"
+        v-bind:slots="pair.slots"
       />
     </div>
-    <!-- PAGINATION -->
     <div class="pagination">
       <ul>
         <li class="prev"><button v-on:click="prevPage">&#10094;</button></li>
@@ -41,7 +40,7 @@ export default {
       daysToDisplay: 70, // Equivalent to 10 WEEKS
       daysPerPage: 3,
       today: moment(),
-      currentBookings: [],
+      currentSlots: [],
     };
   },
   methods: {
@@ -60,21 +59,28 @@ export default {
     numPages: function() {
       return Math.ceil(this.daysToDisplay / this.daysPerPage);
     },
-    displayDays: function() {
-      const days = [];
+    getDaysAndSlots: function() {
+      const daysAndSlots = [];
       for (let i = 0; i < this.daysPerPage; i++) {
         const baseDay = moment(this.today).add(
           this.curPage * this.daysPerPage,
           "days"
         );
-        days.push(moment(baseDay).add(i, "days"));
+        const day = moment(baseDay).add(i, "days");
+
+        const slots = [];
+
+        daysAndSlots.push({
+          day,
+          slots,
+        });
       }
-      return days;
+      return daysAndSlots;
     },
   },
   mounted() {
     axios.get("http://localhost:8080/api/schedule").then((response) => {
-      this.currentBookings = response.data;
+      this.currentSlots = response.data;
     });
   },
 };
