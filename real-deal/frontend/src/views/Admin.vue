@@ -16,22 +16,24 @@
     </div>
 
     <section id="menu-profile-admin">
-      <a class="home-button admin1" href="#adminsection"
-        ><p>ADMINISTRATORS</p></a
-      >
-      <a class="home-button admin2" href="#clientsection"><p>CLIENTS</p></a>
-      <a class="home-button admin3" href="#productssection"><p>PRODUCTS</p></a>
-      <a class="home-button admin4" href="#schedulesection-admin"
-        ><p>SCHEDULES</p></a
-      >
-      <a class="home-button admin5" href="#servicessection"><p>SERVICES</p></a>
+      <a class="home-button admin1" href="#adminsection">
+        <p>ADMINISTRATORS</p>
+      </a>
+      <a class="home-button admin2" href="#clientsection">
+        <p>CLIENTS</p>
+      </a>
+      <a class="home-button admin3" href="#productssection">
+        <p>PRODUCTS</p>
+      </a>
+      <a class="home-button admin4" href="#schedulesection-admin">
+        <p>SCHEDULES</p>
+      </a>
+      <a class="home-button admin5" href="#servicessection">
+        <p>SERVICES</p>
+      </a>
     </section>
 
-    <div
-      id="adminsection"
-      class="customsection"
-      style="background-color:mediumseagreen;"
-    >
+    <div id="adminsection" class="customsection" style="background-color:mediumseagreen;">
       <p>Administratos</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -40,21 +42,13 @@
 
     <div class="scheduleform">
       <section class="polaroid pol1" style="background-color:mediumseagreen;">
-        <img
-          src="../mockup/images/profile/admin1.jpg"
-          width="100%"
-          height="80%"
-        />
+        <img src="../mockup/images/profile/admin1.jpg" width="100%" height="80%" />
         <p>Tchutchucão</p>
         <hr />
         <button>Edit</button>
       </section>
       <section class="polaroid pol2" style="background-color:mediumseagreen;">
-        <img
-          src="../mockup/images/profile/admin2.jpg"
-          width="100%"
-          height="80%"
-        />
+        <img src="../mockup/images/profile/admin2.jpg" width="100%" height="80%" />
         <p>Scooby-Doo</p>
         <hr />
         <button>Edit</button>
@@ -70,11 +64,7 @@
       </div>
     </div>
 
-    <div
-      id="clientsection"
-      class="customsection"
-      style="background-color:#2980B9;"
-    >
+    <div id="clientsection" class="customsection" style="background-color:#2980B9;">
       <p>Clients</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -88,22 +78,14 @@
         v-for="client in clients"
         v-bind:key="client.name"
       >
-        <img
-          src="../mockup/images/profile/cliente1.jpg"
-          width="100%"
-          height="80%"
-        />
+        <img src="../mockup/images/profile/cliente1.jpg" width="100%" height="80%" />
         <p>{{ client.name }}</p>
         <hr />
         <button>Edit</button>
       </section>
     </div>
 
-    <div
-      id="productssection"
-      class="customsection"
-      style="background-color:slateblue;"
-    >
+    <div id="productssection" class="customsection" style="background-color:slateblue;">
       <p>Products</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -128,11 +110,7 @@
       </div>
     </section>
 
-    <div
-      id="servicessection"
-      class="customsection"
-      style="background-color:#E74C3C;"
-    >
+    <div id="servicessection" class="customsection" style="background-color:#E74C3C;">
       <p>Services</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -146,11 +124,7 @@
         v-for="service in services"
         :key="service._id"
       >
-        <img
-          src="../mockup/images/categorias/services.jpg"
-          width="100%"
-          height="80%"
-        />
+        <img src="../mockup/images/categorias/services.jpg" width="100%" height="80%" />
         <p>{{ service.name }}</p>
         <hr />
         <button>Edit</button>
@@ -167,11 +141,7 @@
       </div>
     </div>
 
-    <div
-      id="schedulesection-admin"
-      class="customsection"
-      style="background-color:darkslategray;"
-    >
+    <div id="schedulesection-admin" class="customsection" style="background-color:darkslategray;">
       <p>Schedules</p>
       <div class="search">
         <input type="text" placeholder=" Search..." />
@@ -187,8 +157,8 @@
         <div class="tsel-item1">
           <div class="tsel-up">
             <div class="weeks">
-              <span
-                >In
+              <span>
+                In
                 <input type="number" value="0" min="0" />
                 weeks
               </span>
@@ -208,8 +178,8 @@
           </div>
           <div class="column-separator"></div>
           <div class="tsel-down">
-            <span
-              >For
+            <span>
+              For
               <input class="date-input" type="date" />
             </span>
           </div>
@@ -263,13 +233,12 @@
                 src="../mockup/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
-              <img
-                class="icon"
-                src="../mockup/images/tchutchucao.jpg"
-                alt="Pet image"
-              />
+              <img class="icon" src="../mockup/images/tchutchucao.jpg" alt="Pet image" />
               <div class="info">
-                <p class="service">Vaccination<span class="of"> of</span></p>
+                <p class="service">
+                  Vaccination
+                  <span class="of">of</span>
+                </p>
                 <p class="pet">Tchutchucão</p>
               </div>
             </div>
@@ -289,13 +258,12 @@
                 src="../mockup/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
-              <img
-                class="icon"
-                src="../mockup/images/tchutchucao.jpg"
-                alt="Pet image"
-              />
+              <img class="icon" src="../mockup/images/tchutchucao.jpg" alt="Pet image" />
               <div class="info">
-                <p class="service">Vaccination<span class="of"> of</span></p>
+                <p class="service">
+                  Vaccination
+                  <span class="of">of</span>
+                </p>
                 <p class="pet">Tchutchucão</p>
               </div>
             </div>
@@ -342,13 +310,12 @@
                 src="../mockup/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
-              <img
-                class="icon"
-                src="../mockup/images/tchutchucao.jpg"
-                alt="Pet image"
-              />
+              <img class="icon" src="../mockup/images/tchutchucao.jpg" alt="Pet image" />
               <div class="info">
-                <p class="service">Vaccination<span class="of"> of</span></p>
+                <p class="service">
+                  Vaccination
+                  <span class="of">of</span>
+                </p>
                 <p class="pet">Tchutchucão</p>
               </div>
             </div>
@@ -368,13 +335,12 @@
                 src="../mockup/images/categorias/vacinacao.jpg"
                 alt="Vaccination image"
               />
-              <img
-                class="icon"
-                src="../mockup/images/tchutchucao.jpg"
-                alt="Pet image"
-              />
+              <img class="icon" src="../mockup/images/tchutchucao.jpg" alt="Pet image" />
               <div class="info">
-                <p class="service">Vaccination<span class="of"> of</span></p>
+                <p class="service">
+                  Vaccination
+                  <span class="of">of</span>
+                </p>
                 <p class="pet">Tchutchucão</p>
               </div>
             </div>
@@ -415,11 +381,11 @@
           <li class="prev">&#10094;</li>
           <li class="next">&#10095;</li>
           <li>
-            <span
-              >Page
+            <span>
+              Page
               <span style="color: yellow;">1</span>
-              of 10</span
-            >
+              of 10
+            </span>
           </li>
         </ul>
       </div>
@@ -437,7 +403,7 @@ export default {
   name: "Admin",
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
@@ -445,7 +411,7 @@ export default {
       clients: [],
       products: [],
       services: [],
-      error: "",
+      error: ""
     };
   },
   mounted() {
@@ -453,28 +419,29 @@ export default {
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWQwNmJjZmM3NTA1MDNmNTUyMzRkMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NTczNzc5MywiZXhwIjoxNTk1ODI0MTkzfQ.Ofmcp_L_6a9V56VeYbIEyNRTmYtqz0ClClBu9lI-Stc";
     axios
       .get("http://localhost:8080/api/admin/customers", {
-        headers: { "x-access-token": token },
+        headers: { "x-access-token": token }
       })
-      .then((response) => {
+      .then(response => {
         console.log(response.data);
         this.clients = response.data;
       });
 
     axios
       .get("http://localhost:8080/api/admin/products", {
-        headers: { "x-access-token": token },
+        headers: { "x-access-token": token }
       })
-      .then((response) => {
+      .then(response => {
         console.log(response.data);
         this.products = response.data;
       });
 
-    axios.get("http://localhost:8080/api/services").then((response) => {
+    axios.get("http://localhost:8080/api/services").then(response => {
       console.log(response.data);
       this.services = response.data;
     });
-  },
+  }
 };
 </script>
 
-<style scoped></style>
+<style>
+</style>

@@ -6,4 +6,14 @@
 
 <style>
 @import "./mockup/style.css";
+@import url("https://fonts.googleapis.com/css?family=Just+Another+Hand");
+
+body {
+  background-color: #eeeeee;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
 </style>
