@@ -150,9 +150,7 @@ exports.deleteChildAdmin = async (req, res) => {
 // Used by: Admin
 exports.authenticate = async (req, res) => {
   try {
-    const admin = await repository.getByAdminName({
-      adminName: req.body.adminName,
-    });
+    const admin = await repository.getByAdminName(req.body.adminName);
     // Guard clauses
     if (!admin) {
       res.status(404).send({

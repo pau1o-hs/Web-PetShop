@@ -8,8 +8,18 @@
         <h1>CART</h1>
       </div>
     </div>
-
-    <Index></Index>
+    <section>
+      <div class="cart-model" v-for="p in products" :key="p._id">
+        <!--  <img src="../mockup/images/racoes/racao-gato.jpg" alt="Ração de gato" /> -->
+        <h2>{{ p.name }}</h2>
+        <p>{{ p.description }}</p>
+        <p></p>
+        <p>{{ p.price }}</p>
+        <p></p>
+        <p>quantity</p>
+        <p></p>
+      </div>
+    </section>
     <Footer></Footer>
   </div>
 </template>
@@ -17,14 +27,28 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import Index from "@/components/Index.vue";
+import axios from "axios";
 
 export default {
   name: "cart",
   components: {
     Header,
     Footer,
-    Index,
+  },
+  data() {
+    return {
+      products: [],
+      error: "",
+    };
+  },
+  mounted() {
+    axios
+      .post("http://localhost:8080/api/products/", {
+        tag: "foods",
+      })
+      .then((response) => {
+        this.products = response.data;
+      });
   },
 };
 </script>

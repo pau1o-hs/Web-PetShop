@@ -86,7 +86,7 @@
         class="polaroid"
         style="background-color:#2980B9;"
         v-for="client in clients"
-        :key="client.name"
+        v-bind:key="client.name"
       >
         <img
           src="../mockup/images/profile/cliente1.jpg"
@@ -111,11 +111,11 @@
     </div>
 
     <section id="foods">
-      <div class="item-unity food1">
+      <div class="item-unity" v-for="product in products" :key="product._id">
         <img src="../mockup/images/racoes/racao-cao.jpg" alt="Ração de gato" />
-        <h2 id="nome-item">Pedigree</h2>
-        <p id="descricao-item">Ração pedigree 5kg para cães</p>
-        <p id="preco">R$0,00</p>
+        <h2 id="nome-item">{{ product.name }}</h2>
+        <p id="descricao-item">{{ product.description }}</p>
+        <p id="preco">R${{ product.price }}</p>
         <button id="adicionar-carrinho">Update item</button>
       </div>
       <div class="infosection">
@@ -140,39 +140,22 @@
     </div>
 
     <div class="scheduleform">
-      <section class="polaroid pol1" style="background-color:#E74C3C;">
+      <section
+        class="polaroid"
+        style="background-color:#E74C3C;"
+        v-for="service in services"
+        :key="service._id"
+      >
         <img
           src="../mockup/images/categorias/services.jpg"
           width="100%"
           height="80%"
         />
-        <p>Wash</p>
+        <p>{{ service.name }}</p>
         <hr />
         <button>Edit</button>
       </section>
-      <section class="polaroid pol2" style="background-color:#E74C3C;">
-        <img
-          src="../mockup/images/categorias/vacinacao.jpg"
-          width="100%"
-          height="80%"
-        />
-        <p>Vaccine</p>
-        <hr />
-        <button>Edit</button>
-      </section>
-      <section class="polaroid pol3" style="background-color:#E74C3C;">
-        <img
-          src="../mockup/images/categorias/adestramento.jpg"
-          width="100%"
-          height="80%"
-        />
-        <p>Training</p>
-        <hr />
-        <button>Edit</button>
-      </section>
-      <!-- <a class="home-button pet1" href="#schedulesection"><p>Wash</p></a>
-		<a class="home-button pet2" href="#schedulesection"><p>Vaccine</p></a>
-		<a class="home-button pet3" href="#schedulesection"><p>Training</p></a> -->
+
       <div class="infosection">
         <input type="text" placeholder="Name" />
         <input type="text" placeholder="Description" />
@@ -470,9 +453,9 @@ export default {
   },
   mounted() {
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWNjODBhMTNlNzA5NGE5MTMyMmZhMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTU3MjE4NzMsImV4cCI6MTU5NTgwODI3M30.m8FYtgLH4Q6V7l_7bZ8QCvXE669cMtbYUwrTzFIMZzw";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWQwNmJjZmM3NTA1MDNmNTUyMzRkMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTU5NTczNzc5MywiZXhwIjoxNTk1ODI0MTkzfQ.Ofmcp_L_6a9V56VeYbIEyNRTmYtqz0ClClBu9lI-Stc";
     axios
-      .get("http://localhost:8080/api/profile", {
+      .get("http://localhost:8080/api/admin/customers", {
         headers: { "x-access-token": token },
       })
       .then((response) => {
@@ -481,22 +464,18 @@ export default {
       });
 
     axios
-      .get("http://localhost:8080/api/products", {
+      .get("http://localhost:8080/api/admin/products", {
         headers: { "x-access-token": token },
       })
       .then((response) => {
         console.log(response.data);
-        this.pets = response.data;
+        this.products = response.data;
       });
 
-    axios
-      .get("http://localhost:8080/api/services", {
-        headers: { "x-access-token": token },
-      })
-      .then((response) => {
-        console.log(response.data);
-        this.schedules = response.data;
-      });
+    axios.get("http://localhost:8080/api/services").then((response) => {
+      console.log(response.data);
+      this.services = response.data;
+    });
   },
 };
 </script>

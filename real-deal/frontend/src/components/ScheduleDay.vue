@@ -5,9 +5,8 @@
       <ScheduleSlot
         v-for="hour in workingHours"
         v-bind:key="hour"
-        v-bind:state="getState()"
         v-bind:hour="hour"
-        v-bind:info="getSlotsInHour()"
+        v-bind:info="getSlotInHour(hour)"
       ></ScheduleSlot>
     </div>
   </div>
@@ -27,22 +26,25 @@ export default {
     ScheduleSlot,
   },
   methods: {
-    getState() {
-      return "BOOKED";
-    },
-    getSlotsInHour: function(hour) {
-      this.slots.forEach();
-      return {
-        serviceName: "salve",
-        serviceImage: "a",
-        petName: "hee hee",
-        petImage: "b",
-      };
+    getSlotInHour: function(hour) {
+      console.log(
+        this.slots.find((slot) => {
+          moment(slot.date).hour() == moment(slot.date).hour();
+        })
+      );
+      if (this.slots[0] === undefined) {
+        return { state: "EMPTY" };
+      }
+      return this.slots[0];
     },
   },
   computed: {
     day: function() {
-      return this.date.date() + "/" + (this.date.month() + 1);
+      return (
+        this.date.date() +
+        "/" +
+        (this.date.month() + 1).toString().padStart(2, "0")
+      );
     },
     workingHours: function() {
       const hours = [];

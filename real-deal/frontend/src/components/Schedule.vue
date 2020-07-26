@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-      curPage: 1,
+      curPage: 0,
       daysToDisplay: 70, // Equivalent to 10 WEEKS
       daysPerPage: 3,
       today: moment(),
