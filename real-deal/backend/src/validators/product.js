@@ -15,6 +15,7 @@ exports.validate = (req, res, next) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     next();
+    return;
   }
   const extractedErrors = [];
   errors.array().map((err) => extractedErrors.push({ [err.param]: err.msg }));

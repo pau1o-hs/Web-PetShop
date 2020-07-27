@@ -100,7 +100,7 @@
         <input type="text" placeholder="Email" v-model="newAdmin.email" />
         <input type="text" placeholder="Senha" v-model="newAdmin.password" />
         <button type="file" class="btn-add2">Photo</button>
-        <button class="btn-add2" style="width: 50%;">
+        <button class="btn-add2" style="width: 50%;" v-on:click="createNew()">
           Add Admin
         </button>
       </div>
@@ -177,23 +177,13 @@
 
     <section id="foods">
       <div class="item-unity" v-for="product in products" :key="product._id">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img :src="product.photo" />
-            <h2 id="nome-item">{{ product.name }}</h2>
-            <p id="descricao-item">{{ product.description }}</p>
-            <p id="preco">R${{ product.price }}</p>
-            <button
-              id="adicionar-carrinho"
-              v-on:click="updateItem(product._id)"
-            >
-              Update item
-            </button>
-          </div>
-          <div class="flip-card-back">
-            ALOOOO
-          </div>
-        </div>
+        <img :src="product.photo" />
+        <h2 id="nome-item">{{ product.name }}</h2>
+        <p id="descricao-item">{{ product.description }}</p>
+        <p id="preco">R${{ product.price }}</p>
+        <button id="adicionar-carrinho" v-on:click="updateItem(product._id)">
+          Update item
+        </button>
       </div>
       <div class="infosection">
         <input type="text" placeholder="Name" />
@@ -294,25 +284,6 @@ export default {
     };
   },
   methods: {
-    updateItem: function(id) {
-      axios
-        .put(
-          "http://localhost:8080/api/products/" + id,
-          {
-            name: this.products.name,
-            description: this.products.description,
-            price: this.products.price,
-            inStock: this.products.inStock,
-          },
-          {
-            headers: { "x-access-token": this.$token },
-          }
-        )
-        .then((response) => {
-          this.childAdmins.push(response.data);
-          console.log("Deu erro");
-        });
-    },
     //quando clicar no button
     createNew: function() {
       // `this` dentro de métodos aponta para a instância Vue
@@ -322,11 +293,11 @@ export default {
           {
             CPF: this.newAdmin.cpf,
             name: this.newAdmin.name,
-            phone: this.newAdmin.phone,
+            adminName: this.adminName,
             email: this.newAdmin.email,
-            adminName: this.newAdmin.adminName,
             password: this.newAdmin.password,
             photo: this.newAdmin.photo,
+            phone: this.newAdmin.phone,
           },
           {
             headers: { "x-access-token": this.$token },
