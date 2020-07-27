@@ -7,6 +7,8 @@ const populateDb = require('./populate');
 
 const app = express();
 
+app.use(express.static('dist'));
+
 // Remove mongoose's "deprecation warnings"
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
