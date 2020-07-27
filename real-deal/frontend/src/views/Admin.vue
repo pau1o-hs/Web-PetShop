@@ -83,13 +83,6 @@
                 v-model="childadmin.photo"
               />
               <input type="text" placeholder="ID" v-model="childadmin._id" />
-              <button
-                class="btn-add2"
-                style="width: 50%;"
-                @click="deleteAdmin(childadmin._id)"
-              >
-                Delete
-              </button>
             </div>
           </div>
         </div>
@@ -151,13 +144,6 @@
                 v-model="client.password"
               />
               <input type="text" placeholder="Senha" v-model="client._id" />
-              <button
-                class="btn-add2"
-                style="width: 50%;"
-                v-on:click="deleteCustomer(client._id)"
-              >
-                Delete
-              </button>
             </div>
           </div>
         </div>
@@ -348,15 +334,15 @@ export default {
     deleteAdmin: function(id) {
       // `this` dentro de métodos aponta para a instância Vue
       console.log(id);
-      // axios
-      //   .delete("http://localhost:8080/api/admin/children/" + id, {
-      //     headers: { "x-access-token": this.$token },
-      //   })
-      //   .then((response) => {
-      //     this.childAdmins.push(response.data);
-      //     console.log("O ID É ESSE");
-      //     console.log(id);
-      //   });
+      axios
+        .delete("http://localhost:8080/api/admin/children/" + id, {
+          headers: { "x-access-token": this.$token },
+        })
+        .then((response) => {
+          this.childAdmins.push(response.data);
+          console.log("O ID É ESSE");
+          console.log(id);
+        });
     },
     deleteCustomer: function(id) {
       // `this` dentro de métodos aponta para a instância Vue
@@ -366,6 +352,8 @@ export default {
         })
         .then((response) => {
           this.childAdmins.push(response.data);
+          console.log("O ID É ESSE");
+          console.log(id);
         });
     },
   },

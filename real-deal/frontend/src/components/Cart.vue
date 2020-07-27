@@ -18,14 +18,15 @@
     <section class="main-block">
       <h1>PRODUCTS</h1>
       <div class="cart-model" v-for="p in products" :key="p._id">
-        <h2>Product: {{ p.name }}</h2>
+        <h3>Product: {{ p.name }}</h3>
         <p>Description: {{ p.description }}</p>
         <p>Price: {{ p.price }}</p>
         <p>Quantity: {{ p.quantity }}</p>
       </div>
+      <h1>{{ totalProducts }}</h1>
       <h1>SERVICES</h1>
       <div class="cart-model" v-for="s in services" :key="s._id">
-        <h2>Service: {{ s.name }}</h2>
+        <h3>Service: {{ s.name }}</h3>
         <p>Description: {{ s.description }}</p>
         <p>Price: {{ s.price }}</p>
         <p>Date: {{ s.date }}</p>
@@ -58,6 +59,26 @@ export default {
   methods: {
     submitOrder: function() {
       alert("Your order has been emmitted successfully!!");
+    },
+  },
+  computed: {
+    totalProducts: function() {
+      if (!this.products) return;
+      const total = this.products.reduce((acc, elem) => {
+        console.log(elem);
+        acc + elem.price;
+      });
+      console.log(total);
+      return total;
+    },
+    totalServices: function() {
+      if (!this.services) return;
+      const total = this.services.reduce((acc, elem) => {
+        console.log(elem);
+        acc + elem.price;
+      });
+      console.log(total);
+      return total;
     },
   },
   mounted() {
