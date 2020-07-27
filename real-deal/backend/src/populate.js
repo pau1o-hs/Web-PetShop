@@ -26,6 +26,8 @@ module.exports = async function () {
     CPF: '11111111112',
     name: 'Bruno Santos',
     phone: '11945677438',
+    photo:
+      'https://conhecimentocientifico.r7.com/wp-content/uploads/2020/04/jesus-5.jpg',
     email: 'brunos@petshop.com',
     adminName: 'bruno',
     password: await passwordEncrypter.encrypt('bruno'),
@@ -35,6 +37,8 @@ module.exports = async function () {
     CPF: '11111111113',
     name: 'Paulo Henrique',
     phone: '11954787439',
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/profile/admin1.jpg',
     email: 'pauloh@petshop.com',
     adminName: 'paulo',
     password: await passwordEncrypter.encrypt('paulo'),
@@ -44,6 +48,8 @@ module.exports = async function () {
     CPF: '11111111114',
     name: 'Vitor Santana',
     phone: '11947831245',
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/profile/admin1.jpg',
     email: 'vitors@petshop.com',
     adminName: 'vitor',
     password: await passwordEncrypter.encrypt('vitor'),
@@ -65,6 +71,61 @@ module.exports = async function () {
     tags: ['tosa', 'banho'],
     photo:
       'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/categorias/banhotosa.png',
+    description: 'Uma tosa bem suave para seu bichinho',
+    responsible: 'Paulo Henrique',
+    price: 50.0,
+    totalBooked: 10,
+  });
+
+  await repos.service.createOne({
+    name: 'Adestramento',
+    tags: ['adestramento'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/categorias/adestramento.jpg',
+    description: 'Uma tosa bem suave para seu bichinho',
+    responsible: 'Paulo Henrique',
+    price: 50.0,
+    totalBooked: 10,
+  });
+
+  await repos.service.createOne({
+    name: 'Castração',
+    tags: ['castracao'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/categorias/castracao.jpg',
+    description: 'Uma tosa bem suave para seu bichinho',
+    responsible: 'Paulo Henrique',
+    price: 50.0,
+    totalBooked: 10,
+  });
+
+  await repos.service.createOne({
+    name: 'Consulta',
+    tags: ['consulta'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/categorias/consulta.jpg',
+    description: 'Uma tosa bem suave para seu bichinho',
+    responsible: 'Paulo Henrique',
+    price: 50.0,
+    totalBooked: 10,
+  });
+
+  await repos.service.createOne({
+    name: 'Vacinação',
+    tags: ['vacinacao'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/categorias/vacinacao.jpg',
+    description: 'Uma tosa bem suave para seu bichinho',
+    responsible: 'Paulo Henrique',
+    price: 50.0,
+    totalBooked: 10,
+  });
+
+  await repos.service.createOne({
+    name: 'Lar Temporário',
+    tags: ['lar-temporario'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/categorias/lar.jpg',
     description: 'Uma tosa bem suave para seu bichinho',
     responsible: 'Paulo Henrique',
     price: 50.0,
@@ -350,7 +411,7 @@ module.exports = async function () {
     name: 'Roupa 1',
     tags: ['cloths'],
     photo:
-      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira1.png',
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/roupas/roupa1.jpg',
     description: 'Roupa',
     price: 11.99,
     inStock: 30,
@@ -361,7 +422,7 @@ module.exports = async function () {
     name: 'Roupa 2',
     tags: ['cloths'],
     photo:
-      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira2.webp',
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/roupas/roupa2.jpg',
     description: 'Roupa',
     price: 11.99,
     inStock: 30,
@@ -372,7 +433,7 @@ module.exports = async function () {
     name: 'Roupa 3',
     tags: ['cloths'],
     photo:
-      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira3.webp',
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/roupas/roupa3.jpg',
     description: 'Roupa',
     price: 11.99,
     inStock: 30,
@@ -383,7 +444,7 @@ module.exports = async function () {
     name: 'Roupa 4',
     tags: ['cloths'],
     photo:
-      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira4.webp',
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/roupas/roupa4.jpg',
     description: 'Roupa',
     price: 11.99,
     inStock: 30,
@@ -394,7 +455,7 @@ module.exports = async function () {
     name: 'Roupa 5',
     tags: ['cloths'],
     photo:
-      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira5.webp',
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/roupas/roupa5.jpg',
     description: 'Roupa',
     price: 11.99,
     inStock: 30,
@@ -405,7 +466,7 @@ module.exports = async function () {
     name: 'Roupa 6',
     tags: ['cloths'],
     photo:
-      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira5.webp',
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/roupas/roupa6.jpg',
     description: 'Roupa',
     price: 11.99,
     inStock: 30,
@@ -416,8 +477,63 @@ module.exports = async function () {
     name: 'Roupa 7',
     tags: ['cloths'],
     photo:
-      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/passeio/coleira6.webp',
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/roupas/roupa7.jpg',
     description: 'Roupa',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Conforto 1',
+    tags: ['comfort'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/conforto/conforto1.webp',
+    description: 'Conforto',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Conforto 2',
+    tags: ['comfort'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/conforto/conforto2.webp',
+    description: 'Conforto',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Conforto 3',
+    tags: ['comfort'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/conforto/conforto3.webp',
+    description: 'Conforto',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Conforto 4',
+    tags: ['comfort'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/conforto/conforto4.webp',
+    description: 'Conforto',
+    price: 11.99,
+    inStock: 30,
+    totalSold: 55,
+  });
+
+  await repos.product.createOne({
+    name: 'Conforto 5',
+    tags: ['comfort'],
+    photo:
+      'https://raw.githubusercontent.com/pau1o-hs/Web-PetShop/master/real-deal/frontend/public/images/conforto/conforto5.webp',
+    description: 'Conforto',
     price: 11.99,
     inStock: 30,
     totalSold: 55,

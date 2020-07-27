@@ -37,9 +37,9 @@
       <section class="infosection" style="width: 30%">
         <p>{{ user.name }}</p>
         <div>
-          <!-- <button class="fa fa-btn fa-plus-circle"> -->
-          <input type="file" class="fa fa-btn fa-plus-circle" />
-          <!-- </button> -->
+          <button class="fa fa-btn fa-plus-circle">
+            <!-- <input type="file" class="fa fa-btn fa-plus-circle" /> -->
+          </button>
         </div>
       </section>
 
@@ -91,9 +91,6 @@
       style="background-color:#E74C3C;"
     >
       <p>Reserved Schedules</p>
-      <div class="search">
-        <input type="text" placeholder=" Type one of your pets here..." />
-      </div>
     </div>
 
     <div class="scheduleform">
@@ -102,11 +99,7 @@
         v-for="schedule in schedules"
         :key="schedule._id"
       >
-        <img
-          src="../../public/images/profile/pet1.png"
-          width="100%"
-          height="80%"
-        />
+        <img :src="schedule.photo" width="100%" height="80%" />
         <p>{{ schedule.service.name }} (R${{ schedule.service.price }})</p>
         <hr />
         <p>{{ schedule.data }}</p>
@@ -136,18 +129,9 @@ export default {
   data() {
     return {
       addUser: {
-        name: "Full name",
-        address: "Address",
-        phone: "Phone",
-        email: "E-mail",
-        photo: "Photo",
+        name: n,
       },
-      addPet: {
-        name: "Name",
-        race: "Race",
-        age: null,
-        photo: "Photo",
-      },
+      addPet: {},
       user: { name: "" },
       pets: [],
       schedules: [],
@@ -161,9 +145,7 @@ export default {
         .put(
           "http://localhost:8080/api/profile",
           {
-            data: {
-              name: "Joaozito",
-            },
+            name: this.addUsername,
           },
           {
             headers: {

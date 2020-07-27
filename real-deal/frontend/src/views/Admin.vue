@@ -40,7 +40,7 @@
     >
       <p>Child Administrators</p>
     </div>
-
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
     <div class="scheduleform">
       <section
         class="polaroid"
@@ -50,11 +50,7 @@
       >
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img
-              src="../../public/images/profile/admin1.jpg"
-              width="100%"
-              height="80%"
-            />
+            <img :src="childadmin.photo" width="100%" height="80%" />
             <p>{{ childadmin.name }}</p>
           </div>
           <div class="flip-card-back">
@@ -63,7 +59,7 @@
               <input type="text" placeholder="Name" v-model="childadmin.name" />
               <input
                 type="text"
-                placeholder="AdminName"
+                placeholder="admin-name"
                 v-model="childadmin.adminName"
               />
               <input
@@ -78,8 +74,13 @@
               />
               <input
                 type="text"
-                placeholder="Senha"
+                placeholder="Password"
                 v-model="childadmin.password"
+              />
+              <input
+                type="text"
+                placeholder="Photo (URL)"
+                v-model="childadmin.photo"
               />
               <button
                 class="btn-add2"
@@ -111,7 +112,7 @@
         </button>
       </div>
     </div>
-
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
     <div
       id="clientsection"
       class="customsection"
@@ -143,10 +144,31 @@
                 placeholder="Senha"
                 v-model="client.password"
               />
+              <button
+                class="btn-add2"
+                style="width: 50%;"
+                v-on:click="deleteCustomer(client._id)"
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>
       </section>
+      <div class="infosection">
+        <input type="text" placeholder="CPF" v-model="newClient.cpf" />
+        <input type="text" placeholder="Name" v-model="newClient.name" />
+        <input type="text" placeholder="E-mail" v-model="newClient.email" />
+        <input
+          type="text"
+          placeholder="Password"
+          v-model="newClient.password"
+        />
+        <button type="file" class="btn-add2">Photo</button>
+        <button class="btn-add2" style="width: 50%;" v-on:click="createNew()">
+          Add Client
+        </button>
+      </div>
     </div>
 
     <div
@@ -159,10 +181,7 @@
 
     <section id="foods">
       <div class="item-unity" v-for="product in products" :key="product._id">
-        <img
-          src="../../public/images/racoes/racao-cao.jpg"
-          alt="Ração de gato"
-        />
+        <img :src="product.photo" alt="Ração de gato" />
         <h2 id="nome-item">{{ product.name }}</h2>
         <p id="descricao-item">{{ product.description }}</p>
         <p id="preco">R${{ product.price }}</p>
@@ -193,11 +212,7 @@
         v-for="service in services"
         :key="service._id"
       >
-        <img
-          src="../../public/images/categorias/services.jpg"
-          width="100%"
-          height="80%"
-        />
+        <img :src="service.photo" width="100%" height="80%" />
         <p>{{ service.name }}</p>
         <hr />
         <button>Edit</button>
@@ -248,6 +263,17 @@ export default {
         phone: "",
         email: "",
         password: "",
+        photo: "",
+        _id: "",
+      },
+      newClient: {
+        cpf: "",
+        name: "",
+        adminName: "",
+        phone: "",
+        email: "",
+        password: "",
+        photo: "",
         _id: "",
       },
       admins: { name: "" },
@@ -275,6 +301,30 @@ export default {
             email: this.newAdmin.email,
             adminName: this.newAdmin.adminName,
             password: this.newAdmin.password,
+            photo: this.newAdmin.photo,
+          }
+        )
+        .then((response) => {
+          this.childAdmins.push(response.data);
+        });
+    },
+
+    createNewCustomer: function() {
+      // `this` dentro de métodos aponta para a instância Vue
+      axios
+        .post(
+          "http://localhost:8080/api/admin/children",
+          {
+            headers: { "x-access-token": this.$token },
+          },
+          {
+            CPF: this.newAdmin.cpf,
+            name: this.newAdmin.name,
+            phone: this.newAdmin.phone,
+            email: this.newAdmin.email,
+            adminName: this.newAdmin.adminName,
+            password: this.newAdmin.password,
+            photo: this.newAdmin.photo,
           }
         )
         .then((response) => {
@@ -285,6 +335,16 @@ export default {
       // `this` dentro de métodos aponta para a instância Vue
       axios
         .delete("http://localhost:8080/api/admin/children/" + id, {
+          headers: { "x-access-token": this.$token },
+        })
+        .then((response) => {
+          this.childAdmins.push(response.data);
+        });
+    },
+    deleteCustomer: function(id) {
+      // `this` dentro de métodos aponta para a instância Vue
+      axios
+        .delete("http://localhost:8080/api/admin/customers/" + id, {
           headers: { "x-access-token": this.$token },
         })
         .then((response) => {
@@ -441,7 +501,7 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(65, 2, 2, 0.19);
 }
 
-.polaroid {
+/* .polaroid {
   box-shadow: 0 0 10px black;
   align-self: center;
   align-items: center;
@@ -458,21 +518,9 @@ export default {
   text-align: center;
   padding: 5px 20px;
   color: white;
-}
+} */
 
-.pol1 {
-  grid-area: polaroid1;
-}
-
-.pol2 {
-  grid-area: polaroid2;
-}
-
-.pol2 {
-  grid-area: polaroid3;
-}
-
-.scheduleform {
+/* .scheduleform {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 65%;
@@ -484,7 +532,7 @@ export default {
   grid-template-areas: "polaroid1 polaroid2 polaroid3 polaroid4" "polaroid5 polaroid6 polaroid7 pet-register";
   align-self: center;
   margin-bottom: 5vh;
-}
+} */
 
 .polaroid {
   flex-direction: column;

@@ -2,11 +2,13 @@
   <div class="cloth">
     <section id="foods">
       <div class="item-unity" v-for="item in products" :key="item.username">
-        <img src="../../public/images/racoes/racao-gato.jpg" alt="Ração de gato" />
+        <img :src="item.photo" alt="Ração de gato" />
         <h2 id="nome-item">{{ item.name }}</h2>
         <p id="descricao-item">{{ item.description }}</p>
         <p id="preco">{{ item.price }}</p>
-        <button id="adicionar-carrinho">Adicionar ao carrinho</button>
+        <button id="adicionar-carrinho" v-on:click="addToCart">
+          Adicionar ao carrinho
+        </button>
       </div>
     </section>
   </div>
@@ -20,17 +22,20 @@ export default {
   data() {
     return {
       products: [],
-      error: ""
+      error: "",
     };
+  },
+  methods: {
+    addToCart: function() {},
   },
   mounted() {
     axios
       .post("http://localhost:8080/api/products/tags/", {
-        tag: "food"
+        tag: "cloths",
       })
-      .then(response => {
+      .then((response) => {
         this.products = response.data;
       });
-  }
+  },
 };
 </script>
