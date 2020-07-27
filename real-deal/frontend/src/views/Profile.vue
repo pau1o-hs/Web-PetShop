@@ -44,10 +44,10 @@
       </section>
 
       <section class="infosection" style="width: 30%">
-        <input type="text" v-model="addUser.name" placeholder="Name" />
-        <input type="text" v-model="addUser.address" placeholder="Address" />
-        <input type="text" v-model="addUser.phone" placeholder="Phone" />
-        <input type="text" v-model="addUser.email" placeholder="E-mail" />
+        <input type="text" v-model="editUser.name" placeholder="Name" />
+        <input type="text" v-model="editUser.address" placeholder="Address" />
+        <input type="text" v-model="editUser.phone" placeholder="Phone" />
+        <input type="text" v-model="editUser.email" placeholder="E-mail" />
         <input type="submit" text="Atualizar" v-on:click="updateUserInfo()" />
       </section>
     </div>
@@ -128,10 +128,12 @@ export default {
   },
   data() {
     return {
-      addUser: {
-        name: n,
+      editUser: {
+        name: null,
+        address: null,
+        phone: null,
+        email: null,
       },
-      addPet: {},
       user: { name: "" },
       pets: [],
       schedules: [],
@@ -145,7 +147,10 @@ export default {
         .put(
           "http://localhost:8080/api/profile",
           {
-            name: this.addUsername,
+            name: this.editUser.name,
+            address: this.editUser.address,
+            phone: this.editUser.phone,
+            email: this.editUser.email,
           },
           {
             headers: {
@@ -166,7 +171,7 @@ export default {
       .then((response) => {
         console.log(response.data);
         this.user = response.data;
-        this.addUser = response.data;
+        this.editUser = response.data;
       });
 
     axios

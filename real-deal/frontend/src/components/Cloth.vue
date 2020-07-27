@@ -6,7 +6,7 @@
         <h2 id="nome-item">{{ item.name }}</h2>
         <p id="descricao-item">{{ item.description }}</p>
         <p id="preco">{{ item.price }}</p>
-        <button id="adicionar-carrinho" v-on:click="addToCart">
+        <button id="adicionar-carrinho" v-on:click="addToCart(item)">
           Adicionar ao carrinho
         </button>
       </div>
@@ -16,6 +16,7 @@
 
 <script>
 import axios from "axios";
+import cart from "../cart";
 
 export default {
   name: "Cloth",
@@ -26,7 +27,16 @@ export default {
     };
   },
   methods: {
-    addToCart: function() {},
+    addToCart: function(item) {
+      // Se já tem esse produto lá, apenas aumente sua quantidade
+      if (cart.products.find((prod) => prod.slug == item.slug)) {
+        const index = cart.products.findIndex((prod) => prod.slug == item.slug);
+        cart.products[index].quantity++;
+        return;
+      }
+      // Caso contrario, adicione ele no carrinho
+      cart.products.push({ ...item, quantity: 1 });
+    },
   },
   mounted() {
     axios

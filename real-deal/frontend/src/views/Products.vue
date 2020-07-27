@@ -34,56 +34,62 @@
     </section>
 
     <!-- FOODS -->
-    <div id="foodsection" class="customsection" style="background-color:#8E44AD;">
+    <div
+      id="foodsection"
+      class="customsection"
+      style="background-color:#8E44AD;"
+    >
       <p>Foods</p>
-      <div class="search">
-        <input type="text" placeholder=" Search..." />
-      </div>
     </div>
     <Foods></Foods>
 
     <!-- TOYS -->
-    <div id="toysection" class="customsection" style="background-color:#2980B9;">
+    <div
+      id="toysection"
+      class="customsection"
+      style="background-color:#2980B9;"
+    >
       <p>Toys</p>
-      <div class="search">
-        <input type="text" placeholder=" Search..." />
-      </div>
     </div>
     <Toys></Toys>
 
     <!-- SNACK -->
-    <div id="snacksection" class="customsection" style="background-color:#E74C3C;">
+    <div
+      id="snacksection"
+      class="customsection"
+      style="background-color:#E74C3C;"
+    >
       <p>Snacks</p>
-      <div class="search">
-        <input type="text" placeholder=" Search..." />
-      </div>
     </div>
     <Snacks></Snacks>
 
     <!-- WALKWAY -->
-    <div id="walkwaysection" class="customsection" style="background-color:#27AE60;">
+    <div
+      id="walkwaysection"
+      class="customsection"
+      style="background-color:#27AE60;"
+    >
       <p>Walkway</p>
-      <div class="search">
-        <input type="text" placeholder=" Search..." />
-      </div>
     </div>
     <Walkway></Walkway>
 
     <!-- CLOTH -->
-    <div id="clothsection" class="customsection" style="background-color:#F39C12;">
+    <div
+      id="clothsection"
+      class="customsection"
+      style="background-color:#F39C12;"
+    >
       <p>Clothing</p>
-      <div class="search">
-        <input type="text" placeholder=" Search..." />
-      </div>
     </div>
     <Cloth></Cloth>
 
     <!-- COMFORT -->
-    <div id="comfortsection" class="customsection" style="background-color:#34495E;">
+    <div
+      id="comfortsection"
+      class="customsection"
+      style="background-color:#34495E;"
+    >
       <p>Comfort</p>
-      <div class="search">
-        <input type="text" placeholder=" Search..." />
-      </div>
     </div>
     <Comfort></Comfort>
 
@@ -111,13 +117,13 @@ export default {
     Snacks,
     Walkway,
     Cloth,
-    Comfort
+    Comfort,
   },
   data() {
     return {
-      info: null
+      info: null,
     };
-  }
+  },
 };
 </script>
 

@@ -82,12 +82,13 @@
                 placeholder="Photo (URL)"
                 v-model="childadmin.photo"
               />
+              <input type="text" placeholder="ID" v-model="childadmin._id" />
               <button
                 class="btn-add2"
                 style="width: 50%;"
-                v-on:click="deleteAdmin(childadmin._id)"
+                @click="deleteAdmin(childadmin._id)"
               >
-                Delete Admin
+                Delete
               </button>
             </div>
           </div>
@@ -107,7 +108,7 @@
         <input type="text" placeholder="Email" v-model="newAdmin.email" />
         <input type="text" placeholder="Senha" v-model="newAdmin.password" />
         <button type="file" class="btn-add2">Photo</button>
-        <button class="btn-add2" style="width: 50%;" v-on:click="createNew()">
+        <button class="btn-add2" style="width: 50%;">
           Add Admin
         </button>
       </div>
@@ -141,9 +142,15 @@
               <input type="text" placeholder="E-mail" v-model="client.email" />
               <input
                 type="text"
+                placeholder="Address"
+                v-model="client.address"
+              />
+              <input
+                type="text"
                 placeholder="Senha"
                 v-model="client.password"
               />
+              <input type="text" placeholder="Senha" v-model="client._id" />
               <button
                 class="btn-add2"
                 style="width: 50%;"
@@ -158,14 +165,19 @@
       <div class="infosection">
         <input type="text" placeholder="CPF" v-model="newClient.cpf" />
         <input type="text" placeholder="Name" v-model="newClient.name" />
+        <input type="text" placeholder="Phone" v-model="newClient.phone" />
+        <input type="text" placeholder="Address" v-model="newClient.address" />
         <input type="text" placeholder="E-mail" v-model="newClient.email" />
         <input
           type="text"
           placeholder="Password"
           v-model="newClient.password"
         />
-        <button type="file" class="btn-add2">Photo</button>
-        <button class="btn-add2" style="width: 50%;" v-on:click="createNew()">
+        <button
+          class="btn-add2"
+          style="width: 50%;"
+          v-on:click="createNewCustomer()"
+        >
           Add Client
         </button>
       </div>
@@ -275,6 +287,7 @@ export default {
         password: "",
         photo: "",
         _id: "",
+        address: "",
       },
       admins: { name: "" },
       clients: [],
@@ -286,7 +299,7 @@ export default {
   },
   methods: {
     //quando clicar no button
-    createNew: function() {
+    /*  createNew: function() {
       // `this` dentro de métodos aponta para a instância Vue
       axios
         .post(
@@ -306,25 +319,26 @@ export default {
         )
         .then((response) => {
           this.childAdmins.push(response.data);
+          console.log("Deu erro");
         });
-    },
+    }, */
 
     createNewCustomer: function() {
       // `this` dentro de métodos aponta para a instância Vue
       axios
         .post(
-          "http://localhost:8080/api/admin/children",
+          "http://localhost:8080/api/admin/customers",
           {
             headers: { "x-access-token": this.$token },
           },
           {
-            CPF: this.newAdmin.cpf,
-            name: this.newAdmin.name,
-            phone: this.newAdmin.phone,
-            email: this.newAdmin.email,
-            adminName: this.newAdmin.adminName,
-            password: this.newAdmin.password,
-            photo: this.newAdmin.photo,
+            CPF: this.newClient.cpf,
+            name: this.newClient.name,
+            email: this.newClient.email,
+            password: this.newClient.password,
+            photo: this.newClient.photo,
+            address: this.newClient.address,
+            phone: this.newClient.phone,
           }
         )
         .then((response) => {
@@ -333,13 +347,16 @@ export default {
     },
     deleteAdmin: function(id) {
       // `this` dentro de métodos aponta para a instância Vue
-      axios
-        .delete("http://localhost:8080/api/admin/children/" + id, {
-          headers: { "x-access-token": this.$token },
-        })
-        .then((response) => {
-          this.childAdmins.push(response.data);
-        });
+      console.log(id);
+      // axios
+      //   .delete("http://localhost:8080/api/admin/children/" + id, {
+      //     headers: { "x-access-token": this.$token },
+      //   })
+      //   .then((response) => {
+      //     this.childAdmins.push(response.data);
+      //     console.log("O ID É ESSE");
+      //     console.log(id);
+      //   });
     },
     deleteCustomer: function(id) {
       // `this` dentro de métodos aponta para a instância Vue

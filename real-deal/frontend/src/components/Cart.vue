@@ -16,13 +16,22 @@
     </div>
 
     <section class="main-block">
+      <h1>PRODUCTS</h1>
       <div class="cart-model" v-for="p in products" :key="p._id">
-        <!--  <img src="../../public/images/racoes/racao-gato.jpg" alt="Ração de gato" /> -->
-        <h2>{{ p.name }}</h2>
-        <p>{{ p.description }}</p>
-        <p>{{ p.price }}</p>
-        <p>{{ p.quantity }}</p>
+        <h2>Product: {{ p.name }}</h2>
+        <p>Description: {{ p.description }}</p>
+        <p>Price: {{ p.price }}</p>
+        <p>Quantity: {{ p.quantity }}</p>
       </div>
+      <h1>SERVICES</h1>
+      <div class="cart-model" v-for="s in services" :key="s._id">
+        <h2>Service: {{ s.name }}</h2>
+        <p>Description: {{ s.description }}</p>
+        <p>Price: {{ s.price }}</p>
+        <p>Date: {{ s.date }}</p>
+        <p>Pet: {{ s.pet }}</p>
+      </div>
+      <button class="btn" v-on:click="submitOrder">FINISH PURCHASE</button>
     </section>
     <Footer></Footer>
   </div>
@@ -31,34 +40,34 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import axios from "axios";
+import cart from "../cart";
 
 export default {
-  name: "cart",
+  name: "Cart",
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
       products: [],
-      error: ""
+      services: [],
+      error: "",
     };
   },
+  methods: {
+    submitOrder: function() {
+      alert("Your order has been emmitted successfully!!");
+    },
+  },
   mounted() {
-    axios
-      .get("http://localhost:8080/api/admin/products", {
-        headers: { "x-access-token": this.$token }
-      })
-      .then(response => {
-        console.log(response.data);
-        this.products = response.data;
-      });
-  }
+    this.products = cart.products;
+    this.services = cart.services;
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .main-block {
   display: grid;
   width: 90%;
@@ -72,7 +81,7 @@ export default {
   /* border-style: solid; */
 
   /* border-width: 1px 0px; */
-  border-bottom: 0.1vh solid #333;
+  border-top: 1vh solid #333;
   border-color: #333;
   /* box-shadow: 0 0 10px black; */
 
@@ -87,5 +96,28 @@ export default {
 
 .cart-model h2 {
   padding-top: 1vh;
+}
+
+.btn {
+  background: mediumseagreen;
+  display: block;
+  width: 150px;
+  color: #fdfffc;
+  margin: 10px auto;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
+  border: 0;
+  border: 2px solid mediumseagreen;
+  outline: none;
+  margin-top: 30%;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: none;
+  color: mediumseagreen;
+  transition-duration: 0.1s;
 }
 </style>
