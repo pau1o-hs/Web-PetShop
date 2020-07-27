@@ -74,9 +74,9 @@
         <button>Edit</button>
       </section>
       <div class="infosection">
-        <input type="text" v-model="addPet.name" placeholder="name" />
-        <input type="select" v-model="addPet.race" placeholder="race" />
-        <input type="number" v-model="addPet.age" placeholder="Age" />
+        <input type="text" placeholder="name" />
+        <input type="select" placeholder="race" />
+        <input type="number" placeholder="Age" />
         <button type="file" class="fa fa-btn1 fa-plus-circle">Photo</button>
         <button class="fa fa-btn1 fa-plus-circle" style="width: 50%;">
           Add Pet

@@ -82,7 +82,6 @@
                 placeholder="Photo (URL)"
                 v-model="childadmin.photo"
               />
-              <input type="text" placeholder="ID" v-model="childadmin._id" />
             </div>
           </div>
         </div>
@@ -143,7 +142,6 @@
                 placeholder="Senha"
                 v-model="client.password"
               />
-              <input type="text" placeholder="Senha" v-model="client._id" />
             </div>
           </div>
         </div>
@@ -179,11 +177,23 @@
 
     <section id="foods">
       <div class="item-unity" v-for="product in products" :key="product._id">
-        <img :src="product.photo" alt="Ração de gato" />
-        <h2 id="nome-item">{{ product.name }}</h2>
-        <p id="descricao-item">{{ product.description }}</p>
-        <p id="preco">R${{ product.price }}</p>
-        <button id="adicionar-carrinho">Update item</button>
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img :src="product.photo" />
+            <h2 id="nome-item">{{ product.name }}</h2>
+            <p id="descricao-item">{{ product.description }}</p>
+            <p id="preco">R${{ product.price }}</p>
+            <button
+              id="adicionar-carrinho"
+              v-on:click="updateItem(product._id)"
+            >
+              Update item
+            </button>
+          </div>
+          <div class="flip-card-back">
+            ALOOOO
+          </div>
+        </div>
       </div>
       <div class="infosection">
         <input type="text" placeholder="Name" />
@@ -284,15 +294,31 @@ export default {
     };
   },
   methods: {
+    updateItem: function(id) {
+      axios
+        .put(
+          "http://localhost:8080/api/products/" + id,
+          {
+            name: this.products.name,
+            description: this.products.description,
+            price: this.products.price,
+            inStock: this.products.inStock,
+          },
+          {
+            headers: { "x-access-token": this.$token },
+          }
+        )
+        .then((response) => {
+          this.childAdmins.push(response.data);
+          console.log("Deu erro");
+        });
+    },
     //quando clicar no button
-    /*  createNew: function() {
+    createNew: function() {
       // `this` dentro de métodos aponta para a instância Vue
       axios
         .post(
           "http://localhost:8080/api/admin/children",
-          {
-            headers: { "x-access-token": this.$token },
-          },
           {
             CPF: this.newAdmin.cpf,
             name: this.newAdmin.name,
@@ -301,14 +327,16 @@ export default {
             adminName: this.newAdmin.adminName,
             password: this.newAdmin.password,
             photo: this.newAdmin.photo,
+          },
+          {
+            headers: { "x-access-token": this.$token },
           }
         )
         .then((response) => {
           this.childAdmins.push(response.data);
           console.log("Deu erro");
         });
-    }, */
-
+    },
     createNewCustomer: function() {
       // `this` dentro de métodos aponta para a instância Vue
       axios
